@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  20 FEB 2022 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  20 FEB 2022 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -133,20 +133,20 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 ) (./ER Diagram and Relational Schema.aux)
 \openout1 = `"ER Diagram and Relational Schema.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
  (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count276
@@ -200,11 +200,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
  (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -226,7 +226,7 @@ No file "ER Diagram and Relational Schema".lof.
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--58
+Underfull \hbox (badness 10000) in paragraph at lines 41--61
 
  []
 
@@ -234,10 +234,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--58
 
 ] [4]
 Chapter 2.
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> 'ER DiagramER 
                          Diagram'
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -245,10 +245,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> 'ER DiagramER 
                          Diagram'
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -256,10 +256,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> 'ER DiagramER 
                          Diagram'
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -267,10 +267,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.pdf\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -278,10 +278,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.png\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -289,10 +289,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.jpg\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -300,10 +300,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.mps\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -311,10 +311,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.jpeg\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -322,10 +322,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.jbig2\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -333,10 +333,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.jb2\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -344,10 +344,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.PDF\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -355,10 +355,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.PNG\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -366,10 +366,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.JPG\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -377,10 +377,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.JPEG\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -388,10 +388,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.JBIG2\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -399,10 +399,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.JB2\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -410,10 +410,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
 <argument> \ER 
                'ER DiagramDiagram'.eps\@gobble 
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -422,12 +422,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: Undefined control sequence.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: Undefined control sequence.
  ->\errmessage  LaTeX Error: File `'ER Diagram\ER 
                                                   Diagram'' not found.
 
 See ...
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -435,13 +435,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:60: LaTeX Error: File `'ER DiagramDiagram'' not found.
+c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:66: LaTeX Error: File `'ER DiagramDiagram'' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.60     \includegraphics{'ER Diagram\ER Diagram'}
+l.66     \includegraphics{'ER Diagram\ER Diagram'}
                                                   
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -460,7 +460,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,6n,62p,293b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "ER Diagram and Relational Schema.pdf" (6 pages, 51197 bytes).
+Output written on "ER Diagram and Relational Schema.pdf" (6 pages, 51664 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
