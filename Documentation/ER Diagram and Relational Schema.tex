@@ -1,0 +1,62 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\graphicspath{..\ER Diagram}
+
+\title{
+    \textbf{Database Design for Online Retail Store\\ Winter 2022 \\}
+}
+
+\author{Abhimanyu Bhatnagar, 2020273
+        \\Atyant Sony, 2020039
+        \\Ritika Nagar, 2020112
+        \\Madhava Krishna, 2020217}
+\date{\textit{\today}}
+
+
+
+\begin{document}
+    \maketitle
+    
+    \tableofcontents
+    \listoffigures
+    \pagebreak
+
+    %chapter 1, defining the problem
+    \chapter{Defining the Problem}
+    \section{Objective}
+        The goal is to design a database management system for an online retail store,
+        similar to Big Bazaar, Flipkart and Amazon. Our project models on Grofers (now BlinkIt), 
+        a fast grocery marketplace for consumers to purchase day-to-day goods from.
+    
+    \section{Problem Statement}
+    The ER diagrams and the relational schema that follow are based on the following (rudimentary) problem statement:
+    \\\\
+    %Problem statement
+    \textit{
+        The online retail store serves many customers. 
+        The customers are required to hold an account on the platofrm to be able to purchase items.
+        They can create an account by specifying their name, email address, phone number, and address.
+        Customers add products to a shopping cart. They apply coupons on the shopping cart; the coupons 
+        have a coupon code and an associated discount percentage.\\
+        Customers order items by checking out the items on their shopping cart. The order is placed once the
+         transaction is confirmed.
+        \\
+        A product can belong to various categories and has specifications and a cost. Each
+        product is obtained from a vendor which the store transacts with. After being purchased from 
+        the vendor, the products are stored in a warehouse. Warehouse employees are responsible for packing 
+        and preparing orders. The readied order is then delivered to the customer by a delivery agent.
+        \\
+        In case of any lapses with an order, the customer complains to support staff who create a complaint
+        number against the order. They send out the details regarding the complaint to the customer.
+    }
+
+    \chapter{ER Diagram}
+    \includegraphics{'ER Diagram\ER Diagram'}
+
+\end{document}
