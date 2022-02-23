@@ -1,5 +1,8 @@
 Relational Schema:
 
+TODO: #1 cart item dilemma; to keep or not to keep
+
+
 square brackets: primary
 
 
@@ -25,29 +28,36 @@ square brackets: primary
 
 8) Cart_Item([Product_ID], Quantity)
 
-9) Coupon([Coupon_Code], Discount Percentage)
+9) Coupon([Coupon_Code], Discount Percentage, Customer_ID)  #Customer_ID can be null if unused
 
-10) Warehouse_Worker([Employee_ID])
+10) Warehouse_Worker([Employee_ID,Warehouse_ID])
 
 11) Service_Employee([Employee_ID])
 
-12) Shopping_Cart([Customer_ID])
+12) Shopping_Cart([Customer_ID,])
 
-13)
+13  Complains([Complaint_number], Customer_ID, Employee_ID, Order_ID)
 
+14) Transaction([Order_ID], Payment Method, Transaction Status, Timestamp, Customer_ID, Coupon_Code)
 
 Relations:
 
 involving Customer
-1) Complains([Complaint_number], Customer_ID, Employee_ID, Order_ID)
-2) Transaction(Payment Method, Transaction Status, Timestamp, [Customer], Shopping cart, Coupon, Order)
-3) cart_contains_cart_item([Customer_ID], Product_ID)
-4) cart_item_consists_of (Product_ID, qty)
+1)
+2) 
+3) contains_cart_item([Customer_ID], Product_ID)
+
+4) 
+
 5) order_includes(cart_item)
-6) picks_up(Delivery_Partner, order, warehouse)
-7) Delivery (Customer, Delivery_Partner, order)
-8) Works_in(Warehouse_Worker, Warehouse)
-9) Supplies(Vendor, Product_ID)
-10) Stores(Warehouse, product_ID)
-11) Has(Customer_ID, Shopping_Cart)
-12) Applies(Customer, Shopping cart, couponID)
+
+6) picks_up([Order_ID], Employee_ID, Warehouse_ID) npt needed
+7) Delivery ([Order_ID],Customer_ID, Employee_ID) // not needed
+
+6&7) picks_up_and_delivers([Order_ID], Employee_ID, Customer_ID, Warehouse_ID)
+
+9) Supplies([Vendor_ID, Product_ID])
+
+10) Stores([Warehouse_ID, Product_ID], Stock)
+
+//12) Applies([Coupon_Code], Customer_ID )
