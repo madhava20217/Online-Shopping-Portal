@@ -1,6 +1,7 @@
 Relational Schema:
 
 TODO: #1 cart item dilemma; to keep or not to keep
+TODO: #2 clubbing delivery and picks relations.
 
 
 square brackets: primary
@@ -28,7 +29,7 @@ square brackets: primary
 
 8) Cart_Item([Product_ID], Quantity)
 
-9) Coupon([Coupon_Code], Discount Percentage, Customer_ID)  #Customer_ID can be null if unused
+9) Coupon([Coupon_Code], Discount Percentage)  #Customer_ID can be null if unused
 
 10) Warehouse_Worker([Employee_ID,Warehouse_ID])
 
@@ -39,6 +40,12 @@ square brackets: primary
 13  Complains([Complaint_number], Customer_ID, Employee_ID, Order_ID)
 
 14) Transaction([Order_ID], Payment Method, Transaction Status, Timestamp, Customer_ID, Coupon_Code)
+
+15) picks_up_and_delivers([Order_ID], Employee_ID, Customer_ID, Warehouse_ID)
+
+16) Supplies([Vendor_ID, Product_ID])
+
+17) Stores([Warehouse_ID, Product_ID], Stocks)
 
 Relations:
 
@@ -54,10 +61,8 @@ involving Customer
 6) picks_up([Order_ID], Employee_ID, Warehouse_ID) npt needed
 7) Delivery ([Order_ID],Customer_ID, Employee_ID) // not needed
 
-6&7) picks_up_and_delivers([Order_ID], Employee_ID, Customer_ID, Warehouse_ID)
+6&7)
 
-9) Supplies([Vendor_ID, Product_ID])
+9) 
 
-10) Stores([Warehouse_ID, Product_ID], Stock)
-
-//12) Applies([Coupon_Code], Customer_ID )
+//12) Applies([Coupon_Code], Customer_ID )      : not useful anymore, will be applied on order.
