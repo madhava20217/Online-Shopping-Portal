@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  25 FEB 2022 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  25 FEB 2022 17:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -209,19 +209,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-No file "ER Diagram and Relational Schema".toc.
+{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./ER Diagram and Relational Schema.toc)
 \tf@toc=\write3
 \openout3 = `"ER Diagram and Relational Schema.toc"'.
 
-[1
+ [1
 
-]
-No file "ER Diagram and Relational Schema".lof.
+] (./ER Diagram and Relational Schema.lof)
 \tf@lof=\write4
 \openout4 = `"ER Diagram and Relational Schema.lof"'.
 
-[2
+ [2
 
 ]
 Chapter 1.
@@ -236,29 +234,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--62
 Chapter 2.
 [5
 
-] [6]
-c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex:158: Undefined control sequence.
-<recently read> \Underline 
-                           
-l.158                 \item \Underline
-                                      {Employee ID}: Primary key
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[7] [8] (./ER Diagram and Relational Schema.aux) ) 
+] [6] [7] [8] (./ER Diagram and Relational Schema.aux) ) 
 Here is how much of TeX's memory you used:
- 2713 strings out of 478286
- 42128 string characters out of 5850726
- 346155 words of memory out of 5000000
- 20898 multiletter control sequences out of 15000+600000
- 479352 words of font info for 66 fonts, out of 8000000 for 9000
+ 2719 strings out of 478286
+ 42378 string characters out of 5850726
+ 346164 words of memory out of 5000000
+ 20900 multiletter control sequences out of 15000+600000
+ 479659 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,62p,319b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "ER Diagram and Relational Schema.pdf" (9 pages, 66007 bytes).
+Output written on "ER Diagram and Relational Schema.pdf" (9 pages, 66639 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream

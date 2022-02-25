@@ -71,6 +71,7 @@
         \item Vendors have only one account number and will be based only in India.
         \item Employees have only one email address.
         \item There won't be any wishlisting features, nor any saved-items feature like the ones offered by Amazon.
+        \item Employees' performance would be graded 'Excellent', 'Good', 'Average', 'Below Average', 'Poor'.
     \end{enumerate}
 
 
@@ -117,7 +118,7 @@
                 \item Rating : Multivalued
                 \item Photos: Multivalued
             \end{enumerate}
-        \item Order
+        \item Orders
             \begin{enumerate}
                 \item \underline{Order ID}
                 \item Cost of products
@@ -155,7 +156,7 @@
             \end{enumerate}
         \item Employee:
             \begin{enumerate}
-                \item \Underline{Employee ID}: Primary key
+                \item \underline{Employee ID}: Primary key
                 \item Date of Joining
                 \item Position
                 \item Department
@@ -178,13 +179,17 @@
                 \item Salary
                 \item Gender
                 \item Date of Birth
-                \item \textit{Age} : derived
+                \item Age : derived
             \end{enumerate}
             Employees can be specialised into:
             \begin{itemize}
-                \item Delivery Partner
-                \item Warehouse Worker
-                \item Service Employee
+                \item Delivery Partner:
+                    \begin{enumerate}
+                        \item Vehicle ID
+                        \item Vehicle Type
+                    \end{enumerate}
+                \item Warehouse Worker: no additional attributes
+                \item Service Employee: no additional attributes
             \end{itemize}
         \item Shopping Cart (Weak entity)
             \begin{enumerate}

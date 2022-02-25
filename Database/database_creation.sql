@@ -98,8 +98,8 @@ create table Transaction(
     Customer_ID numeric(10,0), 
     Coupon_Code varchar(10),
 
-    foreign key (Customer_ID) REFERENCES Customer(Customer_ID)
-    foreign key (Coupon_Code) REFERENCES Coupon(Customer_ID)
+    foreign key (Customer_ID) REFERENCES Customer(Customer_ID),
+    foreign key (Coupon_Code) REFERENCES Coupon(Coupon_Code)
     
 );
 
@@ -113,8 +113,8 @@ create table Stores(
 	Warehouse_ID numeric(10,0),
     Product_ID numeric(10,0),
     Stocks numeric(10,0),
-    primary key (Vendor_ID, Product_ID),
-    foreign key (Vendor_ID) references Vendor,
+    primary key (Warehouse_ID, Product_ID),
+    foreign key (Warehouse_ID) references Warehouse,
     foreign key (Product_ID) references Product
 );
 
