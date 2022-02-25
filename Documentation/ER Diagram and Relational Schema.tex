@@ -115,13 +115,68 @@
                 \item Discount Percentage
                 \item GST
                 \item Rating : Multivalued
-                \item Photos: multivalued
+                \item Photos: Multivalued
             \end{enumerate}
         \item Order
+            \begin{enumerate}
+                \item \underline{Order ID}
+                \item Cost of products
+                \item Taxes
+                \item Discount Percentage
+            \end{enumerate}
         \item Vendor
+            \begin{enumerate}
+                \item \underline{Vendor ID}
+                \item Address
+                    \begin{enumerate}
+                        \item Plot number
+                        \item City
+                        \item State
+                        \item Pin code
+                    \end{enumerate}
+                \item Name
+            \end{enumerate}
         \item Coupon
+            \begin{enumerate}
+                \item \underline{Coupon Code}: Primary key
+                \item Discount Percentage
+            \end{enumerate}
         \item Warehouse
-        \item Employee
+            \begin{enumerate}
+                \item \underline{Warehouse ID}
+                \item Address: composite
+                    \begin{enumerate}
+                        \item Plot number
+                        \item City
+                        \item State
+                        \item Pin Code
+                    \end{enumerate}
+                \item Telephone Number: multivalued
+            \end{enumerate}
+        \item Employee:
+            \begin{enumerate}
+                \item \Underline{Employee ID}: Primary key
+                \item Date of Joining
+                \item Position
+                \item Department
+                \item Email Address
+                \item Name: composite
+                \item Residential Address: composite
+                    \begin{enumerate}
+                        \item House number
+                        \item Locality
+                        \item City
+                        \item State
+                        \item Pin Code
+                    \end{enumerate}
+                \item Date of Joining
+                \item Performance
+                \item Salary
+                \item Gender
+                \item Date of Birth
+                \item \textit{Age} : derived
+                \item 
+            \end{enumerate}
             \begin{itemize}
                 \item Delivery Partner
                 \item Warehouse Worker
@@ -129,7 +184,7 @@
             \end{itemize}
         \item Shopping Cart (Weak entity)
             \begin{enumerate}
-                \item Total cost: Derived
+                \item Total cost: Derived attribute
             \end{enumerate}
     \end{enumerate}
 
