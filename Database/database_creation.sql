@@ -32,7 +32,13 @@ create table Vendor(Vendor_id numeric(10,0) primary key,
                     State varchar(20),
                     pincode numeric(10,0));
 create table numeric(10) Warehouse();
-create table Employee();
+create table Employee(Employee_ID numeric(10) primary key,
+                      age int(4) not null ,
+ First_Name varchar(20) not null,
+ Last_Name varchar(20), 
+ Salary numeric(20) not null, 
+ Gender varchar(4), 
+ Department varchar(10), Performance varchar(10), Position varchar(10) not null, Date_of_joining date not null, Email_address varchar(50),Residental_address varchar(30),Pincode varchar(6,0) ,);
 
 
 
