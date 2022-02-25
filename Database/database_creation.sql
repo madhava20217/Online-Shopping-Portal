@@ -22,6 +22,7 @@
 -- 19) Supplies
 -- 20) Shopping_cart
 -- 21) Complains
+-- 22) Order_products
 
  
 
@@ -29,7 +30,7 @@ drop database online_shopping;
 create DATABASE online_shopping;
 
 use online_shopping;
-drop table customer;
+
 create table Customer(customer_ID numeric(10,0) primary key,
                     First_name varchar(20) not null,
                     Last_name varchar(20) not null,
@@ -138,7 +139,8 @@ create table Warehouse_Worker(
     Employee_ID numeric(10,0) primary key,
     Warehouse_ID numeric(10,0),
     foreign key (Employee_ID) references Employee(Employee_ID),
-    foreign key (Warehouse_ID) references Warehouse(Warehouse_ID));
+    foreign key (Warehouse_ID) references Warehouse(Warehouse_ID)
+    );
 
 
 create table Service_Employee(
@@ -180,6 +182,7 @@ create table Stores(
 	Warehouse_ID numeric(10,0),
     Product_ID numeric(10,0),
     Stocks numeric(10,0),
+
     primary key (Warehouse_ID, Product_ID),
     foreign key (Warehouse_ID) references Warehouse(Warehouse_ID),
     foreign key (Product_ID) references Product(Product_ID)
@@ -190,6 +193,7 @@ create table Stores(
 create table Supplies(
 	Vendor_ID numeric(10,0),
     Product_ID numeric(10,0),
+
     primary key (Vendor_ID, Product_ID),
     foreign key (Vendor_ID) references Vendor(Vendor_ID),
     foreign key (Product_ID) references Product(Product_ID)
@@ -199,7 +203,8 @@ create table Supplies(
 create table Shopping_Cart(
 	customer_ID numeric(10,0),
     Product_ID numeric(10, 0),
-    quantity numeric(3,0)
+    quantity numeric(3,0),
+
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
@@ -211,6 +216,17 @@ create table complains(
     order_id numeric(10,0),
     service_employee_id numeric(10,0), 
     foreign key (customer_id) references Customer(customer_ID),
-    foreign key (order_id) references orders(Order_ID)
-    foreign key (service_employee_id) references Service_Employee(Employee_ID),
+    foreign key (order_id) references orders(Order_ID),
+    foreign key (service_employee_id) references Service_Employee(Employee_ID)
+    );
+
+create table order_products(
+    order_id numeric(10,0),
+    product_id numeric(10,0),
+
+    foreign key (order_id) references Orders(order_id),
+    foreign key (product_id) references Product(product_id),
+
+    primary key (order_id, product_id)
 );
+
