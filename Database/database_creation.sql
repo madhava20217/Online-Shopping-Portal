@@ -34,11 +34,11 @@ use online_shopping;
 create table Customer(customer_ID numeric(10,0) primary key,
                     First_name varchar(20) not null,
                     Last_name varchar(20) not null,
-                    House_number numeric(10,0),
+                    House_number numeric(10,0) check(House_number > 0),
                     Locality varchar(30),
                     City varchar(20),
                     State varchar(20),
-                    Pin_code numeric(6,0),
+                    pincode numeric(6,0) check(pincode > 0),
                     email_address varchar(50) unique not null,
                     password varchar(20) not null
                     );
@@ -48,44 +48,45 @@ create table Customer_phone(Customer_ID numeric(10,0),
                             primary key(Phone_number,Customer_id)
                             );
 create table Product(Product_ID numeric(10) primary key,
-                    Price numeric(14, 2),
+                    Price numeric(14, 2) check(Price > 0),
                     Category varchar(15),
-                    Discount_Percentage numeric(5,2), 
+                    Discount_Percentage numeric(5,2) check(Discount_Percentage >= 0), 
                     GST_percentage numeric(4, 2)
                     );
 
 create table product_rating(
                     Product_ID numeric(10,0),
-                    Rating numeric(1,0),
+                    Rating numeric(1,0) check (Rating > 0),
                     foreign key (product_id) references product(product_id),
                     primary key (product_id, rating)
-);
+                    );
 
 create table product_photo(
                     Product_ID numeric(10,0),
                     Photos_url varchar(100),
                     foreign key (product_id) references product(product_id),
                     primary key (product_id, Photos_url)
-);
+                    );
 
 
 create table Vendor(Vendor_id numeric(10,0) primary key,
                     first_name varchar(20) not null,
                     last_name varchar(20) not null, 
-                    Plot_number numeric(10,0),
+                    Plot_number numeric(10,0) check (plot_number > 0),
                     City varchar(20),
                     State varchar(20),
-                    pincode numeric(6,0));
+                    pincode numeric(6,0) check (pincode > 0)
+                    );
 create table Vendor_phone(Vendor_ID numeric(10,0),
                             Phone_number numeric(10,0) not null,
                             foreign key (Vendor_ID) references Vendor(Vendor_ID),
                             primary key(Phone_number,Vendor_ID)
                         );
 create table Warehouse(Warehouse_ID numeric(10,0) primary key,
-                    Plot_number numeric(10,0),
+                    Plot_number numeric(10,0) check(plot_number > 0),
                     City varchar(20),
                     State varchar(20),
-                    pincode numeric(6,0)
+                    pincode numeric(6,0) check(pincode > 0)
                 );
 
 create table Warehouse_phone(Warehouse_ID numeric(10,0),
@@ -96,7 +97,7 @@ create table Warehouse_phone(Warehouse_ID numeric(10,0),
                 
 
 create table Employee(Employee_ID numeric(10,0) primary key,
-                    age int(4) not null ,
+                    age int(4) not null check(age between 18 and 100),
                     First_Name varchar(20) not null,
                     Last_Name varchar(20), 
                     Salary numeric(20) not null, 
@@ -110,15 +111,15 @@ create table Employee(Employee_ID numeric(10,0) primary key,
                     Locality varchar(30),
                     City varchar(20),
                     State varchar(20),
-                    Pincode numeric(6,0)
+                    Pincode numeric(6,0) check (Pincode > 0)
                 );
 
 
 create table orders(
     order_ID numeric(10,0) primary key, 
-    Total_Price numeric(14,2),
-    Taxes numeric(10,2),
-    Discount_Percentage numeric(5,2)
+    Total_Price numeric(14,2) check(Total_price > 0),
+    Taxes numeric(10,2) check(Taxes >= 0),
+    Total_Discount_Percentage numeric(5,2)
     );
 
 create table Delivery_Partner(
@@ -130,7 +131,7 @@ create table Delivery_Partner(
 
 create table Coupon(
     Coupon_Code varchar(10) primary key, 
-    Discount_Percentage numeric(5,2)
+    Discount_Percentage numeric(5,2) check (discount_percentage >= 0)
     );
 
 
@@ -146,7 +147,7 @@ create table Warehouse_Worker(
 create table Service_Employee(
     Employee_ID numeric(10,0) primary key,
     foreign key (Employee_ID) references Employee(Employee_ID)
-);
+    );
 
 
 create table Transaction(
@@ -160,7 +161,7 @@ create table Transaction(
     foreign key (Customer_ID) REFERENCES Customer(Customer_ID),
     foreign key (Coupon_Code) REFERENCES Coupon(Coupon_Code)
     
-);
+    );
 
 
 create table Delivery(
@@ -173,7 +174,7 @@ create table Delivery(
     FOREIGN KEY (Employee_ID) REFERENCES Employee(Employee_ID),
     FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
     FOREIGN KEY (Warehouse_ID) REFERENCES Warehouse(Warehouse_ID)
-);
+    );
 
 
 
@@ -181,12 +182,12 @@ create table Delivery(
 create table Stores(
 	Warehouse_ID numeric(10,0),
     Product_ID numeric(10,0),
-    Stocks numeric(10,0),
+    Stocks numeric(10,0) check(stocks >= 0),
 
     primary key (Warehouse_ID, Product_ID),
     foreign key (Warehouse_ID) references Warehouse(Warehouse_ID),
     foreign key (Product_ID) references Product(Product_ID)
-);
+    );
 
 
 
@@ -197,18 +198,18 @@ create table Supplies(
     primary key (Vendor_ID, Product_ID),
     foreign key (Vendor_ID) references Vendor(Vendor_ID),
     foreign key (Product_ID) references Product(Product_ID)
-);
+    );
 
 
 create table Shopping_Cart(
 	customer_ID numeric(10,0),
     Product_ID numeric(10, 0),
-    quantity numeric(3,0),
+    quantity numeric(3,0) check(quantity >= 0),
 
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
-);
+    );
 
 create table complains(
     complaint_number numeric(10,0) primary key,
