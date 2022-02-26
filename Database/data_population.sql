@@ -1669,6 +1669,848 @@ insert into order_products (Order_id, product_id, quantity) values (27, 82, 8);
 insert into order_products (Order_id, product_id, quantity) values (28, 59, 7);
 insert into order_products (Order_id, product_id, quantity) values (29, 39, 1);
 insert into order_products (Order_id, product_id, quantity) values (30, 27, 1);
+insert into order_products (Order_id, product_id, quantity) values (31, 53, 7);
+insert into order_products (Order_id, product_id, quantity) values (32, 1, 9);
+insert into order_products (Order_id, product_id, quantity) values (33, 90, 2);
+insert into order_products (Order_id, product_id, quantity) values (34, 15, 9);
+insert into order_products (Order_id, product_id, quantity) values (35, 61, 8);
+insert into order_products (Order_id, product_id, quantity) values (36, 68, 6);
+insert into order_products (Order_id, product_id, quantity) values (37, 59, 2);
+insert into order_products (Order_id, product_id, quantity) values (38, 44, 1);
+insert into order_products (Order_id, product_id, quantity) values (39, 56, 8);
+insert into order_products (Order_id, product_id, quantity) values (40, 76, 1);
+insert into order_products (Order_id, product_id, quantity) values (41, 3, 10);
+insert into order_products (Order_id, product_id, quantity) values (42, 68, 6);
+insert into order_products (Order_id, product_id, quantity) values (43, 30, 5);
+insert into order_products (Order_id, product_id, quantity) values (44, 12, 5);
+insert into order_products (Order_id, product_id, quantity) values (45, 67, 1);
+insert into order_products (Order_id, product_id, quantity) values (46, 89, 6);
+insert into order_products (Order_id, product_id, quantity) values (47, 82, 5);
+insert into order_products (Order_id, product_id, quantity) values (48, 92, 6);
+insert into order_products (Order_id, product_id, quantity) values (49, 97, 8);
+insert into order_products (Order_id, product_id, quantity) values (50, 80, 10);
 
 
 
+
+insert into product_rating values (78,85,5),
+(78,12,3),
+(41,71,1),
+(63,94,5),
+(26,28,2),
+(92,78,5),
+(47,28,3),
+(93,97,3),
+(95,48,1),
+(56,12,3),
+(81,95,2),
+(49,49,5),
+(32,74,4),
+(84,76,5),
+(50,61,5),
+(60,59,1),
+(16,66,4),
+(71,46,2),
+(18,33,1),
+(13,22,2),
+(30,88,2),
+(87,45,2),
+(98,86,2),
+(84,54,3),
+(21,28,4),
+(25,31,4),
+(73,29,3),
+(32,79,4),
+(96,48,5),
+(33,61,4),
+(76,84,2),
+(38,99,3),
+(12,50,2),
+(14,52,4),
+(92,13,1),
+(90,81,3),
+(4,92,2),
+(91,73,2),
+(79,73,3),
+(18,21,5),
+(90,49,2),
+(20,56,1),
+(70,72,1),
+(15,14,1),
+(2,27,3),
+(71,67,5),
+(26,25,4),
+(53,68,2),
+(43,34,5),
+(43,93,5),
+(93,81,1),
+(2,94,5),
+(57,84,1),
+(47,57,1),
+(62,92,4),
+(82,38,2),
+(54,64,2),
+(39,87,2),
+(92,77,5),
+(27,81,1),
+(26,100,2),
+(94,68,5),
+(70,28,5),
+(83,86,4),
+(53,49,1),
+(86,34,5),
+(28,24,4),
+(55,28,2),
+(64,11,4),
+(33,54,5),
+(96,16,3),
+(17,57,5),
+(75,86,4),
+(37,30,1),
+(31,12,2),
+(18,23,5),
+(1,81,2),
+(23,34,4),
+(91,93,3),
+(40,69,3),
+(23,14,1),
+(38,1,5),
+(52,2,2),
+(87,99,2),
+(54,38,2),
+(37,39,4),
+(94,89,2),
+(68,41,1),
+(80,96,4),
+(16,98,5),
+(97,93,1),
+(23,83,2),
+(20,23,5),
+(77,62,1),
+(77,98,2),
+(52,63,3),
+(46,92,5),
+(30,59,2),
+(85,47,1),
+(1,63,3),
+(89,52,2),
+(98,58,5),
+(84,34,5),
+(65,54,3),
+(19,45,1),
+(15,50,3),
+(85,65,1),
+(58,4,1),
+(46,46,3),
+(28,89,2),
+(9,86,4),
+(96,45,2),
+(38,71,3),
+(68,38,3),
+(47,67,2),
+(43,86,5),
+(77,86,5),
+(74,6,4),
+(72,63,2),
+(40,13,4),
+(29,82,5),
+(89,1,1),
+(97,1,5),
+(48,54,4),
+(13,91,3),
+(34,67,1),
+(36,54,5),
+(49,69,5),
+(12,34,5),
+(84,85,3),
+(77,18,1),
+(53,97,5),
+(63,35,5),
+(74,51,1),
+(2,96,5),
+(45,7,4),
+(32,33,2),
+(57,77,3),
+(55,76,3),
+(31,51,4),
+(81,66,4),
+(9,31,5),
+(94,75,2),
+(96,13,1),
+(92,59,3),
+(93,62,4),
+(23,44,3),
+(6,3,5),
+(67,5,5),
+(37,92,4),
+(25,38,4),
+(39,45,1),
+(25,30,2),
+(83,29,1),
+(55,38,3),
+(50,18,3),
+(21,63,4),
+(88,17,4),
+(14,29,4),
+(78,25,5),
+(31,86,3),
+(62,17,1),
+(75,69,2),
+(44,19,2),
+(94,61,2),
+(49,9,4),
+(57,93,2),
+(40,30,3),
+(35,71,2),
+(64,56,2),
+(27,54,3),
+(62,88,2),
+(58,33,1),
+(64,97,5),
+(83,8,3),
+(2,92,5),
+(39,25,1),
+(90,38,5),
+(4,53,1),
+(9,53,2),
+(98,13,4),
+(35,20,1),
+(58,40,1),
+(61,5,5),
+(70,42,3),
+(49,13,1),
+(41,53,5),
+(74,33,5),
+(77,24,3),
+(13,90,2),
+(92,44,4),
+(55,42,2),
+(95,14,2),
+(82,91,4),
+(61,60,1),
+(55,53,5),
+(31,43,5),
+(46,63,2),
+(20,35,4),
+(45,70,4),
+(44,85,2),
+(57,49,3),
+(34,91,3),
+(84,94,4),
+(47,56,1),
+(81,29,4),
+(79,39,1),
+(8,48,2),
+(36,77,3),
+(41,80,2),
+(7,28,5),
+(5,58,5),
+(11,82,1),
+(7,87,3),
+(95,56,5),
+(30,68,1),
+(63,5,1),
+(19,99,1),
+(11,13,2),
+(94,35,3),
+(6,49,4),
+(33,77,2),
+(48,91,3),
+(93,17,1),
+(35,76,1),
+(11,23,4),
+(52,52,3),
+(66,75,4),
+(7,78,1),
+(83,98,2),
+(56,75,2),
+(78,9,5),
+(3,61,1),
+(100,92,3),
+(11,5,3),
+(28,4,3),
+(11,53,3),
+(94,9,1),
+(53,99,3),
+(25,90,4),
+(6,26,3),
+(76,70,4),
+(50,11,1),
+(6,71,5),
+(17,54,3),
+(63,2,4),
+(65,93,4),
+(99,13,3),
+(60,85,4),
+(69,22,5),
+(5,80,3),
+(83,57,1),
+(3,44,2),
+(44,8,4),
+(96,49,3),
+(54,48,5),
+(80,6,3),
+(19,35,3),
+(36,99,5),
+(15,78,5),
+(47,17,4),
+(76,32,2),
+(62,72,4),
+(73,96,1),
+(31,6,5),
+(29,42,1),
+(46,43,1),
+(5,11,3),
+(42,9,1),
+(41,24,1),
+(9,3,1),
+(86,29,3),
+(14,85,1),
+(50,75,1),
+(54,9,1),
+(56,16,4),
+(88,94,3),
+(77,60,3),
+(22,63,3),
+(73,38,3),
+(69,69,2),
+(58,90,1),
+(34,38,3),
+(20,42,2),
+(50,20,4),
+(58,84,5),
+(7,74,3),
+(37,46,3),
+(76,40,4),
+(44,23,3),
+(98,3,4),
+(28,64,3),
+(10,33,4),
+(68,60,1),
+(60,8,3),
+(3,89,1),
+(89,87,3),
+(17,46,1),
+(1,95,1),
+(78,48,1);
+
+
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 4 , 1 , 785 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 2 , 760 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 57 , 3 , 635 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 25 , 4 , 521 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 44 , 5 , 397 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 89 , 6 , 408 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 31 , 7 , 786 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 91 , 8 , 179 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 20 , 9 , 971 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 90 , 10 , 402 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 97 , 11 , 665 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 67 , 12 , 789 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 41 , 13 , 500 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 84 , 14 , 455 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 71 , 15 , 175 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 16 , 469 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 25 , 17 , 737 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 19 , 18 , 70 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 19 , 188 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 36 , 20 , 988 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 87 , 21 , 897 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 8 , 22 , 51 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 56 , 23 , 90 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 81 , 24 , 265 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 100 , 25 , 245 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 47 , 26 , 91 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 11 , 27 , 21 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 36 , 28 , 101 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 28 , 29 , 519 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 30 , 758 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 31 , 619 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 56 , 32 , 51 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 34 , 33 , 999 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 62 , 34 , 341 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 61 , 35 , 548 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 36 , 56 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 52 , 37 , 941 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 17 , 38 , 238 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 68 , 39 , 31 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 65 , 40 , 943 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 41 , 276 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 45 , 42 , 983 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 98 , 43 , 301 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 46 , 44 , 876 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 66 , 45 , 398 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 73 , 46 , 74 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 99 , 47 , 439 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 48 , 312 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 5 , 49 , 919 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 79 , 50 , 812 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 34 , 51 , 223 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 90 , 52 , 822 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 46 , 53 , 895 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 54 , 769 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 10 , 55 , 432 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 56 , 747 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 71 , 57 , 804 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 58 , 58 , 421 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 86 , 59 , 648 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 60 , 334 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 70 , 61 , 440 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 63 , 62 , 620 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 63 , 63 , 656 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 72 , 64 , 854 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 12 , 65 , 770 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 70 , 66 , 495 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 86 , 67 , 650 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 89 , 68 , 20 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 41 , 69 , 219 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 24 , 70 , 320 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 29 , 71 , 448 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 81 , 72 , 773 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 73 , 693 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 27 , 74 , 23 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 32 , 75 , 7 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 58 , 76 , 217 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 25 , 77 , 458 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 100 , 78 , 494 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 79 , 830 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 78 , 80 , 177 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 42 , 81 , 592 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 82 , 265 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 30 , 83 , 484 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 61 , 84 , 31 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 85 , 551 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 30 , 86 , 190 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 40 , 87 , 511 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 86 , 88 , 185 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 63 , 89 , 888 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 84 , 90 , 170 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 6 , 91 , 986 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 100 , 92 , 612 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 57 , 93 , 202 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 5 , 94 , 62 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 69 , 95 , 774 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 82 , 96 , 884 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 58 , 97 , 794 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 98 , 328 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 28 , 99 , 972 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 81 , 100 , 122 );
+
+
+
+
+-- stores
+
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 1 , 8955 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 2 , 2065 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 3 , 1679 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 4 , 1544 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 5 , 5750 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 6 , 4640 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 7 , 9736 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 8 , 9310 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 9 , 1932 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 10 , 432 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 11 , 4049 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 12 , 8410 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 13 , 7187 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 14 , 4455 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 15 , 6817 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 16 , 6221 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 17 , 8028 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 18 , 7346 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 19 , 9332 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 20 , 706 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 21 , 1445 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 22 , 5363 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 23 , 695 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 24 , 4360 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 25 , 2024 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 26 , 60 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 27 , 3423 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 28 , 7875 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 29 , 3349 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 30 , 368 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 31 , 7103 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 32 , 3865 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 33 , 5873 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 34 , 681 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 35 , 3235 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 36 , 4710 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 37 , 4272 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 38 , 7826 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 39 , 7485 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 40 , 3861 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 41 , 3757 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 42 , 7168 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 43 , 569 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 44 , 5356 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 45 , 3791 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 46 , 9581 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 47 , 2504 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 48 , 5160 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 49 , 4683 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 50 , 893 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 51 , 3961 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 52 , 8822 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 53 , 37 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 54 , 4488 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 55 , 5119 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 56 , 7646 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 57 , 8731 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 58 , 5349 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 59 , 6708 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 60 , 3929 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 61 , 956 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 62 , 2720 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 63 , 5724 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 64 , 3507 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 65 , 3562 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 66 , 689 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 67 , 6080 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 68 , 5301 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 69 , 7495 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 70 , 4441 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 71 , 5397 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 72 , 3939 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 73 , 2149 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 74 , 7687 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 75 , 1366 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 76 , 7928 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 77 , 7694 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 78 , 1634 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 79 , 6310 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 80 , 9095 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 81 , 5282 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 82 , 6195 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 83 , 8827 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 84 , 2998 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 85 , 8445 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 86 , 1126 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 87 , 3446 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 88 , 9951 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 89 , 6410 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 90 , 3327 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 91 , 3593 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 92 , 7954 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 93 , 3895 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 94 , 8783 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 95 , 2460 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 96 , 2511 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 97 , 883 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 98 , 6973 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 99 , 2219 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 100 , 4822 );
+
+
+-- shopping_cart
+
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 50 , 91 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 7 , 25 , 2 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 26 , 34 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 98 , 36 , 3 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 70 , 31 , 4 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 40 , 29 , 7 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 93 , 68 , 4 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 78 , 26 , 9 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 41 , 73 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 73 , 53 , 4 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 94 , 26 , 5 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 59 , 32 , 2 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 26 , 85 , 8 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 4 , 62 , 9 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 87 , 6 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 36 , 78 , 5 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 13 , 88 , 6 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 36 , 32 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 6 , 30 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 79 , 61 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 72 , 59 , 1 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 74 , 83 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 50 , 75 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 35 , 2 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 53 , 41 , 2 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 5 , 50 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 72 , 23 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 58 , 76 , 5 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 72 , 90 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 70 , 82 , 6 );
+
+
+insert into product_photo values (1,'ROCGZ8996U1ECKM0N83'),
+(2,'YQAIOMU'),
+(2,'040TKZJDL'),
+(2,'R4NP463'),
+(3,'198LCSGXCM7P0VATBM853LT'),
+(3,'Y60KUZL9KZCSRZ09U5XGQX7F2'),
+(3,'7Q6BSOZLOD'),
+(3,'Z7ELIHGZV0DBN90RKV'),
+(4,'BFTQWH7GRQQM'),
+(4,'E1ZPY3'),
+(4,'EB0SKNE'),
+(5,'X8MCF7PU796XFXY4SLHVYO'),
+(6,'EGUCSL7Q5GE4YUWERXV2FLZDH'),
+(6,'91FSIBL'),
+(7,'KJRYJ2X6X2EM581XIVQ'),
+(7,'76H2QY0CVI94R7RGE5T'),
+(7,'Z2QEJR95FBFTVC1PW'),
+(7,'R4MAG33WHFAZ0CBJP40EL'),
+(7,'FYHKBFC2DVY80JOXE'),
+(8,'4B8P3U597'),
+(8,'H18CEKHGG'),
+(8,'R4HTOW2AIN5D2BMQ329ZUH'),
+(9,'VVQ3M87JOGL91SMOZ'),
+(9,'C4QAFMVF1EQEF6QT'),
+(10,'K7GH8PHM'),
+(10,'WN8GUNP3VDFTTRUNNYH7HINW'),
+(10,'J0JSSTL5'),
+(10,'20E59E'),
+(11,'2ZN1NL44'),
+(11,'JIG6KCDHO'),
+(11,'BQYYZM2KVOMN'),
+(11,'0G2ZPIXQLGRSW7FHHVZM'),
+(11,'WJ3ESU507VULBM3XK5NPHGKLK'),
+(12,'T4O8HH93Y'),
+(13,'B3D3X3BNHJ2OE1SU'),
+(14,'90VQDSO8L7YQE'),
+(14,'Y0S1USDR0HQZY'),
+(14,'C86CM2VM4W1'),
+(14,'M11BPDN4A1N5J5I'),
+(14,'2NZU5D'),
+(15,'Q406DA6HXY9O8NOX0LF4C'),
+(15,'ET79NKIO6SZHGKXINTAON6L'),
+(16,'LGEPWARN'),
+(16,'GSM69OT3QF'),
+(16,'JN259LI9GUSW672QNVM8'),
+(17,'DA8KK4R9'),
+(17,'8DCANRAGUOM4P4MA'),
+(17,'32CQM3OL5T'),
+(18,'LEE7W0CQ'),
+(18,'F5QSSYUVSHN'),
+(18,'FMMJNCC5FPMKXQO'),
+(19,'SAM4X9J3X0'),
+(19,'EUYRHLZ'),
+(19,'WGK4IF'),
+(20,'ZEFKQT0LO7GOBJ9'),
+(20,'QOKM80QU78I2PDFLMA4RI'),
+(21,'1X87VNZNAPDJEEXC8A67'),
+(21,'W35RZDAXKKT'),
+(21,'8RFMS5TLIHVAPROOEH3NV'),
+(22,'DJMDO0FGD'),
+(22,'57TWO529OQJHZHN8V2Y7ZA90'),
+(22,'DIFVX33A4VY15DR'),
+(22,'84KI86'),
+(23,'097P72B7TGKG3DD066KLV29A6'),
+(23,'07HPCP'),
+(23,'NYAXNCSX'),
+(24,'DW4FBE69PTLR6JFROM'),
+(25,'LWNDLV5NFU'),
+(25,'E9D83U'),
+(26,'QD6GB7SCNWARNYVLZV66J'),
+(27,'802GSMJ8R2XPRA9DYK0'),
+(28,'POVO81J'),
+(28,'E4ZYC27KENT04'),
+(29,'TP3PFLT9HQXZJYJ75ZN'),
+(29,'4SGOWVQM2NR71MBBS7WHMLSG3'),
+(29,'W09CCA'),
+(30,'GSO3X1KFEC06'),
+(31,'ZG3Q1ID3H2'),
+(31,'H04P7H60CEV'),
+(31,'ZEL40T5A4KBMEFX2P9FA7'),
+(32,'S237DCST94G6XA7W'),
+(32,'61K7C8G1HYILGR0BU'),
+(33,'7JI1CO6SNOLFM6MULYE1'),
+(33,'OEZ4H8TV0WY8DXB56OLMAH5'),
+(33,'XIY38EYOR0OIZ3S'),
+(33,'23LZ0M'),
+(34,'Y3VZP3LWGJD'),
+(35,'1EMYS9O2LUS11VUUTNF8'),
+(36,'77KL9B1VOLJ86BFXM'),
+(37,'ZWFOM6TD32XVFRB614UJSBJ6'),
+(37,'O5WF7R0RFJLZF535QU8B'),
+(38,'0WID65IGKP1LFQK'),
+(39,'8IUPNJ3G06K5A7ZNK'),
+(39,'3MSMYZC'),
+(39,'WY884LOWZKV0NTG79X'),
+(39,'LAEWDMGU3'),
+(39,'11403JKT2ZFYR4ZOJVYD7M0'),
+(40,'SZJDW08SL7AJPLJ3'),
+(40,'4PG62WJ84YF6'),
+(40,'OLGOQ4UTIUPO'),
+(40,'57GIRIZFIU8LA6TQRQ3JGQ'),
+(40,'2EYLJ2NH1ZLK'),
+(41,'ETMWMTHTI3GRH4W4GRRSEQ2W1'),
+(41,'JBQA2W1UGRGJR5'),
+(41,'BHPMJRN2273N1PHHH'),
+(42,'LUI7M7JB3OMC7JSA'),
+(42,'H620X4ULAAF9SA42I3SPR6'),
+(42,'VHZ1O1SQ8HDMY77'),
+(42,'400ZVH23Y'),
+(43,'9ECQQXBEUF9C8K5BMEXEQIBB'),
+(43,'Z8I4GBYNQCAXVP5'),
+(43,'TXZ1UOQ'),
+(43,'W1IRZ5AO0'),
+(43,'2WCO480QJQHDZO823'),
+(44,'J75GJN2X5DSRBJJP0TPY'),
+(44,'LJ98GK2L8'),
+(45,'JKYR6HAB4SAYCI0NPM9RV'),
+(45,'OW8KHHR6VKQYC3AQPM'),
+(46,'WI0GVXYDPXQI64M2B'),
+(46,'AGV0GP9Z2MQ'),
+(46,'SZLL8IQ9LPNTNDA7IYQN09JR'),
+(47,'IWHVLFR26I191G'),
+(47,'4RPIN7L6DTRW3OF'),
+(47,'FQ0P4W'),
+(47,'UDOW0WLMD30TDODM6LGY'),
+(48,'5O6NUAFP42M032KADFMAQ'),
+(48,'A8LB56BIQ4P6B3UVYUUOZ34'),
+(48,'121KB3NHJ'),
+(49,'TV5FNXL'),
+(49,'6XKH7PREXCNUK0DQ1Q9A'),
+(49,'1QP2U0I0FVO8E9ZY0MK2'),
+(49,'S9S02OWGZ1K2L60UV'),
+(49,'2UFQNTHEHSWARAU2RRUQ4B9I2'),
+(50,'WLAM6V2I86'),
+(51,'EK1XMYYEYG9VIO1JWM'),
+(51,'WFFTK21YVW'),
+(51,'9DCP1G37A'),
+(51,'JQQQCS1J11HG7S'),
+(51,'H3TMSFVKCC3U'),
+(52,'HBSE7ULXZURS4WX'),
+(53,'JILXPUYV62O0YQUQC6X'),
+(54,'KQ05TWBSJ8GS8Y'),
+(54,'1VIC43NL2YWK6KE'),
+(54,'UN4QZJR5BCWMBX1'),
+(54,'F6GK6P'),
+(54,'98W3KSQOADUB812QI'),
+(55,'H4CJBIIJ5QVE21LJ1LU9H'),
+(55,'X9BGN17'),
+(55,'D9RENHY8BIK3S5Y9BVS'),
+(55,'EEV1UVEUJLX8HPB0L'),
+(56,'QMMCQEYPE'),
+(56,'I78OPLX73YQN90BW5XX'),
+(56,'XFY5W4N3ADQV7U'),
+(56,'9M6Y4MYN6E'),
+(56,'PZD8BVCB1'),
+(57,'JH55IGB'),
+(57,'QLX2GWANQHZAUYIUP1NUM'),
+(57,'2CH60AS64I4MNJZ3PQMB'),
+(58,'K9TNB088DEXB'),
+(59,'12KXFL87TOSMTGFYP'),
+(59,'Q8XNFLH79ISY90UJTLTVBDK0'),
+(59,'LWMMRBPXUE'),
+(59,'44VFW6MMML44VKD505EL51E'),
+(60,'M8IJOUJD7ZJV29DE4PNEE3'),
+(60,'SQXYOACA'),
+(60,'6J57Z8GOE5HTWU3YY'),
+(61,'LL9N3XENQK295'),
+(61,'BQ8ISK41F6DYI7'),
+(62,'WUFQXVT3U1SOAYJVBZPI'),
+(62,'QYDN7D4ET35BM0CEH5TE'),
+(62,'TJMIT3GF'),
+(62,'YTEQUNMUD8K'),
+(62,'RSBDQPPB0VTKQK8I'),
+(63,'ETXUO3YHX34ZW'),
+(64,'XIULJ8KJQ8GXL0SGMW'),
+(64,'1TBL4LW0S9MSYSTGF'),
+(64,'ZQSOSP'),
+(64,'WKU14O6OTDQO3U1YFQYN'),
+(65,'W9TJHOJJ191I4Y29C'),
+(66,'B29IDC6G50TM4U0T0AFNW'),
+(66,'6CVMA53L'),
+(66,'V6TZKZVLAOZ'),
+(66,'TD8S3MMLYIEQ'),
+(66,'32ACZJN1Y5DF1F2SGVENMYMC5'),
+(67,'EJXD5JI77CEGT7477'),
+(67,'91D206YWS2PIKAVHLKJ'),
+(68,'OL381D'),
+(68,'ZKNA3CREQOLH40UW'),
+(69,'QP0NFBYEJDKG'),
+(70,'BXVVZYD6J8P6'),
+(71,'7BJHT4PGSV26Y'),
+(71,'GERDPV68NCQ45XMIV89E9LI9'),
+(71,'5BMLUIMVU461A'),
+(72,'LYNL882GOAOZQ6WN1J9T4'),
+(72,'142PZF1XAH1BZ'),
+(73,'D8ZFV899GBN7JTK'),
+(73,'YZWP1H08PGMLUQI63AMZMASE'),
+(73,'86V8D031'),
+(74,'5DWJNOOF94BORE2FCRL'),
+(74,'5RG4ICKW2Y7AUI41ZAC'),
+(75,'JC3U0GB5KV7RYGVZ'),
+(75,'ZV17H3VQFQH3A57T4ONXPV'),
+(75,'T3ZQZ80WF3ZF'),
+(75,'6MQP7584OSG'),
+(75,'GT7RDFGU5SPM8HMNUENAFM'),
+(76,'DH9388XFCRN4TACGLE0YWKEZ9'),
+(76,'2CWDYZ168W1WC'),
+(77,'47U4QS'),
+(77,'OXA2QAD'),
+(77,'0CF02JJZTESMFL00CQSHOT'),
+(77,'MEOXPOM7ZVKR0XW'),
+(78,'0K4E51H'),
+(79,'8ZUZMET7HOD2SG6BYNW0M'),
+(79,'S7J5N0TQE4JFR6NSJAA'),
+(79,'LTOPCSGAZ0EV5YMKJD6YCNBHD'),
+(80,'BTG3069SBQ7WYKY763C20JOA'),
+(80,'0AL37ZFPZYYJG'),
+(80,'9GJARHL5Q8YJJS8Q'),
+(80,'FT594P7'),
+(81,'8FCDNZZBFKLSIU077K5'),
+(81,'ANHGMN92'),
+(82,'LV0WOBXZ1U'),
+(82,'1IC6VA8CB438F98DQ'),
+(82,'NDK61WNGB093A4A'),
+(82,'041N20JW69'),
+(82,'NAXN14I8AKNC4S2IMWDV6S'),
+(83,'C0L2I92'),
+(84,'WD32H2F3V'),
+(84,'JDQ279AJODAZZX6G'),
+(84,'WKVBXM0'),
+(85,'0XA0X5QONXT0UHBY'),
+(85,'S854F7CU4RC64U'),
+(86,'KQ9C2UC9XKZ7D5'),
+(86,'8W7AWYTWRT'),
+(86,'YEDLGC5QXV5AS4B6'),
+(87,'DGK4EMUGM7F8J20EUZV7K5'),
+(87,'GST1RDLHQ8V85JY'),
+(88,'69FWV8P'),
+(88,'NSSTMZH97RCEWBAHQIXPYUB'),
+(89,'UTW9RT0MM2Y1F5'),
+(89,'T8D261H0QFXYM0SGVIL9'),
+(89,'7IQ63VPJ'),
+(89,'UYPLLZ7HVIOBNQPSOZIPRY'),
+(89,'H19VBVR6MXPPH8QG'),
+(90,'H2WS69T'),
+(90,'9Y0F22248VBBS9VLJDUQK'),
+(91,'E5SJ5ISGFVTVZCCM9JYX'),
+(91,'V0GPMCNH2N0NU'),
+(91,'WFE4OE8OPMZN'),
+(91,'Z35X277'),
+(92,'3GWY8TKGBVS1VF3ICD0ZI3'),
+(93,'H61ZDXTMXBW'),
+(94,'UZZIKF1BA8UG'),
+(94,'JECGAYFGU5SQSQHWITYKVCG4T'),
+(94,'W92KJDFTXW0BYRD'),
+(94,'JSR24CGDDEIK8T942'),
+(95,'35HULS'),
+(95,'KDMU4Q0'),
+(95,'GPXM2M0CFASIH0'),
+(95,'2YH1Y5570'),
+(96,'YXFRSE7F29O6'),
+(96,'EEBDXULLBELLB2'),
+(96,'IT8S4M1MIX5'),
+(96,'G2QBK6U'),
+(96,'JVFWK4XMX'),
+(97,'E0S0YZQO0PLLA'),
+(97,'X0Q6SG10MG0YEFMDJIB4U52HC'),
+(97,'89R6T2BH'),
+(97,'AGDMZFKCJO'),
+(97,'LA6WXCDXJGVLTJVH'),
+(98,'MXDTHDNZ43'),
+(98,'MD9I3D16WP'),
+(99,'YZEIJ1SR9DSZS8EM'),
+(100,'XLVTHSDKN1WYG'),
+(100,'2GRNDENSPEXUES0RP1TRLBX'),
+(100,'JMB7NYOOC2LY6KVFMG76UT'),
+(100,'MH9JEC8DAHF');

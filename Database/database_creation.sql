@@ -4,8 +4,8 @@
 -- 1) Customer          -done
 -- 2) Customer Phone    -done
 -- 3) Product           -done
--- 4) Product_rating    -
--- 5) Product_photos    -
+-- 4) Product_rating    -done
+-- 5) Product_photos    -done
 -- 6) Vendor            -done
 -- 7) Vendor_Phone      -done
 -- 8) Warehouse         -done
@@ -18,9 +18,9 @@
 -- 15) Service_employee -done
 -- 16) Transaction      -done
 -- 17) Delivery         -done
--- 18) Stores           -
--- 19) Supplies         -
--- 20) Shopping_cart    -
+-- 18) Stores           -done
+-- 19) Supplies         -done
+-- 20) Shopping_cart    -done
 -- 21) Complains        -done
 -- 22) Order_products   -done
 
