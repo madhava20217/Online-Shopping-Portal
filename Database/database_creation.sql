@@ -1,28 +1,28 @@
 #script for creating database and tables
 
 -- tables created:
--- 1) Customer
--- 2) Customer Phone
--- 3) Product
--- 4) Product_rating
--- 5) Product_photos
--- 6) Vendor
--- 7) Vendor_Phone
--- 8) Warehouse
--- 9) Warehouse_Phone
--- 10) Employee
--- 11) Orders
--- 12) Delivery Partner
--- 13) Coupon
--- 14) Warehouse_Worker
--- 15) Service_employee
--- 16) Transaction
--- 17) Delivery
--- 18) Stores
--- 19) Supplies
--- 20) Shopping_cart
--- 21) Complains
--- 22) Order_products
+-- 1) Customer          -done
+-- 2) Customer Phone    -done
+-- 3) Product           -done
+-- 4) Product_rating    -
+-- 5) Product_photos    -
+-- 6) Vendor            -done
+-- 7) Vendor_Phone      -done
+-- 8) Warehouse         -done
+-- 9) Warehouse_Phone   -done
+-- 10) Employee         -done
+-- 11) Orders           -done
+-- 12) Delivery Partner -done
+-- 13) Coupon           -done
+-- 14) Warehouse_Worker -done
+-- 15) Service_employee -done
+-- 16) Transaction      -done
+-- 17) Delivery         -done
+-- 18) Stores           -
+-- 19) Supplies         -
+-- 20) Shopping_cart    -
+-- 21) Complains        -done
+-- 22) Order_products   -
 
  
 
@@ -214,6 +214,7 @@ create table Supplies(
 create table Shopping_Cart(
 	customer_ID numeric(30,0),
     Product_ID numeric(30, 0),
+    quantity int,
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
