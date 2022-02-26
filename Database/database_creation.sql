@@ -43,14 +43,17 @@ create table Customer(
                     email_address varchar(50) unique not null,
                     password varchar(30) not null
                     );
+#done
 create table Customer_phone(Customer_ID numeric(30,0),
                             Phone_number numeric(30,0) not null,
                             foreign key (Customer_id) references Customer(customer_id),
                             primary key(Phone_number,Customer_id)
                             );
+
+#done
 create table Product(Product_ID numeric(30) primary key,
                     Price numeric(15, 2) check(Price > 0),
-                    Category varchar(15),
+                    Category varchar(50),
                     Discount_Percentage numeric(5,2) check(Discount_Percentage >= 0), 
                     GST_percentage numeric(10, 2)
                     );
@@ -59,7 +62,7 @@ create table product_rating(
                     Product_ID numeric(30,0),
                     Rating numeric(1,0) check (Rating > 0),
                     foreign key (product_id) references product(product_id),
-                    primary key (product_id, rating)
+                    
                     );
 
 create table product_photo(
@@ -96,6 +99,8 @@ create table Warehouse_phone(Warehouse_ID numeric(30,0),
                             foreign key (Warehouse_ID) references Warehouse(Warehouse_ID),
                             primary key(Phone_number,Warehouse_ID)
                         );
+
+#done
 create table Employee(Employee_ID numeric(30,0) primary key,
                     age int(10) not null check(age between 18 and 300),
                     First_Name varchar(30) not null,
@@ -122,7 +127,7 @@ create table Orders(
     Taxes numeric(30,2) check(Taxes >= 0),
     Total_Discount_Percentage numeric(5,2)
     );
-
+#done
 create table Delivery_Partner(
     Employee_ID numeric(30,0) primary key, 
     Vehicle_ID varchar(30), 
@@ -146,13 +151,13 @@ create table Warehouse_Worker(
     foreign key (Warehouse_ID) references Warehouse(Warehouse_ID)
     );
 
-
+#done
 create table Service_Employee(
     Employee_ID numeric(30,0) primary key,
     foreign key (Employee_ID) references Employee(Employee_ID)
     );
 
-
+#done
 create table Transaction(
     Order_ID numeric(30,0) primary key, 
     Payment_Method varchar(30), 
@@ -181,7 +186,7 @@ create table Delivery(
 
 
 
-
+#done
 create table Stores(
 	Warehouse_ID numeric(30,0),
     Product_ID numeric(30,0),
@@ -193,10 +198,11 @@ create table Stores(
     );
 
 
-
+#done
 create table Supplies(
 	Vendor_ID numeric(30,0),
     Product_ID numeric(30,0),
+    quantity numeric(6,0) check(quantity > 0),
 
     primary key (Vendor_ID, Product_ID),
     foreign key (Vendor_ID) references Vendor(Vendor_ID),
@@ -207,8 +213,6 @@ create table Supplies(
 create table Shopping_Cart(
 	customer_ID numeric(30,0),
     Product_ID numeric(30, 0),
-    quantity numeric(3,0) check(quantity >= 0),
-
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
@@ -224,9 +228,11 @@ create table complains(
     foreign key (service_employee_id) references Service_Employee(Employee_ID)
     );
 
+#done
 create table order_products(
     order_id numeric(30,0),
     product_id numeric(30,0),
+    quantity numeric(3,0) check(quantity > 0),
 
     foreign key (order_id) references Orders(order_id),
     foreign key (product_id) references Product(product_id),
