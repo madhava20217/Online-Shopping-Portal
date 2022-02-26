@@ -31,7 +31,8 @@ create DATABASE online_shopping;
 
 use online_shopping;
 
-create table Customer(customer_ID numeric(10,0) primary key,
+create table Customer(
+                    customer_ID numeric(10,0) primary key,
                     First_name varchar(20) not null,
                     Last_name varchar(20) not null,
                     House_number numeric(10,0) check(House_number > 0),
@@ -95,7 +96,6 @@ create table Warehouse_phone(Warehouse_ID numeric(10,0),
                             primary key(Phone_number,Warehouse_ID)
                         );
                 
-
 create table Employee(Employee_ID numeric(10,0) primary key,
                     age int(4) not null check(age between 18 and 100),
                     First_Name varchar(20) not null,
@@ -111,7 +111,8 @@ create table Employee(Employee_ID numeric(10,0) primary key,
                     Locality varchar(30),
                     City varchar(20),
                     State varchar(20),
-                    Pincode numeric(6,0) check (Pincode > 0)
+                    Pincode numeric(6,0) check (Pincode > 0),
+                    Phone_number numeric(10,0) check (Phone_number > 0)
                 );
 
 
