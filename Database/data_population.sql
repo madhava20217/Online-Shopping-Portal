@@ -215,7 +215,7 @@ insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (2, 20, 
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (3, 86, 'Unidos', 556905);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (4, 29, 'Stockholm', 196614);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (5, 67, 'Omaha', 821660);
-insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (6, 51, 'Rio Negrinho', 597713);
+/* insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (6, 51, 'Rio Negrinho', 597713);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (7, 79, 'Maisons-Laffitte', 990051);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (8, 19, 'Otaru', 594721);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (9, 64, 'Lenchwe Le Tau', 756360);
@@ -309,16 +309,110 @@ insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (96, 11,
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (97, 33, 'Houmt Souk', 815458);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (98, 72, 'Nantang', 314909);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (99, 11, 'Pangani', 906523);
-insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (100, 18, 'Nogent-sur-Marne', 583701);
+insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (100, 18, 'Nogent-sur-Marne', 583701); */
+
+insert into Coupon values ( 1 , 10.32 ),
+( 2 , 6.64 ),
+( 3 , 9.92 ),
+( 4 , 22.7 ),
+( 5 , 21.71 ),
+( 6 , 27.84 ),
+( 7 , 7.03 ),
+( 8 , 18.15 ),
+( 9 , 29.24 ),
+( 10 , 23.62 ),
+( 11 , 21.25 ),
+( 12 , 28.9 ),
+( 13 , 24.85 ),
+( 14 , 11.23 ),
+( 15 , 26.77 ),
+( 16 , 2.45 ),
+( 17 , 22.47 ),
+( 18 , 22.16 ),
+( 19 , 27.68 ),
+( 20 , 19.53 ),
+( 21 , 25.18 ),
+( 22 , 18.29 ),
+( 23 , 14.3 ),
+( 24 , 13.31 ),
+( 25 , 7.78 ),
+( 26 , 27.32 ),
+( 27 , 29.71 ),
+( 28 , 26.11 ),
+( 29 , 26.52 ),
+( 30 , 20.42 ),
+( 31 , 4.66 ),
+( 32 , 1.46 ),
+( 33 , 7.91 ),
+( 34 , 3.93 ),
+( 35 , 26.93 ),
+( 36 , 28.0 ),
+( 37 , 14.84 ),
+( 38 , 18.14 ),
+( 39 , 4.37 ),
+( 40 , 2.17 ),
+( 41 , 14.12 ),
+( 42 , 4.41 ),
+( 43 , 10.95 ),
+( 44 , 16.88 ),
+( 45 , 12.48 ),
+( 46 , 19.43 ),
+( 47 , 9.94 ),
+( 48 , 21.41 ),
+( 49 , 23.49 ),
+( 50 , 12.22 ),
+( 51 , 27.84 ),
+( 52 , 22.63 ),
+( 53 , 26.94 ),
+( 54 , 28.94 ),
+( 55 , 20.04 ),
+( 56 , 6.66 ),
+( 57 , 26.0 ),
+( 58 , 26.92 ),
+( 59 , 17.6 ),
+( 60 , 21.35 ),
+( 61 , 15.93 ),
+( 62 , 16.22 ),
+( 63 , 10.58 ),
+( 64 , 13.05 ),
+( 65 , 8.62 ),
+( 66 , 20.51 ),
+( 67 , 6.51 ),
+( 68 , 21.74 ),
+( 69 , 13.92 ),
+( 70 , 21.07 ),
+( 71 , 14.47 ),
+( 72 , 11.56 ),
+( 73 , 5.63 ),
+( 74 , 27.86 ),
+( 75 , 25.87 ),
+( 76 , 21.18 ),
+( 77 , 22.95 ),
+( 78 , 4.19 ),
+( 79 , 10.85 ),
+( 80 , 13.86 ),
+( 81 , 26.47 ),
+( 82 , 23.5 ),
+( 83 , 3.12 ),
+( 84 , 21.62 ),
+( 85 , 12.44 ),
+( 86 , 6.84 ),
+( 87 , 27.09 ),
+( 88 , 25.43 ),
+( 89 , 21.26 ),
+( 90 , 19.85 ),
+( 91 , 6.54 ),
+( 92 , 28.13 ),
+( 93 , 29.44 ),
+( 94 , 28.7 ),
+( 95 , 11.79 ),
+( 96 , 20.61 ),
+( 97 , 1.69 ),
+( 98 , 11.09 );
 
 
 
 #Orders
-
-
-
-
-
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (1, 62089.49, 27.65, 9.13);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (2, 23387.82, 8.85, 24.41);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (3, 63751.88, 24.84, 6.42);
@@ -369,7 +463,9 @@ insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) val
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (48, 6996.77, 11.28, 14.71);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (49, 9614.46, 6.84, 10.73);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (50, 74700.23, 15.59, 7.19);
-insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (51, 62368.71, 16.7, 2.13);
+
+
+/* insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (51, 62368.71, 16.7, 2.13);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (52, 15326.77, 22.99, 21.35);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (53, 97063.68, 22.58, 16.42);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (54, 45147.18, 14.99, 25.75);
@@ -418,4 +514,740 @@ insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) val
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (97, 309.41, 22.84, 21.78);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (98, 4686.67, 20.76, 18.25);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (99, 99778.52, 13.32, 12.4);
-insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (100, 24184.44, 27.87, 5.04);
+insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (100, 24184.44, 27.87, 5.04); */
+
+#Product
+
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (1, 16552, 'Eggplant Italian', 7.41, 15.17);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (2, 942, 'Fruit Salad Deluxe', 21.48, 23.16);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (3, 9447, 'Bread - White Mini Epi', 2.31, 14.24);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (4, 61251, 'Mints - Striped Red', 8.83, 20.57);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (5, 78679, 'Wine - Rioja Campo Viejo', 2.34, 16.99);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (6, 18914, 'Myers Planters Punch', 1.76, 22.07);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (7, 58727, 'Bread - Flat Bread', 12.6, 18.94);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (8, 71735, 'Apricots Fresh', 18.0, 29.74);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (9, 74247, 'Bag Stand', 12.74, 10.49);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (10, 72034, 'Snapple Raspberry Tea', 3.29, 27.9);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (11, 15793, 'Baking Soda', 8.54, 29.24);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (12, 69549, 'Fruit Salad Deluxe', 8.92, 10.28);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (13, 91085, 'Cassis', 11.44, 16.03);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (14, 60815, 'Gatorade - Lemon Lime', 6.25, 21.63);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (15, 32790, 'Soap - Hand Soap', 1.63, 27.95);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (16, 74123, 'Bay Leaf', 22.02, 15.87);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (17, 69034, 'Napkin - Dinner, White', 13.55, 15.99);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (18, 33445, 'Milk - Condensed', 16.5, 12.9);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (19, 96694, 'Soup - Campbells, Minestrone', 2.66, 19.49);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (20, 15979, 'Cheese - St. Andre', 29.61, 24.32);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (21, 81962, 'Chocolate - Milk, Callets', 13.51, 15.09);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (22, 81615, 'Spice - Chili Powder Mexican', 27.69, 23.32);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (23, 68097, 'Wine - Magnotta - Belpaese', 24.69, 28.81);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (24, 64854, 'Banana - Green', 22.35, 23.4);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (25, 61979, 'Mop Head - Cotton, 24 Oz', 13.73, 11.6);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (26, 8306, 'Stock - Fish', 3.29, 18.68);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (27, 8534, 'Pork - Belly Fresh', 22.06, 20.22);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (28, 89384, 'Trout - Hot Smkd, Dbl Fillet', 5.18, 25.32);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (29, 94381, 'Lettuce - Iceberg', 21.79, 11.7);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (30, 66285, 'Wine - Beringer Founders Estate', 5.53, 17.57);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (31, 96495, 'Potatoes - Idaho 100 Count', 19.98, 10.58);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (32, 47979, 'Eggplant - Regular', 12.71, 24.69);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (33, 16131, 'Filter - Coffee', 4.31, 22.93);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (34, 79284, 'Soup Campbells Turkey Veg.', 29.71, 11.88);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (35, 33515, 'Pail For Lid 1537', 4.72, 13.13);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (36, 95460, 'Lamb - Rack', 15.94, 13.35);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (37, 42654, 'Table Cloth 62x114 White', 0.32, 29.46);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (38, 68786, 'Pepper Squash', 24.27, 14.68);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (39, 65685, 'Shrimp - Black Tiger 13/15', 16.4, 25.16);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (40, 43017, 'Pail For Lid 1537', 5.95, 24.51);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (41, 22447, 'Quail - Whole, Bone - In', 3.6, 15.37);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (42, 47347, 'Cheese - Parmesan Grated', 15.34, 22.79);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (43, 12829, 'Bowl 12 Oz - Showcase 92012', 28.15, 29.95);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (44, 68820, 'Cauliflower', 18.57, 19.76);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (45, 16547, 'Puree - Mocha', 5.02, 19.77);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (46, 89756, 'Wine - Magnotta - Pinot Gris Sr', 18.86, 11.22);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (47, 30059, 'Salt - Rock, Course', 27.74, 24.62);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (48, 15181, 'Bagel - Whole White Sesame', 12.47, 29.67);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (49, 47651, 'Milk - 2%', 3.44, 16.51);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (50, 57290, 'Crab - Dungeness, Whole', 21.94, 29.06);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (51, 59573, 'Pasta - Cheese / Spinach Bauletti', 5.71, 26.52);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (52, 57201, 'Mushroom - Shitake, Fresh', 22.07, 15.42);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (53, 14529, 'Sparkling Wine - Rose, Freixenet', 17.56, 22.14);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (54, 23049, 'Pepper - Orange', 12.86, 25.27);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (55, 9636, 'Beets - Candy Cane, Organic', 12.0, 20.16);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (56, 69114, 'Tart Shells - Savory, 2', 11.27, 19.57);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (57, 80604, 'Wine - Ej Gallo Sierra Valley', 6.67, 17.5);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (58, 71394, 'Appetizer - Mango Chevre', 26.35, 25.41);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (59, 72858, 'Chips Potato Reg 43g', 27.12, 20.97);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (60, 62056, 'Piping - Bags Quizna', 16.33, 22.73);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (61, 57113, 'Thermometer Digital', 1.98, 28.26);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (62, 15529, 'Tilapia - Fillets', 14.46, 18.32);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (63, 51707, 'Yogurt - Banana, 175 Gr', 26.18, 17.07);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (64, 83264, 'Rice - Jasmine Sented', 14.83, 20.65);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (65, 35132, 'Appetizer - Escargot Puff', 11.16, 14.82);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (66, 72569, 'Wine - Crozes Hermitage E.', 24.32, 21.41);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (67, 96424, 'Anisette - Mcguiness', 20.99, 28.1);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (68, 83272, 'Cheese - Comte', 30.0, 16.64);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (69, 83360, 'Juice - Clamato, 341 Ml', 19.11, 25.19);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (70, 67248, 'Mackerel Whole Fresh', 18.36, 13.09);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (71, 56141, 'Persimmons', 16.64, 21.23);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (72, 55105, 'Coffee - 10oz Cup 92961', 1.52, 10.11);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (73, 14035, 'Wine - Saint - Bris 2002, Sauv', 20.19, 12.18);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (74, 25158, 'Wine - Chablis 2003 Champs', 16.08, 12.15);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (75, 49659, 'Wine - Red, Colio Cabernet', 15.87, 28.81);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (76, 18047, 'Juice - Happy Planet', 10.01, 10.53);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (77, 89207, 'Pork - Loin, Bone - In', 13.43, 13.72);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (78, 50439, 'Mortadella', 23.37, 27.0);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (79, 40913, 'Crab - Blue, Frozen', 25.64, 23.81);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (80, 47600, 'Rice - Brown', 25.27, 13.11);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (81, 26673, 'Spinach - Frozen', 11.42, 11.02);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (82, 94927, 'Raisin - Dark', 21.02, 22.84);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (83, 96493, 'Calaloo', 15.38, 23.16);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (84, 21884, 'Island Oasis - Ice Cream Mix', 1.4, 14.14);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (85, 43312, 'Mace', 4.11, 20.71);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (86, 96516, 'Syrup - Monin, Amaretta', 23.42, 13.83);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (87, 15085, 'Cheese - Brie, Cups 125g', 13.37, 28.74);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (88, 73511, 'Sauce - Soya, Dark', 27.04, 12.81);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (89, 42089, 'Pasta - Lasagne, Fresh', 16.68, 17.74);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (90, 1503, 'Cake Circle, Foil, Scallop', 10.81, 23.55);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (91, 92620, 'Cheese - Bakers Cream Cheese', 15.8, 10.96);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (92, 44635, 'Russian Prince', 14.8, 29.05);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (93, 52063, 'Bread - Italian Sesame Poly', 23.63, 19.3);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (94, 88405, 'Sugar - Palm', 24.54, 19.32);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (95, 63232, 'Lamb - Bones', 24.19, 22.64);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (96, 63512, 'Energy Drink - Franks Pineapple', 18.95, 10.79);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (97, 22513, 'Pork - Ham, Virginia', 28.09, 12.16);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (98, 50582, 'Quail - Jumbo Boneless', 22.76, 10.12);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (99, 70128, 'Cheese - Bocconcini', 22.39, 25.21);
+insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (100, 70080, 'Napkin White - Starched', 4.08, 29.4);
+
+
+
+/* Order_products */
+
+
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (1, 66.4, 'Leora', 'Hengoed', 87502.2, 'Polygender', 'Support', 5.4, 4, '7/1/2021', '1/25/2022', 'lhengoed0@theglobeandmail.com', '098', 'Nova', 'Mayantoc', '59', '1523251683');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (2, 92.4, 'Noach', 'Menault', 65248.3, 'Female', 'Services', 1.1, 3, '6/3/2021', '12/15/2021', 'nmenault1@ucsd.edu', '7236', 'Hazelcrest', 'Chambellan', '7', '5676013065');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (3, 93.7, 'Renelle', 'Semorad', 58603.0, 'Female', 'Engineering', 5.6, 2, '6/25/2021', '6/18/2021', 'rsemorad2@guardian.co.uk', '878', 'Summerview', 'Tamuning-Tumon-Harmon Village', '043', '6346746623');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (4, 23.7, 'first', 'second', 126487.8, 'Male', 'Human Resources', 8.0, 2, '11/5/2021', '4/2/2021', 'zcantwell3@discuz.net', '2', 'Ludington', 'Mabua', '44510', '7934004516');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (5, 74.5, 'Gunner', 'Witchell', 146769.0, 'Male', 'Human Resources', 8.4, 4, '6/15/2021', '2/14/2022', 'gwitchell4@bloglines.com', '3', 'Florence', 'Boxholm', '32', '9551160774');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (6, 84.4, 'Jedidiah', 'Samways', 73744.7, 'Female', 'Research and Development', 5.6, 5, '10/9/2021', '12/11/2021', 'jsamways5@edublogs.org', '176', 'Eastwood', 'Shangganshan', '155', '7354624494');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (7, 87.7, 'Delinda', 'Fallow', 102339.9, 'Male', 'Engineering', 1.5, 4, '10/11/2021', '7/1/2021', 'dfallow6@tamu.edu', '37', 'Dryden', 'Panji', '16311', '1194772704');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (8, 81.2, 'Matilda', 'Dannohl', 57875.3, 'Male', 'Engineering', 2.6, 2, '7/27/2021', '6/1/2021', 'mdannohl7@google.ru', '33484', 'Hollow Ridge', 'Selaawi', '718', '6674210495');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (9, 73.6, 'Marys', 'Hune', 53944.9, 'Male', 'Research and Development', 4.3, 2, '10/25/2021', '12/28/2021', 'mhune8@tinypic.com', '56670', 'Monument', 'Gul’cha', '2439', '3971658563');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (10, 24.7, 'Malinde', 'Pendleberry', 111611.9, 'Female', 'Sales', 4.0, 4, '3/10/2021', '8/8/2021', 'mpendleberry9@ovh.net', '76', 'Barby', 'Tuka', '031', '1037639269');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (11, 76.0, 'Hernando', 'Villar', 163004.5, 'Bigender', 'Accounting', 1.0, 2, '8/26/2021', '11/1/2021', 'hvillara@huffingtonpost.com', '11', 'Delladonna', 'Naranjo', '014', '5189683343');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (12, 40.2, 'Collie', 'Murtagh', 185470.3, 'Female', 'Accounting', 8.3, 2, '9/9/2021', '1/27/2022', 'cmurtaghb@whitehouse.gov', '53', 'Gina', 'Novokubansk', '5', '1904148228');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (13, 19.2, 'Larisa', 'Blazejewski', 133621.1, 'Male', 'Services', 4.4, 3, '12/17/2021', '10/10/2021', 'lblazejewskic@microsoft.com', '3861', 'Monterey', 'Noupoort', '61', '8617507189');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (14, 98.6, 'Jade', 'Orht', 82526.7, 'Female', 'Legal', 6.3, 2, '5/2/2021', '8/29/2021', 'jorhtd@desdev.cn', '12290', 'Eggendart', 'Gubeikou', '4', '9436719991');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (15, 56.7, 'Laurianne', 'Gregore', 123393.8, 'Female', 'Legal', 6.6, 4, '8/11/2021', '12/17/2021', 'lgregoree@ihg.com', '8', 'Utah', 'Washington', '4157', '2029518177');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (16, 50.3, 'Laureen', 'Brymner', 39871.5, 'Male', 'Business Development', 3.3, 2, '3/6/2021', '1/9/2022', 'lbrymnerf@creativecommons.org', '28406', 'Aberg', 'Shumyachi', '46', '1531798105');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (17, 45.7, 'Norean', 'Boise', 174231.0, 'Female', 'Marketing', 7.8, 1, '10/21/2021', '8/26/2021', 'nboiseg@bbb.org', '9302', 'Warbler', 'Hanover', '10', '7438472436');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (18, 92.5, 'Gusty', 'Roback', 22144.5, 'Genderqueer', 'Marketing', 1.1, 4, '7/24/2021', '2/28/2021', 'grobackh@amazon.de', '10', 'Knutson', 'Novi Karlovci', '7521', '3612829629');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (19, 55.0, 'Juliet', 'Verdy', 91944.6, 'Male', 'Sales', 9.4, 2, '11/2/2021', '8/16/2021', 'jverdyi@soup.io', '647', 'Delaware', 'Aygeshat', '1264', '8113865094');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (20, 52.4, 'Camey', 'Barden', 85803.3, 'Female', 'Marketing', 8.3, 3, '1/18/2022', '8/13/2021', 'cbardenj@infoseek.co.jp', '8', 'Ridgeview', 'Mamponteng', '7', '4646782770');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (21, 27.3, 'Reginauld', 'Feares', 53206.4, 'Female', 'Research and Development', 6.0, 1, '4/12/2021', '11/16/2021', 'rfearesk@people.com.cn', '72', '7th', 'Jianping', '61', '5648595084');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (22, 74.5, 'Francesca', 'Glanders', 88811.4, 'Female', 'Training', 6.8, 3, '1/25/2022', '10/25/2021', 'fglandersl@hp.com', '1786', 'Spaight', 'Sumilao', '37288', '5872049061');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (23, 65.3, 'Armando', 'Whillock', 125751.2, 'Female', 'Support', 1.7, 1, '5/19/2021', '4/4/2021', 'awhillockm@ucoz.com', '8547', 'Thompson', 'Bibrka', '40', '5603773343');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (24, 98.9, 'Raddie', 'Ledington', 93510.8, 'Female', 'Training', 4.9, 5, '10/29/2021', '11/10/2021', 'rledingtonn@shutterfly.com', '2045', 'Maryland', 'Isheyevka', '3', '1993601504');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (25, 84.7, 'Kristy', 'MacGraith', 14772.9, 'Female', 'Training', 8.0, 3, '11/21/2021', '4/26/2021', 'kmacgraitho@bravesites.com', '219', '8th', 'Berëzovka', '34863', '8363085007');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (26, 92.9, 'Louisa', 'Sommerled', 199875.3, 'Male', 'Business Development', 1.7, 3, '11/21/2021', '2/1/2022', 'lsommerledp@webnode.com', '841', 'Meadow Ridge', 'Levallois-Perret', '9883', '6074482127');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (27, 94.8, 'Wilek', 'Hacker', 84148.5, 'Male', 'Research and Development', 4.8, 5, '5/20/2021', '9/4/2021', 'whackerq@wordpress.com', '25', 'Heffernan', 'Piggs Peak', '06689', '5489177257');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (28, 50.0, 'Kara-lynn', 'Pumphrey', 42268.0, 'Female', 'Services', 9.1, 2, '11/28/2021', '1/26/2022', 'kpumphreyr@goo.ne.jp', '3', 'Kedzie', 'Gaopu', '5', '3875401508');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (29, 83.1, 'Hadria', 'Bjorkan', 174864.9, 'Male', 'Services', 5.5, 2, '7/27/2021', '1/8/2022', 'hbjorkans@usda.gov', '218', 'Vahlen', 'Gravataí', '95247', '7452282102');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (30, 69.4, 'Cordie', 'Snarr', 156097.5, 'Female', 'Business Development', 1.1, 4, '11/28/2021', '10/27/2021', 'csnarrt@phpbb.com', '807', 'Meadow Vale', 'Roma', '2', '2615980377');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (31, 24.6, 'Mahala', 'O''Mailey', 185979.3, 'Male', 'Legal', 5.3, 3, '8/29/2021', '11/7/2021', 'momaileyu@ibm.com', '5592', 'Calypso', 'Tsengel', '853', '6652515955');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (32, 29.9, 'Aeriel', 'Tutchell', 34860.9, 'Female', 'Product Management', 6.4, 4, '3/21/2021', '3/30/2021', 'atutchellv@npr.org', '77', 'Old Gate', 'Tucson', '4840', '5201102191');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (33, 46.9, 'Joshua', 'Burnham', 124501.3, 'Genderfluid', 'Business Development', 6.1, 4, '8/22/2021', '12/4/2021', 'jburnhamw@xrea.com', '50153', 'Independence', 'Caminauit', '1930', '7127359769');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (34, 92.4, 'Benoite', 'Treagust', 158511.8, 'Female', 'Legal', 7.1, 4, '10/1/2021', '7/29/2021', 'btreagustx@people.com.cn', '48786', 'Waxwing', 'Limón', '6', '3138700945');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (35, 80.9, 'Joly', 'Cordeau', 154067.8, 'Female', 'Marketing', 6.7, 1, '12/13/2021', '9/19/2021', 'jcordeauy@usnews.com', '39', 'Ramsey', 'Baiyin', '28', '4092748289');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (36, 65.8, 'Anica', 'Pane', 141747.7, 'Male', 'Marketing', 9.9, 2, '12/28/2021', '11/20/2021', 'apanez@posterous.com', '702', 'La Follette', 'Barobo', '7', '9481290792');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (37, 69.8, 'Tiebold', 'Sneesbie', 133796.7, 'Male', 'Engineering', 5.3, 3, '6/19/2021', '6/30/2021', 'tsneesbie10@wisc.edu', '8', 'Doe Crossing', 'Nikolayevsk', '850', '7454288594');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (38, 18.3, 'Bridgette', 'De Bischop', 197521.8, 'Non-binary', 'Marketing', 6.1, 2, '1/21/2022', '10/22/2021', 'bdebischop11@theguardian.com', '45', 'Corscot', 'Jingzhou', '317', '4231182839');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (39, 24.1, 'Kim', 'Marke', 171549.1, 'Female', 'Marketing', 4.4, 5, '5/31/2021', '12/28/2021', 'kmarke12@dedecms.com', '43', 'Graedel', 'Conner', '84', '8951580854');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (40, 69.6, 'Torey', 'O''Clery', 150180.3, 'Male', 'Accounting', 1.8, 1, '8/1/2021', '12/28/2021', 'toclery13@ask.com', '38', 'Stephen', 'Kharkhorin', '11450', '1373293919');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (41, 57.5, 'Bernie', 'MacAne', 161116.9, 'Female', 'Accounting', 5.5, 4, '10/2/2021', '10/12/2021', 'bmacane14@paypal.com', '4608', 'Jana', 'Indaiatuba', '52703', '3944417076');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (42, 80.4, 'Mufinella', 'Colthard', 109120.5, 'Female', 'Research and Development', 6.7, 1, '3/30/2021', '11/4/2021', 'mcolthard15@ucoz.ru', '0', 'Tomscot', 'Polanica-Zdrój', '46417', '9641970994');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (43, 19.5, 'Lacey', 'Dimock', 141498.7, 'Male', 'Legal', 3.1, 4, '2/2/2022', '9/14/2021', 'ldimock16@nature.com', '77184', 'Leroy', 'Ivry-sur-Seine', '4', '9335811774');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (44, 85.1, 'Leshia', 'O''Cahill', 100116.3, 'Male', 'Services', 6.1, 3, '11/7/2021', '9/12/2021', 'locahill17@census.gov', '903', 'Pearson', 'Xinzhai', '744', '8081887214');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (45, 97.1, 'Lily', 'Letten', 103778.9, 'Non-binary', 'Product Management', 9.4, 4, '10/26/2021', '9/18/2021', 'lletten18@technorati.com', '6279', 'Graedel', 'Niagara Falls', '984', '6526434001');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (46, 69.5, 'Dennison', 'Canny', 191241.4, 'Female', 'Human Resources', 8.5, 5, '3/21/2021', '8/22/2021', 'dcanny19@nytimes.com', '6', 'Almo', 'Naval', '2', '8845515594');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (47, 42.9, 'Gusty', 'Kalisch', 106633.4, 'Female', 'Legal', 4.0, 1, '12/4/2021', '1/21/2022', 'gkalisch1a@ca.gov', '5286', 'Green Ridge', 'Manacsac', '36', '2949562486');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (48, 48.0, 'Flossi', 'Fayter', 147786.7, 'Male', 'Human Resources', 8.0, 4, '11/20/2021', '3/8/2021', 'ffayter1b@baidu.com', '77720', 'Tennyson', 'Luopioinen', '18', '2454427450');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (49, 84.5, 'Almeria', 'Amy', 153739.2, 'Male', 'Sales', 5.8, 1, '10/16/2021', '4/5/2021', 'aamy1c@istockphoto.com', '14', 'Northland', 'Fuyang', '0708', '2147589030');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (50, 86.8, 'Robbie', 'Lowensohn', 127757.7, 'Female', 'Legal', 1.3, 5, '4/8/2021', '4/7/2021', 'rlowensohn1d@stanford.edu', '5042', 'Prairie Rose', 'Lashma', '464', '9345773365');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (51, 96.7, 'Reamonn', 'Pikett', 154669.5, 'Female', 'Legal', 9.5, 5, '3/3/2021', '2/3/2022', 'rpikett1e@google.ca', '92602', 'Pleasure', 'Ust’-Koksa', '173', '2756209793');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (52, 89.7, 'Fleur', 'Parzizek', 37193.8, 'Male', 'Legal', 9.0, 3, '11/5/2021', '1/19/2022', 'fparzizek1f@nyu.edu', '6', 'Ohio', 'Löddeköpinge', '0', '4325633758');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (53, 39.4, 'Kyle', 'Mulder', 81827.2, 'Male', 'Marketing', 8.9, 3, '3/6/2021', '4/3/2021', 'kmulder1g@ucoz.ru', '905', 'Packers', 'Khashuri', '88885', '1463251312');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (54, 36.7, 'Marc', 'Oriel', 86114.4, 'Female', 'Product Management', 7.5, 3, '10/27/2021', '8/26/2021', 'moriel1h@goodreads.com', '17492', 'Division', 'Carcassonne', '1389', '4864865969');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (55, 95.9, 'Carly', 'Penquet', 126785.6, 'Male', 'Sales', 3.8, 3, '3/28/2021', '1/21/2022', 'cpenquet1i@seesaa.net', '17', 'Declaration', 'Durham', '3', '9197573644');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (56, 28.7, 'Manolo', 'Walkingshaw', 171721.1, 'Male', 'Research and Development', 5.3, 5, '3/29/2021', '10/20/2021', 'mwalkingshaw1j@dell.com', '34', 'Goodland', 'La Roche-sur-Yon', '73361', '2677346093');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (57, 80.9, 'Honor', 'Farnin', 187161.7, 'Male', 'Training', 3.8, 3, '4/15/2021', '3/13/2021', 'hfarnin1k@yolasite.com', '53907', 'Mcguire', 'Bakau', '7451', '2746231762');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (58, 40.5, 'Vicky', 'Franzewitch', 101214.5, 'Female', 'Services', 5.1, 2, '11/26/2021', '7/14/2021', 'vfranzewitch1l@hao123.com', '5', 'Buell', 'Nová Role', '0', '9206448170');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (59, 86.7, 'Jory', 'Symms', 88188.7, 'Female', 'Sales', 8.5, 3, '12/16/2021', '3/13/2021', 'jsymms1m@cafepress.com', '1855', 'Waubesa', 'Rennes', '47', '1904444406');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (60, 97.9, 'Leslie', 'Skala', 48310.6, 'Female', 'Human Resources', 1.8, 2, '9/27/2021', '4/7/2021', 'lskala1n@twitpic.com', '5110', 'Warner', 'Qinhe', '7', '2741121627');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (61, 78.3, 'Marji', 'Mechic', 124738.0, 'Female', 'Product Management', 6.6, 2, '1/25/2022', '4/19/2021', 'mmechic1o@taobao.com', '33302', 'Cherokee', 'Šventoji', '03033', '7838750160');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (62, 98.1, 'Bridie', 'Benton', 162417.1, 'Male', 'Sales', 6.7, 5, '4/18/2021', '6/29/2021', 'bbenton1p@oracle.com', '08', 'Lake View', 'Tayāsīr', '80', '2501171191');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (63, 49.6, 'Constantina', 'Kingscote', 33228.6, 'Female', 'Human Resources', 3.1, 2, '1/6/2022', '7/13/2021', 'ckingscote1q@cdbaby.com', '58', 'Blaine', 'Al Khāniq', '5760', '7339683012');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (64, 23.9, 'Bryant', 'Tinson', 63123.3, 'Female', 'Research and Development', 6.2, 1, '5/8/2021', '1/17/2022', 'btinson1r@dell.com', '4', 'Rowland', 'Na Klang', '2', '2347672403');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (65, 75.1, 'Bevvy', 'Suatt', 87228.9, 'Female', 'Marketing', 3.7, 2, '11/27/2021', '10/26/2021', 'bsuatt1s@macromedia.com', '27', 'Ridgeway', 'Lenningen', '1149', '4554595487');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (66, 86.4, 'Ellsworth', 'Barbosa', 195681.6, 'Female', 'Marketing', 9.2, 5, '5/8/2021', '1/31/2022', 'ebarbosa1t@posterous.com', '49', 'Darwin', 'Labuan', '7', '1254859767');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (67, 52.6, 'Nola', 'Crabb', 166850.8, 'Female', 'Accounting', 7.7, 5, '10/22/2021', '11/13/2021', 'ncrabb1u@answers.com', '1997', 'Harbort', 'Peteranec', '84879', '9704376411');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (68, 53.7, 'Maudie', 'Hannaford', 160871.9, 'Female', 'Human Resources', 9.0, 3, '2/1/2022', '7/2/2021', 'mhannaford1v@desdev.cn', '21785', 'Bunker Hill', 'Aktogay', '5', '2256255732');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (69, 82.3, 'Rorie', 'Arkill', 188622.5, 'Bigender', 'Legal', 1.3, 1, '9/21/2021', '12/8/2021', 'rarkill1w@soundcloud.com', '4', 'Michigan', 'Ozëry', '2545', '8367322695');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (70, 61.4, 'Therine', 'Alexsandrovich', 140165.6, 'Female', 'Human Resources', 9.6, 4, '10/22/2021', '3/16/2021', 'talexsandrovich1x@cbsnews.com', '4', 'Namekagon', 'Kylmäkoski', '97281', '9742531111');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (71, 40.2, 'Carolyne', 'Steljes', 79234.6, 'Female', 'Training', 9.1, 2, '12/20/2021', '3/4/2021', 'csteljes1y@ftc.gov', '71', 'Roth', 'Yantan', '3', '6804071043');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (72, 83.9, 'Gusty', 'Inkpin', 23423.1, 'Male', 'Support', 8.1, 2, '9/27/2021', '4/27/2021', 'ginkpin1z@china.com.cn', '534', 'Hoard', 'Francisco Villa', '41377', '6717610479');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (73, 52.7, 'Reba', 'Poetz', 129319.3, 'Female', 'Training', 5.4, 3, '7/11/2021', '11/16/2021', 'rpoetz20@cbsnews.com', '94840', 'Forster', 'Hyattsville', '676', '3015639330');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (74, 78.9, 'Torrey', 'Moberley', 31974.9, 'Male', 'Research and Development', 4.3, 2, '10/11/2021', '11/16/2021', 'tmoberley21@sitemeter.com', '38903', 'Lillian', 'Ratchasan', '8', '8111222314');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (75, 66.1, 'Chere', 'Collinette', 54480.7, 'Male', 'Research and Development', 7.6, 3, '1/2/2022', '12/10/2021', 'ccollinette22@bravesites.com', '4', '6th', 'Henglu', '5991', '2642858000');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (76, 76.4, 'Remy', 'Bryce', 58136.1, 'Male', 'Business Development', 9.7, 5, '12/27/2021', '1/13/2022', 'rbryce23@disqus.com', '89499', 'Fair Oaks', 'Matiguás', '63004', '7916677535');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (77, 91.9, 'Lillian', 'Farncomb', 93857.7, 'Female', 'Human Resources', 1.3, 3, '3/10/2021', '6/21/2021', 'lfarncomb24@un.org', '1771', 'Twin Pines', 'Bull Savanna', '3725', '7904687292');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (78, 66.1, 'Boigie', 'Shawel', 51158.6, 'Female', 'Marketing', 7.4, 5, '2/9/2022', '10/5/2021', 'bshawel25@hexun.com', '01626', 'Rutledge', 'Krajan Dua Sumbersari', '1', '2674579489');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (79, 66.7, 'Merwin', 'Horick', 18084.5, 'Female', 'Research and Development', 2.3, 5, '5/12/2021', '12/4/2021', 'mhorick26@loc.gov', '90983', 'Victoria', 'Liupai', '32872', '1545202453');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (80, 54.8, 'Alejandrina', 'Sharrem', 186832.1, 'Female', 'Product Management', 3.5, 1, '10/12/2021', '3/18/2021', 'asharrem27@hhs.gov', '7', 'Canary', 'Normandin', '936', '5747189716');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (81, 93.5, 'Gannie', 'Foxwell', 40472.1, 'Female', 'Training', 2.1, 5, '4/7/2021', '2/12/2022', 'gfoxwell28@hp.com', '79', 'Maryland', 'Lazarevac', '19', '9658875905');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (82, 27.5, 'Eric', 'Dudhill', 30678.5, 'Female', 'Human Resources', 8.0, 5, '11/11/2021', '11/21/2021', 'edudhill29@biglobe.ne.jp', '4340', 'Spohn', 'Tayirove', '6381', '5498924243');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (83, 70.6, 'Oralee', 'McGilleghole', 114012.2, 'Female', 'Sales', 5.9, 5, '12/28/2021', '2/25/2022', 'omcgilleghole2a@free.fr', '7381', 'Maryland', 'Adela', '661', '9553147926');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (84, 42.5, 'Orbadiah', 'Baldock', 169352.9, 'Genderqueer', 'Legal', 2.2, 4, '6/25/2021', '1/28/2022', 'obaldock2b@yale.edu', '132', 'Debs', 'Chisong', '257', '4051834591');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (85, 25.8, 'Bliss', 'MacMeeking', 46400.1, 'Agender', 'Training', 9.9, 1, '11/20/2021', '11/13/2021', 'bmacmeeking2c@nydailynews.com', '8', 'Dorton', 'Stockholm', '022', '7337561250');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (86, 80.9, 'Laetitia', 'Sandison', 153231.1, 'Male', 'Legal', 8.5, 5, '5/28/2021', '7/18/2021', 'lsandison2d@google.com.hk', '848', 'Forest Run', 'Porsgrunn', '63803', '2327228418');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (87, 21.5, 'Ferris', 'Conor', 141598.6, 'Male', 'Marketing', 2.5, 4, '12/27/2021', '8/25/2021', 'fconor2e@dedecms.com', '4', 'Crowley', 'Gaoping', '83', '8735083667');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (88, 50.5, 'Viv', 'Matieu', 193462.0, 'Male', 'Marketing', 4.5, 2, '12/20/2021', '11/12/2021', 'vmatieu2f@eventbrite.com', '731', 'Russell', 'Naukšēni', '79232', '8625173212');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (89, 93.3, 'Gerry', 'Bawle', 73770.3, 'Female', 'Business Development', 7.7, 4, '3/26/2021', '3/11/2021', 'gbawle2g@gnu.org', '6586', 'Express', 'Kota Kinabalu', '35', '7786150140');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (90, 36.2, 'Guglielmo', 'Gilbard', 28693.7, 'Male', 'Support', 8.2, 1, '7/1/2021', '9/13/2021', 'ggilbard2h@edublogs.org', '9', 'Lien', 'Awka', '6801', '3166017638');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (91, 95.7, 'Jeanna', 'Chesnut', 20302.8, 'Male', 'Human Resources', 3.7, 1, '11/13/2021', '2/10/2022', 'jchesnut2i@nymag.com', '802', 'Forster', 'Jiaotan', '45', '2672826587');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (92, 48.8, 'Stephanus', 'Wringe', 160796.2, 'Female', 'Services', 3.8, 5, '5/8/2021', '10/26/2021', 'swringe2j@drupal.org', '023', 'Rigney', 'Qingkou', '9670', '2224875712');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (93, 26.8, 'Marty', 'Rummer', 28525.0, 'Male', 'Product Management', 7.4, 3, '4/28/2021', '1/20/2022', 'mrummer2k@1und1.de', '24', 'Lerdahl', 'Guadalupe Victoria', '0', '7126483626');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (94, 40.7, 'Eldin', 'Antonomoli', 113940.9, 'Male', 'Research and Development', 6.0, 4, '10/27/2021', '3/1/2021', 'eantonomoli2l@narod.ru', '8397', 'Summer Ridge', 'Mokotów', '5', '4463812880');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (95, 86.1, 'Rosabella', 'Frazer', 35708.5, 'Female', 'Services', 5.4, 5, '11/23/2021', '4/9/2021', 'rfrazer2m@booking.com', '6469', 'Eagle Crest', 'Didi Lilo', '64', '9603518228');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (96, 24.9, 'third', 'fourth', 163830.1, 'Female', 'Training', 1.0, 2, '1/5/2022', '5/7/2021', 'rferriby2n@phoca.cz', '1', 'Fairfield', 'Rukem', '984', '4675432204');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (97, 75.1, 'Perren', 'MacDougall', 131027.4, 'Polygender', 'Research and Development', 4.0, 3, '5/18/2021', '12/2/2021', 'pmacdougall2o@usgs.gov', '94370', 'Maryland', 'Velké Bílovice', '68', '3713970242');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (98, 22.5, 'Sky', 'Grimwood', 192079.1, 'Female', 'Support', 4.3, 2, '12/29/2021', '1/7/2022', 'sgrimwood2p@businesswire.com', '646', 'Sherman', 'Calubcub Dos', '03', '8494544427');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (99, 29.2, 'Ade', 'Mulqueen', 151362.6, 'Female', 'Engineering', 3.2, 3, '10/29/2021', '7/9/2021', 'amulqueen2q@mapquest.com', '986', 'Redwing', 'Svirsk', '64', '4114852416');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (100, 74.3, 'Leisha', 'Skelhorn', 170552.6, 'Female', 'Support', 1.3, 1, '5/20/2021', '11/16/2021', 'lskelhorn2r@newsvine.com', '43', 'Dakota', 'Marxog', '2', '6667684834');
+
+
+select * from employee;
+-- Employee_childs
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 1 , 2 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 2 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 3 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 4 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 5 , 3 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 6 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 7 , 2 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 8 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 9 , 1 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 10 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 11 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 12 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 13 , 1 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 14 , 1 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 15 , 4 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 16 , 2 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 17 , 3 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 18 , 5 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 19 , 1 );
+insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 20 , 1 );
+insert into Service_Employee (Employee_ID) values ( 21 );
+insert into Service_Employee (Employee_ID) values ( 22 );
+insert into Service_Employee (Employee_ID) values ( 23 );
+insert into Service_Employee (Employee_ID) values ( 24 );
+insert into Service_Employee (Employee_ID) values ( 25 );
+insert into Service_Employee (Employee_ID) values ( 26 );
+insert into Service_Employee (Employee_ID) values ( 27 );
+insert into Service_Employee (Employee_ID) values ( 28 );
+insert into Service_Employee (Employee_ID) values ( 29 );
+insert into Service_Employee (Employee_ID) values ( 30 );
+insert into Service_Employee (Employee_ID) values ( 31 );
+insert into Service_Employee (Employee_ID) values ( 32 );
+insert into Service_Employee (Employee_ID) values ( 33 );
+insert into Service_Employee (Employee_ID) values ( 34 );
+insert into Service_Employee (Employee_ID) values ( 35 );
+insert into Service_Employee (Employee_ID) values ( 36 );
+insert into Service_Employee (Employee_ID) values ( 37 );
+insert into Service_Employee (Employee_ID) values ( 38 );
+insert into Service_Employee (Employee_ID) values ( 39 );
+insert into Service_Employee (Employee_ID) values ( 40 );
+insert into Service_Employee (Employee_ID) values ( 41 );
+insert into Service_Employee (Employee_ID) values ( 42 );
+insert into Service_Employee (Employee_ID) values ( 43 );
+insert into Service_Employee (Employee_ID) values ( 44 );
+insert into Service_Employee (Employee_ID) values ( 45 );
+insert into Service_Employee (Employee_ID) values ( 46 );
+insert into Service_Employee (Employee_ID) values ( 47 );
+insert into Service_Employee (Employee_ID) values ( 48 );
+insert into Service_Employee (Employee_ID) values ( 49 );
+insert into Service_Employee (Employee_ID) values ( 50 );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 51 , 'WA63LS3871' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 52 , 'MU16TE7580' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 53 , 'MJ64PW9232' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 54 , 'MU47TZ6174' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 55 , 'BN51IB8337' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 56 , 'JN68VM3359' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 57 , 'QV41IW8451' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 58 , 'VQ54MO2556' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 59 , 'GG27HT7337' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 60 , 'QM43AD2048' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 61 , 'SZ50TI2162' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 62 , 'RH48BV6512' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 63 , 'CB42IM8233' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 64 , 'ZK39KB6341' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 65 , 'VT51GT8301' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 66 , 'WD34UM1403' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 67 , 'QX53BX5639' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 68 , 'WK48MB2898' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 69 , 'IV29WY5103' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 70 , 'OT75OR2418' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 71 , 'GX98IJ7089' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 72 , 'GD14SJ5149' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 73 , 'XM28ZL9240' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 74 , 'MG10MX4360' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 75 , 'WX24FB4547' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 76 , 'ES38NL9463' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 77 , 'AK31YP2140 ', 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 78 , 'VP17ZS3028 ', 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 79 , 'UI19VT4166 ', 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 80 , 'YT84YL7561 ', 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 81 , 'HT41OJ5604' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 82 , 'OP64GA5711' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 83 , 'AV62BO7211' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 84 , 'ZM98CP3319' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 85 , 'QX42LV9819' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 86 , 'RR39NW5372' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 87 , 'IQ13VC4604' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 88 , 'BJ74TX3469' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 89 , 'GT80JW4653' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 90 , 'BW86ON4594' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 91 , 'IW22RP1633' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 92 , 'VQ82XX3792' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 93 , 'AK69KL9549' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 94 , 'VD55VM9277' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 95 , 'HQ40BI3920' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 96 , 'BE83IM3967' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 97 , 'ZQ61NH6892' , 'Tempo' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 98 , 'HM51AB2565' , 'Van' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 99 , 'MG27HB6980' , 'Bike' );
+insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 100 , 'ST66ST7930' , 'Van' );
+
+
+
+#transactions
+
+insert into Transaction values (1,'Net Banking',true,"2021:7:18 22:49:53",40, 6),
+(2,'Card',true,"2021:8:13 21:30:53",68, 7),
+(3,'Net Banking',true,"2021:9:30 23:56:52",44, 8),
+(4,'UPI',false,"2021:9:9 4:23:11",38, 9),
+(5,'UPI',true,"2021:10:6 14:9:50",97, 10),
+(6,'UPI',true,"2021:4:17 7:34:30",31, 11),
+(7,'UPI',true,"2021:3:28 1:52:38",29, 12),
+(8,'UPI',true,"2021:1:19 23:25:37",39, 13),
+(9,'Card',true,"2021:3:8 5:46:42",35, 14),
+(10,'Net Banking',false,"2021:1:18 2:42:42",24, 15),
+(11,'Net Banking',true,"2021:8:25 7:17:5",55, 16),
+(12,'UPI',false,"2021:9:12 6:51:13",50, 17),
+(13,'Net Banking',true,"2021:2:9 17:45:3",62, 18),
+(14,'Card',true,"2021:5:4 23:14:35",2, 19),
+(15,'UPI',true,"2021:3:12 3:14:14",39, 20),
+(16,'Net Banking',false,"2021:7:19 13:50:36",81, 21),
+(17,'Card',true,"2021:12:7 18:47:40",18, 22),
+(18,'UPI',false,"2021:12:19 12:31:29",91, 23),
+(19,'UPI',false,"2021:12:5 3:19:53",43, 24),
+(20,'Net Banking',false,"2021:4:23 0:27:13",95, 25),
+(21,'Card',false,"2021:12:10 16:32:24",8, 26),
+(22,'Card',true,"2021:10:7 22:49:36",91, 27),
+(23,'Net Banking',false,"2021:10:26 14:53:18",25, 28),
+(24,'Card',true,"2021:6:15 4:15:18",82, 29),
+(25,'Card',true,"2021:11:28 23:7:52",70, 30),
+(26,'Card',true,"2021:8:3 14:38:8",34, 31),
+(27,'UPI',true,"2021:7:10 8:41:59",90, 32),
+(28,'UPI',true,"2021:6:17 12:4:49",95, 33),
+(29,'UPI',false,"2021:9:14 7:14:32",46, 34),
+(30,'Net Banking',false,"2021:5:6 23:9:31",55, 35),
+(31,'Card',false,"2021:7:24 7:31:55",88, 36),
+(32,'UPI',false,"2021:5:7 15:33:26",58, 37),
+(33,'Net Banking',false,"2021:4:13 1:35:38",35, 38),
+(34,'Card',false,"2021:4:25 12:50:2",32, 39),
+(35,'Net Banking',true,"2021:8:1 4:36:23",19, 40),
+(36,'Card',true,"2021:8:17 20:5:20",34, 41),
+(37,'UPI',false,"2021:1:23 9:0:0",52, 42),
+(38,'Net Banking',true,"2021:9:13 22:39:53",18, 43),
+(39,'Net Banking',true,"2021:1:18 3:10:36",81, 44),
+(40,'UPI',false,"2021:1:9 1:27:1",29, 45),
+(41,'Card',false,"2021:1:10 17:37:50",21, 46),
+(42,'UPI',false,"2021:2:24 13:39:31",11, 47),
+(43,'UPI',true,"2021:1:24 5:40:28",27, 48),
+(44,'Card',false,"2021:11:2 7:27:11",43, 49),
+(45,'Card',false,"2021:1:9 10:18:21",98, 50),
+(46,'Net Banking',false,"2021:9:7 10:33:25",92, 51),
+(47,'Net Banking',true,"2021:5:12 16:54:14",75, 52),
+(48,'UPI',false,"2021:10:14 5:55:32",40, 53),
+(49,'UPI',false,"2021:3:11 18:26:47",57, 54),
+(50,'UPI',false,"2021:4:8 5:57:30",5, 55);
+
+
+insert into delivery values ( 1 , 97 , 40 , 1 ),
+( 2 , 97 , 68 , 3 ),
+( 3 , 60 , 44 , 4 ),
+( 4 , 56 , 38 , 1 ),
+( 5 , 85 , 97 , 1 ),
+( 6 , 60 , 31 , 2 ),
+( 7 , 54 , 29 , 1 ),
+( 8 , 94 , 39 , 3 ),
+( 9 , 68 , 35 , 3 ),
+( 10 , 65 , 24 , 3 ),
+( 11 , 93 , 55 , 3 ),
+( 12 , 63 , 50 , 1 ),
+( 13 , 82 , 62 , 4 ),
+( 14 , 80 , 2 , 2 ),
+( 15 , 81 , 39 , 2 ),
+( 16 , 82 , 81 , 5 ),
+( 17 , 96 , 18 , 4 ),
+( 18 , 60 , 91 , 4 ),
+( 19 , 52 , 43 , 4 ),
+( 20 , 87 , 95 , 5 ),
+( 21 , 78 , 8 , 1 ),
+( 22 , 85 , 91 , 4 ),
+( 23 , 72 , 25 , 4 ),
+( 24 , 84 , 82 , 2 ),
+( 25 , 50 , 70 , 4 ),
+( 26 , 76 , 34 , 1 ),
+( 27 , 87 , 90 , 2 ),
+( 28 , 69 , 95 , 5 ),
+( 29 , 92 , 46 , 4 ),
+( 30 , 61 , 55 , 5 ),
+( 31 , 96 , 88 , 5 ),
+( 32 , 65 , 58 , 1 ),
+( 33 , 77 , 35 , 3 ),
+( 34 , 77 , 32 , 1 ),
+( 35 , 65 , 19 , 3 ),
+( 36 , 52 , 34 , 4 ),
+( 37 , 65 , 52 , 3 ),
+( 38 , 57 , 18 , 2 ),
+( 39 , 54 , 81 , 5 ),
+( 40 , 76 , 29 , 2 ),
+( 41 , 90 , 21 , 1 ),
+( 42 , 67 , 11 , 3 ),
+( 43 , 76 , 27 , 4 ),
+( 44 , 98 , 43 , 5 ),
+( 45 , 83 , 98 , 1 ),
+( 46 , 90 , 92 , 3 ),
+( 47 , 72 , 75 , 4 ),
+( 48 , 90 , 40 , 2 ),
+( 49 , 96 , 57 , 2 ),
+( 50 , 74 , 5 , 5 );
+
+
+insert into vendor_phone values (67, 9634248315) ,
+(62, 9703259703) ,
+(90, 9487332083) ,
+(66, 9206291418) ,
+(90, 9624277489) ,
+(57, 9568083238) ,
+(51, 9677051612) ,
+(84, 9190098197) ,
+(87, 9585112676) ,
+(61, 9368694772) ,
+(88, 9910828018) ,
+(40, 9137907116) ,
+(30, 9633141600) ,
+(65, 9849991687) ,
+(66, 9078056849) ,
+(78, 9237994747) ,
+(85, 9233078037) ,
+(37, 9434425824) ,
+(87, 9492335469) ,
+(18, 9075224248) ,
+(83, 9307204961) ,
+(11, 9185739558) ,
+(81, 9466222581) ,
+(68, 9235140490) ,
+(66, 9757802044) ,
+(39, 9528612495) ,
+(5, 9383628333) ,
+(64, 9205512949) ,
+(88, 9518227909) ,
+(25, 9731032653) ,
+(95, 9890012861) ,
+(96, 9480768931) ,
+(38, 9357760139) ,
+(97, 9648173808) ,
+(38, 9985618972) ,
+(45, 9786648154) ,
+(1, 9353925329) ,
+(48, 9609646385) ,
+(68, 9973834018) ,
+(75, 9246349498) ,
+(23, 9361334129) ,
+(94, 9953620568) ,
+(67, 9107750243) ,
+(70, 9314875168) ,
+(87, 9384003816) ,
+(52, 9772126291) ,
+(26, 9433001687) ,
+(73, 9299697230) ,
+(40, 9401532222) ,
+(84, 9431879233) ,
+(98, 9452894176) ,
+(10, 9865380572) ,
+(9, 9386074751) ,
+(71, 9683578698) ,
+(26, 9690328425) ,
+(21, 9557859513) ,
+(76, 9182134732) ,
+(83, 9242407479) ,
+(15, 9923901366) ,
+(25, 9957818835) ,
+(92, 9630946265) ,
+(62, 9960424597) ,
+(43, 9151208273) ,
+(63, 9053081506) ,
+(97, 9247084395) ,
+(62, 9588298180) ,
+(55, 9178265483) ,
+(15, 9053636267) ,
+(34, 9223870202) ,
+(13, 9434370455) ,
+(36, 9926652801) ,
+(5, 9046416326) ,
+(10, 9129648791) ,
+(52, 9014039693) ,
+(45, 9037136738) ,
+(84, 9952695844) ,
+(39, 9756665976) ,
+(88, 9476524222) ,
+(52, 9402262897) ,
+(48, 9400904160) ,
+(65, 9085965351) ,
+(75, 9480897672) ,
+(37, 9569262049) ,
+(18, 9029315906) ,
+(97, 9233032222) ,
+(63, 9634727016) ,
+(66, 9462906165) ,
+(94, 9422937299) ,
+(76, 9553346498) ,
+(43, 9591916307) ,
+(69, 9428717769) ,
+(32, 9924290249) ,
+(42, 9466630347) ,
+(46, 9460783535) ,
+(41, 9289814910) ,
+(68, 9003688733) ,
+(83, 9777035348) ,
+(48, 9822698532) ,
+(44, 9634450905) ,
+(22, 9786754130) ,
+(54, 9545170901) ,
+(8, 9265329087) ,
+(90, 9225585781) ,
+(32, 9810034157) ,
+(81, 9662820250) ,
+(88, 9474192004) ,
+(92, 9160700767) ,
+(46, 9127585384) ,
+(26, 9204376368) ,
+(1, 9247407269) ,
+(38, 9018507704) ,
+(8, 9980639724) ,
+(8, 9556167292) ,
+(82, 9206543228) ,
+(15, 9991245069) ,
+(61, 9682541853) ,
+(45, 9568331486) ,
+(22, 9189934716) ,
+(69, 9369070263) ,
+(44, 9655310350) ,
+(89, 9074145752) ,
+(67, 9609099307) ,
+(7, 9256141757) ,
+(9, 9978082021) ,
+(26, 9202634389) ,
+(22, 9096894321) ,
+(59, 9794642962) ,
+(40, 9177489598) ,
+(21, 9290206035) ,
+(89, 9721044279) ,
+(10, 9348971177) ,
+(88, 9411463262) ,
+(43, 9435542953) ,
+(48, 9657553635) ,
+(4, 9011078624) ,
+(37, 9553830545) ,
+(42, 9239491869) ,
+(51, 9643322621) ,
+(7, 9650882010) ,
+(68, 9785565289) ,
+(3, 9902930793) ,
+(49, 9056393534) ,
+(60, 9259237497) ,
+(62, 9975464654) ,
+(70, 9642449741) ,
+(73, 9792912710) ,
+(30, 9674769594) ,
+(7, 9620218696) ,
+(36, 9353212326) ,
+(63, 9591226100) ,
+(95, 9166711466) ,
+(80, 9719736518) ,
+(29, 9923480080) ,
+(61, 9216367153) ,
+(32, 9176420504) ,
+(34, 9093085881) ,
+(66, 9704465255) ,
+(12, 9240544047) ,
+(83, 9955941045) ,
+(64, 9551517293) ,
+(5, 9590709165) ,
+(11, 9858724362) ,
+(32, 9869712905) ,
+(6, 9409549696) ,
+(100, 9583114043) ,
+(37, 9751694923) ,
+(43, 9888644898) ,
+(99, 9444738424) ,
+(72, 9249960494) ,
+(69, 9825025477) ,
+(21, 9552334497) ,
+(5, 9922343207) ,
+(30, 9749397059) ,
+(34, 9194098431) ,
+(49, 9731085331) ,
+(87, 9312824892) ,
+(56, 9910148241) ,
+(88, 9374228698) ,
+(2, 9945850783) ,
+(9, 9467994422) ,
+(66, 9814683403) ,
+(44, 9216208910) ,
+(89, 9109973274) ,
+(46, 9484766111) ,
+(2, 9880986125) ,
+(15, 9871841730) ,
+(66, 9312296760) ,
+(1, 9391904704) ,
+(51, 9245847920) ,
+(97, 9131080526) ,
+(66, 9183129293) ,
+(43, 9817359267) ,
+(88, 9628265943) ,
+(36, 9150075173) ,
+(56, 9079127915) ,
+(6, 9154904965) ,
+(66, 9538221725) ,
+(34, 9568534655) ,
+(86, 9421234822) ,
+(58, 9396612496) ,
+(98, 9814730870) ,
+(31, 9366642085) ,
+(92, 9685973451) ,
+(71, 9790640561) ,
+(19, 9149953761) ,
+(84, 9987583282) ,
+(23, 9109963045) ,
+(92, 9150719085) ,
+(10, 9245327148) ,
+(42, 9375125432) ,
+(95, 9094376644) ,
+(73, 9584193319) ,
+(66, 9061899587) ,
+(21, 9075787061) ,
+(23, 9503418016) ,
+(76, 9327515623) ,
+(19, 9162165935) ,
+(27, 9936927090) ,
+(63, 9752252972) ,
+(68, 9945197548) ,
+(11, 9847776293) ,
+(26, 9812980603) ,
+(90, 9388382588) ,
+(100, 9806680228) ,
+(18, 9779588764) ,
+(75, 9096306584) ,
+(12, 9460758328) ,
+(53, 9604676650) ,
+(79, 9250825864) ,
+(69, 9528403933) ,
+(49, 9522192653) ,
+(45, 9068754187) ,
+(8, 9716716451) ,
+(45, 9882539400) ,
+(65, 9732782279) ,
+(85, 9544835711) ,
+(35, 9658885561) ,
+(69, 9899748801) ,
+(78, 9855435045) ,
+(61, 9285234011) ,
+(62, 9384423827) ,
+(8, 9012062890) ,
+(14, 9030785097) ,
+(33, 9395057668) ,
+(38, 9336282619) ,
+(94, 9031210662) ,
+(76, 9108733350) ,
+(85, 9321530124) ,
+(30, 9846861533) ,
+(21, 9742700830) ,
+(78, 9104009555) ,
+(20, 9373772952) ,
+(94, 9223561469) ,
+(79, 9677382812) ,
+(27, 9573481644) ,
+(51, 9009354070) ,
+(75, 9429502721) ,
+(82, 9257808066) ,
+(56, 9282319127) ,
+(93, 9814999102) ,
+(94, 9430841994) ,
+(98, 9930955751) ,
+(72, 9435803352) ,
+(42, 9864936088) ,
+(43, 9935071178) ,
+(37, 9802579509) ,
+(100, 9936482220) ,
+(14, 9587706253) ,
+(2, 9682891133) ,
+(52, 9953672225) ,
+(32, 9882509309) ,
+(38, 9606128796) ,
+(11, 9463803402) ,
+(14, 9618051204) ,
+(54, 9086615483) ,
+(94, 9715160145) ,
+(34, 9536098331) ,
+(23, 9544202108) ,
+(59, 9617745036) ,
+(4, 9404613777) ,
+(27, 9240599504) ,
+(61, 9583171276) ,
+(42, 9738568045) ,
+(61, 9205578113) ,
+(50, 9049391325) ,
+(1, 9627398866) ,
+(52, 9719830537) ,
+(31, 9300744639) ,
+(21, 9281958153) ,
+(2, 9723160778) ,
+(75, 9071194136) ,
+(92, 9102421614) ,
+(36, 9404350982) ,
+(60, 9189334323) ,
+(29, 9121094983) ,
+(71, 9908351219) ,
+(5, 9991384031) ,
+(79, 9248033479) ,
+(92, 9094124650) ,
+(7, 9735910634);
+
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 1 , 50 , 12 , 48 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 2 , 95 , 28 , 31 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 3 , 91 , 18 , 26 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 4 , 88 , 31 , 39 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 5 , 81 , 39 , 25 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 6 , 18 , 17 , 43 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 7 , 62 , 13 , 21 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 8 , 95 , 28 , 45 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 9 , 35 , 9 , 50 );
+insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 10 , 55 , 11 , 41 );
+
+
+
