@@ -31,6 +31,7 @@ create DATABASE online_shopping;
 
 use online_shopping;
 
+#done
 create table Customer(
                     customer_ID numeric(30,0) primary key,
                     First_name varchar(30) not null,
@@ -69,6 +70,7 @@ create table product_photo(
                     );
 
 
+#done
 create table Vendor(Vendor_id numeric(30,0) primary key,
                     first_name varchar(30) not null,
                     last_name varchar(30) not null, 
@@ -81,6 +83,8 @@ create table Vendor_phone(Vendor_ID numeric(30,0),
                             foreign key (Vendor_ID) references Vendor(Vendor_ID),
                             primary key(Phone_number,Vendor_ID)
                         );
+
+#done
 create table Warehouse(Warehouse_ID numeric(30,0) primary key,
                     Plot_number numeric(30,0) check(plot_number >= 0),
                     City varchar(30),
@@ -92,18 +96,17 @@ create table Warehouse_phone(Warehouse_ID numeric(30,0),
                             foreign key (Warehouse_ID) references Warehouse(Warehouse_ID),
                             primary key(Phone_number,Warehouse_ID)
                         );
-                
 create table Employee(Employee_ID numeric(30,0) primary key,
                     age int(10) not null check(age between 18 and 300),
                     First_Name varchar(30) not null,
                     Last_Name varchar(30), 
                     Salary numeric(30) not null, 
-                    Gender varchar(10), 
+                    Gender varchar(20), 
                     Department varchar(30),
                     Performance varchar(30), 
                     Position varchar(30) not null,
-                    Date_of_joining char(8) not null, 
-                    Date_of_birth char(8) not null,
+                    Date_of_joining char(30) not null, 
+                    Date_of_birth char(30) not null,
                     Email_address varchar(50) unique not null,
                     House_No numeric(30,0),
                     Locality varchar(30),
@@ -112,8 +115,8 @@ create table Employee(Employee_ID numeric(30,0) primary key,
                     Phone_number numeric(30,0)
                 );
 
-
-create table orders(
+#done
+create table Orders(
     order_ID numeric(30,0) primary key, 
     Total_Price numeric(20,2) check(Total_price > 0),
     Taxes numeric(30,2) check(Taxes >= 0),
@@ -127,6 +130,7 @@ create table Delivery_Partner(
     foreign key (Employee_id) references Employee(employee_id)
     );
 
+#done
 create table Coupon(
     Coupon_Code varchar(30) primary key, 
     Discount_Percentage numeric(5,2) check (discount_percentage >= 0)
@@ -134,6 +138,7 @@ create table Coupon(
 
 
 
+#doing
 create table Warehouse_Worker(
     Employee_ID numeric(30,0) primary key,
     Warehouse_ID numeric(30,0),
