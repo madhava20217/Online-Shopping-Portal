@@ -4,10 +4,7 @@
 \documentclass[12pt]{report}
 
 \usepackage[utf8]{inputenc}
-\usepackage{amsfonts}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{geometry}
 
 \graphicspath{..\ER Diagram}
 
@@ -87,6 +84,7 @@
 
 
     \chapter{ER Diagram}
+    
     \section{Entities}
 
     \begin{enumerate}
@@ -276,20 +274,48 @@
 			\item Quantity
 			\item Cost of items in the cart: Derived quantity.
 		\end{enumerate}
-	\item Rates: between customer and product for indicating rating
+	\item Rates: between customer and product for indicating rating.
 		\begin{enumerate}
-			\item \underline{Product_ID, Customer_ID): Primary key
+			\item \underline{Customer ID, Product ID}: Primary key
 			\item Rating: attribute
 		\end{enumerate}
-        \end{enumerate}
+	\end{enumerate}
+
+
+	\section{Diagram}
+	\includegraphics[width =0.85\textwidth]{Pictures/ER_Diagram.png}
 
 \chapter{Relational Schema}
 The ER diagram was reduced by noting multiplicities and the following tables for the relational schema resulted.
 
 \begin{enumerate}
-	\item Customer(\underline{customer_ID}, First_name, Last_name, House_number, Locality, City, Pincode, email_address, password)
-	\item Customer_phone(\underline{customer_ID, phone_number})
-	\item Product(\underline{product_ID}, Price, Category, Discount_Percentage, GST_Percentage)
-	\item Product_Rating(\underline{Product_ID, Customer_ID, 
+	\item Customer(\underline{customer ID}, )
+	\item Product(\underline{product ID}, Price, Category, Discount Percentage, GST Percentage)
+	\item Product Rating(\underline{Product ID, Customer ID}, Rating)
+	\item Product Photo(\underline{Product ID, Product Photo})
+	\item Vendor(\underline{Vendor ID}, First Name, Last Name, Plot Number, City, Pincode)
+	\item Vendor Phone(\underline{Vendor ID, Phone Number})
+	\item Warehouse(\underline{Warehouse ID}, Plot Number, City, Pincode)
+	\item Warehouse Phone(\underline{Warehouse ID, Phone Number})
+	\item Employee(\underline{Employee ID}, First name, Last name, Age, Salary, Gender, Department, Performance, Position, Date of Joining, Date of Birth, Email Address, House Number, Locality, City, Pincode, Phone Number)
+	\item Delivery Partner(\underline{Employee ID}, Vehicle ID, Vehicle Type)
+	\item Warehouse Worker(\underline{Employee ID})
+	\item Service Employee (\underline{Employee ID})
+	\item Orders(\underline{Order ID}, Total Price, Taxes, Total Discount Percentage)
+	\item Coupon(\underline{Coupon Code}, Discount Percentage)
+	\item Transaction(\underline{Order ID}, Payment Method, Transaction Status ,Transaction Time, Customer ID, Coupon code)\\ Here, Customer ID is referenced from Customer table and coupon code from Coupon table. Coupon code can be null, customer id cannot.
+	\item Delivery (\underline{Order ID}, Employee ID, Customer ID, Warehouse ID) \\ Here Employee ID is taken from the Employee table if it belongs to Delivery Partner, Customer ID from Customer table, Warehouse ID from Warehouse table.
+	\item Stores(\underline{Warehouse ID, Product ID}, Quantity)
+	\item Supplies(\underline{Vendor ID, Product ID}, Quantity)
+	\item Shopping Cart(\underline{Customer ID, Product ID}, Quantity)
+	\item Complains(\underline{Complaint Number}, Customer ID, Order ID, Service Employee ID)\\ Here, Customer ID is taken from Customer table, Order ID from Orders table, Service Employee ID from Service Employees table.
+	\item Order Products(\underline{Order ID, Product ID}, Quantity)
+
 \end{enumerate}
+
+\textbf{\underline{ Note}}: Employee has both fields of age and DOB. This is a redundancy on our part as the data entries were designed with age as an attribute. This may be eliminated in the final version depending on whether there is need or not (number of employees should be significantly lower than the number of customers).
+\\
+The SQL queries for creating the database, populating the database and the queries required are submitted under the names: 'database\_creation.sql', 'database\_population.sql' and 'queries.sql'.
+
+\chapter{Contributions of Team Members}
 \end{document}
