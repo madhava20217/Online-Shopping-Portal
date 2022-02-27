@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  27 FEB 2022 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  27 FEB 2022 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -121,7 +121,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--58
+Underfull \hbox (badness 10000) in paragraph at lines 36--57
 
  []
 
@@ -132,7 +132,7 @@ Chapter 2.
 [5
 
 ] [6] [7] [8]
-Overfull \hbox (1.75844pt too wide) in paragraph at lines 239--240
+Overfull \hbox (1.75844pt too wide) in paragraph at lines 238--239
 []\OT1/cmr/m/n/12 Delivery: Quar-ternary re-la-tion be-tween ware-house, or-der
 , de-liv-ery part-
  []
@@ -141,7 +141,7 @@ Overfull \hbox (1.75844pt too wide) in paragraph at lines 239--240
 <Pictures/ER_Diagram.png, id=38, 1204.5pt x 1924.18875pt>
 File: Pictures/ER_Diagram.png Graphic file (type png)
 <use Pictures/ER_Diagram.png>
-Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 285.
+Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 284.
 (pdftex.def)             Requested size: 331.50238pt x 529.57928pt.
  [10]
 Overfull \vbox (9.32262pt too high) has occurred while \output is active []
@@ -153,7 +153,28 @@ Chapter 3.
 
 ] [13]
 Chapter 4.
+
+Overfull \hbox (24.21574pt too wide) in paragraph at lines 323--323
+[]\OT1/cmr/bx/n/17.28 Entity Re-la-tion-ship Par-tic-i-pa-tion and Types 
+ []
+
 [14
+
+]
+Overfull \hbox (23.62627pt too wide) in paragraph at lines 339--340
+\OT1/cmr/m/n/12 Queries have been in-cluded in the Database folder un-der the f
+ile name 'queries.sql',
+ []
+
+
+Overfull \hbox (26.70288pt too wide) in paragraph at lines 339--340
+\OT1/cmr/m/n/12 which should be run af-ter run-ning 'database[]creation.sql' an
+d 'data[]population.sql'
+ []
+
+[15] [16]
+Chapter 5.
+[17
 
 ] (./ER Diagram and Relational Schema.aux) ) 
 Here is how much of TeX's memory you used:
@@ -163,17 +184,17 @@ Here is how much of TeX's memory you used:
  19582 multiletter control sequences out of 15000+600000
  476064 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,6n,62p,398b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,62p,656b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/e
 nc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "ER Diagram and Relational Schema.pdf" (15 pages, 348404 byte
+Output written on "ER Diagram and Relational Schema.pdf" (18 pages, 354512 byte
 s).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

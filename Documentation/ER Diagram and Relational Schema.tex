@@ -22,7 +22,6 @@
 
 \begin{document}
     \maketitle
-    
     \tableofcontents
     \pagebreak
 
@@ -314,7 +313,30 @@ The ER diagram was reduced by noting multiplicities and the following tables for
 
 \textbf{\underline{ Note}}: Employee has both fields of age and DOB. This is a redundancy on our part as the data entries were designed with age as an attribute. This may be eliminated in the final version depending on whether there is need or not (number of employees should be significantly lower than the number of customers).
 \\
-The SQL queries for creating the database, populating the database and the queries required are submitted under the names: 'database\_creation.sql', 'database\_population.sql' and 'queries.sql'.
+The SQL queries for creating the database, populating the database and the queries required are submitted under the names: 'database\_creation.sql', 'database\_population.sql' and 'queries.sql' in the Database folder.
 
+\chapter{Project Development Procedure and Deliverables}
+	\section{ER Formulation}
+	Before commencing with the ER diagram formulation, many brainstorming sessions were held to determine which all aspects the online retail store would target and to what degree. The result of those sessions is the \textit{problem statement} and the list of assumptions. The problem statement is a rudimentary sketch of what all scenarios the store should be equipped to handle and what to expect from the usage scenarios of the database management system. The ER diagram and relational schema have been added in the previous chapters and the diagram should be available in the ER\_Diagram folder.
+	\section{Weak Entity}
+	The shopping cart was determined to be a weak entity since it does not have any identifying attribute other than belonging to a specific customer. Hence, on careful consideration of all its attributes and the lack of a distinctive attribute, it was decided to be kept as a weak entity.
+	\section{Entity Relationship Participation and Types}
+	This was another topic on which multiple meetings had been conducted, specifically on the nature of the ternary/quarternary relations and how to decompose them. Ultimately, Delivery and Transaction were kept because of their utility and ability to define the whole scenario without conflicts with other entities and relations. The participation types (total and partial), relationship roles and cardinality constraints have been mentioned in the ER diagram. Detailed constraints have been mentioned in the SQL database creation file.
+
+	\section{Ternary Relation}
+	A ternary relation: complains was identified which involves an order, the customer who placed that order and one of the service employees. The cardinality is many on the order's side and unary on the customer's and service employee's side. It was identified in the following way: "A customer can complain to a service employee about many orders."
+
+	\section{Relational Schemas}
+	They have been included in one of the earlier chapters.
+	
+	\section{Sufficient and Valid Constraints in DDL}
+	The DDL file has been enclosed in the Database folder under the name 'database\_creation.sql'.
+
+	\section{Data Entry}
+	Data was generated using Mockaroo and using python scripts for the foreign key tables. The primary keys were chosen in increasing order (similar to AUTO\_INCREMENT) and most of the tables (except warehouse and complains, which contain 5 and 10 rows respectively), have 50 to over a hundred entries.
+
+	\section{Queries}
+	Queries have been included in the Database folder under the file name 'queries.sql', which should be run after running 'database\_creation.sql' and 'data\_population.sql' respectively.
+	
 \chapter{Contributions of Team Members}
 \end{document}
