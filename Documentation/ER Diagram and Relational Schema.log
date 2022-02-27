@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  27 FEB 2022 20:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.19)  27 FEB 2022 21:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,13 +138,13 @@ Overfull \hbox (1.75844pt too wide) in paragraph at lines 238--239
  []
 
 [9]
-<Pictures/ER_Diagram.png, id=38, 1204.5pt x 1924.18875pt>
+<Pictures/ER_Diagram.png, id=38, 1240.635pt x 2011.515pt>
 File: Pictures/ER_Diagram.png Graphic file (type png)
 <use Pictures/ER_Diagram.png>
 Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 284.
-(pdftex.def)             Requested size: 331.50238pt x 529.57928pt.
+(pdftex.def)             Requested size: 331.50238pt x 537.46877pt.
  [10]
-Overfull \vbox (9.32262pt too high) has occurred while \output is active []
+Overfull \vbox (17.2121pt too high) has occurred while \output is active []
 
 
 [11 <./Pictures/ER_Diagram.png>]
@@ -190,7 +190,7 @@ nc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "ER Diagram and Relational Schema.pdf" (18 pages, 354970 byte
+Output written on "ER Diagram and Relational Schema.pdf" (18 pages, 386502 byte
 s).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
