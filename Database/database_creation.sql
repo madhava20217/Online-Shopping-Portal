@@ -1,4 +1,4 @@
-#script for creating database and tables
+--script for creating database and tables
 
 -- tables created:
 -- 1) Customer          -done
@@ -31,7 +31,7 @@ create DATABASE online_shopping;
 
 use online_shopping;
 
--- #done
+-- --done
 create table Customer(
                     customer_ID numeric(30,0) primary key,
                     First_name varchar(30) not null,
@@ -74,7 +74,7 @@ create table product_photo(
                     );
 
 
--- #done
+-- --done
 create table Vendor(Vendor_id numeric(30,0) primary key,
                     first_name varchar(30) not null,
                     last_name varchar(30) not null, 
@@ -88,7 +88,7 @@ create table Vendor_phone(Vendor_ID numeric(30,0),
                             primary key(Phone_number,Vendor_ID)
                         );
 
--- #done
+-- --done
 create table Warehouse(Warehouse_ID numeric(30,0) primary key,
                     Plot_number numeric(30,0) check(plot_number >= 0),
                     City varchar(30),
@@ -121,7 +121,7 @@ create table Employee(Employee_ID numeric(30,0) primary key,
                     Phone_number numeric(30,0)
                 );
 
-#done
+--done
 create table Orders(
     order_ID numeric(30,0) primary key, 
     Total_Price numeric(20,2) check(Total_price > 0),
@@ -137,7 +137,7 @@ create table Delivery_Partner(
     foreign key (Employee_id) references Employee(employee_id)
     );
 
--- #done
+-- --done
 create table Coupon(
     Coupon_Code varchar(30) primary key, 
     Discount_Percentage numeric(5,2) check (discount_percentage >= 0)
@@ -145,7 +145,7 @@ create table Coupon(
 
 
 
--- #done
+-- --done
 create table Warehouse_Worker(
     Employee_ID numeric(30,0) primary key,
     Warehouse_ID numeric(30,0),
@@ -243,7 +243,7 @@ create table order_products(
     primary key (order_id, product_id)
 );
 
-#script for creating database and tables
+--script for creating database and tables
 
 -- tables created:
 -- 1) Customer          -done
@@ -276,7 +276,7 @@ create DATABASE online_shopping;
 
 use online_shopping;
 
--- #done
+-- --done
 create table Customer(
                     customer_ID numeric(30,0) primary key,
                     First_name varchar(30) not null,
@@ -319,7 +319,7 @@ create table product_photo(
                     );
 
 
--- #done
+-- --done
 create table Vendor(Vendor_id numeric(30,0) primary key,
                     first_name varchar(30) not null,
                     last_name varchar(30) not null, 
@@ -333,7 +333,7 @@ create table Vendor_phone(Vendor_ID numeric(30,0),
                             primary key(Phone_number,Vendor_ID)
                         );
 
--- #done
+-- --done
 create table Warehouse(Warehouse_ID numeric(30,0) primary key,
                     Plot_number numeric(30,0) check(plot_number >= 0),
                     City varchar(30),
@@ -366,7 +366,7 @@ create table Employee(Employee_ID numeric(30,0) primary key,
                     Phone_number numeric(30,0)
                 );
 
-#done
+--done
 create table Orders(
     order_ID numeric(30,0) primary key, 
     Total_Price numeric(20,2) check(Total_price > 0),
@@ -382,7 +382,7 @@ create table Delivery_Partner(
     foreign key (Employee_id) references Employee(employee_id)
     );
 
--- #done
+-- --done
 create table Coupon(
     Coupon_Code varchar(30) primary key, 
     Discount_Percentage numeric(5,2) check (discount_percentage >= 0)
@@ -390,7 +390,7 @@ create table Coupon(
 
 
 
--- #done
+-- --done
 create table Warehouse_Worker(
     Employee_ID numeric(30,0) primary key,
     Warehouse_ID numeric(30,0),

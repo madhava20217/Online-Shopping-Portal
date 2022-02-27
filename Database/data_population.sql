@@ -1,13 +1,13 @@
-#remaining:
-# 1) product_rating: change to add customer entity as well
-# 2) product_photos:
-# 3) shopping cart
-# 4) 
+-- --remaining:
+-- -- 1) product_rating: change to add customer entity as well
+-- -- 2) product_photos:
+-- -- 3) shopping cart
+-- -- 4) 
 
-#script for inputting data and tuples into the database
+--script for inputting data and tuples into the database
 use online_shopping;
 
-#Customer
+--Customer
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (1, 'Shurlock', 'Sadgrove', '3978', 'Eastlawn', 'Na Muen', 872979, 'ssadgrove0@sitemeter.com', 'LJc5AVRCdR');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (2, 'Allin', 'Millward', '77919', 'Gerald', 'Erie', 469017, 'amillward1@techcrunch.com', 'Cg8hpuQk2zK');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (3, 'Algernon', 'Clemoes', '2140', 'Menomonie', 'Mulan', 739352, 'aclemoes2@stumbleupon.com', 'teh1Xj');
@@ -413,7 +413,7 @@ insert into customer_phone values (22, 9865776005) ,
 
 
 select * from customer;
-# Vendor
+-- Vendor
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (1, 'Otes', 'Renwick', '34373', 'Palaióchora', 803147);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (2, 'Junette', 'Barnhart', '40094', 'Muara Siberut', 827734);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (3, 'Allissa', 'Biggerstaff', '8999', 'Victoria', 778846);
@@ -514,10 +514,10 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (98, 'Baily', 'Lamp', '2719', 'Damatulan', 403162);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (99, 'Nadia', 'Threadgall', '192', 'Río de Oro', 999530);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (100, 'Anders', 'Garlette', '0', 'Vinsady', 540491);
-# Rows:
+-- Rows:
 
 
-# Warehouse
+-- Warehouse
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (1, 99, 'San Quintin', 793623);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (2, 20, 'Hampton', 991302);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (3, 86, 'Unidos', 556905);
@@ -720,7 +720,7 @@ insert into Coupon values ( 1 , 10.32 ),
 
 
 
-#Orders
+--Orders
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (1, 62089.49, 27.65, 9.13);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (2, 23387.82, 8.85, 24.41);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (3, 63751.88, 24.84, 6.42);
@@ -824,7 +824,7 @@ insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) val
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (99, 99778.52, 13.32, 12.4);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (100, 24184.44, 27.87, 5.04); */
 
-#Product
+--Product
 
 insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (1, 16552, 'Eggplant Italian', 7.41, 15.17);
 insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (2, 942, 'Fruit Salad Deluxe', 21.48, 23.16);
@@ -1139,7 +1139,7 @@ insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 10
 
 
 
-#transactions
+--transactions
 
 insert into Transaction values (1,'Net Banking',true,"2021:7:18 22:49:53",40, 6),
 (2,'Card',true,"2021:8:13 21:30:53",68, 7),
@@ -1581,7 +1581,7 @@ insert into warehouse_phone values (5, 9058021150) ,
 (1, 9923252418);
 
 
-#oder_products
+--oder_products
 
 
 
