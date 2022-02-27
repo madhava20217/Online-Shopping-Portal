@@ -225,7 +225,6 @@ create table Shopping_Cart(
 create table complains(
     complaint_number numeric(30,0) primary key,
     customer_ID numeric(30, 0),
-        
     order_id numeric(30,0),
     service_employee_id numeric(30,0), 
     foreign key (customer_id) references Customer(customer_ID),

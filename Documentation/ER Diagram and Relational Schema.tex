@@ -4,10 +4,7 @@
 \documentclass[12pt]{report}
 
 \usepackage[utf8]{inputenc}
-\usepackage{amsfonts}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{geometry}
 
 \graphicspath{..\ER Diagram}
 
@@ -16,18 +13,16 @@
 }
 
 \author{Abhimanyu Bhatnagar, 2020273
-        \\Atyant Sony, 2020039
+        \\Madhava Krishna, 2020217
         \\Ritika Nagar, 2020112
-        \\Madhava Krishna, 2020217}
+        \\Atyant Sony, 2020039}
 \date{\textit{\today}}
 
 
 
 \begin{document}
     \maketitle
-    
     \tableofcontents
-    \listoffigures
     \pagebreak
 
     %chapter 1, defining the problem
@@ -59,11 +54,300 @@
         In case of any lapses with an order, the customer complains to support staff who create a complaint
         number against the order. They send out the details regarding the complaint to the customer.
     }
+
+    \section{Stakeholders}
+    Notable stakeholders of this problem include:
+    \begin{enumerate}
+        \item Customer
+        \item Employees
+        \item Suppliers
+        \item Vendors
+    \end{enumerate}
+    Other stakeholders include manufacturers, warehousing service providers
     
     \section{Assumptions}
-    
+    \begin{enumerate}
+        \item The retail store would be operated in one country only. Therefore, there isn't an option to change the country.
+        \item There will be a shopping cart associated with the customer's account. They won't be able to add item to cart without being logged in.
+        \item The delivery would be taken care of by the company itself; items will be shipped from one warehouse only (Similar to Blinkit, erstwhile Grofers).
+        \item Coupons would be applied on the order, not the cart. Coupon would be applied during the checkout process.
+        \item Coupons would be applied using the coupon code, which is a unique alphanumeric value. A coupon cannot be reused.
+        \item Employees will be divided into delivery partners (responsible for delivering the order), warehouse workers (tasked with preparation of orders) and service employees (responsible for conflict resolution).
+        \item Vendors have only one account number and will be based only in India.
+        \item Employees have only one email address.
+        \item There won't be any wishlisting features, nor any saved-items feature like the ones offered by Amazon.
+        \item Employees' performance would be graded on a scale from 1 to 10 (for ease of data entry) with decimal values being permissible.
+    \end{enumerate}
+
+
 
     \chapter{ER Diagram}
-    \includegraphics{}
+    
+    \section{Entities}
 
+    \begin{enumerate}
+        \item Customer
+            \begin{enumerate}
+                \item \underline{Customer ID}: Primary key
+                \item Phone Number: Multivalued
+                \item Name: composite
+                    \begin{enumerate}
+                        \item First Name
+                        \item Last Name
+                    \end{enumerate}
+                \item Address: composite
+                    \begin{enumerate}
+                        \item House Number
+                        \item Locality
+                        \item City
+                        \item State
+                        \item Pin Code
+                    \end{enumerate}
+                \item Email Address
+                \item Password
+            \end{enumerate}
+        \item Product
+            \begin{enumerate}
+                \item \underline{Product ID}: Primary key
+                \item Specifications
+                    \begin{enumerate}
+                        \item Expiry date
+                        \item Manufacture date
+                        \item Country of manufacture
+                        \item Weight 
+                        \item Dimensions
+                    \end{enumerate}
+                \item Price
+                \item Category
+                \item Discount Percentage
+                \item GST
+                \item Rating : Multivalued
+                \item Photos: Multivalued
+            \end{enumerate}
+        \item Orders
+            \begin{enumerate}
+                \item \underline{Order ID}
+                \item Cost of products
+                \item Taxes
+                \item Discount Percentage
+            \end{enumerate}
+        \item Vendor
+            \begin{enumerate}
+                \item \underline{Vendor ID}
+                \item Address
+                    \begin{enumerate}
+                        \item Plot number
+                        \item City
+                        \item State
+                        \item Pin code
+                    \end{enumerate}
+                \item Name
+                \item Phone number
+            \end{enumerate}
+        \item Coupon
+            \begin{enumerate}
+                \item \underline{Coupon Code}: Primary key
+                \item Discount Percentage
+                \item Validity
+            \end{enumerate}
+        \item Warehouse
+            \begin{enumerate}
+                \item \underline{Warehouse ID}
+                \item Address: composite
+                    \begin{enumerate}
+                        \item Plot number
+                        \item City
+                        \item State
+                        \item Pin Code
+                    \end{enumerate}
+                \item Telephone Number: multivalued
+            \end{enumerate}
+        \item Employee:
+            \begin{enumerate}
+                \item \underline{Employee ID}: Primary key
+                \item Date of Joining
+                \item Position
+                \item Department
+                \item Email Address
+                \item Name: composite
+                    \begin{enumerate}
+                        \item First Name
+                        \item Last Name
+                    \end{enumerate}
+                \item Residential Address: composite
+                    \begin{enumerate}
+                        \item House number
+                        \item Locality
+                        \item City
+                        \item State
+                        \item Pin Code
+                    \end{enumerate}
+                \item Date of Joining
+                \item Performance
+                \item Salary
+                \item Gender
+                \item Date of Birth
+                \item Age : derived
+            \end{enumerate}
+            Employees can be specialised into:
+            \begin{itemize}
+                \item Delivery Partner:
+                    \begin{enumerate}
+                        \item Vehicle ID
+                        \item Vehicle Type
+                    \end{enumerate}
+                \item Warehouse Worker: no additional attributes
+                \item Service Employee: no additional attributes
+            \end{itemize}
+        \item Shopping Cart (Weak entity)
+            \begin{enumerate}
+                \item \underline{Customer ID,Product ID}: Primary Key
+                \item Customer ID: Foreign Key (references Customer)
+                \item Product ID: Foreign Key (references Product)
+                \item Quantity
+                \item Total cost: Derived attribute
+
+            \end{enumerate}
+        
+    \end{enumerate}
+
+
+    \section{Relations}
+        \begin{enumerate}
+             \item Supplies: between vendor and product
+            \begin{enumerate}
+                \item \underline{Vendor ID, Product ID}: Primary Key
+                \item Vendor ID: Foreign Key (references Vendor)
+                \item Product ID: Foreign Key (references Product)
+                \item Quantity: attribute
+            \end{enumerate}
+            \item Includes: between product and order to show which order contained what products
+            \begin{enumerate}
+                \item \underline{Order ID, Product ID}: Primary Key 
+                \item Order ID: Foreign Key (references Order)
+                \item Product ID: Foreign Key (references Product)
+                \item Quantity: attribute
+            \end{enumerate}
+            \item Stores: between warehouse and product to show which warehouse contains what products.
+            \begin{enumerate}
+                \item \underline{Warehouse ID, Product ID}: Primary Key
+                \item Warehouse ID: Foreign Key (references Warehouse)
+                \item Product ID: Foreign Key (references Product)
+                \item Stocks: attribute
+            \end{enumerate}
+            \item Delivery: Quarternary relation between warehouse, order, delivery partner and customer to represent delivery.
+            \begin{enumerate}
+                \item \underline{Order ID}: Primary Key
+                \item Order ID: Foreign Key (references Order)
+                \item Employee ID: Foreign Key (references Employee)
+                \item Customer ID: Foreign Key (references Customer)
+                \item Warehouse ID: Foreign Key (references Warehouse)
+            \end{enumerate}
+            \item Transaction: Relation between customer and their cart, order and coupon code.
+            \begin{enumerate}
+                \item \underline{Order ID}: Primary Key
+                \item Customer ID: Foreign Key (references Customer)
+                \item Payment Method
+                \item Transaction Status
+                \item Transaction Time
+                \item Coupon Code: Foreign Key (references Coupon)
+            \end{enumerate}
+            \item Complains: between service employees (specialisation), customer and order to indicate a dispute.
+            \begin{enumerate}
+                \item \underline {Complaint Number}: Primary Key
+                \item Customer ID: Foreign Key (references Customer)
+                \item Order ID: Foreign Key (references Order)
+                \item Service Employee ID: Foreign Key (references Employee)
+            \end{enumerate}
+	\item Works in: between Warehouse Worker and warehouse.
+	\begin{enumerate}
+				\item \underline{Employee ID, Warehouse ID}: Primary key
+			\end{enumerate}
+	\item Has: relation between customer and shopping cart (weak entity).
+			\begin{enumerate}
+				\item \underline{Customer ID}: Primary key
+			\end{enumerate}
+	\item Contains: relation between shopping cart and product to indicate that shopping cart contains the item.
+		\begin{enumerate}
+			\item Quantity
+			\item Cost of items in the cart: Derived quantity.
+		\end{enumerate}
+	\item Rates: between customer and product for indicating rating.
+		\begin{enumerate}
+			\item \underline{Customer ID, Product ID}: Primary key
+			\item Rating: attribute
+		\end{enumerate}
+	\end{enumerate}
+
+
+	\section{Diagram}
+	\includegraphics[width =0.85\textwidth]{Pictures/ER_Diagram.png}
+
+\chapter{Relational Schema}
+The ER diagram was reduced by noting multiplicities and the following tables for the relational schema resulted.
+
+\begin{enumerate}
+	\item Customer(\underline{customer ID}, )
+	\item Product(\underline{product ID}, Price, Category, Discount Percentage, GST Percentage)
+	\item Product Rating(\underline{Product ID, Customer ID}, Rating)
+	\item Product Photo(\underline{Product ID, Product Photo})
+	\item Vendor(\underline{Vendor ID}, First Name, Last Name, Plot Number, City, Pincode)
+	\item Vendor Phone(\underline{Vendor ID, Phone Number})
+	\item Warehouse(\underline{Warehouse ID}, Plot Number, City, Pincode)
+	\item Warehouse Phone(\underline{Warehouse ID, Phone Number})
+	\item Employee(\underline{Employee ID}, First name, Last name, Age, Salary, Gender, Department, Performance, Position, Date of Joining, Date of Birth, Email Address, House Number, Locality, City, Pincode, Phone Number)
+	\item Delivery Partner(\underline{Employee ID}, Vehicle ID, Vehicle Type)
+	\item Warehouse Worker(\underline{Employee ID})
+	\item Service Employee (\underline{Employee ID})
+	\item Orders(\underline{Order ID}, Total Price, Taxes, Total Discount Percentage)
+	\item Coupon(\underline{Coupon Code}, Discount Percentage)
+	\item Transaction(\underline{Order ID}, Payment Method, Transaction Status ,Transaction Time, Customer ID, Coupon code)\\ Here, Customer ID is referenced from Customer table and coupon code from Coupon table. Coupon code can be null, customer id cannot.
+	\item Delivery (\underline{Order ID}, Employee ID, Customer ID, Warehouse ID) \\ Here Employee ID is taken from the Employee table if it belongs to Delivery Partner, Customer ID from Customer table, Warehouse ID from Warehouse table.
+	\item Stores(\underline{Warehouse ID, Product ID}, Quantity)
+	\item Supplies(\underline{Vendor ID, Product ID}, Quantity)
+	\item Shopping Cart(\underline{Customer ID, Product ID}, Quantity)
+	\item Complains(\underline{Complaint Number}, Customer ID, Order ID, Service Employee ID)\\ Here, Customer ID is taken from Customer table, Order ID from Orders table, Service Employee ID from Service Employees table.
+	\item Order Products(\underline{Order ID, Product ID}, Quantity)
+
+\end{enumerate}
+
+\textbf{\underline{ Note}}: Employee has both fields of age and DOB. This is a redundancy on our part as the data entries were designed with age as an attribute. This may be eliminated in the final version depending on whether there is need or not (number of employees should be significantly lower than the number of customers).
+\\
+The SQL queries for creating the database, populating the database and the queries required are submitted under the names: 'database\_creation.sql', 'database\_population.sql' and 'queries.sql' in the Database folder.
+
+\chapter{Project Development Procedure and Deliverables}
+	\section{ER Formulation}
+	Before commencing with the ER diagram formulation, many brainstorming sessions were held to determine which all aspects the online retail store would target and to what degree. The result of those sessions is the \textit{problem statement} and the list of assumptions. The problem statement is a rudimentary sketch of what all scenarios the store should be equipped to handle and what to expect from the usage scenarios of the database management system. The ER diagram and relational schema have been added in the previous chapters and the diagram should be available in the ER\_Diagram folder.
+	\section{Weak Entity}
+	The shopping cart was determined to be a weak entity since it does not have any identifying attribute other than belonging to a specific customer. Hence, on careful consideration of all its attributes and the lack of a distinctive attribute, it was decided to be kept as a weak entity.
+	\section{Entity Relationship Participation and Types}
+	This was another topic on which multiple meetings had been conducted, specifically on the nature of the ternary/quarternary relations and how to decompose them. Ultimately, Delivery and Transaction were kept because of their utility and ability to define the whole scenario without conflicts with other entities and relations. The participation types (total and partial), relationship roles and cardinality constraints have been mentioned in the ER diagram. Detailed constraints have been mentioned in the SQL database creation file.
+
+	\section{Ternary Relation}
+	A ternary relation: complains was identified which involves an order, the customer who placed that order and one of the service employees. The cardinality is many on the order's side and unary on the customer's and service employee's side. It was identified in the following way: "A customer can complain to a service employee about many orders."
+
+	\section{Relational Schemas}
+	They have been included in one of the earlier chapters.
+	
+	\section{Sufficient and Valid Constraints in DDL}
+	The DDL file has been enclosed in the Database folder under the name 'database\_creation.sql'.
+
+	\section{Data Entry}
+	Data was generated using Mockaroo and using python scripts for the foreign key tables. The primary keys were chosen in increasing order (similar to AUTO\_INCREMENT) and most of the tables (except warehouse and complains, which contain 5 and 10 rows respectively), have 50 to over a hundred entries.
+
+	\section{Queries}
+	Queries have been included in the Database folder under the file name 'queries.sql', which should be run after running 'database\_creation.sql' and 'data\_population.sql' respectively.
+	
+\chapter{Contributions of Team Members}
+Collaboration was done by the means of Microsoft Visual Studio Code's Live Share feature which allowed for real time simultaneous editing of multiple files by many participants. Communication occurred through Google Meet links. Following are the contribution of each team member in the development and ideation of the project till the mid-evaluation.
+
+	\begin{enumerate}
+		\item Abhimanyu Bhatnagar:
+		
+		\item Atyant Sony:
+
+		\item Ritika Nagar:
+
+		\item Madhava Krishna
+	\end{enumerate}
 \end{document}
