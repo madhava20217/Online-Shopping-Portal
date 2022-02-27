@@ -59,6 +59,7 @@ create table Product(Product_ID numeric(30) primary key,
 
 create table product_rating(
                     Product_ID numeric(30,0),
+                    customer_id numeric(30,0),
                     Rating numeric(1,0) check (Rating > 0),
                     foreign key (product_id) references Product(product_id),
                     foreign key (customer_id) references Customer(customer_id),
@@ -215,6 +216,7 @@ create table Supplies(
 create table Shopping_Cart(
 	customer_ID numeric(30,0),
     Product_ID numeric(30, 0),
+    quantity int,
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
