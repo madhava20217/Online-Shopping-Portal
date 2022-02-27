@@ -426,7 +426,7 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (10, 'Joyann', 'Pidwell', '2', 'Baidoa', 904749);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (11, 'Kimble', 'McAlarney', '64100', 'Mjamaoué', 855149);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (12, 'Minnaminnie', 'Yonge', '182', 'Pasar', 925203);
-insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (13, 'Raviv', 'Eyer', '4', 'Bao’an', 852404);
+insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (13, 'Raviv', 'Eyer', '4', 'Baoan', 852404);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (14, 'Janek', 'Gossage', '525', 'Cumming', 659351);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (15, 'Dicky', 'Hrihorovich', '31607', 'Gävle', 252198);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (16, 'Yevette', 'Antoszczyk', '65', 'Strömsund', 453380);
@@ -468,7 +468,7 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (52, 'Deb', 'LAbbet', '4', 'Khvatovka', 206137);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (53, 'Tymothy', 'Jee', '51', 'Dahuangwei', 754789);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (54, 'Emyle', 'Vaugham', '0650', 'Krasne', 502275);
-insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (55, 'Kean', 'Hackford', '468', 'Pervoural’sk', 508980);
+insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (55, 'Kean', 'Hackford', '468', 'Pervouralsk', 508980);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (56, 'Vittorio', 'Bellchamber', '8141', 'Нераште', 986257);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (57, 'Tandi', 'Whitney', '279', 'Ganzhou', 145550);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (58, 'Lonnard', 'Mifflin', '70', 'Qixian', 915567);
@@ -497,7 +497,7 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (81, 'Tate', 'Phifer', '64659', 'Novi Beograd', 521118);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (82, 'Barr', 'Sture', '14528', 'Malabonot', 153543);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (83, 'Camella', 'Seares', '10669', 'Novoukrainskiy', 363179);
-insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (84, 'Naoma', 'Urey', '352', 'Xing’an', 492191);
+insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (84, 'Naoma', 'Urey', '352', 'Xingan', 492191);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (85, 'Merla', 'Sirette', '4143', 'Charlotte', 169462);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (86, 'Katlin', 'Antoni', '5', 'Karabanovo', 470308);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (87, 'Sonya', 'Jeavon', '79934', 'Säter', 591669);
@@ -940,7 +940,7 @@ insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, 
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (6, 84.4, 'Jedidiah', 'Samways', 73744.7, 'Female', 'Research and Development', 5.6, 5, '10/9/2021', '12/11/2021', 'jsamways5@edublogs.org', '176', 'Eastwood', 'Shangganshan', '155', '7354624494');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (7, 87.7, 'Delinda', 'Fallow', 102339.9, 'Male', 'Engineering', 1.5, 4, '10/11/2021', '7/1/2021', 'dfallow6@tamu.edu', '37', 'Dryden', 'Panji', '16311', '1194772704');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (8, 81.2, 'Matilda', 'Dannohl', 57875.3, 'Male', 'Engineering', 2.6, 2, '7/27/2021', '6/1/2021', 'mdannohl7@google.ru', '33484', 'Hollow Ridge', 'Selaawi', '718', '6674210495');
-insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (9, 73.6, 'Marys', 'Hune', 53944.9, 'Male', 'Research and Development', 4.3, 2, '10/25/2021', '12/28/2021', 'mhune8@tinypic.com', '56670', 'Monument', 'Gul’cha', '2439', '3971658563');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (9, 73.6, 'Marys', 'Hune', 53944.9, 'Male', 'Research and Development', 4.3, 2, '10/25/2021', '12/28/2021', 'mhune8@tinypic.com', '56670', 'Monument', 'Gulcha', '2439', '3971658563');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (10, 24.7, 'Malinde', 'Pendleberry', 111611.9, 'Female', 'Sales', 4.0, 4, '3/10/2021', '8/8/2021', 'mpendleberry9@ovh.net', '76', 'Barby', 'Tuka', '031', '1037639269');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (11, 76.0, 'Hernando', 'Villar', 163004.5, 'Bigender', 'Accounting', 1.0, 2, '8/26/2021', '11/1/2021', 'hvillara@huffingtonpost.com', '11', 'Delladonna', 'Naranjo', '014', '5189683343');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (12, 40.2, 'Collie', 'Murtagh', 185470.3, 'Female', 'Accounting', 8.3, 2, '9/9/2021', '1/27/2022', 'cmurtaghb@whitehouse.gov', '53', 'Gina', 'Novokubansk', '5', '1904148228');
