@@ -72,7 +72,7 @@
     
     \section{Assumptions}
     \begin{enumerate}
-        \item The retail store would be operated in India only. Therefore, there isn't an option to change the country.
+        \item The retail store would be operated in one country only. Therefore, there isn't an option to change the country.
         \item There will be a shopping cart associated with the customer's account. They won't be able to add item to cart without being logged in.
         \item The delivery would be taken care of by the company itself; items will be shipped from one warehouse only (Similar to Blinkit, erstwhile Grofers).
         \item Coupons would be applied on the order, not the cart. Coupon would be applied during the checkout process.
@@ -81,7 +81,7 @@
         \item Vendors have only one account number and will be based only in India.
         \item Employees have only one email address.
         \item There won't be any wishlisting features, nor any saved-items feature like the ones offered by Amazon.
-        \item Employees' performance would be graded 'Excellent', 'Good', 'Average', 'Below Average', 'Poor'.
+        \item Employees' performance would be graded on a scale from 1 to 10 (for ease of data entry) with decimal values being permissible.
     \end{enumerate}
 
 
@@ -218,28 +218,28 @@
 
     \section{Relations}
         \begin{enumerate}
-             \item Supplies
+             \item Supplies: between vendor and product
             \begin{enumerate}
                 \item \underline{Vendor ID, Product ID}: Primary Key
                 \item Vendor ID: Foreign Key (references Vendor)
                 \item Product ID: Foreign Key (references Product)
-                \item Quantity
+                \item Quantity: attribute
             \end{enumerate}
-            \item Order Product
+            \item Includes: between product and order to show which order contained what products
             \begin{enumerate}
                 \item \underline{Order ID, Product ID}: Primary Key 
                 \item Order ID: Foreign Key (references Order)
                 \item Product ID: Foreign Key (references Product)
-                \item Quantity
+                \item Quantity: attribute
             \end{enumerate}
-            \item Stores
+            \item Stores: between warehouse and product to show which warehouse contains what products.
             \begin{enumerate}
                 \item \underline{Warehouse ID, Product ID}: Primary Key
                 \item Warehouse ID: Foreign Key (references Warehouse)
                 \item Product ID: Foreign Key (references Product)
-                \item Stocks
+                \item Stocks: attribute
             \end{enumerate}
-            \item Delivery
+            \item Delivery: Quarternary relation between warehouse, order, delivery partner and customer to represent delivery.
             \begin{enumerate}
                 \item \underline{Order ID}: Primary Key
                 \item Order ID: Foreign Key (references Order)
@@ -247,7 +247,7 @@
                 \item Customer ID: Foreign Key (references Customer)
                 \item Warehouse ID: Foreign Key (references Warehouse)
             \end{enumerate}
-            \item Transaction
+            \item Transaction: Relation between customer and their cart, order and coupon code.
             \begin{enumerate}
                 \item \underline{Order ID}: Primary Key
                 \item Customer ID: Foreign Key (references Customer)
@@ -256,13 +256,32 @@
                 \item Transaction Time
                 \item Coupon Code: Foreign Key (references Coupon)
             \end{enumerate}
-            \item Complains
+            \item Complains: between service employees (specialisation), customer and order to indicate a dispute.
             \begin{enumerate}
                 \item \underline {Complaint Number}: Primary Key
                 \item Customer ID: Foreign Key (references Customer)
                 \item Order ID: Foreign Key (references Order)
                 \item Service Employee ID: Foreign Key (references Employee)
             \end{enumerate}
+	\item Works in: between Warehouse Worker and warehouse.
+	\begin{enumerate}
+				\item \underline{Employee ID, Warehouse ID}: Primary key
+			\end{enumerate}
+	\item Has: relation between customer and shopping cart (weak entity).
+			\begin{enumerate}
+				\item \underline{Customer ID}: Primary key
+			\end{enumerate}
+	\item Contains: relation between shopping cart and product to indicate that shopping cart contains the item.
+		\begin{enumerate}
+			\item Quantity
+			\item Cost of items in the cart: Derived quantity.
+		\end{enumerate}
         \end{enumerate}
-    \
+
+\chapter{Relational Schema}
+The ER diagram was reduced by noting multiplicities and the following relation schema resulted.
+
+\begin{enumerate}
+	\item 	
+\end{enumerate}
 \end{document}
