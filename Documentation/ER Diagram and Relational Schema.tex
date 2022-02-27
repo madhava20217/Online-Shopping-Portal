@@ -205,12 +205,18 @@
 
     \section{Relations}
         \begin{enumerate}
+            \item Supplies
+            \begin{enumerate}
+                \item Vendor ID
+                \item Product ID
+                \item Quantity
+            \end{enumerate}
             \item Complains
             \begin{enumerate}
                 \item \underline {Complaint Number}: Primary Key
-                \item Customer ID: Foreign Key 
-                \item Order ID
-                \item Service Employee ID
+                \item Customer ID: Foreign Key (references Customer)
+                \item Order ID: Foreign Key (references Order)
+                \item Service Employee ID: Foreign Key (references Employee)
             \end{enumerate}
         \end{enumerate}
     
