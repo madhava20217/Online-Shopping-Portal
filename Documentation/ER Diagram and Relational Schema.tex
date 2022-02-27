@@ -276,12 +276,20 @@
 			\item Quantity
 			\item Cost of items in the cart: Derived quantity.
 		\end{enumerate}
+	\item Rates: between customer and product for indicating rating
+		\begin{enumerate}
+			\item \underline{Product_ID, Customer_ID): Primary key
+			\item Rating: attribute
+		\end{enumerate}
         \end{enumerate}
 
 \chapter{Relational Schema}
-The ER diagram was reduced by noting multiplicities and the following relation schema resulted.
+The ER diagram was reduced by noting multiplicities and the following tables for the relational schema resulted.
 
 \begin{enumerate}
-	\item 	
+	\item Customer(\underline{customer_ID}, First_name, Last_name, House_number, Locality, City, Pincode, email_address, password)
+	\item Customer_phone(\underline{customer_ID, phone_number})
+	\item Product(\underline{product_ID}, Price, Category, Discount_Percentage, GST_Percentage)
+	\item Product_Rating(\underline{Product_ID, Customer_ID, 
 \end{enumerate}
 \end{document}
