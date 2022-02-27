@@ -1,7 +1,13 @@
-#script for inputting data and tuples into the database
+-- --remaining:
+-- -- 1) product_rating: change to add customer entity as well
+-- -- 2) product_photos:
+-- -- 3) shopping cart
+-- -- 4) 
+
+--script for inputting data and tuples into the database
 use online_shopping;
 
-#Customer
+--Customer
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (1, 'Shurlock', 'Sadgrove', '3978', 'Eastlawn', 'Na Muen', 872979, 'ssadgrove0@sitemeter.com', 'LJc5AVRCdR');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (2, 'Allin', 'Millward', '77919', 'Gerald', 'Erie', 469017, 'amillward1@techcrunch.com', 'Cg8hpuQk2zK');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (3, 'Algernon', 'Clemoes', '2140', 'Menomonie', 'Mulan', 739352, 'aclemoes2@stumbleupon.com', 'teh1Xj');
@@ -30,7 +36,7 @@ insert into Customer (Customer_ID, first_name, last_name, House_number, Locality
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (26, 'Alley', 'Gorner', '78024', 'Pennsylvania', 'Fort-de-France', 516120, 'agornerp@redcross.org', 'EWnPxB');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (27, 'Rafe', 'Handyside', '29511', 'Old Shore', 'Nobeoka', 348756, 'rhandysideq@imgur.com', 'jceTSO');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (28, 'Reena', 'Riccioppo', '33882', 'Superior', 'Seoul', 933245, 'rriccioppor@flickr.com', '9Z32nhSHtuL');
-insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (29, 'Jodie', 'Dunderdale', '7', 'Buell', 'Tosu', 784878, 'jdunderdales@simplemachines.org', 'QGOwj4XQ8xqF');
+insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (29, 'Jodie', 'Dunderdale', '7', 'Buell', 'Bhola', 784878, 'jdunderdales@simplemachines.org', 'QGOwj4XQ8xqF');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (30, 'Felita', 'Durno', '656', 'Shopko', 'Gwandu', 749587, 'fdurnot@icq.com', 'Mxrt3Yfp6VY');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (31, 'Joel', 'Jewson', '889', 'Anzinger', 'El Benque', 722249, 'jjewsonu@state.gov', '0wnexwJsAv');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (32, 'Henderson', 'Choppen', '46919', 'Montana', 'Bhola', 256803, 'hchoppenv@usgs.gov', 'b8JQyr');
@@ -51,7 +57,7 @@ insert into Customer (Customer_ID, first_name, last_name, House_number, Locality
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (47, 'Ruddie', 'Ivashkov', '4', 'Summerview', 'Třešť', 496617, 'rivashkov1a@nsw.gov.au', 'sPzc3XgAC');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (48, 'Con', 'Rentoll', '6', 'Kropf', 'Wangfu', 779298, 'crentoll1b@reverbnation.com', 'poTRTk');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (49, 'Bill', 'Rattery', '4618', 'Welch', 'Bác Ái', 516646, 'brattery1c@mapy.cz', 'FWmuWOu');
-insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (50, 'Nanette', 'Mahomet', '83033', 'Heath', 'Amuñgan', 146891, 'nmahomet1d@usa.gov', 'KahdGEG');
+insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (50, 'Nanette', 'Mahomet', '83033', 'Heath', 'Mossoró', 146891, 'nmahomet1d@usa.gov', 'KahdGEG');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (51, 'Correna', 'Northcott', '9736', 'Arrowood', 'Monteiro', 898761, 'cnorthcott1e@omniture.com', 'nXpVHgs');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (52, 'Blondelle', 'Tomadoni', '37284', 'Eastwood', 'Trollhättan', 292747, 'btomadoni1f@globo.com', 'n5ZIeU');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (53, 'Wildon', 'McMylor', '647', 'Donald', 'Tsagaanchuluut', 461551, 'wmcmylor1g@yahoo.co.jp', 'ruTdgV6uNB7');
@@ -59,7 +65,7 @@ insert into Customer (Customer_ID, first_name, last_name, House_number, Locality
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (55, 'Zacharias', 'Adair', '7', 'Washington', 'Porsgrunn', 619140, 'zadair1i@shop-pro.jp', 'r8nqcFT');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (56, 'Munroe', 'Tucsell', '2062', 'Kennedy', 'Sedlice', 111241, 'mtucsell1j@addtoany.com', 'pMIB7l');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (57, 'Neville', 'Jemison', '4', 'New Castle', 'Yuannan', 101129, 'njemison1k@cbc.ca', 'qm3UUbgHQ');
-insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (58, 'Sherye', 'Hallatt', '9070', 'Garrison', 'Zhoukoudian', 181954, 'shallatt1l@bravesites.com', 'OjTiRF2bMlXw');
+insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (58, 'Sherye', 'Hallatt', '9070', 'Garrison', 'Sedlice', 181954, 'shallatt1l@bravesites.com', 'OjTiRF2bMlXw');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (59, 'Siffre', 'Christophersen', '2', 'Pearson', 'Banjar Tegal Belodan', 567655, 'schristophersen1m@mit.edu', 'aVcGtG8rKFa');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (60, 'Carol-jean', 'Spurryer', '08423', 'Toban', 'Donetsk', 683752, 'cspurryer1n@gnu.org', 'AI8Bm7n');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (61, 'Nefen', 'Biskup', '67310', 'Eggendart', 'Banjar Batuaji Kaja', 511481, 'nbiskup1o@microsoft.com', 'ciiU0ZniwO');
@@ -69,7 +75,7 @@ insert into Customer (Customer_ID, first_name, last_name, House_number, Locality
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (65, 'Jory', 'Burgiss', '7961', 'Dorton', 'Jimsar', 529984, 'jburgiss1s@stanford.edu', 'tSGe5j7qT9p');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (66, 'Jacky', 'Greenroad', '13387', 'Hoard', 'Huadi', 144446, 'jgreenroad1t@dion.ne.jp', 'Waa7rQSD');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (67, 'Sada', 'Kynton', '37', 'American', 'Socos', 743868, 'skynton1u@elpais.com', 'CbrbVOvo8aJ');
-insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (68, 'Casie', 'Galvan', '976', 'Fieldstone', 'Orlando', 864940, 'cgalvan1v@ocn.ne.jp', 'MmGAwOo0');
+insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (68, 'Casie', 'Galvan', '976', 'Fieldstone', 'Jimsar', 864940, 'cgalvan1v@ocn.ne.jp', 'MmGAwOo0');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (69, 'Burch', 'Camock', '368', 'Badeau', 'Turnišče', 527190, 'bcamock1w@umn.edu', '93k2T3T');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (70, 'Jobye', 'Louedey', '9843', 'Eliot', 'Varginha', 275791, 'jlouedey1x@infoseek.co.jp', 'tiG2Nw2');
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (71, 'Chris', 'Newlove', '29', 'Morningstar', 'Sokyryany', 349060, 'cnewlove1y@arizona.edu', 'rwHmvs85He8');
@@ -104,8 +110,310 @@ insert into Customer (Customer_ID, first_name, last_name, House_number, Locality
 insert into Customer (Customer_ID, first_name, last_name, House_number, Locality, City, Pincode, email_address, password) values (100, 'Maegan', 'Ranfield', '50839', '4th', 'Pragen Selatan', 482296, 'mranfield2r@discovery.com', 'Cw8rOq0LnB');
 
 
+insert into customer_phone values (22, 9865776005) ,
+(91, 9249260511) ,
+(67, 9573706143) ,
+(76, 9605074588) ,
+(35, 9849433017) ,
+(91, 9982315429) ,
+(78, 9696242603) ,
+(37, 9768801939) ,
+(83, 9194114790) ,
+(42, 9331234796) ,
+(75, 9435007766) ,
+(32, 9838649701) ,
+(85, 9944949938) ,
+(77, 9266618509) ,
+(48, 9330073711) ,
+(40, 9093865469) ,
+(50, 9471116791) ,
+(65, 9047889396) ,
+(31, 9487974257) ,
+(93, 9254517955) ,
+(100, 9686115601) ,
+(70, 9196930413) ,
+(71, 9444363657) ,
+(78, 9518949781) ,
+(100, 9564784625) ,
+(7, 9689516560) ,
+(42, 9962367121) ,
+(81, 9433659239) ,
+(45, 9334347460) ,
+(51, 9243161453) ,
+(12, 9854109812) ,
+(99, 9214842321) ,
+(41, 9524940566) ,
+(63, 9512727681) ,
+(55, 9416767853) ,
+(6, 9109026157) ,
+(66, 9946177264) ,
+(48, 9342907844) ,
+(15, 9703747093) ,
+(66, 9069431297) ,
+(44, 9622863163) ,
+(6, 9076830678) ,
+(41, 9107466069) ,
+(47, 9837784603) ,
+(84, 9130358801) ,
+(76, 9414812993) ,
+(81, 9458768692) ,
+(32, 9766780484) ,
+(33, 9489939265) ,
+(9, 9945392803) ,
+(94, 9577643813) ,
+(98, 9185417452) ,
+(21, 9573261131) ,
+(62, 9250824239) ,
+(94, 9832086007) ,
+(95, 9252991368) ,
+(2, 9417769663) ,
+(35, 9682683836) ,
+(28, 9218952226) ,
+(34, 9702871971) ,
+(27, 9221702174) ,
+(41, 9007706856) ,
+(15, 9327095696) ,
+(88, 9709915994) ,
+(40, 9615569084) ,
+(96, 9138683645) ,
+(37, 9360959443) ,
+(52, 9844929830) ,
+(63, 9240372727) ,
+(10, 9410870911) ,
+(27, 9098468054) ,
+(94, 9557672353) ,
+(20, 9788557350) ,
+(1, 9489757734) ,
+(10, 9695915934) ,
+(27, 9846749363) ,
+(38, 9296276986) ,
+(55, 9327411037) ,
+(57, 9332000294) ,
+(51, 9075049573) ,
+(89, 9978747834) ,
+(42, 9287694803) ,
+(64, 9701069799) ,
+(67, 9644221911) ,
+(84, 9808330314) ,
+(23, 9307589873) ,
+(74, 9522731175) ,
+(64, 9450021887) ,
+(87, 9373272408) ,
+(54, 9288051857) ,
+(77, 9877374618) ,
+(12, 9404339963) ,
+(26, 9170254959) ,
+(49, 9982062775) ,
+(75, 9619025054) ,
+(24, 9220396862) ,
+(11, 9210201388) ,
+(85, 9891673333) ,
+(28, 9198537334) ,
+(99, 9632127107) ,
+(28, 9082017728) ,
+(89, 9068816328) ,
+(84, 9313747630) ,
+(32, 9915087697) ,
+(92, 9909090692) ,
+(63, 9053481217) ,
+(85, 9234755167) ,
+(25, 9687959234) ,
+(2, 9972236365) ,
+(7, 9145277814) ,
+(95, 9396067136) ,
+(31, 9162802619) ,
+(61, 9892271417) ,
+(97, 9328591279) ,
+(74, 9314291897) ,
+(70, 9591090053) ,
+(91, 9893190043) ,
+(75, 9105319097) ,
+(28, 9022888134) ,
+(38, 9569801782) ,
+(73, 9339011433) ,
+(59, 9851343073) ,
+(95, 9548933819) ,
+(38, 9889018694) ,
+(39, 9678710349) ,
+(35, 9821910221) ,
+(53, 9851823111) ,
+(17, 9245331179) ,
+(47, 9941133530) ,
+(8, 9784454629) ,
+(28, 9547526677) ,
+(76, 9316891145) ,
+(48, 9303368413) ,
+(62, 9650455563) ,
+(51, 9719933736) ,
+(8, 9679638618) ,
+(51, 9979028429) ,
+(40, 9203760996) ,
+(51, 9228020139) ,
+(57, 9822898633) ,
+(25, 9323154210) ,
+(93, 9994797279) ,
+(45, 9118854161) ,
+(82, 9709836017) ,
+(20, 9064804612) ,
+(52, 9672315052) ,
+(74, 9759449380) ,
+(68, 9709940698) ,
+(37, 9213164294) ,
+(7, 9071442335) ,
+(70, 9003452340) ,
+(36, 9927389698) ,
+(85, 9600622962) ,
+(38, 9848669142) ,
+(55, 9821000222) ,
+(90, 9761997381) ,
+(63, 9230338271) ,
+(7, 9510621755) ,
+(31, 9749858108) ,
+(4, 9292518772) ,
+(39, 9104953051) ,
+(96, 9149364006) ,
+(15, 9470873104) ,
+(99, 9574145993) ,
+(14, 9897135625) ,
+(87, 9186604346) ,
+(97, 9598784710) ,
+(36, 9539265881) ,
+(74, 9408738344) ,
+(44, 9928433547) ,
+(72, 9837267665) ,
+(75, 9825615272) ,
+(41, 9533267568) ,
+(52, 9806459578) ,
+(85, 9255891944) ,
+(85, 9095416292) ,
+(91, 9967901744) ,
+(33, 9875898391) ,
+(16, 9356225410) ,
+(40, 9597352419) ,
+(12, 9139026792) ,
+(67, 9304067905) ,
+(55, 9915231796) ,
+(100, 9030667340) ,
+(23, 9678508959) ,
+(56, 9344034331) ,
+(19, 9305503917) ,
+(40, 9600491061) ,
+(50, 9090007356) ,
+(66, 9195798948) ,
+(23, 9498135979) ,
+(78, 9146063540) ,
+(6, 9869919957) ,
+(40, 9026377792) ,
+(78, 9588691369) ,
+(21, 9516611591) ,
+(67, 9733380462) ,
+(57, 9926180455) ,
+(85, 9521846765) ,
+(44, 9472629880) ,
+(83, 9440377703) ,
+(73, 9461139738) ,
+(69, 9532174047) ,
+(76, 9875518499) ,
+(39, 9842965524) ,
+(52, 9253577830) ,
+(16, 9355835221) ,
+(26, 9970516559) ,
+(92, 9486359984) ,
+(48, 9889464700) ,
+(16, 9662761826) ,
+(82, 9132902139) ,
+(78, 9693322113) ,
+(45, 9895780347) ,
+(39, 9582852437) ,
+(30, 9217543423) ,
+(92, 9998419600) ,
+(82, 9035920128) ,
+(78, 9605400141) ,
+(12, 9451665650) ,
+(3, 9670458482) ,
+(68, 9713432667) ,
+(1, 9619714416) ,
+(53, 9078495525) ,
+(23, 9654712286) ,
+(68, 9750440985) ,
+(33, 9801460751) ,
+(84, 9464167618) ,
+(25, 9407489656) ,
+(56, 9024392133) ,
+(82, 9336847380) ,
+(16, 9450600456) ,
+(81, 9753297068) ,
+(27, 9296476102) ,
+(84, 9061007199) ,
+(21, 9564517774) ,
+(5, 9320119370) ,
+(17, 9904111560) ,
+(81, 9447898833) ,
+(26, 9450359725) ,
+(3, 9488743923) ,
+(36, 9142117102) ,
+(72, 9830383788) ,
+(35, 9984623467) ,
+(15, 9723805807) ,
+(49, 9336604877) ,
+(74, 9810869644) ,
+(19, 9487179855) ,
+(13, 9314357967) ,
+(41, 9385309508) ,
+(42, 9853061429) ,
+(23, 9024667776) ,
+(77, 9506416697) ,
+(98, 9548896617) ,
+(80, 9277246605) ,
+(82, 9147782842) ,
+(9, 9949709096) ,
+(21, 9262485219) ,
+(70, 9836846409) ,
+(31, 9315260673) ,
+(13, 9915884329) ,
+(77, 9016830662) ,
+(41, 9697238640) ,
+(97, 9013529381) ,
+(59, 9537583632) ,
+(72, 9056253843) ,
+(27, 9617453180) ,
+(84, 9131130150) ,
+(61, 9536036336) ,
+(34, 9079235941) ,
+(13, 9727848097) ,
+(8, 9249277446) ,
+(36, 9623840564) ,
+(49, 9684326818) ,
+(15, 9024782729) ,
+(12, 9796288480) ,
+(72, 9148912210) ,
+(60, 9771314912) ,
+(58, 9758047792) ,
+(13, 9024213131) ,
+(64, 9376699732) ,
+(17, 9666872597) ,
+(40, 9165544844) ,
+(14, 9679807319) ,
+(3, 9444621922) ,
+(95, 9670348767) ,
+(6, 9006818026) ,
+(100, 9587094766) ,
+(32, 9882712015) ,
+(94, 9215184699) ,
+(19, 9307225260) ,
+(77, 9855773020) ,
+(28, 9276580972) ,
+(74, 9477497814) ,
+(21, 9346752104) ,
+(58, 9851574487) ,
+(40, 9663032040) ,
+(13, 9670127283) ,
+(1, 9550425356) ,
+(98, 9569797742);
+
+
 select * from customer;
-# Vendor
+-- Vendor
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (1, 'Otes', 'Renwick', '34373', 'Palaióchora', 803147);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (2, 'Junette', 'Barnhart', '40094', 'Muara Siberut', 827734);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (3, 'Allissa', 'Biggerstaff', '8999', 'Victoria', 778846);
@@ -118,7 +426,7 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (10, 'Joyann', 'Pidwell', '2', 'Baidoa', 904749);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (11, 'Kimble', 'McAlarney', '64100', 'Mjamaoué', 855149);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (12, 'Minnaminnie', 'Yonge', '182', 'Pasar', 925203);
-insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (13, 'Raviv', 'Eyer', '4', 'Bao’an', 852404);
+insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (13, 'Raviv', 'Eyer', '4', 'Baoan', 852404);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (14, 'Janek', 'Gossage', '525', 'Cumming', 659351);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (15, 'Dicky', 'Hrihorovich', '31607', 'Gävle', 252198);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (16, 'Yevette', 'Antoszczyk', '65', 'Strömsund', 453380);
@@ -160,7 +468,7 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (52, 'Deb', 'LAbbet', '4', 'Khvatovka', 206137);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (53, 'Tymothy', 'Jee', '51', 'Dahuangwei', 754789);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (54, 'Emyle', 'Vaugham', '0650', 'Krasne', 502275);
-insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (55, 'Kean', 'Hackford', '468', 'Pervoural’sk', 508980);
+insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (55, 'Kean', 'Hackford', '468', 'Pervouralsk', 508980);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (56, 'Vittorio', 'Bellchamber', '8141', 'Нераште', 986257);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (57, 'Tandi', 'Whitney', '279', 'Ganzhou', 145550);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (58, 'Lonnard', 'Mifflin', '70', 'Qixian', 915567);
@@ -189,7 +497,7 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (81, 'Tate', 'Phifer', '64659', 'Novi Beograd', 521118);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (82, 'Barr', 'Sture', '14528', 'Malabonot', 153543);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (83, 'Camella', 'Seares', '10669', 'Novoukrainskiy', 363179);
-insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (84, 'Naoma', 'Urey', '352', 'Xing’an', 492191);
+insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (84, 'Naoma', 'Urey', '352', 'Xingan', 492191);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (85, 'Merla', 'Sirette', '4143', 'Charlotte', 169462);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (86, 'Katlin', 'Antoni', '5', 'Karabanovo', 470308);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (87, 'Sonya', 'Jeavon', '79934', 'Säter', 591669);
@@ -206,10 +514,10 @@ insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (98, 'Baily', 'Lamp', '2719', 'Damatulan', 403162);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (99, 'Nadia', 'Threadgall', '192', 'Río de Oro', 999530);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (100, 'Anders', 'Garlette', '0', 'Vinsady', 540491);
-# Rows:
+-- Rows:
 
 
-# Warehouse
+-- Warehouse
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (1, 99, 'San Quintin', 793623);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (2, 20, 'Hampton', 991302);
 insert into Warehouse (Warehouse_ID, Plot_number, City, pincode) values (3, 86, 'Unidos', 556905);
@@ -412,7 +720,7 @@ insert into Coupon values ( 1 , 10.32 ),
 
 
 
-#Orders
+--Orders
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (1, 62089.49, 27.65, 9.13);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (2, 23387.82, 8.85, 24.41);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (3, 63751.88, 24.84, 6.42);
@@ -516,7 +824,7 @@ insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) val
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (99, 99778.52, 13.32, 12.4);
 insert into Orders (Order_id, Total_price, Taxes, Total_Discount_Percentage) values (100, 24184.44, 27.87, 5.04); */
 
-#Product
+--Product
 
 insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (1, 16552, 'Eggplant Italian', 7.41, 15.17);
 insert into Product (Product_id, Price, Category, Discount_Percentage, GST_percentage) values (2, 942, 'Fruit Salad Deluxe', 21.48, 23.16);
@@ -632,7 +940,7 @@ insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, 
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (6, 84.4, 'Jedidiah', 'Samways', 73744.7, 'Female', 'Research and Development', 5.6, 5, '10/9/2021', '12/11/2021', 'jsamways5@edublogs.org', '176', 'Eastwood', 'Shangganshan', '155', '7354624494');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (7, 87.7, 'Delinda', 'Fallow', 102339.9, 'Male', 'Engineering', 1.5, 4, '10/11/2021', '7/1/2021', 'dfallow6@tamu.edu', '37', 'Dryden', 'Panji', '16311', '1194772704');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (8, 81.2, 'Matilda', 'Dannohl', 57875.3, 'Male', 'Engineering', 2.6, 2, '7/27/2021', '6/1/2021', 'mdannohl7@google.ru', '33484', 'Hollow Ridge', 'Selaawi', '718', '6674210495');
-insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (9, 73.6, 'Marys', 'Hune', 53944.9, 'Male', 'Research and Development', 4.3, 2, '10/25/2021', '12/28/2021', 'mhune8@tinypic.com', '56670', 'Monument', 'Gul’cha', '2439', '3971658563');
+insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (9, 73.6, 'Marys', 'Hune', 53944.9, 'Male', 'Research and Development', 4.3, 2, '10/25/2021', '12/28/2021', 'mhune8@tinypic.com', '56670', 'Monument', 'Gulcha', '2439', '3971658563');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (10, 24.7, 'Malinde', 'Pendleberry', 111611.9, 'Female', 'Sales', 4.0, 4, '3/10/2021', '8/8/2021', 'mpendleberry9@ovh.net', '76', 'Barby', 'Tuka', '031', '1037639269');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (11, 76.0, 'Hernando', 'Villar', 163004.5, 'Bigender', 'Accounting', 1.0, 2, '8/26/2021', '11/1/2021', 'hvillara@huffingtonpost.com', '11', 'Delladonna', 'Naranjo', '014', '5189683343');
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (12, 40.2, 'Collie', 'Murtagh', 185470.3, 'Female', 'Accounting', 8.3, 2, '9/9/2021', '1/27/2022', 'cmurtaghb@whitehouse.gov', '53', 'Gina', 'Novokubansk', '5', '1904148228');
@@ -831,7 +1139,7 @@ insert into Delivery_Partner (Employee_ID, Vehicle_ID, Vehicle_Type) values ( 10
 
 
 
-#transactions
+--transactions
 
 insert into Transaction values (1,'Net Banking',true,"2021:7:18 22:49:53",40, 6),
 (2,'Card',true,"2021:8:13 21:30:53",68, 7),
@@ -1251,3 +1559,958 @@ insert into complains (complaint_number, customer_ID, order_ID, service_employee
 
 
 
+insert into warehouse_phone values (5, 9058021150) ,
+(5, 9844878834) ,
+(3, 9488583004) ,
+(1, 9891045934) ,
+(1, 9154496880) ,
+(5, 9253892237) ,
+(4, 9935515025) ,
+(3, 9653172917) ,
+(1, 9450679380) ,
+(4, 9885883262) ,
+(4, 9311274244) ,
+(5, 9542143193) ,
+(1, 9458106197) ,
+(4, 9920312369) ,
+(2, 9716221845) ,
+(2, 9762027321) ,
+(1, 9657706381) ,
+(4, 9930018684) ,
+(2, 9610554752) ,
+(1, 9923252418);
+
+
+--oder_products
+
+
+
+insert into order_products (Order_id, product_id, quantity) values (1, 62, 10);
+insert into order_products (Order_id, product_id, quantity) values (2, 50, 1);
+insert into order_products (Order_id, product_id, quantity) values (3, 87, 5);
+insert into order_products (Order_id, product_id, quantity) values (4, 2, 4);
+insert into order_products (Order_id, product_id, quantity) values (5, 92, 5);
+insert into order_products (Order_id, product_id, quantity) values (6, 44, 1);
+insert into order_products (Order_id, product_id, quantity) values (7, 70, 7);
+insert into order_products (Order_id, product_id, quantity) values (8, 21, 5);
+insert into order_products (Order_id, product_id, quantity) values (9, 79, 5);
+insert into order_products (Order_id, product_id, quantity) values (10, 77, 7);
+insert into order_products (Order_id, product_id, quantity) values (11, 45, 3);
+insert into order_products (Order_id, product_id, quantity) values (12, 17, 2);
+insert into order_products (Order_id, product_id, quantity) values (13, 31, 4);
+insert into order_products (Order_id, product_id, quantity) values (14, 77, 9);
+insert into order_products (Order_id, product_id, quantity) values (15, 49, 8);
+insert into order_products (Order_id, product_id, quantity) values (16, 45, 5);
+insert into order_products (Order_id, product_id, quantity) values (17, 12, 7);
+insert into order_products (Order_id, product_id, quantity) values (18, 55, 3);
+insert into order_products (Order_id, product_id, quantity) values (19, 9, 5);
+insert into order_products (Order_id, product_id, quantity) values (20, 68, 9);
+
+insert into order_products (Order_id, product_id, quantity) values (1, 73, 3);
+insert into order_products (Order_id, product_id, quantity) values (2, 46, 9);
+insert into order_products (Order_id, product_id, quantity) values (3, 40, 7);
+insert into order_products (Order_id, product_id, quantity) values (4, 89, 1);
+insert into order_products (Order_id, product_id, quantity) values (5, 80, 9);
+insert into order_products (Order_id, product_id, quantity) values (6, 13, 7);
+insert into order_products (Order_id, product_id, quantity) values (7, 3, 5);
+insert into order_products (Order_id, product_id, quantity) values (8, 98, 4);
+insert into order_products (Order_id, product_id, quantity) values (9, 34, 4);
+insert into order_products (Order_id, product_id, quantity) values (10, 72, 2);
+insert into order_products (Order_id, product_id, quantity) values (11, 90, 1);
+insert into order_products (Order_id, product_id, quantity) values (12, 42, 1);
+insert into order_products (Order_id, product_id, quantity) values (13, 54, 4);
+insert into order_products (Order_id, product_id, quantity) values (14, 88, 1);
+insert into order_products (Order_id, product_id, quantity) values (15, 90, 5);
+insert into order_products (Order_id, product_id, quantity) values (16, 90, 9);
+insert into order_products (Order_id, product_id, quantity) values (17, 55, 5);
+insert into order_products (Order_id, product_id, quantity) values (18, 54, 10);
+insert into order_products (Order_id, product_id, quantity) values (19, 76, 10);
+insert into order_products (Order_id, product_id, quantity) values (20, 18, 4);
+
+insert into order_products (Order_id, product_id, quantity) values (1, 55, 9);
+insert into order_products (Order_id, product_id, quantity) values (2, 1, 1);
+insert into order_products (Order_id, product_id, quantity) values (3, 21, 9);
+insert into order_products (Order_id, product_id, quantity) values (4, 81, 8);
+insert into order_products (Order_id, product_id, quantity) values (5, 88, 8);
+insert into order_products (Order_id, product_id, quantity) values (6, 14, 7);
+insert into order_products (Order_id, product_id, quantity) values (7, 22, 10);
+insert into order_products (Order_id, product_id, quantity) values (8, 25, 2);
+insert into order_products (Order_id, product_id, quantity) values (9, 10, 7);
+insert into order_products (Order_id, product_id, quantity) values (10, 46, 8);
+insert into order_products (Order_id, product_id, quantity) values (11, 11, 3);
+insert into order_products (Order_id, product_id, quantity) values (12, 56, 1);
+insert into order_products (Order_id, product_id, quantity) values (13, 84, 10);
+insert into order_products (Order_id, product_id, quantity) values (14, 40, 10);
+insert into order_products (Order_id, product_id, quantity) values (15, 12, 6);
+insert into order_products (Order_id, product_id, quantity) values (16, 40, 3);
+insert into order_products (Order_id, product_id, quantity) values (17, 31, 4);
+insert into order_products (Order_id, product_id, quantity) values (18, 93, 2);
+insert into order_products (Order_id, product_id, quantity) values (19, 31, 7);
+insert into order_products (Order_id, product_id, quantity) values (20, 65, 8);
+
+insert into order_products (Order_id, product_id, quantity) values (21, 77, 8);
+insert into order_products (Order_id, product_id, quantity) values (22, 16, 6);
+insert into order_products (Order_id, product_id, quantity) values (23, 71, 10);
+insert into order_products (Order_id, product_id, quantity) values (24, 48, 1);
+insert into order_products (Order_id, product_id, quantity) values (25, 20, 2);
+insert into order_products (Order_id, product_id, quantity) values (26, 74, 6);
+insert into order_products (Order_id, product_id, quantity) values (27, 92, 6);
+insert into order_products (Order_id, product_id, quantity) values (28, 17, 1);
+insert into order_products (Order_id, product_id, quantity) values (29, 77, 3);
+insert into order_products (Order_id, product_id, quantity) values (30, 85, 4);
+
+insert into order_products (Order_id, product_id, quantity) values (21, 80, 7);
+insert into order_products (Order_id, product_id, quantity) values (22, 10, 7);
+insert into order_products (Order_id, product_id, quantity) values (23, 67, 9);
+insert into order_products (Order_id, product_id, quantity) values (24, 65, 10);
+insert into order_products (Order_id, product_id, quantity) values (25, 92, 2);
+insert into order_products (Order_id, product_id, quantity) values (26, 63, 7);
+insert into order_products (Order_id, product_id, quantity) values (27, 82, 8);
+insert into order_products (Order_id, product_id, quantity) values (28, 59, 7);
+insert into order_products (Order_id, product_id, quantity) values (29, 39, 1);
+insert into order_products (Order_id, product_id, quantity) values (30, 27, 1);
+insert into order_products (Order_id, product_id, quantity) values (31, 53, 7);
+insert into order_products (Order_id, product_id, quantity) values (32, 1, 9);
+insert into order_products (Order_id, product_id, quantity) values (33, 90, 2);
+insert into order_products (Order_id, product_id, quantity) values (34, 15, 9);
+insert into order_products (Order_id, product_id, quantity) values (35, 61, 8);
+insert into order_products (Order_id, product_id, quantity) values (36, 68, 6);
+insert into order_products (Order_id, product_id, quantity) values (37, 59, 2);
+insert into order_products (Order_id, product_id, quantity) values (38, 44, 1);
+insert into order_products (Order_id, product_id, quantity) values (39, 56, 8);
+insert into order_products (Order_id, product_id, quantity) values (40, 76, 1);
+insert into order_products (Order_id, product_id, quantity) values (41, 3, 10);
+insert into order_products (Order_id, product_id, quantity) values (42, 68, 6);
+insert into order_products (Order_id, product_id, quantity) values (43, 30, 5);
+insert into order_products (Order_id, product_id, quantity) values (44, 12, 5);
+insert into order_products (Order_id, product_id, quantity) values (45, 67, 1);
+insert into order_products (Order_id, product_id, quantity) values (46, 89, 6);
+insert into order_products (Order_id, product_id, quantity) values (47, 82, 5);
+insert into order_products (Order_id, product_id, quantity) values (48, 92, 6);
+insert into order_products (Order_id, product_id, quantity) values (49, 97, 8);
+insert into order_products (Order_id, product_id, quantity) values (50, 80, 10);
+
+
+
+
+insert into product_rating values (78,85,5),
+(78,12,3),
+(41,71,1),
+(63,94,5),
+(26,28,2),
+(92,78,5),
+(47,28,3),
+(93,97,3),
+(95,48,1),
+(56,12,3),
+(81,95,2),
+(49,49,5),
+(32,74,4),
+(84,76,5),
+(50,61,5),
+(60,59,1),
+(16,66,4),
+(71,46,2),
+(18,33,1),
+(13,22,2),
+(30,88,2),
+(87,45,2),
+(98,86,2),
+(84,54,3),
+(21,28,4),
+(25,31,4),
+(73,29,3),
+(32,79,4),
+(96,48,5),
+(33,61,4),
+(76,84,2),
+(38,99,3),
+(12,50,2),
+(14,52,4),
+(92,13,1),
+(90,81,3),
+(4,92,2),
+(91,73,2),
+(79,73,3),
+(18,21,5),
+(90,49,2),
+(20,56,1),
+(70,72,1),
+(15,14,1),
+(2,27,3),
+(71,67,5),
+(26,25,4),
+(53,68,2),
+(43,34,5),
+(43,93,5),
+(93,81,1),
+(2,94,5),
+(57,84,1),
+(47,57,1),
+(62,92,4),
+(82,38,2),
+(54,64,2),
+(39,87,2),
+(92,77,5),
+(27,81,1),
+(26,100,2),
+(94,68,5),
+(70,28,5),
+(83,86,4),
+(53,49,1),
+(86,34,5),
+(28,24,4),
+(55,28,2),
+(64,11,4),
+(33,54,5),
+(96,16,3),
+(17,57,5),
+(75,86,4),
+(37,30,1),
+(31,12,2),
+(18,23,5),
+(1,81,2),
+(23,34,4),
+(91,93,3),
+(40,69,3),
+(23,14,1),
+(38,1,5),
+(52,2,2),
+(87,99,2),
+(54,38,2),
+(37,39,4),
+(94,89,2),
+(68,41,1),
+(80,96,4),
+(16,98,5),
+(97,93,1),
+(23,83,2),
+(20,23,5),
+(77,62,1),
+(77,98,2),
+(52,63,3),
+(46,92,5),
+(30,59,2),
+(85,47,1),
+(1,63,3),
+(89,52,2),
+(98,58,5),
+(84,34,5),
+(65,54,3),
+(19,45,1),
+(15,50,3),
+(85,65,1),
+(58,4,1),
+(46,46,3),
+(28,89,2),
+(9,86,4),
+(96,45,2),
+(38,71,3),
+(68,38,3),
+(47,67,2),
+(43,86,5),
+(77,86,5),
+(74,6,4),
+(72,63,2),
+(40,13,4),
+(29,82,5),
+(89,1,1),
+(97,1,5),
+(48,54,4),
+(13,91,3),
+(34,67,1),
+(36,54,5),
+(49,69,5),
+(12,34,5),
+(84,85,3),
+(77,18,1),
+(53,97,5),
+(63,35,5),
+(74,51,1),
+(2,96,5),
+(45,7,4),
+(32,33,2),
+(57,77,3),
+(55,76,3),
+(31,51,4),
+(81,66,4),
+(9,31,5),
+(94,75,2),
+(96,13,1),
+(92,59,3),
+(93,62,4),
+(23,44,3),
+(6,3,5),
+(67,5,5),
+(37,92,4),
+(25,38,4),
+(39,45,1),
+(25,30,2),
+(83,29,1),
+(55,38,3),
+(50,18,3),
+(21,63,4),
+(88,17,4),
+(14,29,4),
+(78,25,5),
+(31,86,3),
+(62,17,1),
+(75,69,2),
+(44,19,2),
+(94,61,2),
+(49,9,4),
+(57,93,2),
+(40,30,3),
+(35,71,2),
+(64,56,2),
+(27,54,3),
+(62,88,2),
+(58,33,1),
+(64,97,5),
+(83,8,3),
+(2,92,5),
+(39,25,1),
+(90,38,5),
+(4,53,1),
+(9,53,2),
+(98,13,4),
+(35,20,1),
+(58,40,1),
+(61,5,5),
+(70,42,3),
+(49,13,1),
+(41,53,5),
+(74,33,5),
+(77,24,3),
+(13,90,2),
+(92,44,4),
+(55,42,2),
+(95,14,2),
+(82,91,4),
+(61,60,1),
+(55,53,5),
+(31,43,5),
+(46,63,2),
+(20,35,4),
+(45,70,4),
+(44,85,2),
+(57,49,3),
+(34,91,3),
+(84,94,4),
+(47,56,1),
+(81,29,4),
+(79,39,1),
+(8,48,2),
+(36,77,3),
+(41,80,2),
+(7,28,5),
+(5,58,5),
+(11,82,1),
+(7,87,3),
+(95,56,5),
+(30,68,1),
+(63,5,1),
+(19,99,1),
+(11,13,2),
+(94,35,3),
+(6,49,4),
+(33,77,2),
+(48,91,3),
+(93,17,1),
+(35,76,1),
+(11,23,4),
+(52,52,3),
+(66,75,4),
+(7,78,1),
+(83,98,2),
+(56,75,2),
+(78,9,5),
+(3,61,1),
+(100,92,3),
+(11,5,3),
+(28,4,3),
+(11,53,3),
+(94,9,1),
+(53,99,3),
+(25,90,4),
+(6,26,3),
+(76,70,4),
+(50,11,1),
+(6,71,5),
+(17,54,3),
+(63,2,4),
+(65,93,4),
+(99,13,3),
+(60,85,4),
+(69,22,5),
+(5,80,3),
+(83,57,1),
+(3,44,2),
+(44,8,4),
+(96,49,3),
+(54,48,5),
+(80,6,3),
+(19,35,3),
+(36,99,5),
+(15,78,5),
+(47,17,4),
+(76,32,2),
+(62,72,4),
+(73,96,1),
+(31,6,5),
+(29,42,1),
+(46,43,1),
+(5,11,3),
+(42,9,1),
+(41,24,1),
+(9,3,1),
+(86,29,3),
+(14,85,1),
+(50,75,1),
+(54,9,1),
+(56,16,4),
+(88,94,3),
+(77,60,3),
+(22,63,3),
+(73,38,3),
+(69,69,2),
+(58,90,1),
+(34,38,3),
+(20,42,2),
+(50,20,4),
+(58,84,5),
+(7,74,3),
+(37,46,3),
+(76,40,4),
+(44,23,3),
+(98,3,4),
+(28,64,3),
+(10,33,4),
+(68,60,1),
+(60,8,3),
+(3,89,1),
+(89,87,3),
+(17,46,1),
+(1,95,1),
+(78,48,1);
+
+
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 4 , 1 , 785 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 2 , 760 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 57 , 3 , 635 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 25 , 4 , 521 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 44 , 5 , 397 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 89 , 6 , 408 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 31 , 7 , 786 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 91 , 8 , 179 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 20 , 9 , 971 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 90 , 10 , 402 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 97 , 11 , 665 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 67 , 12 , 789 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 41 , 13 , 500 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 84 , 14 , 455 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 71 , 15 , 175 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 16 , 469 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 25 , 17 , 737 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 19 , 18 , 70 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 19 , 188 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 36 , 20 , 988 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 87 , 21 , 897 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 8 , 22 , 51 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 56 , 23 , 90 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 81 , 24 , 265 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 100 , 25 , 245 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 47 , 26 , 91 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 11 , 27 , 21 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 36 , 28 , 101 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 28 , 29 , 519 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 30 , 758 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 31 , 619 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 56 , 32 , 51 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 34 , 33 , 999 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 62 , 34 , 341 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 61 , 35 , 548 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 36 , 56 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 52 , 37 , 941 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 17 , 38 , 238 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 68 , 39 , 31 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 65 , 40 , 943 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 41 , 276 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 45 , 42 , 983 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 98 , 43 , 301 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 46 , 44 , 876 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 66 , 45 , 398 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 73 , 46 , 74 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 99 , 47 , 439 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 48 , 312 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 5 , 49 , 919 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 79 , 50 , 812 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 34 , 51 , 223 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 90 , 52 , 822 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 46 , 53 , 895 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 54 , 769 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 10 , 55 , 432 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 56 , 747 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 71 , 57 , 804 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 58 , 58 , 421 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 86 , 59 , 648 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 60 , 334 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 70 , 61 , 440 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 63 , 62 , 620 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 63 , 63 , 656 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 72 , 64 , 854 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 12 , 65 , 770 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 70 , 66 , 495 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 86 , 67 , 650 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 89 , 68 , 20 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 41 , 69 , 219 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 24 , 70 , 320 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 29 , 71 , 448 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 81 , 72 , 773 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 73 , 693 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 27 , 74 , 23 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 32 , 75 , 7 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 58 , 76 , 217 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 25 , 77 , 458 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 100 , 78 , 494 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 3 , 79 , 830 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 78 , 80 , 177 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 42 , 81 , 592 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 60 , 82 , 265 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 30 , 83 , 484 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 61 , 84 , 31 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 1 , 85 , 551 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 30 , 86 , 190 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 40 , 87 , 511 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 86 , 88 , 185 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 63 , 89 , 888 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 84 , 90 , 170 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 6 , 91 , 986 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 100 , 92 , 612 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 57 , 93 , 202 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 5 , 94 , 62 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 69 , 95 , 774 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 82 , 96 , 884 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 58 , 97 , 794 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 83 , 98 , 328 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 28 , 99 , 972 );
+insert into Supplies (Vendor_ID, Product_ID, Quantity) values ( 81 , 100 , 122 );
+
+
+
+
+-- stores
+
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 1 , 8955 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 2 , 2065 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 3 , 1679 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 4 , 1544 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 5 , 5750 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 6 , 4640 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 7 , 9736 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 8 , 9310 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 9 , 1932 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 10 , 432 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 11 , 4049 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 12 , 8410 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 13 , 7187 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 14 , 4455 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 15 , 6817 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 16 , 6221 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 17 , 8028 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 18 , 7346 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 19 , 9332 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 20 , 706 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 21 , 1445 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 22 , 5363 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 23 , 695 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 24 , 4360 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 25 , 2024 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 26 , 60 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 27 , 3423 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 28 , 7875 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 29 , 3349 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 30 , 368 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 31 , 7103 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 32 , 3865 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 33 , 5873 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 34 , 681 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 35 , 3235 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 36 , 4710 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 37 , 4272 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 38 , 7826 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 39 , 7485 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 40 , 3861 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 41 , 3757 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 42 , 7168 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 43 , 569 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 44 , 5356 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 45 , 3791 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 46 , 9581 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 47 , 2504 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 48 , 5160 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 49 , 4683 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 50 , 893 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 51 , 3961 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 52 , 8822 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 53 , 37 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 54 , 4488 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 55 , 5119 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 56 , 7646 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 57 , 8731 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 58 , 5349 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 59 , 6708 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 60 , 3929 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 61 , 956 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 62 , 2720 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 63 , 5724 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 64 , 3507 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 65 , 3562 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 66 , 689 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 67 , 6080 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 68 , 5301 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 69 , 7495 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 70 , 4441 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 71 , 5397 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 72 , 3939 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 73 , 2149 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 74 , 7687 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 75 , 1366 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 76 , 7928 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 77 , 7694 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 78 , 1634 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 79 , 6310 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 80 , 9095 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 81 , 5282 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 82 , 6195 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 83 , 8827 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 84 , 2998 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 85 , 8445 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 86 , 1126 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 87 , 3446 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 88 , 9951 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 89 , 6410 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 2 , 90 , 3327 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 91 , 3593 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 92 , 7954 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 4 , 93 , 3895 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 94 , 8783 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 95 , 2460 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 96 , 2511 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 3 , 97 , 883 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 98 , 6973 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 1 , 99 , 2219 );
+insert into Stores (Warehouse_ID, Product_ID, Stocks) values ( 5 , 100 , 4822 );
+
+
+-- shopping_cart
+
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 50 , 91 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 7 , 25 , 2 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 26 , 34 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 98 , 36 , 3 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 70 , 31 , 4 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 40 , 29 , 7 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 93 , 68 , 4 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 78 , 26 , 9 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 41 , 73 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 73 , 53 , 4 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 94 , 26 , 5 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 59 , 32 , 2 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 26 , 85 , 8 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 4 , 62 , 9 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 87 , 6 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 36 , 78 , 5 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 13 , 88 , 6 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 36 , 32 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 6 , 30 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 79 , 61 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 72 , 59 , 1 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 74 , 83 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 50 , 75 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 35 , 2 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 53 , 41 , 2 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 5 , 50 , 11 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 72 , 23 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 58 , 76 , 5 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 72 , 90 , 10 );
+insert into Shopping_Cart (customer_ID, product_ID, quantity) values ( 70 , 82 , 6 );
+
+
+insert into product_photo values (1,'ROCGZ8996U1ECKM0N83'),
+(2,'YQAIOMU'),
+(2,'040TKZJDL'),
+(2,'R4NP463'),
+(3,'198LCSGXCM7P0VATBM853LT'),
+(3,'Y60KUZL9KZCSRZ09U5XGQX7F2'),
+(3,'7Q6BSOZLOD'),
+(3,'Z7ELIHGZV0DBN90RKV'),
+(4,'BFTQWH7GRQQM'),
+(4,'E1ZPY3'),
+(4,'EB0SKNE'),
+(5,'X8MCF7PU796XFXY4SLHVYO'),
+(6,'EGUCSL7Q5GE4YUWERXV2FLZDH'),
+(6,'91FSIBL'),
+(7,'KJRYJ2X6X2EM581XIVQ'),
+(7,'76H2QY0CVI94R7RGE5T'),
+(7,'Z2QEJR95FBFTVC1PW'),
+(7,'R4MAG33WHFAZ0CBJP40EL'),
+(7,'FYHKBFC2DVY80JOXE'),
+(8,'4B8P3U597'),
+(8,'H18CEKHGG'),
+(8,'R4HTOW2AIN5D2BMQ329ZUH'),
+(9,'VVQ3M87JOGL91SMOZ'),
+(9,'C4QAFMVF1EQEF6QT'),
+(10,'K7GH8PHM'),
+(10,'WN8GUNP3VDFTTRUNNYH7HINW'),
+(10,'J0JSSTL5'),
+(10,'20E59E'),
+(11,'2ZN1NL44'),
+(11,'JIG6KCDHO'),
+(11,'BQYYZM2KVOMN'),
+(11,'0G2ZPIXQLGRSW7FHHVZM'),
+(11,'WJ3ESU507VULBM3XK5NPHGKLK'),
+(12,'T4O8HH93Y'),
+(13,'B3D3X3BNHJ2OE1SU'),
+(14,'90VQDSO8L7YQE'),
+(14,'Y0S1USDR0HQZY'),
+(14,'C86CM2VM4W1'),
+(14,'M11BPDN4A1N5J5I'),
+(14,'2NZU5D'),
+(15,'Q406DA6HXY9O8NOX0LF4C'),
+(15,'ET79NKIO6SZHGKXINTAON6L'),
+(16,'LGEPWARN'),
+(16,'GSM69OT3QF'),
+(16,'JN259LI9GUSW672QNVM8'),
+(17,'DA8KK4R9'),
+(17,'8DCANRAGUOM4P4MA'),
+(17,'32CQM3OL5T'),
+(18,'LEE7W0CQ'),
+(18,'F5QSSYUVSHN'),
+(18,'FMMJNCC5FPMKXQO'),
+(19,'SAM4X9J3X0'),
+(19,'EUYRHLZ'),
+(19,'WGK4IF'),
+(20,'ZEFKQT0LO7GOBJ9'),
+(20,'QOKM80QU78I2PDFLMA4RI'),
+(21,'1X87VNZNAPDJEEXC8A67'),
+(21,'W35RZDAXKKT'),
+(21,'8RFMS5TLIHVAPROOEH3NV'),
+(22,'DJMDO0FGD'),
+(22,'57TWO529OQJHZHN8V2Y7ZA90'),
+(22,'DIFVX33A4VY15DR'),
+(22,'84KI86'),
+(23,'097P72B7TGKG3DD066KLV29A6'),
+(23,'07HPCP'),
+(23,'NYAXNCSX'),
+(24,'DW4FBE69PTLR6JFROM'),
+(25,'LWNDLV5NFU'),
+(25,'E9D83U'),
+(26,'QD6GB7SCNWARNYVLZV66J'),
+(27,'802GSMJ8R2XPRA9DYK0'),
+(28,'POVO81J'),
+(28,'E4ZYC27KENT04'),
+(29,'TP3PFLT9HQXZJYJ75ZN'),
+(29,'4SGOWVQM2NR71MBBS7WHMLSG3'),
+(29,'W09CCA'),
+(30,'GSO3X1KFEC06'),
+(31,'ZG3Q1ID3H2'),
+(31,'H04P7H60CEV'),
+(31,'ZEL40T5A4KBMEFX2P9FA7'),
+(32,'S237DCST94G6XA7W'),
+(32,'61K7C8G1HYILGR0BU'),
+(33,'7JI1CO6SNOLFM6MULYE1'),
+(33,'OEZ4H8TV0WY8DXB56OLMAH5'),
+(33,'XIY38EYOR0OIZ3S'),
+(33,'23LZ0M'),
+(34,'Y3VZP3LWGJD'),
+(35,'1EMYS9O2LUS11VUUTNF8'),
+(36,'77KL9B1VOLJ86BFXM'),
+(37,'ZWFOM6TD32XVFRB614UJSBJ6'),
+(37,'O5WF7R0RFJLZF535QU8B'),
+(38,'0WID65IGKP1LFQK'),
+(39,'8IUPNJ3G06K5A7ZNK'),
+(39,'3MSMYZC'),
+(39,'WY884LOWZKV0NTG79X'),
+(39,'LAEWDMGU3'),
+(39,'11403JKT2ZFYR4ZOJVYD7M0'),
+(40,'SZJDW08SL7AJPLJ3'),
+(40,'4PG62WJ84YF6'),
+(40,'OLGOQ4UTIUPO'),
+(40,'57GIRIZFIU8LA6TQRQ3JGQ'),
+(40,'2EYLJ2NH1ZLK'),
+(41,'ETMWMTHTI3GRH4W4GRRSEQ2W1'),
+(41,'JBQA2W1UGRGJR5'),
+(41,'BHPMJRN2273N1PHHH'),
+(42,'LUI7M7JB3OMC7JSA'),
+(42,'H620X4ULAAF9SA42I3SPR6'),
+(42,'VHZ1O1SQ8HDMY77'),
+(42,'400ZVH23Y'),
+(43,'9ECQQXBEUF9C8K5BMEXEQIBB'),
+(43,'Z8I4GBYNQCAXVP5'),
+(43,'TXZ1UOQ'),
+(43,'W1IRZ5AO0'),
+(43,'2WCO480QJQHDZO823'),
+(44,'J75GJN2X5DSRBJJP0TPY'),
+(44,'LJ98GK2L8'),
+(45,'JKYR6HAB4SAYCI0NPM9RV'),
+(45,'OW8KHHR6VKQYC3AQPM'),
+(46,'WI0GVXYDPXQI64M2B'),
+(46,'AGV0GP9Z2MQ'),
+(46,'SZLL8IQ9LPNTNDA7IYQN09JR'),
+(47,'IWHVLFR26I191G'),
+(47,'4RPIN7L6DTRW3OF'),
+(47,'FQ0P4W'),
+(47,'UDOW0WLMD30TDODM6LGY'),
+(48,'5O6NUAFP42M032KADFMAQ'),
+(48,'A8LB56BIQ4P6B3UVYUUOZ34'),
+(48,'121KB3NHJ'),
+(49,'TV5FNXL'),
+(49,'6XKH7PREXCNUK0DQ1Q9A'),
+(49,'1QP2U0I0FVO8E9ZY0MK2'),
+(49,'S9S02OWGZ1K2L60UV'),
+(49,'2UFQNTHEHSWARAU2RRUQ4B9I2'),
+(50,'WLAM6V2I86'),
+(51,'EK1XMYYEYG9VIO1JWM'),
+(51,'WFFTK21YVW'),
+(51,'9DCP1G37A'),
+(51,'JQQQCS1J11HG7S'),
+(51,'H3TMSFVKCC3U'),
+(52,'HBSE7ULXZURS4WX'),
+(53,'JILXPUYV62O0YQUQC6X'),
+(54,'KQ05TWBSJ8GS8Y'),
+(54,'1VIC43NL2YWK6KE'),
+(54,'UN4QZJR5BCWMBX1'),
+(54,'F6GK6P'),
+(54,'98W3KSQOADUB812QI'),
+(55,'H4CJBIIJ5QVE21LJ1LU9H'),
+(55,'X9BGN17'),
+(55,'D9RENHY8BIK3S5Y9BVS'),
+(55,'EEV1UVEUJLX8HPB0L'),
+(56,'QMMCQEYPE'),
+(56,'I78OPLX73YQN90BW5XX'),
+(56,'XFY5W4N3ADQV7U'),
+(56,'9M6Y4MYN6E'),
+(56,'PZD8BVCB1'),
+(57,'JH55IGB'),
+(57,'QLX2GWANQHZAUYIUP1NUM'),
+(57,'2CH60AS64I4MNJZ3PQMB'),
+(58,'K9TNB088DEXB'),
+(59,'12KXFL87TOSMTGFYP'),
+(59,'Q8XNFLH79ISY90UJTLTVBDK0'),
+(59,'LWMMRBPXUE'),
+(59,'44VFW6MMML44VKD505EL51E'),
+(60,'M8IJOUJD7ZJV29DE4PNEE3'),
+(60,'SQXYOACA'),
+(60,'6J57Z8GOE5HTWU3YY'),
+(61,'LL9N3XENQK295'),
+(61,'BQ8ISK41F6DYI7'),
+(62,'WUFQXVT3U1SOAYJVBZPI'),
+(62,'QYDN7D4ET35BM0CEH5TE'),
+(62,'TJMIT3GF'),
+(62,'YTEQUNMUD8K'),
+(62,'RSBDQPPB0VTKQK8I'),
+(63,'ETXUO3YHX34ZW'),
+(64,'XIULJ8KJQ8GXL0SGMW'),
+(64,'1TBL4LW0S9MSYSTGF'),
+(64,'ZQSOSP'),
+(64,'WKU14O6OTDQO3U1YFQYN'),
+(65,'W9TJHOJJ191I4Y29C'),
+(66,'B29IDC6G50TM4U0T0AFNW'),
+(66,'6CVMA53L'),
+(66,'V6TZKZVLAOZ'),
+(66,'TD8S3MMLYIEQ'),
+(66,'32ACZJN1Y5DF1F2SGVENMYMC5'),
+(67,'EJXD5JI77CEGT7477'),
+(67,'91D206YWS2PIKAVHLKJ'),
+(68,'OL381D'),
+(68,'ZKNA3CREQOLH40UW'),
+(69,'QP0NFBYEJDKG'),
+(70,'BXVVZYD6J8P6'),
+(71,'7BJHT4PGSV26Y'),
+(71,'GERDPV68NCQ45XMIV89E9LI9'),
+(71,'5BMLUIMVU461A'),
+(72,'LYNL882GOAOZQ6WN1J9T4'),
+(72,'142PZF1XAH1BZ'),
+(73,'D8ZFV899GBN7JTK'),
+(73,'YZWP1H08PGMLUQI63AMZMASE'),
+(73,'86V8D031'),
+(74,'5DWJNOOF94BORE2FCRL'),
+(74,'5RG4ICKW2Y7AUI41ZAC'),
+(75,'JC3U0GB5KV7RYGVZ'),
+(75,'ZV17H3VQFQH3A57T4ONXPV'),
+(75,'T3ZQZ80WF3ZF'),
+(75,'6MQP7584OSG'),
+(75,'GT7RDFGU5SPM8HMNUENAFM'),
+(76,'DH9388XFCRN4TACGLE0YWKEZ9'),
+(76,'2CWDYZ168W1WC'),
+(77,'47U4QS'),
+(77,'OXA2QAD'),
+(77,'0CF02JJZTESMFL00CQSHOT'),
+(77,'MEOXPOM7ZVKR0XW'),
+(78,'0K4E51H'),
+(79,'8ZUZMET7HOD2SG6BYNW0M'),
+(79,'S7J5N0TQE4JFR6NSJAA'),
+(79,'LTOPCSGAZ0EV5YMKJD6YCNBHD'),
+(80,'BTG3069SBQ7WYKY763C20JOA'),
+(80,'0AL37ZFPZYYJG'),
+(80,'9GJARHL5Q8YJJS8Q'),
+(80,'FT594P7'),
+(81,'8FCDNZZBFKLSIU077K5'),
+(81,'ANHGMN92'),
+(82,'LV0WOBXZ1U'),
+(82,'1IC6VA8CB438F98DQ'),
+(82,'NDK61WNGB093A4A'),
+(82,'041N20JW69'),
+(82,'NAXN14I8AKNC4S2IMWDV6S'),
+(83,'C0L2I92'),
+(84,'WD32H2F3V'),
+(84,'JDQ279AJODAZZX6G'),
+(84,'WKVBXM0'),
+(85,'0XA0X5QONXT0UHBY'),
+(85,'S854F7CU4RC64U'),
+(86,'KQ9C2UC9XKZ7D5'),
+(86,'8W7AWYTWRT'),
+(86,'YEDLGC5QXV5AS4B6'),
+(87,'DGK4EMUGM7F8J20EUZV7K5'),
+(87,'GST1RDLHQ8V85JY'),
+(88,'69FWV8P'),
+(88,'NSSTMZH97RCEWBAHQIXPYUB'),
+(89,'UTW9RT0MM2Y1F5'),
+(89,'T8D261H0QFXYM0SGVIL9'),
+(89,'7IQ63VPJ'),
+(89,'UYPLLZ7HVIOBNQPSOZIPRY'),
+(89,'H19VBVR6MXPPH8QG'),
+(90,'H2WS69T'),
+(90,'9Y0F22248VBBS9VLJDUQK'),
+(91,'E5SJ5ISGFVTVZCCM9JYX'),
+(91,'V0GPMCNH2N0NU'),
+(91,'WFE4OE8OPMZN'),
+(91,'Z35X277'),
+(92,'3GWY8TKGBVS1VF3ICD0ZI3'),
+(93,'H61ZDXTMXBW'),
+(94,'UZZIKF1BA8UG'),
+(94,'JECGAYFGU5SQSQHWITYKVCG4T'),
+(94,'W92KJDFTXW0BYRD'),
+(94,'JSR24CGDDEIK8T942'),
+(95,'35HULS'),
+(95,'KDMU4Q0'),
+(95,'GPXM2M0CFASIH0'),
+(95,'2YH1Y5570'),
+(96,'YXFRSE7F29O6'),
+(96,'EEBDXULLBELLB2'),
+(96,'IT8S4M1MIX5'),
+(96,'G2QBK6U'),
+(96,'JVFWK4XMX'),
+(97,'E0S0YZQO0PLLA'),
+(97,'X0Q6SG10MG0YEFMDJIB4U52HC'),
+(97,'89R6T2BH'),
+(97,'AGDMZFKCJO'),
+(97,'LA6WXCDXJGVLTJVH'),
+(98,'MXDTHDNZ43'),
+(98,'MD9I3D16WP'),
+(99,'YZEIJ1SR9DSZS8EM'),
+(100,'XLVTHSDKN1WYG'),
+(100,'2GRNDENSPEXUES0RP1TRLBX'),
+(100,'JMB7NYOOC2LY6KVFMG76UT'),
+(100,'MH9JEC8DAHF');

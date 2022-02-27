@@ -1,7 +1,20 @@
-\contentsline {chapter}{\numberline {1}Defining the Problem}{3}{}%
-\contentsline {section}{\numberline {1.1}Objective}{3}{}%
-\contentsline {section}{\numberline {1.2}Problem Statement}{3}{}%
-\contentsline {section}{\numberline {1.3}Assumptions}{4}{}%
+\contentsline {chapter}{\numberline {1}Defining the Problem}{2}{}%
+\contentsline {section}{\numberline {1.1}Objective}{2}{}%
+\contentsline {section}{\numberline {1.2}Problem Statement}{2}{}%
+\contentsline {section}{\numberline {1.3}Stakeholders}{3}{}%
+\contentsline {section}{\numberline {1.4}Assumptions}{3}{}%
 \contentsline {chapter}{\numberline {2}ER Diagram}{5}{}%
 \contentsline {section}{\numberline {2.1}Entities}{5}{}%
 \contentsline {section}{\numberline {2.2}Relations}{8}{}%
+\contentsline {section}{\numberline {2.3}Diagram}{11}{}%
+\contentsline {chapter}{\numberline {3}Relational Schema}{12}{}%
+\contentsline {chapter}{\numberline {4}Project Development Procedure and Deliverables}{14}{}%
+\contentsline {section}{\numberline {4.1}ER Formulation}{14}{}%
+\contentsline {section}{\numberline {4.2}Weak Entity}{14}{}%
+\contentsline {section}{\numberline {4.3}Entity Relationship Participation and Types}{15}{}%
+\contentsline {section}{\numberline {4.4}Ternary Relation}{15}{}%
+\contentsline {section}{\numberline {4.5}Relational Schemas}{15}{}%
+\contentsline {section}{\numberline {4.6}Sufficient and Valid Constraints in DDL}{15}{}%
+\contentsline {section}{\numberline {4.7}Data Entry}{15}{}%
+\contentsline {section}{\numberline {4.8}Queries}{16}{}%
+\contentsline {chapter}{\numberline {5}Contributions of Team Members}{17}{}%
