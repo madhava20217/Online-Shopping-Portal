@@ -195,8 +195,11 @@
             \end{itemize}
         \item Shopping Cart (Weak entity)
             \begin{enumerate}
+                \item \underline {Customer ID,Product ID}: Primary Key
+                \item Customer ID: Foreign Key (references Customer)
+                \item Product ID: Foreign Key (references Product)
+                \item Quantity
                 \item Total cost: Derived attribute
-                \item \underline {Customer_ID,Product_ID}: Primary Key
 
             \end{enumerate}
         
@@ -205,9 +208,17 @@
 
     \section{Relations}
         \begin{enumerate}
-            \item Supplies
+             \item Supplies
             \begin{enumerate}
-                \item Vendor ID
+                \item \underline {Vendor ID, Product ID}: Primary Key
+                \item Vendor ID: Foreign Key (references Vendor)
+                \item Product ID: Foreign Key (references Product)
+                \item Quantity
+            \end{enumerate}
+            \item Order Product
+            \begin{enumerate}
+                \item \underline 
+                \item Order ID
                 \item Product ID
                 \item Quantity
             \end{enumerate}
