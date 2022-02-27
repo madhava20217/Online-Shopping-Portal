@@ -61,8 +61,8 @@ create table product_rating(
                     Product_ID numeric(30,0),
                     customer_id numeric(30,0),
                     Rating numeric(1,0) check (Rating > 0),
-                    foreign key (product_id) references product(product_id),
-                    foreign key (customer_id) references customer(customer_id),
+                    foreign key (product_id) references Product(product_id),
+                    foreign key (customer_id) references Customer(customer_id),
                     primary key (product_id, customer_id, Rating)
                     );
 

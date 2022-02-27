@@ -1559,7 +1559,7 @@ insert into complains (complaint_number, customer_ID, order_ID, service_employee
 
 
 
-insert into warehouse_phone values (5, 9058021150) ,
+insert into Warehouse_phone values (5, 9058021150) ,
 (5, 9844878834) ,
 (3, 9488583004) ,
 (1, 9891045934) ,
