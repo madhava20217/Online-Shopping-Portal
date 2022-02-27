@@ -58,6 +58,7 @@ Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.
 --find name of employee with salary greater then some of emp in Marketing department
 select distinct Employee_ID
         	from Employee 
-        	where Salary > some (select Salary from Employee where Department= "Marketing" )
+        	where Salary > some (select Salary from Employee where Department= "Marketing" );
 
-        
+
+mysqldump --databases online_shopping > dump.sql

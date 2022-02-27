@@ -16,9 +16,9 @@
 }
 
 \author{Abhimanyu Bhatnagar, 2020273
-        \\Atyant Sony, 2020039
+        \\Madhava Krishna, 2020217
         \\Ritika Nagar, 2020112
-        \\Madhava Krishna, 2020217}
+        \\Atyant Sony, 2020039}
 \date{\textit{\today}}
 
 
@@ -59,6 +59,16 @@
         In case of any lapses with an order, the customer complains to support staff who create a complaint
         number against the order. They send out the details regarding the complaint to the customer.
     }
+
+    \section{Stakeholders}
+    Notable stakeholders of this problem include:
+    \begin{enumerate}
+        \item Customer
+        \item Employees
+        \item Suppliers
+        \item Vendors
+    \end{enumerate}
+    Other stakeholders include manufacturers, warehousing service providers
     
     \section{Assumptions}
     \begin{enumerate}
@@ -195,7 +205,7 @@
             \end{itemize}
         \item Shopping Cart (Weak entity)
             \begin{enumerate}
-                \item \underline {Customer ID,Product ID}: Primary Key
+                \item \underline{Customer ID,Product ID}: Primary Key
                 \item Customer ID: Foreign Key (references Customer)
                 \item Product ID: Foreign Key (references Product)
                 \item Quantity
@@ -210,17 +220,41 @@
         \begin{enumerate}
              \item Supplies
             \begin{enumerate}
-                \item \underline {Vendor ID, Product ID}: Primary Key
+                \item \underline{Vendor ID, Product ID}: Primary Key
                 \item Vendor ID: Foreign Key (references Vendor)
                 \item Product ID: Foreign Key (references Product)
                 \item Quantity
             \end{enumerate}
             \item Order Product
             \begin{enumerate}
-                \item \underline 
-                \item Order ID
-                \item Product ID
+                \item \underline{Order ID, Product ID}: Primary Key 
+                \item Order ID: Foreign Key (references Order)
+                \item Product ID: Foreign Key (references Product)
                 \item Quantity
+            \end{enumerate}
+            \item Stores
+            \begin{enumerate}
+                \item \underline{Warehouse ID, Product ID}: Primary Key
+                \item Warehouse ID: Foreign Key (references Warehouse)
+                \item Product ID: Foreign Key (references Product)
+                \item Stocks
+            \end{enumerate}
+            \item Delivery
+            \begin{enumerate}
+                \item \underline{Order ID}: Primary Key
+                \item Order ID: Foreign Key (references Order)
+                \item Employee ID: Foreign Key (references Employee)
+                \item Customer ID: Foreign Key (references Customer)
+                \item Warehouse ID: Foreign Key (references Warehouse)
+            \end{enumerate}
+            \item Transaction
+            \begin{enumerate}
+                \item \underline{Order ID}: Primary Key
+                \item Customer ID: Foreign Key (references Customer)
+                \item Payment Method
+                \item Transaction Status
+                \item Transaction Time
+                \item Coupon Code: Foreign Key (references Coupon)
             \end{enumerate}
             \item Complains
             \begin{enumerate}
@@ -230,6 +264,5 @@
                 \item Service Employee ID: Foreign Key (references Employee)
             \end{enumerate}
         \end{enumerate}
-    
-    \chapter*{Relational Schema}
+    \
 \end{document}
