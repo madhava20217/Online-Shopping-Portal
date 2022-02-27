@@ -1,28 +1,28 @@
-#script for creating database and tables
+--script for creating database and tables
 
 -- tables created:
--- 1) Customer
--- 2) Customer Phone
--- 3) Product
--- 4) Product_rating
--- 5) Product_photos
--- 6) Vendor
--- 7) Vendor_Phone
--- 8) Warehouse
--- 9) Warehouse_Phone
--- 10) Employee
--- 11) Orders
--- 12) Delivery Partner
--- 13) Coupon
--- 14) Warehouse_Worker
--- 15) Service_employee
--- 16) Transaction
--- 17) Delivery
--- 18) Stores
--- 19) Supplies
--- 20) Shopping_cart
--- 21) Complains
--- 22) Order_products
+-- 1) Customer          -done
+-- 2) Customer Phone    -done
+-- 3) Product           -done
+-- 4) Product_rating    -done
+-- 5) Product_photos    -done
+-- 6) Vendor            -done
+-- 7) Vendor_Phone      -done
+-- 8) Warehouse         -done
+-- 9) Warehouse_Phone   -done
+-- 10) Employee         -done
+-- 11) Orders           -done
+-- 12) Delivery Partner -done
+-- 13) Coupon           -done
+-- 14) Warehouse_Worker -done
+-- 15) Service_employee -done
+-- 16) Transaction      -done
+-- 17) Delivery         -done
+-- 18) Stores           -done
+-- 19) Supplies         -done
+-- 20) Shopping_cart    -done
+-- 21) Complains        -done
+-- 22) Order_products   -done
 
  
 
@@ -31,7 +31,7 @@ create DATABASE online_shopping;
 
 use online_shopping;
 
--- #done
+-- --done
 create table Customer(
                     customer_ID numeric(30,0) primary key,
                     First_name varchar(30) not null,
@@ -59,9 +59,11 @@ create table Product(Product_ID numeric(30) primary key,
 
 create table product_rating(
                     Product_ID numeric(30,0),
+                    customer_id numeric(30,0),
                     Rating numeric(1,0) check (Rating > 0),
                     foreign key (product_id) references product(product_id),
-                    primary key (product_id, rating)
+                    foreign key (customer_id) references customer(customer_id),
+                    primary key (product_id, customer_id, Rating)
                     );
 
 create table product_photo(
@@ -72,7 +74,7 @@ create table product_photo(
                     );
 
 
--- #done
+-- --done
 create table Vendor(Vendor_id numeric(30,0) primary key,
                     first_name varchar(30) not null,
                     last_name varchar(30) not null, 
@@ -86,7 +88,7 @@ create table Vendor_phone(Vendor_ID numeric(30,0),
                             primary key(Phone_number,Vendor_ID)
                         );
 
--- #done
+-- --done
 create table Warehouse(Warehouse_ID numeric(30,0) primary key,
                     Plot_number numeric(30,0) check(plot_number >= 0),
                     City varchar(30),
@@ -119,7 +121,7 @@ create table Employee(Employee_ID numeric(30,0) primary key,
                     Phone_number numeric(30,0)
                 );
 
-#done
+--done
 create table Orders(
     order_ID numeric(30,0) primary key, 
     Total_Price numeric(20,2) check(Total_price > 0),
@@ -135,7 +137,7 @@ create table Delivery_Partner(
     foreign key (Employee_id) references Employee(employee_id)
     );
 
--- #done
+-- --done
 create table Coupon(
     Coupon_Code varchar(30) primary key, 
     Discount_Percentage numeric(5,2) check (discount_percentage >= 0)
@@ -143,7 +145,7 @@ create table Coupon(
 
 
 
--- #done
+-- --done
 create table Warehouse_Worker(
     Employee_ID numeric(30,0) primary key,
     Warehouse_ID numeric(30,0),
@@ -209,11 +211,11 @@ create table Supplies(
     foreign key (Vendor_ID) references Vendor(Vendor_ID),
     foreign key (Product_ID) references Product(Product_ID)
     );
-
-
+    
 create table Shopping_Cart(
 	customer_ID numeric(30,0),
     Product_ID numeric(30, 0),
+    quantity NUMERIC(10,0),
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
@@ -240,4 +242,3 @@ create table order_products(
 
     primary key (order_id, product_id)
 );
-
