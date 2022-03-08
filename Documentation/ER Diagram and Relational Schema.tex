@@ -61,7 +61,7 @@
         \item Customer
         \item Employees
         \item Suppliers
-        \item Vendors
+        \item Management of the company: board of executives, shareholders
     \end{enumerate}
     Other stakeholders include manufacturers, warehousing service providers
     
@@ -287,7 +287,7 @@
 The ER diagram was reduced by noting multiplicities and the following tables for the relational schema resulted.
 
 \begin{enumerate}
-	\item Customer(\underline{customer ID}, )
+	\item Customer(\underline{customer ID}, First\_name, Last\_name, House\_number, Locality, City, Pincode, Email\_Address, Password)
 	\item Product(\underline{product ID}, Price, Category, Discount Percentage, GST Percentage)
 	\item Product Rating(\underline{Product ID, Customer ID}, Rating)
 	\item Product Photo(\underline{Product ID, Product Photo})
@@ -324,7 +324,7 @@ The SQL queries for creating the database, populating the database and the queri
 	This was another topic on which multiple meetings had been conducted, specifically on the nature of the ternary/quarternary relations and how to decompose them. Ultimately, Delivery and Transaction were kept because of their utility and ability to define the whole scenario without conflicts with other entities and relations. The participation types (total and partial), relationship roles and cardinality constraints have been mentioned in the ER diagram. Detailed constraints have been mentioned in the SQL database creation file.
 
 	\section{Ternary Relation}
-	A ternary relation: complains was identified which involves an order, the customer who placed that order and one of the service employees. The cardinality is many on the order's side and unary on the customer's and service employee's side. It was identified in the following way: "A customer can complain to a service employee about many orders."
+	A ternary relation: complains was identified which involves an order, the customer who placed that order and one of the service employees. The cardinality is many on the order's and service employee's side and unary on the customer's  side. It was identified in the following way: "A customer can complain to many service employees about many orders."
 
 	\section{Relational Schemas}
 	They have been included in one of the earlier chapters.

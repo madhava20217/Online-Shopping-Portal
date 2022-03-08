@@ -1,4 +1,4 @@
-#script for creating database and tables
+--script for creating database and tables
 
 -- tables created:
 -- 1) Customer
@@ -24,14 +24,12 @@
 -- 21) Complains
 -- 22) Order_products
 
- 
-
 drop database online_shopping;
+
 create DATABASE online_shopping;
 
 use online_shopping;
 
--- #done
 create table Customer(
                     customer_ID numeric(30,0) primary key,
                     First_name varchar(30) not null,
@@ -49,7 +47,7 @@ create table Customer_phone(Customer_ID numeric(30,0),
                             primary key(Phone_number,Customer_id)
                             );
 
--- done
+
 create table Product(Product_ID numeric(30) primary key,
                     Price numeric(15, 2) check(Price > 0),
                     Category varchar(50),
@@ -63,7 +61,7 @@ create table product_rating(
                     Rating numeric(1,0) check (Rating > 0),
                     foreign key (product_id) references Product(product_id),
                     foreign key (customer_id) references Customer(customer_id),
-                    primary key (product_id, customer_id, Rating)
+                    primary key (product_id, customer_id)
                     );
 
 create table product_photo(
@@ -74,7 +72,7 @@ create table product_photo(
                     );
 
 
--- #done
+
 create table Vendor(Vendor_id numeric(30,0) primary key,
                     first_name varchar(30) not null,
                     last_name varchar(30) not null, 
@@ -88,7 +86,7 @@ create table Vendor_phone(Vendor_ID numeric(30,0),
                             primary key(Phone_number,Vendor_ID)
                         );
 
--- #done
+
 create table Warehouse(Warehouse_ID numeric(30,0) primary key,
                     Plot_number numeric(30,0) check(plot_number >= 0),
                     City varchar(30),
@@ -101,7 +99,7 @@ create table Warehouse_phone(Warehouse_ID numeric(30,0),
                             primary key(Phone_number,Warehouse_ID)
                         );
 
--- done
+
 create table Employee(Employee_ID numeric(30,0) primary key,
                     age int(10) not null check(age between 18 and 300),
                     First_Name varchar(30) not null,
@@ -121,7 +119,7 @@ create table Employee(Employee_ID numeric(30,0) primary key,
                     Phone_number numeric(30,0)
                 );
 
-#done
+
 create table Orders(
     order_ID numeric(30,0) primary key, 
     Total_Price numeric(20,2) check(Total_price > 0),
@@ -129,7 +127,7 @@ create table Orders(
     Total_Discount_Percentage numeric(5,2)
     );
 
--- done
+
 create table Delivery_Partner(
     Employee_ID numeric(30,0) primary key, 
     Vehicle_ID varchar(30), 
@@ -137,7 +135,7 @@ create table Delivery_Partner(
     foreign key (Employee_id) references Employee(employee_id)
     );
 
--- #done
+
 create table Coupon(
     Coupon_Code varchar(30) primary key, 
     Discount_Percentage numeric(5,2) check (discount_percentage >= 0)
@@ -145,7 +143,6 @@ create table Coupon(
 
 
 
--- #done
 create table Warehouse_Worker(
     Employee_ID numeric(30,0) primary key,
     Warehouse_ID numeric(30,0),
@@ -154,13 +151,12 @@ create table Warehouse_Worker(
     );
 
 
--- done
 create table Service_Employee(
     Employee_ID numeric(30,0) primary key,
     foreign key (Employee_ID) references Employee(Employee_ID)
     );
 
--- done
+
 create table Transaction(
     Order_ID numeric(30,0) primary key, 
     Payment_Method varchar(30), 
@@ -222,7 +218,7 @@ create table Shopping_Cart(
     foreign key (Product_ID) references Product(Product_ID)
     );
 
--- done
+
 create table complains(
     complaint_number numeric(30,0) primary key,
     customer_ID numeric(30, 0),

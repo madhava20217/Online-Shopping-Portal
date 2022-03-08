@@ -1,8 +1,3 @@
--- --remaining:
--- -- 1) product_rating: change to add customer entity as well
--- -- 2) product_photos:
--- -- 3) shopping cart
--- -- 4) 
 
 --script for inputting data and tuples into the database
 use online_shopping;
@@ -412,7 +407,6 @@ insert into customer_phone values (22, 9865776005) ,
 (98, 9569797742);
 
 
-select * from customer;
 -- Vendor
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (1, 'Otes', 'Renwick', '34373', 'Palaióchora', 803147);
 insert into Vendor (Vendor_id, first_name, last_name, Plot_number, City, Pincode) values (2, 'Junette', 'Barnhart', '40094', 'Muara Siberut', 827734);
@@ -1034,7 +1028,6 @@ insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, 
 insert into Employee (Employee_ID, age , First_Name, Last_name, Salary, Gender, Department , Performance, Position , Date_of_Joining, Date_of_birth, Email_address, House_No, Locality, City, Pincode, Phone_Number) values (100, 74.3, 'Leisha', 'Skelhorn', 170552.6, 'Female', 'Support', 1.3, 1, '5/20/2021', '11/16/2021', 'lskelhorn2r@newsvine.com', '43', 'Dakota', 'Marxog', '2', '6667684834');
 
 
-select * from employee;
 -- Employee_childs
 insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 1 , 2 );
 insert into Warehouse_Worker (Employee_ID, Warehouse_ID) values ( 2 , 4 );
