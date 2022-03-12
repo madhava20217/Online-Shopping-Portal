@@ -1,5 +1,7 @@
 use online_shopping;
 
+commit work;
+
 update Employee set salary = case 
             when (performance > 7) then  salary + 50000  
             when  (3 <performance < 7) then salary + 30000 
@@ -56,3 +58,5 @@ Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.
 
 
 select * from orders where MOD(order_id, 5) = 0;
+
+rollback work;
