@@ -50,7 +50,7 @@ create table Customer_phone(Customer_ID numeric(30,0),
 
 create table Product(Product_ID numeric(30) primary key,
                     Price numeric(15, 2) check(Price > 0),
-                    Category varchar(50),
+                    Product_name varchar(50),
                     Discount_Percentage numeric(5,2) check(Discount_Percentage >= 0), 
                     GST_percentage numeric(10, 2)
                     );
