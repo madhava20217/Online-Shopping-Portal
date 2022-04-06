@@ -1,3 +1,5 @@
+-- TODO: add delivery_date field to delivery table and fix all the input data.
+
 -- script for creating database and tables
 
 -- tables created:
@@ -182,9 +184,6 @@ create table Delivery(
     FOREIGN KEY (Warehouse_ID) REFERENCES Warehouse(Warehouse_ID)
     );
 
-
-
-
 create table Stores(
 	Warehouse_ID numeric(30,0),
     Product_ID numeric(30,0),
@@ -239,3 +238,9 @@ create table order_products(
     primary key (order_id, product_id)
 );
 
+create table delivered_orders(
+    order_id numeric(30,0) primary key,
+    delivery_date Timestamp,
+
+    foreign key (order_id) REFERENCES orders(order_id)
+);

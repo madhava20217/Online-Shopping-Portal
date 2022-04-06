@@ -1,3 +1,6 @@
+--TODO: change the table name of Del when delivery table is fixed (added delivery-date attribute)
+
+
 create view Delivery_Guy as 
 (select Delivery.Order_ID, Delivery.Employee_ID, Customer.House_number as Customer_House_No, Customer.Locality as Customer_Locality, 
 Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.Plot_number as Warehouse_Address,
@@ -7,17 +10,54 @@ Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.
 -- Views for customer : cart, complaint, order
 
 -- Customer_order:
--- product, order_product, order, transaction, 
+-- product, order_product, order, transaction, customer
 -- products they bought, name, order_id
---, delivery address, transaction date/time, transaction_status, 
+-- delivery address, transaction date/time, 
 -- cost of product, 
+
+-- customer: primary key is customer_id
+-- Transaction table: primary key is order_id
+-- product: primary key is product_id
+-- order_product: order_id, product_id
+-- transaction: order_id, customer, coupon
+
 
 
 create view Customer_Order as
-(select Product.Product_name as Product_Name, order_products.quantity as Quantity, 
-from Order, order_products, Transaction, Product
+(
+    select 
+        customer.customer_id as Customer_ID, 
+        
+        CONCAT(customer.first_name, " ", customer.last_name) as customer_name, 
 
-where Customer_ID);
+        Orders.Order_ID as Order_ID, 
+        
+        Product.Product_name as Product_Name,
+
+        order_products.quantity as Quantity,
+    
+        Orders.Total_Price as Total_Price,
+     
+        CONCAT(Customer.House_number, " ", Customer.Locality, " ", Customer.City, " ", Customer.pincode) as Delivery_address, 
+     
+        Transaction.transaction_time as Transaction_Time,
+
+        Del.Delivery_date as Delivery_Status
+
+
+    from Orders, order_products, Transaction, Product, Customer, delivered_orders as Del
+
+    where Orders.Order_ID = order_products.Order_ID 
+        and order_products.Product_ID = Product.Product_ID 
+        and Orders.Order_ID = Transaction.Order_ID 
+        and Transaction.Customer_ID = Customer.Customer_ID
+        and Del.order_id = Orders.order_id
+);
+
+drop view customer_order;
+
+select * from customer_order;
+
 
 create view Customer_Complaint as
 

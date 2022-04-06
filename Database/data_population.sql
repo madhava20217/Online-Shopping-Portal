@@ -2508,4 +2508,8 @@ insert into product_photo values (1,'ROCGZ8996U1ECKM0N83'),
 (100,'JMB7NYOOC2LY6KVFMG76UT'),
 (100,'MH9JEC8DAHF');
 
-Alter table Product Change Category Product_name varchar(50);
+insert into delivered_orders values (5,"2021:7:19 22:49:53");
+insert into delivered_orders values (10,"2021:8:14 22:49:53");
+insert into delivered_orders values (15,"2021:10:1 22:49:53");
+insert into delivered_orders values (25,"2021:9:11 22:49:53");
+insert into delivered_orders values (40,"2021:10:8 22:49:53");
