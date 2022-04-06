@@ -101,7 +101,6 @@ create table Warehouse_phone(Warehouse_ID numeric(30,0),
 
 
 create table Employee(Employee_ID numeric(30,0) primary key,
-                    age int(10) not null check(age between 18 and 300),
                     First_Name varchar(30) not null,
                     Last_Name varchar(30), 
                     Salary numeric(30) not null, 
