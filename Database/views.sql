@@ -59,12 +59,18 @@ drop view customer_order;
 select * from customer_order;
 
 
+-- Customer's complaints tracking
 create view Customer_Complaint as
 
+
+-- Customer's cart view
 create view Customer_Cart as
 
+-- Customer's account view
 create view Customer_account as 
 
+
+-- View for suppliers
 create view Suppliers as 
 (select product,quantity from Supplies where Vendor_ID);
 
