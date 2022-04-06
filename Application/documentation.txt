@@ -1,0 +1,9 @@
+Python and flutter, base for the project option 1.
+
+Python and Flask / Django. Flask for simplified, Django for complicated.
+
+Actors:
+- customer
+- vendor
+- employees
+- 

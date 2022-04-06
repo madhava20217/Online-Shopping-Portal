@@ -1,4 +1,4 @@
---script for creating database and tables
+-- script for creating database and tables
 
 -- tables created:
 -- 1) Customer
