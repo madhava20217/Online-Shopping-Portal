@@ -6,11 +6,15 @@ Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.
 
 -- Views for customer : cart, complaint, order
 
--- Customer_order: products they bought, delivery address, transaction date,
--- 
+-- Customer_order:
+-- product, order_product, order, transaction, 
+-- products they bought, name, order_id
+--, delivery address, transaction date/time, transaction_status, 
+-- cost of product, 
+
 
 create view Customer_Order as
-(select order_products.quantity, Product.product_name,quantiy
+(select Product.Product_name as Product_Name, order_products.quantity as Quantity, 
 from Order, order_products, Transaction, Product
 
 where Customer_ID);
