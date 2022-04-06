@@ -177,6 +177,7 @@ create table Delivery(
     Employee_ID numeric(30,0), 
     Customer_ID numeric(30,0), 
     Warehouse_ID numeric(30,0),
+    delivery_date TIMESTAMP,
 
     FOREIGN KEY (Order_ID) REFERENCES Orders(Order_ID),
     FOREIGN KEY (Employee_ID) REFERENCES Employee(Employee_ID),
@@ -236,11 +237,4 @@ create table order_products(
     foreign key (product_id) references Product(product_id),
 
     primary key (order_id, product_id)
-);
-
-create table delivered_orders(
-    order_id numeric(30,0) primary key,
-    delivery_date Timestamp,
-
-    foreign key (order_id) REFERENCES orders(order_id)
 );

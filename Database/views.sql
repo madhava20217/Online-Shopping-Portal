@@ -31,6 +31,8 @@ create view Customer_Order as
         CONCAT(customer.first_name, " ", customer.last_name) as customer_name, 
 
         Orders.Order_ID as Order_ID, 
+
+        Product.Product_ID as Product_ID,
         
         Product.Product_name as Product_Name,
 
@@ -42,10 +44,11 @@ create view Customer_Order as
      
         Transaction.transaction_time as Transaction_Time,
 
-        Del.Delivery_date as Delivery_Status
+        Del.Delivery_date as Delivery_Date
 
 
-    from Orders, order_products, Transaction, Product, Customer, delivered_orders as Del
+    from Orders, order_products, Transaction, Product, Customer, 
+    delivery as Del
 
     where Orders.Order_ID = order_products.Order_ID 
         and order_products.Product_ID = Product.Product_ID 
