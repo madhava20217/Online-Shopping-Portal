@@ -1539,16 +1539,16 @@ insert into vendor_phone values (67, 9634248315) ,
 (92, 9094124650) ,
 (7, 9735910634);
 
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 1 , 50 , 12 , 48 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 2 , 95 , 28 , 31 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 3 , 91 , 18 , 26 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 4 , 88 , 31 , 39 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 5 , 81 , 39 , 25 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 6 , 18 , 17 , 43 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 7 , 62 , 13 , 21 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 8 , 95 , 28 , 45 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 9 , 35 , 9 , 50 );
-insert into complains (complaint_number, customer_ID, order_ID, service_employee_id) values ( 10 , 55 , 11 , 41 );
+insert into complains values ( 1 , 50 , 12 , 48 , "2021:7:12 21:23:12", "extra", "Y");
+insert into complains  values ( 2 , 95 , 28 , 31 , "2021:7:12 21:23:12", "not delivered", "Y");
+insert into complains values ( 3 , 91 , 18 , 26 , "2021:7:12 21:23:12", "wrong item", "Y");
+insert into complains values ( 4 , 88 , 31 , 39 , "2021:7:12 21:23:12", "bad product", "Y");
+insert into complains values ( 5 , 81 , 39 , 25 , "2021:7:12 21:23:12", "extra", "Y");
+insert into complains  values ( 6 , 18 , 17 , 43 , "2021:7:12 21:23:12", "not working", "Y");
+insert into complains  values ( 7 , 62 , 13 , 21 , "2021:7:12 21:23:12", "spam bot refund", "Y");
+insert into complains values ( 8 , 95 , 28 , 45 , "2021:7:12 21:23:12", "refund me plox", "Y");
+insert into complains values ( 9 , 35 , 9 , 50 , "2021:7:12 21:23:12", "GIMME MONEEE", "Y");
+insert into complains values ( 10 , 55 , 11 , 41 , "2021:7:12 21:23:12", "Delivery took time", "Y");
 
 
 
@@ -2508,3 +2508,4 @@ insert into product_photo values (1,'ROCGZ8996U1ECKM0N83'),
 (100,'JMB7NYOOC2LY6KVFMG76UT'),
 (100,'MH9JEC8DAHF');
 
+commit;

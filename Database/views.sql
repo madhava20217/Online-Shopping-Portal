@@ -57,25 +57,64 @@ create view Customer_Order as
         and Del.order_id = Orders.order_id
 );
 
-drop view customer_order;
-
 select * from customer_order;
 
+commit;
 
 -- Customer's complaints tracking
-create view Customer_Complaint as
+create view Customer_Complaint as (
+    select customer.customer_ID,
+    CONCAT(customer.first_name, " ", customer.last_name) as customer_name, 
+    complains.order_ID as Order_ID,
+    complains.date_of_creation as Date_of_Complaint_Creation,
+    complains.Details as Complaint_Details,
+    complains.resolved as Resolution_Status
 
+    from complains natural join customer
 
+);
+select * from customer_complaint;
+
+commit;
 -- Customer's cart view
 create view Customer_Cart as
+(
+    select 
+        shopping_cart.customer_ID as Customer_ID,
+        shopping_cart.Product_ID as Product_ID,
+        product.Product_name as Product_Name,
+        shopping_cart.quantity as Quantity,
+        ROUND((product.price * (100-product.discount_percentage)*(100+product.GST_percentage)/10000), 2) 
+            as Price_Per_Unit_Discount_and_Tax_Inclusive
+
+
+    from shopping_cart natural join product
+);
+
+select * from customer_cart;
 
 -- Customer's account view
-create view Customer_account as 
+create view Customer_account as ;
 
-
--- View for suppliers
+-- View for suppliers, should have details of products they supply
 create view Suppliers as 
-(select product,quantity from Supplies where Vendor_ID);
+(select 
+    Vendor.vendor_ID as vendor_ID,
+    (CONCAT(vendor.first_name, " ", vendor.last_name)) as Vendor_Name,
+    (CONCAT(vendor.plot_number, " ", vendor.city, " ", vendor.pincode)) as Vendor_Address,
+    Product.product_ID as Product_ID,
+    product.product_Name as Product_Name,
+    product.price as Unit_price,
+    product.GST_percentage as GST_Percentage,
+    Supplies.quantity as Quantity_Supplied
+
+    from Vendor, Supplies, Product
+    where 
+        Vendor.vendor_id = supplies.vendor_id and
+        Supplies.product_id = Product.product_id    
+    );
+
+select * from Suppliers;
 
 create view Service_Emp as
 (select );

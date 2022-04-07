@@ -223,6 +223,9 @@ create table complains(
     customer_ID numeric(30, 0),
     order_id numeric(30,0),
     service_employee_id numeric(30,0), 
+    date_of_creation timestamp,
+    details varchar(250),
+    resolved char(1),
     foreign key (customer_id) references Customer(customer_ID),
     foreign key (order_id) references Orders(Order_ID),
     foreign key (service_employee_id) references Service_Employee(Employee_ID)
@@ -238,3 +241,6 @@ create table order_products(
 
     primary key (order_id, product_id)
 );
+
+
+commit;

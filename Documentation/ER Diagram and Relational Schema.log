@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.3.8)  8 MAR 2022 08:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.3.8)  7 APR 2022 08:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -118,7 +118,7 @@ Chapter 2.
 [5
 
 ] [6] [7] [8]
-Overfull \hbox (1.75844pt too wide) in paragraph at lines 238--239
+Overfull \hbox (1.75844pt too wide) in paragraph at lines 239--240
 []\OT1/cmr/m/n/12 Delivery: Quar-ternary re-la-tion be-tween ware-house, or-der, de-liv-ery part-
  []
 
@@ -126,7 +126,7 @@ Overfull \hbox (1.75844pt too wide) in paragraph at lines 238--239
 <Pictures/ER_Diagram.png, id=37, 1240.635pt x 2011.515pt>
 File: Pictures/ER_Diagram.png Graphic file (type png)
 <use Pictures/ER_Diagram.png>
-Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 284.
+Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 285.
 (pdftex.def)             Requested size: 331.50238pt x 537.46877pt.
  [10]
 Overfull \vbox (17.2121pt too high) has occurred while \output is active []
@@ -138,19 +138,19 @@ Chapter 3.
 ] [13]
 Chapter 4.
 
-Overfull \hbox (24.21574pt too wide) in paragraph at lines 323--323
+Overfull \hbox (24.21574pt too wide) in paragraph at lines 324--324
 []\OT1/cmr/bx/n/17.28 Entity Re-la-tion-ship Par-tic-i-pa-tion and Types 
  []
 
 [14
 
 ]
-Overfull \hbox (23.62627pt too wide) in paragraph at lines 339--340
+Overfull \hbox (23.62627pt too wide) in paragraph at lines 340--341
 \OT1/cmr/m/n/12 Queries have been in-cluded in the Database folder un-der the file name 'queries.sql',
  []
 
 
-Overfull \hbox (26.70288pt too wide) in paragraph at lines 339--340
+Overfull \hbox (26.70288pt too wide) in paragraph at lines 340--341
 \OT1/cmr/m/n/12 which should be run af-ter run-ning 'database[]creation.sql' and 'data[]population.sql'
  []
 
@@ -168,7 +168,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,6n,62p,698b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\krish\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "ER Diagram and Relational Schema.pdf" (19 pages, 388313 bytes).
+Output written on "ER Diagram and Relational Schema.pdf" (19 pages, 388130 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
