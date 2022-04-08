@@ -2,7 +2,14 @@
 
 import mysql.connector
 from flask import Blueprint, render_template, request
-from . import get_cursor
+
+
+#defining global variable for database login measures
+global mydb
+mydb = mysql.connector.connect(host = "localhost",
+                                user = "root",
+                                password = "Madhava2207",
+                                database = "online_shopping")
 
 auth = Blueprint('auth', __name__)
 
@@ -24,7 +31,13 @@ def login():
                 ## incorrect password
         # else:
             ## email doesn't exist
-        cursor = get_cursor()
+            
+        try:
+            mydb
+        except NameError as e:
+            connect_db()
+
+        cursor = mydb.cursor(buffered = True)
         login_query = "select customer_ID,password from Customer where email_address = %s and password = %s"
         cursor.execute(login_query, [email, password])
         
@@ -32,8 +45,10 @@ def login():
         valid = False
 
         #if length isn't 0, we found the customer!
-        if len(list(iter(cursor.fethcall()))) != 0:
+        if len(list(iter(cursor.fetchall()))) != 0:
             valid = True
+        
+        cursor.close()
 
         if valid:
             #send to main page
@@ -45,3 +60,10 @@ def login():
 def signup():
     
     return render_template("Signup.html")
+
+''' function to initialise connection to online shopping database in mydb'''
+def connect_db():
+    mydb = mysql.connector.connect(host = "localhost",
+                                user = "root",
+                                password = "Madhava2207",
+                                database = "online_shopping")

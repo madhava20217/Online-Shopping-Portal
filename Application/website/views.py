@@ -1,3 +1,6 @@
+#TODO: product site: product rating average and take details 
+#from sql queries
+
 from flask import Blueprint, render_template
 
 views = Blueprint('views', __name__)
@@ -24,7 +27,7 @@ def home5():
 
 @views.route('/product')
 def product():
-    return render_template("Product.html", prod_name = "akdfjl", prod_price = "53", prod_discount = "1")
+    return render_template("Product.html", prod_name = "adfadsf", prod_price = "53", prod_discount = "1")
 
 @views.route('/cart')
 def signup():
