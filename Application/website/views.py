@@ -22,6 +22,10 @@ def home4():
 def home5():
     return render_template("Home5.html")
 
+@views.route('/product')
+def product():
+    return render_template("Product.html", prod_name = "akdfjl", prod_price = "53", prod_discount = "10")
+
 @views.route('/cart')
 def signup():
     return render_template("Cart.html")
