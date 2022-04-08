@@ -24,7 +24,7 @@ def home5():
 
 @views.route('/product')
 def product():
-    return render_template("Product.html", prod_name = "akdfjl", prod_price = "53", prod_discount = "10")
+    return render_template("Product.html", prod_name = "akdfjl", prod_price = "53", prod_discount = "1")
 
 @views.route('/cart')
 def signup():
