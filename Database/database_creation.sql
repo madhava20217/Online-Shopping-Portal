@@ -200,7 +200,7 @@ create table Stores(
 create table Supplies(
 	Vendor_ID numeric(30,0),
     Product_ID numeric(30,0),
-    Quantity int,
+    Quantity int check(Quantity > 0 and Quantity <=10),
 
     primary key (Vendor_ID, Product_ID),
     foreign key (Vendor_ID) references Vendor(Vendor_ID),
@@ -211,7 +211,7 @@ create table Supplies(
 create table Shopping_Cart(
 	customer_ID numeric(30,0),
     Product_ID numeric(30, 0),
-    quantity int,
+    quantity int check(Quantity > 0 and Quantity <=10),
     primary key (customer_ID, Product_ID),
     foreign key (customer_ID) references Customer(Customer_ID),
     foreign key (Product_ID) references Product(Product_ID)
@@ -234,7 +234,7 @@ create table complains(
 create table order_products(
     order_id numeric(30,0),
     product_id numeric(30,0),
-    quantity numeric(3,0) check(quantity > 0),
+    quantity numeric(3,0) check(quantity > 0 and quantity <=10),
 
     foreign key (order_id) references Orders(order_id),
     foreign key (product_id) references Product(product_id),
