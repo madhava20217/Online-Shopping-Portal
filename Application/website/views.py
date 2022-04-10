@@ -36,3 +36,7 @@ def product():
 @views.route('/cart')
 def cart():
     return render_template("Cart.html")
+
+@views.route('/order')
+def order():
+    return render_template("Order.html")

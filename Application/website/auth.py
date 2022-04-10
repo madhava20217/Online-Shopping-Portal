@@ -8,7 +8,8 @@
 #TODO: transaction page (checkout and pay)
 #TODO: home page products linking to invidual product pages
 #TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button
-#TODO: 
+#TODO: Employees management portal (for other stakeholders)
+#TODO: utilise views in the querying process
 
 import mysql.connector
 from flask import Blueprint, render_template, request, flash, redirect, url_for
