@@ -13,5 +13,6 @@
             "username": "root",
             "database": "online_shopping"
         }
-    ]
+    ],
+    "jupyter.jupyterServerType": "local"
 }
