@@ -1,5 +1,6 @@
 #TODO: product site: product rating average and take details 
 #from sql queries
+#TODO: make a page for showing previous orders of the customer
 
 from flask import Blueprint, render_template, request
 

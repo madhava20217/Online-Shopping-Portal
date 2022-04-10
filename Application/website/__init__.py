@@ -4,11 +4,12 @@ from flask import Flask, render_template, request
 
 
 
-'''creates and returns an app object
+
+def create_app():
+    '''creates and returns an app object
     Parameters: no parameters
     Returns: app object made from flask with blueprints 
             from .views and .auth'''
-def create_app():
     app = Flask(__name__)
 
 

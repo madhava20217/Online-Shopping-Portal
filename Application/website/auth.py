@@ -1,7 +1,18 @@
 #TODO: check logic for signup auto-increment.
+#TODO: dynamic list for shopping cart
+#TODO: fix user login (create customer object)
+#TODO: complete signup procedure
+#TODO: shopping cart page (product quantity and total price)
+#TODO: product page to shopping cart linking (add to cart button)
+#TODO: users' previous orders page (delivery details etc)
+#TODO: transaction page (checkout and pay)
+#TODO: home page products linking to invidual product pages
+#TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button
+#TODO: 
 
 import mysql.connector
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask_login import login_user, logout_user, login_required, current_user
 
 
 #defining global variable for database login measures
@@ -25,24 +36,38 @@ def login():
         except NameError as e:
             connect_db()
 
-        cursor = getcursor(mydb)
-        login_query = "select customer_ID,password from Customer where email_address = %s and password = %s"
+        cursor = getcursor()
+        login_query = "select * from Customer where email_address = %s and password = %s"
         cursor.execute(login_query, [email, password])
         
         #checking if the email and password entered are valid or not
         valid = False
 
         #if length isn't 0, we found the customer!
-        if len(list(iter(cursor.fetchall()))) != 0:
+        temp = list(iter(cursor.fetchall()))
+    
+        if len(temp) != 0:
             valid = True
         
         cursor.close()
 
         if valid:
             #send to main page
-            return render_template("Home1.html")
+            print("PASSED")
+            user = temp[0]  # todo correct this as the user is of tuple type
+            login_user(user, remember=True)
+            flash("Logged in successfully!", category='success')
+            return redirect(url_for('views.home1'))
+        else:
+            flash("Incorrect Email or Password! Try Again", category='error')
     
-    return render_template("Login.html")
+    return render_template("Login.html", user=current_user)
+
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('views.home1'))
     
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -92,28 +117,27 @@ def signup():
             valid = False
         
         #this can happen if pincode or house number are invalid, or if the email address exists
-        if( not valid ):
-            #print("NOT VALID")
+        if( valid ):
+            #print("ERROR OCCURRED WHILE REGISTERING, CHECK VALIDITY OF PINCODE AND/OR HOUSE NUMBER")
+            
             tup = [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd]
-            #print(tup)
-            print("ERROR OCCURRED WHILE REGISTERING, CHECK VALIDITY OF PINCODE AND/OR HOUSE NUMBER")
-            return render_template("Signup.html")
+            try:
+                getcursor().execute(register_statement, tup)
+                db_commit()
+                flash("Account Created!", category='success')
+                return redirect(url_for('auth.login'))
+            except mysql.connector.Error as e:
+                #print(e)
+                flash("Sorry, an error occurred while registering, please try again!", category = 'error')
+                redirect(url_for('auth.signup'))
+
+        else:
+            flash("Invalid House Number or Pincode!", category='error')
+    return render_template("Signup.html", user=current_user)
 
 
-
-        tup = [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd]
-        try:
-            getcursor().execute(register_statement, tup)
-            mydb.commit()
-            return render_template("Home1.html")
-        except mysql.connector.Error as e:
-            #print(e)
-            return render_template("Signup.html")
-
-    return render_template("Signup.html")
-
-''' function to initialise connection to online shopping database in mydb'''
 def connect_db():
+    ''' function to initialise connection to online shopping database in mydb'''
     mydb = mysql.connector.connect(host = "localhost",
                                 user = "root",
                                 password = "Madhava2207",
@@ -121,6 +145,10 @@ def connect_db():
 
     return mydb
 
-'''function to get cursor object from database connection instance'''
+
 def getcursor():
+    '''function to get cursor object from database connection instance'''
     return mydb.cursor(buffered = True)
+
+def db_commit():
+    mydb.commit();
