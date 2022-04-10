@@ -19,19 +19,7 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password1')
 
-        ## query to find user by email
-        # user = User.query.filter_by(email = email).first()
-        # if user:
-            ## if user email exists in the database
-            # if check_password_hash(user.password, password):
-            #     flash("Logged in successfully!", category='success')
-            #     login_user(user, remember=True)
-            #     return redirect(url_for('views.home'))
-            # else:
-                ## incorrect password
-        # else:
-            ## email doesn't exist
-            
+        #try-except block for uninitialised variable           
         try:
             mydb
         except NameError as e:
@@ -67,3 +55,5 @@ def connect_db():
                                 user = "root",
                                 password = "Madhava2207",
                                 database = "online_shopping")
+
+    return mydb

@@ -17,51 +17,131 @@ content %}
         <h2 class="text-gray-900 text-lg font-medium title-font mb-5">
           Sign Up
         </h2>
-        <div class="relative mb-4">
-          <label for="full-name" class="leading-7 text-sm text-gray-600"
-            >Full Name</label
+        <div class="mb-4">
+          <label for="first-name" class="leading-7 text-sm text-gray-600"
+            >First Name</label
           >
           <input
+            required
             type="text"
-            id="fullname"
-            name="fullname"
-            placeholder="Enter Name"
+            id="firstname"
+            name="firstname"
+            placeholder="Enter First Name"
+            maxlength="30"
             class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
-        <div class="relative mb-4">
+        <div class="mb-4">
+          <label for="last-name" class="leading-7 text-sm text-gray-600"
+            >Last Name</label
+          >
+          <input
+            required
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Enter Last Name"
+            maxlength="30"
+            class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+        <div class="mb-4">
           <label for="email" class="leading-7 text-sm text-gray-600"
             >Email</label
           >
           <input
+            required
             type="email"
+            maxlenght="50"
             id="email"
             name="email"
             placeholder="Enter Email"
             class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
-        <div class="relative mb-4">
+        <div class="mb-4">
           <label for="password1" class="leading-7 text-sm text-gray-600"
             >Password</label
           >
           <input
+            required
             type="password"
+            maxlength="30"
             id="password1"
             name="password1"
-            placeholder="Enter Password"
+            placeholder="Create Password"
             class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
-        <div class="relative mb-4">
+        <div class="mb-4">
           <label for="password2" class="leading-7 text-sm text-gray-600"
             >Confirm Password</label
           >
           <input
+            required
             type="password"
+            maxlength="30"
             id="password2"
             name="password2"
             placeholder="Confirm Password"
+            class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password2" class="leading-7 text-sm text-gray-600"
+            >House Number</label
+          >
+          <input
+            required
+            type="number"
+            min="0"
+            max="999999999999999999999999999999"
+            id="houseno"
+            name="houseno"
+            placeholder="Enter House Number"
+            class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password2" class="leading-7 text-sm text-gray-600"
+            >Locality</label
+          >
+          <input
+            required
+            type="text"
+            maxlength="30"
+            id="locality"
+            name="locality"
+            placeholder="Enter Locality"
+            class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password2" class="leading-7 text-sm text-gray-600"
+            >City</label
+          >
+          <input
+            required
+            type="text"
+            maxlength="30"
+            id="city"
+            name="city"
+            placeholder="Enter City"
+            class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password2" class="leading-7 text-sm text-gray-600"
+            >Pincode</label
+          >
+          <input
+            required
+            type="number"
+            min="0"
+            max="999999"
+            id="pincode"
+            name="pincode"
+            placeholder="Enter Pincode"
             class="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
