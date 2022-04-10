@@ -1,4 +1,4 @@
-#TODO: check logic for signup auto-increment.
+#TODO: check logic for signup auto-increment (it still auto increments)
 #TODO: dynamic list for shopping cart
 #TODO: fix user login (create customer object)
 #TODO: complete signup procedure
