@@ -3,9 +3,9 @@ from flask_login import UserMixin
 # User Class
 class User(UserMixin):
     def __init__(self, user_tuple, active=True):
-        self.user_id = user_tuple[0]
-        self.user_email = user_tuple[7]
-        self.user_password = user_tuple[8]
+        # self.user_id = user_tuple[0]
+        self.user_email = user_tuple[6]
+        self.user_password = user_tuple[7]
 
     def is_active(self):
         return True
@@ -17,4 +17,4 @@ class User(UserMixin):
         return False
 
     def get_id(self):
-        return self.user_id
+        return self.user_email

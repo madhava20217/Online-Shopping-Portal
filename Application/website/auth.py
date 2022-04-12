@@ -69,8 +69,6 @@ def logout():
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        register_statement = "INSERT INTO Customer(First_name, Last_name, House_number, Locality, City, Pincode, email_address, password) values (%s, %s, %s, %s, %s, %s, %s, %s)"
-
         temp_first_name = request.form.get('firstname')
         temp_last_name = request.form.get('lastname')
         temp_house_no = request.form.get('houseno')
@@ -118,11 +116,11 @@ def signup():
         #this can happen if pincode or house number are invalid, or if the email address exists
         if( valid ):
             #print("ERROR OCCURRED WHILE REGISTERING, CHECK VALIDITY OF PINCODE AND/OR HOUSE NUMBER")
-            
+            register_statement = "INSERT INTO Customer(First_name, Last_name, House_number, Locality, City, Pincode, email_address, password) values (%s, %s, %s, %s, %s, %s, %s, %s)"
             tup = [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd]
             try:
                 cursor2 = getcursor()
-                cursor.execute(register_statement, [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd])
+                cursor2.execute(register_statement, tup)
                 db_commit()
                 cursor2.close()
                 flash("Account Created!", category='success')

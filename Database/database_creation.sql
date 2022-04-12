@@ -33,7 +33,7 @@ create DATABASE online_shopping;
 use online_shopping;
 
 create table Customer(
-                    Customer_ID numeric(30,0) primary key,
+                    Customer_ID Integer AUTO_INCREMENT NOT NULL,
                     First_name varchar(30) not null,
                     Last_name varchar(30) not null,
                     House_number numeric(30,0) check(House_number >= 0),
@@ -41,9 +41,10 @@ create table Customer(
                     City varchar(30),
                     pincode numeric(6,0) check(pincode >= 0),
                     email_address varchar(50) unique not null,
-                    password varchar(30) not null
+                    password varchar(30) not null,
+                    PRIMARY KEY (Customer_ID)
                     );
-create table Customer_phone(Customer_ID numeric(30,0),
+create table Customer_phone(Customer_ID Integer,
                             Phone_number numeric(30,0) not null,
                             foreign key (Customer_id) references Customer(customer_id),
                             primary key(Phone_number,Customer_id)
@@ -59,7 +60,7 @@ create table Product(Product_ID numeric(30) primary key,
 
 create table product_rating(
                     Product_ID numeric(30,0),
-                    customer_id numeric(30,0),
+                    customer_id Integer,
                     Rating numeric(1,0) check (Rating > 0),
                     foreign key (product_id) references Product(product_id),
                     foreign key (customer_id) references Customer(customer_id),
@@ -163,7 +164,7 @@ create table Transaction(
     Payment_Method varchar(30), 
     Transaction_Status boolean, 
     transaction_time Timestamp, 
-    Customer_ID numeric(30,0), 
+    Customer_ID Integer, 
     Coupon_Code varchar(30),
 
     foreign key (Customer_ID) REFERENCES Customer(Customer_ID),
@@ -175,7 +176,7 @@ create table Transaction(
 create table Delivery(
     Order_ID numeric(30,0) primary key,
     Employee_ID numeric(30,0), 
-    Customer_ID numeric(30,0), 
+    Customer_ID Integer, 
     Warehouse_ID numeric(30,0),
     delivery_date TIMESTAMP,
 
@@ -209,7 +210,7 @@ create table Supplies(
 
 
 create table Shopping_Cart(
-	customer_ID numeric(30,0),
+	customer_ID Integer,
     Product_ID numeric(30, 0),
     quantity int check(Quantity > 0 and Quantity <=10),
     primary key (customer_ID, Product_ID),
@@ -220,7 +221,7 @@ create table Shopping_Cart(
 
 create table complains(
     complaint_number numeric(30,0) primary key,
-    customer_ID numeric(30, 0),
+    customer_ID Integer,
     order_id numeric(30,0),
     service_employee_id numeric(30,0), 
     date_of_creation timestamp,
