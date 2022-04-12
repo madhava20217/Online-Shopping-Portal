@@ -33,7 +33,7 @@ create DATABASE online_shopping;
 use online_shopping;
 
 create table Customer(
-                    customer_ID numeric(30,0) primary key AUTO_INCREMENT,
+                    Customer_ID numeric(30,0) primary key,
                     First_name varchar(30) not null,
                     Last_name varchar(30) not null,
                     House_number numeric(30,0) check(House_number >= 0),

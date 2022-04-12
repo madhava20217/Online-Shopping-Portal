@@ -11,17 +11,13 @@
 #TODO: Employees management portal (for other stakeholders)
 #TODO: utilise views in the querying process
 
-import mysql.connector
+from . import connect_db, getcursor, db_commit, mydb
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, login_required, current_user, UserMixin
+import mysql.connector
+from .User import User
 
 
-#defining global variable for database login measures
-global mydb
-mydb = mysql.connector.connect(host = "localhost",
-                                user = "root",
-                                password = "Madhava2207",
-                                database = "online_shopping")
 
 auth = Blueprint('auth', __name__)
 
@@ -54,8 +50,8 @@ def login():
 
         if valid:
             #send to main page
-            print("PASSED")
-            user = temp[0]  # todo correct this as the user is of tuple type
+            print("PASSED", len(temp), temp)
+            user = User(temp[0]) # todo correct this as the user is of tuple type
             login_user(user, remember=True)
             flash("Logged in successfully!", category='success')
             return redirect(url_for('views.home1'))
@@ -91,10 +87,10 @@ def signup():
         valid = True
 
         #check valid email address 
-        check_valid_email = "select customer_ID from customer where customer_id = %s"
+        check_valid_email = "select * from customer where email_address = %s"
+        cursor = getcursor()
 
-        try:
-            cursor = getcursor()
+        try:  
             cursor.execute(check_valid_email, [temp_email_add])
             if(len(list(iter(cursor.fetchall()))) != 0):
                 valid = False
@@ -102,6 +98,8 @@ def signup():
             print("Exception caught when getting valid email address!")
             print(e)
             valid = False
+
+        cursor.close()
 
         #try-except for temp_house_no
         try:
@@ -123,33 +121,19 @@ def signup():
             
             tup = [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd]
             try:
-                getcursor().execute(register_statement, tup)
+                cursor2 = getcursor()
+                cursor.execute(register_statement, [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd])
                 db_commit()
+                cursor2.close()
                 flash("Account Created!", category='success')
+                user = User(tup)
+                login_user(user, remember=True)
                 return redirect(url_for('auth.login'))
             except mysql.connector.Error as e:
                 #print(e)
                 flash("Sorry, an error occurred while registering, please try again!", category = 'error')
                 redirect(url_for('auth.signup'))
-
         else:
             flash("Invalid House Number or Pincode!", category='error')
+
     return render_template("Signup.html", user=current_user)
-
-
-def connect_db():
-    ''' function to initialise connection to online shopping database in mydb'''
-    mydb = mysql.connector.connect(host = "localhost",
-                                user = "root",
-                                password = "Madhava2207",
-                                database = "online_shopping")
-
-    return mydb
-
-
-def getcursor():
-    '''function to get cursor object from database connection instance'''
-    return mydb.cursor(buffered = True)
-
-def db_commit():
-    mydb.commit();
