@@ -57,7 +57,7 @@ def create_app():
 			connect_db()
 		
 		cursor = getcursor()
-		login_query = "select * from Customer where email_address = %s"
+		login_query = "select email_address, password from Customer where email_address = %s"
 		cursor.execute(login_query, [useremail])
 		
 		#if length isn't 0, we found the customer!
@@ -65,7 +65,7 @@ def create_app():
 		cursor.close()
 	
 		if len(temp) != 0:
-			return User(temp[0])
+			return User(temp[0][0], temp[0][1])
 		else:
 			return None
 

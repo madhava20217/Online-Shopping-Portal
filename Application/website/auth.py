@@ -1,8 +1,11 @@
 #TODO: check logic for signup auto-increment (it still auto increments)
-#TODO: dynamic list for shopping cart
-#TODO: fix user login (create customer object)
-#TODO: complete signup procedure
-#TODO: shopping cart page (product quantity and total price)
+#TODO: dynamic list for shopping cart                                               // Done
+#TODO: fix user login (create customer object)                                      // Done
+#TODO: complete signup procedure                                                    // Done
+#TODO: shopping cart page (product quantity and total price)                        // Done
+#TODO: Add edit and delete option in shopping cart page and a checkout button
+#TODO: Auto increment in product table and some other tables                        // Done
+#TODO: The cost of products are too high! A 43g chips potato costs 72858.00 Rs!!!
 #TODO: product page to shopping cart linking (add to cart button)
 #TODO: users' previous orders page (delivery details etc)
 #TODO: transaction page (checkout and pay)
@@ -51,7 +54,7 @@ def login():
         if valid:
             #send to main page
             print("PASSED", len(temp), temp)
-            user = User(temp[0]) # todo correct this as the user is of tuple type
+            user = User(temp[0][7], temp[0][8])
             login_user(user, remember=True)
             flash("Logged in successfully!", category='success')
             return redirect(url_for('views.home1'))
@@ -124,7 +127,7 @@ def signup():
                 db_commit()
                 cursor2.close()
                 flash("Account Created!", category='success')
-                user = User(tup)
+                user = User(tup[6], tup[7])
                 login_user(user, remember=True)
                 return redirect(url_for('auth.login'))
             except mysql.connector.Error as e:
