@@ -2,13 +2,17 @@
 #from sql queries
 #TODO: make a page for showing previous orders of the customer
 
-from flask import Blueprint, render_template, flash, request
+from flask import Blueprint, render_template, flash, request, flash, redirect, url_for
 from flask_login import current_user, login_required, login_user, logout_user
+import mysql.connector
+from .User import User
+from . import connect_db, getcursor, db_commit, mydb
 
 views = Blueprint('views', __name__)
 
 @views.route('/')
 def home1():
+    print(current_user.get_id())
     return render_template("Home1.html")
 
 @views.route('/2')
@@ -43,8 +47,41 @@ def product():
 @views.route('/cart')
 @login_required
 def cart():
-    return render_template("Cart.html", user=current_user)
+    try:
+        mydb
+    except NameError as e:
+        connect_db()
+
+    print(current_user)
+
+    cursor = getcursor()
+    query = "select * from Customer where email_address = %s"
+    cursor.execute(query, [current_user.get_id()])
+    temp = list(iter(cursor.fetchall()))
+    cursor.close()
+    prod_list = []
+    final_list = []
+    if len(temp) != 0:
+        cursor2 = getcursor()
+        query2 = "select * from Shopping_Cart where customer_ID = %s"
+        cursor2.execute(query2, [temp[0][0]])
+        prod_list = list(iter(cursor2.fetchall()))
+        cursor2.close()
+
+        for prod in prod_list:
+            query3 = "select * from Product where Product_ID = %s"
+            cursor3 = getcursor()
+            cursor3.execute(query3, [prod[1]])
+            prod_details = list(iter(cursor3.fetchall()))
+            cursor3.close()
+            final_list.append((prod, prod_details))
+
+    # Structure of final_list:
+    # [((customer_id, product_id, quantity), [(product_id, price, name, discount, gst)]),.....]
+
+    return render_template("Cart.html", user=current_user, prod_list=final_list)
 
 @views.route('/order')
+@login_required
 def order():
     return render_template("Order.html", user=current_user)

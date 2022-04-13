@@ -50,27 +50,23 @@ def create_app():
 	login_manager.init_app(app)
 
 	@login_manager.user_loader
-	def load_user(userid):
+	def load_user(useremail):
 		try:
 			mydb
 		except NameError as e:
 			connect_db()
 		
 		cursor = getcursor()
-		login_query = "select * from Customer where Customer_ID = %s"
-		cursor.execute(login_query, [userid])
+		login_query = "select email_address, password from Customer where email_address = %s"
+		cursor.execute(login_query, [useremail])
 		
-		#checking if the email and password entered are valid or not
-		valid = False
-
 		#if length isn't 0, we found the customer!
 		temp = list(iter(cursor.fetchall()))
+		cursor.close()
 	
 		if len(temp) != 0:
-			valid = True
-		
-		cursor.close()
-
-		return User(temp[0])
+			return User(temp[0][0], temp[0][1])
+		else:
+			return None
 
 	return app
