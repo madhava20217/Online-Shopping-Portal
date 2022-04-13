@@ -20,4 +20,8 @@
 
 #create index stock for stores
 
-create index studentID_index on student(ID)
+create index email_password on Customer(email_address,password)
+
+create index Price on Product(Price)
+
+create index Rating on product_rating(Rating)

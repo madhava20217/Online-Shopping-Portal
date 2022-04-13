@@ -89,17 +89,30 @@ def order():
     except NameError as e:
         connect_db()
 
-    print(current_user.get_id())
+    #current_user.get_id() returns a string which is the email address of the logged in user
+    #print(current_user.get_id())   #debugging
+    orders_list = []
     cursor = getcursor()
     try:
-        query = "select * from Customer_Order where Customer_ID = %s"
-        cursor.execute(query, [current_user.get_id()])
-        orders_list = list(iter(cursor.fetchall()))
+        query1 = "select Order_ID, Product_Name, Quantity, Delivery_address, Transaction_Time, Delivery_Date, Total_Price from Customer_Order where Customer_ID = %s"
+        query2 = "select Customer_ID from Customer where email_address = %s"
+        # print("CURRENT USER's TYPE",type(current_user.get_id()))  #debugging
+        cursor.execute(query2, [current_user.get_id()])
+        customer_id = list(iter(cursor.fetchall()))
+        if len(customer_id) != 0:
+            cursor.execute(query1,[customer_id[0][0]])
+            orders_list = list(iter(cursor.fetchall()))
         
     except Exception as e:
-        print(e)
+        print("Exception caught", e)
 
     cursor.close()
-    print(orders_list)
+    order_dict = {}
+    for order in orders_list:
+        if(order[0] in order_dict.keys()):
+            order_dict[order[0]].append(order[1:])
+        else:
+            order_dict[order[0]] = [order[1:]]
+    # print("ORDERS LIST", orders_list)     #debugging
 
-    return render_template("Order.html", user=current_user, orders_list = orders_list)
+    return render_template("Order.html", user=current_user, order_dict = order_dict)
