@@ -23,12 +23,11 @@ def home1():
         # prod_name = request.form.get('prod_name')
         # prod_price = request.form.get('prod_price')
         # prod_dis = request.form.get('prod_dis')
-        prod_price = request.form.get('prod_price')
         prod_id = request.form.get('prod_id')
         data = request.form
         print(data)
         print("*"*500)
-        print(prod_price)
+
         print(prod_id)
         print(type(request.form.get('prod_id')))
 
@@ -65,8 +64,9 @@ def home5():
     return render_template("Home5.html")
 '''
 
-@views.route('/product', methods=['GET','POST'])
-def product():
+@views.route('/product/<pid>', methods=['GET','POST'])
+def product(pid):
+    print(pid)
     # get product id, name, price, discount, and customer id 
     # global prod_name, prod_price, prod_dis, prod_img
     if request.method == 'POST':
@@ -75,8 +75,22 @@ def product():
         quantity = request.form.get('quantity')
         flash('Added to Cart!', category='success')
         pass
+    else:
+        try:
+            mydb
+        except NameError as e:
+            connect_db()
 
-    return render_template("Product.html", prod_name = 'prod_name', prod_price = 'prod_price', prod_discount = 'prod_dis', user=current_user)
+        cursor = getcursor()
+        prod_id = pid
+        query = "select product_name, price, discount_percentage from all_products where product_id = %s"
+        cursor.execute(query, [prod_id])
+        temp = list(iter(cursor.fetchall()))
+        cursor.close()
+        if (len(temp) == 0):
+            return None
+
+    return render_template("Product.html", prod_name = temp[0][0], prod_price = temp[0][1], prod_discount = temp[0][2], user=current_user)
 
 @views.route('/cart')
 @login_required

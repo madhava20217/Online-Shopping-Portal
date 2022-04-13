@@ -1,13 +1,6 @@
 {% extends "base.html" %} {% block title %}BL'n'kt{% endblock %} {% block
 content %}
 
-<script>
-    function submit_form() {
-        var form = document.getElementById("prod_form");
-        form.submit();
-    }
-</script>
-
 <main class="max-h-screen">
     <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
@@ -33,32 +26,25 @@ content %}
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
                 {% for i in range((all_prod)|length) %}
-                    <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                        <form method="GET" id="prod_form" action = "/product">
-                            <div onclick="submit_form()">
-                                <a class="block h-48 rounded overflow-hidden">
-                                    <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                                        id="prod_img" src="https://picsum.photos/420/260">
-                                </a>
-                                <div class="mt-4">
-                                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1" id="prod_dis">
-                                        {{ all_prod[i][2] }}% Off
-                                    </h3>
-                                    <h2 class="text-gray-900 title-font text-lg font-medium" id="prod_name">{{ all_prod[i][0] }}
-                                    </h2>
-                                    <p class="mt-1" id="prod_price">{{ all_prod[i][1] }} Rs
-                                    </p>
-                                    <div class="form-group">
-                                        <input class="form-control" name="prod_id" id="prod_id" type="text"
-                                            value={{ all_prod[i][3]|string }}>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block h-48 rounded overflow-hidden" href="/product/{{all_prod[i][3]}}">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" id="prod_img"
+                            src="https://picsum.photos/420/260">
+                    </a>
+                    <a href="/product/{{all_prod[i][3]}}">
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1" id="prod_dis">
+                                {{ all_prod[i][2] }}% Off
+                            </h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium" id="prod_name">{{ all_prod[i][0] }}
+                            </h2>
+                            <p class="mt-1" id="prod_price">{{ all_prod[i][1] }} Rs
+                            </p>
+                        </div>
+                    </a>
+                </div>
                 {% endfor %}
             </div>
-
         </div>
     </section>
 </main>
