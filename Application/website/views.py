@@ -102,17 +102,18 @@ def order():
         if len(customer_id) != 0:
             cursor.execute(query1,[customer_id[0][0]])
             orders_list = list(iter(cursor.fetchall()))
-        
     except Exception as e:
         print("Exception caught", e)
 
-    cursor.close()
-    order_dict = {}
-    for order in orders_list:
-        if(order[0] in order_dict.keys()):
-            order_dict[order[0]].append(order[1:])
-        else:
-            order_dict[order[0]] = [order[1:]]
-    # print("ORDERS LIST", orders_list)     #debugging
 
-    return render_template("Order.html", user=current_user, order_dict = order_dict)
+    cursor.close()
+    # #trying to pass edited order list to display like grofers
+    # order_dict = {}
+    # for order in orders_list:
+    #     if(order[0] in order_dict.keys()):
+    #         order_dict[order[0]].append(order[1:])
+    #     else:
+    #         order_dict[order[0]] = [order[1:]]
+    print("ORDERS LIST", orders_list)     #debugging
+
+    return render_template("Order.html", user=current_user, orders_list = orders_list)

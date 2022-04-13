@@ -7,7 +7,7 @@
 #TODO: Auto increment in product table and some other tables                        // Done
 #TODO: The cost of products are too high! A 43g chips potato costs 72858.00 Rs!!!
 #TODO: product page to shopping cart linking (add to cart button)
-#TODO: users' previous orders page (delivery details etc)
+#TODO: users' previous orders page (delivery details etc)                           // Done
 #TODO: transaction page (checkout and pay)
 #TODO: home page products linking to invidual product pages
 #TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button

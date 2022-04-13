@@ -7,16 +7,26 @@
       {% for order in orders_list %}
         <div class="py-8 flex flex-wrap md:flex-nowrap">
           <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-            <span class="font-semibold title-font text-gray-700">CATEGORY</span>
-            <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+            <img
+            alt="ecommerce"
+            class="object-cover object-center w-full h-full block"
+            src="https://dummyimage.com/420x260"
+          />
           </div>
-          <div class="md:flex-grow">
+          <div class="md:flex-grow ml-10">
             <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ order[1] }}</h2>
             <p class="leading-relaxed">Quantity : {{ order[2] }}</p>
-            <p class="leading-relaxed">Total Price : {{ order[6] }}</p>
+            <p class="leading-relaxed">Total Price : {{ (order[6])|round(2) }}</p>
             <p class="leading-relaxed">Delivery Address : {{ order[3] }}</p>
             <p class="leading-relaxed">Ordered On : {{ order[4] }}</p>
-            
+            {% if order[5] != None %}
+              <p class="leading-relaxed">Delivered On : {{ order[5] }}</p>
+            {% endif %}
+            {# {% if (current_time > order[5]) %}
+              <p class="leading-relaxed">Delivered On : {{ order[5] }}</p>
+            {{ else }}
+              <p class="leading-relaxed">Expected Delivery : {{ order[5] }}</p>
+            {{ endif }} #}
           </div>
         </div>
       {% endfor %}

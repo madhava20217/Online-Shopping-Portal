@@ -22,7 +22,7 @@ Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.
 -- order_product: order_id, product_id
 -- transaction: order_id, customer, coupon
 
-
+drop view customer_order;
 
 create view Customer_Order as
 (
@@ -39,7 +39,7 @@ create view Customer_Order as
 
         order_products.quantity as Quantity,
     
-        Orders.Total_Price as Total_Price,
+        (order_products.quantity * Product.price * (100-Product.discount_percentage) * (100 +Product.GST_Percentage) / 10000 ) as Total_Price,
      
         CONCAT(Customer.House_number, " ", Customer.Locality, " ", Customer.City, " ", Customer.pincode) as Delivery_address, 
      
@@ -57,13 +57,6 @@ create view Customer_Order as
         and Transaction.Customer_ID = Customer.Customer_ID
         and Del.order_id = Orders.order_id
 );
-create view Delivery_Guy as 
-(select Delivery.Order_ID, Delivery.Employee_ID, Customer.House_number as Customer_House_No, Customer.Locality as Customer_Locality, 
-Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.Plot_number as Warehouse_Address,
- Warehouse.City as Warehouse_City, Warehouse.pincode as Warehouse_PinCode from Delivery, Customer, Warehouse where 
- (Customer.customer_ID = Delivery.Customer_ID and Delivery.Warehouse_ID = Warehouse.Warehouse_ID));
-select * from customer_order;
-
 commit;
 
 -- Customer's complaints tracking

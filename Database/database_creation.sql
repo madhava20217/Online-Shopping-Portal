@@ -186,7 +186,7 @@ create table Delivery(
     Employee_ID Integer, 
     Customer_ID Integer, 
     Warehouse_ID Integer,
-    delivery_date TIMESTAMP,
+    delivery_date TIMESTAMP default NULL,
 
     FOREIGN KEY (Order_ID) REFERENCES Orders(Order_ID),
     FOREIGN KEY (Employee_ID) REFERENCES Employee(Employee_ID),
