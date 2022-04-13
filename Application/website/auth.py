@@ -5,7 +5,7 @@
 #TODO: shopping cart page (product quantity and total price)                        // Done
 #TODO: Add edit and delete option in shopping cart page and a checkout button
 #TODO: Auto increment in product table and some other tables                        // Done
-#TODO: The cost of products are too high! A 43g chips potato costs 72858.00 Rs!!!
+#TODO: The cost of products are too high! A 43g chips potato costs 72858.00 Rs!!!   // Done
 #TODO: product page to shopping cart linking (add to cart button)
 #TODO: users' previous orders page (delivery details etc)                           // Done
 #TODO: transaction page (checkout and pay)
