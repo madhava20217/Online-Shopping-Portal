@@ -1,239 +1,65 @@
 {% extends "base.html" %} {% block title %}BL'n'kt{% endblock %} {% block
 content %}
+
+<script>
+    function submit_form() {
+        var form = document.getElementById("prod_form");
+        form.submit();
+    }
+</script>
+
 <main class="max-h-screen">
-  <section class="text-gray-600 body-font">
-    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-        <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
-        <div class="text-center lg:w-2/3 w-full">
-        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Microdosing synth tattooed vexillologist</h1>
-        <p class="mb-8 leading-relaxed">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.</p>
-        <div class="flex justify-center">
-            <button class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
-            <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+                src="https://picsum.photos/720/600">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Microdosing synth tattooed
+                    vexillologist</h1>
+                <p class="mb-8 leading-relaxed">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing
+                    tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami
+                    snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo
+                    booth af fingerstache pitchfork.</p>
+                <div class="flex justify-center">
+                    <button
+                        class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
+                    <button
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
     </section>
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
-            {# begin #}
-            {% for prod in all_prod %}
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                    <a class="block h-48 rounded overflow-hidden">
-                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
-                    </a>
-                    <div class="mt-4">
-                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ prod[2] }}% Off</h3>
-                    <h2 class="text-gray-900 title-font text-lg font-medium">{{ prod[0] }}</h2>
-                    <p class="mt-1">{{ prod[1] }} Rs</p>
+                {% for i in range((all_prod)|length) %}
+                    <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <form method="GET" id="prod_form" action = "/product">
+                            <div onclick="submit_form()">
+                                <a class="block h-48 rounded overflow-hidden">
+                                    <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                                        id="prod_img" src="https://picsum.photos/420/260">
+                                </a>
+                                <div class="mt-4">
+                                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1" id="prod_dis">
+                                        {{ all_prod[i][2] }}% Off
+                                    </h3>
+                                    <h2 class="text-gray-900 title-font text-lg font-medium" id="prod_name">{{ all_prod[i][0] }}
+                                    </h2>
+                                    <p class="mt-1" id="prod_price">{{ all_prod[i][1] }} Rs
+                                    </p>
+                                    <div class="form-group">
+                                        <input class="form-control" name="prod_id" id="prod_id" type="text"
+                                            value={{ all_prod[i][3]|string }}>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </div>
-            {% endfor %}
-            {# end #}
-            <!-- <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-                </div>
+                {% endfor %}
             </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
-                </div>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                <a class="block  h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
-                </a>
-                <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
-                </div>
-            </div>
-            </div> -->
+
         </div>
-        </section>
-        <!-- <section>
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900" href='/'>1</a>
-            <a class="mr-5 hover:text-gray-900" href='/2'>2</a>
-            <a class="mr-5 hover:text-gray-900" href='/3'>3</a>
-            <a class="mr-5 hover:text-gray-900" href='/4'>4</a>
-            <a class="mr-5 hover:text-gray-900" href='/5'>5</a>
-            </nav>
-        </div>
-    </section> -->
+    </section>
 </main>
 {% endblock %}

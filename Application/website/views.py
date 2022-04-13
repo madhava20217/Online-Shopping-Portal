@@ -10,18 +10,42 @@ from . import connect_db, getcursor, db_commit, mydb
 
 views = Blueprint('views', __name__)
 
-@views.route('/')
-def home1():
-    try:
-        mydb
-    except NameError as e:
-        connect_db()
+#global variables
+# global prod_name, prod_price, prod_dis, prod_img
+global prod_id
 
-    cursor = getcursor()
-    query = "select product_name, price, discount_percentage from all_products"
-    cursor.execute(query)
-    temp = list(iter(cursor.fetchall()))
-    cursor.close()
+@views.route('/', methods=['POST', 'GET'])
+def home1():
+    temp = []
+    if request.method == 'POST':
+        global prod_id
+        # global prod_name, prod_price, prod_dis, prod_img
+        # prod_name = request.form.get('prod_name')
+        # prod_price = request.form.get('prod_price')
+        # prod_dis = request.form.get('prod_dis')
+        prod_price = request.form.get('prod_price')
+        prod_id = request.form.get('prod_id')
+        data = request.form
+        print(data)
+        print("*"*500)
+        print(prod_price)
+        print(prod_id)
+        print(type(request.form.get('prod_id')))
+
+        return redirect(url_for('views.product'))
+
+    else:
+        try:
+            mydb
+        except NameError as e:
+            connect_db()
+
+        cursor = getcursor()
+        query = "select product_name, price, discount_percentage, product_id from all_products"
+        cursor.execute(query)
+        temp = list(iter(cursor.fetchall()))
+        cursor.close()
+
     return render_template("Home1.html", all_prod = temp)
 '''
 @views.route('/2')
@@ -44,15 +68,15 @@ def home5():
 @views.route('/product', methods=['GET','POST'])
 def product():
     # get product id, name, price, discount, and customer id 
+    # global prod_name, prod_price, prod_dis, prod_img
     if request.method == 'POST':
         #TODO here
         # print("added to cart")
         quantity = request.form.get('quantity')
-
-
         flash('Added to Cart!', category='success')
         pass
-    return render_template("Product.html", prod_name = "adfadsf", prod_price = "53", prod_discount = "1", user=current_user)
+
+    return render_template("Product.html", prod_name = 'prod_name', prod_price = 'prod_price', prod_discount = 'prod_dis', user=current_user)
 
 @views.route('/cart')
 @login_required
