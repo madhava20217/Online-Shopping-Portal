@@ -98,11 +98,33 @@ create view Customer_Cart as
 
 select * from customer_cart;
 
--- Customer's account view
-create view product_available as 
-(select * from product
+-- all products view
+/* product, product rating, product photo, stores */
 
+create view all_products as 
+(select
+    product.product_id as product_id,
+
+    product.product_name as Product_name,
+
+    product.price as Price,
+
+    product.GST_Percentage as GST_Percentage,
+    
+    product.Discount_Percentage as Discount_Percentage,
+
+    (
+        select SUM(stores.stocks) 
+        from stores
+        where stores.product_id = product.product_id
+    ) as Total_Available_Stock
+
+    from product,Stores 
+    where
+        product.product_id = stores.product_id
 );
+
+select * from product_available;
 
 -- View for suppliers, should have details of products they supply
 create view Suppliers as 

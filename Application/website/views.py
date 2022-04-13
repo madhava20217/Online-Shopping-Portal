@@ -12,9 +12,18 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def home1():
-    print(current_user.get_id())
-    return render_template("Home1.html")
+    try:
+        mydb
+    except NameError as e:
+        connect_db()
 
+    cursor = getcursor()
+    query = "select product_name, price, discount_percentage from all_products"
+    cursor.execute(query)
+    temp = list(iter(cursor.fetchall()))
+    cursor.close()
+    return render_template("Home1.html", all_prod = temp)
+'''
 @views.route('/2')
 def home2():
     return render_template("Home2.html")
@@ -30,6 +39,7 @@ def home4():
 @views.route('/5')
 def home5():
     return render_template("Home5.html")
+'''
 
 @views.route('/product', methods=['GET','POST'])
 def product():

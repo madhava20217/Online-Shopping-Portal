@@ -13,6 +13,12 @@
 #TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button
 #TODO: Employees management portal (for other stakeholders)
 #TODO: utilise views in the querying process
+#TODO: Optional : User can rate the products from my orders
+#TODO: Indexing of tables
+#TODO: make page foere customer can review, complain, comment
+#TODO: Make page to insert new productsr 
+#TODO: Reduce stocks of product as it gets ordered
+#TODO: take care of stock availability in individual product pages
 
 from . import connect_db, getcursor, db_commit, mydb
 from flask import Blueprint, render_template, request, flash, redirect, url_for
