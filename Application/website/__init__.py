@@ -8,7 +8,7 @@ import mysql.connector
 global mydb
 mydb = mysql.connector.connect(host = "localhost",
 								user = "root",
-								password = "",
+								password = "Madhava2207",
 								database = "online_shopping")
 
 
@@ -16,7 +16,7 @@ def connect_db():
 	''' function to initialise connection to online shopping database in mydb'''
 	mydb = mysql.connector.connect(host = "localhost",
 								user = "root",
-								password = "",
+								password = "Madhava2207",
 								database = "online_shopping")
 
 	return mydb

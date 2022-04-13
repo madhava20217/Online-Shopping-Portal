@@ -57,7 +57,11 @@ create view Customer_Order as
         and Transaction.Customer_ID = Customer.Customer_ID
         and Del.order_id = Orders.order_id
 );
-
+create view Delivery_Guy as 
+(select Delivery.Order_ID, Delivery.Employee_ID, Customer.House_number as Customer_House_No, Customer.Locality as Customer_Locality, 
+Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.Plot_number as Warehouse_Address,
+ Warehouse.City as Warehouse_City, Warehouse.pincode as Warehouse_PinCode from Delivery, Customer, Warehouse where 
+ (Customer.customer_ID = Delivery.Customer_ID and Delivery.Warehouse_ID = Warehouse.Warehouse_ID));
 select * from customer_order;
 
 commit;
@@ -137,10 +141,10 @@ from service_employee,
     
 ); */
 
-create view Warehouse_Worker_view as 
-(select *
- from Stores, 
- where ):
+-- create view Warehouse_Worker_view as 
+-- (select *
+--  from Stores, 
+--  where );
 
 
 
@@ -160,3 +164,4 @@ grant select on Warehouse_Worker_view to Warehouse_Worker_role;
 
 grant select on Suppliers to Suppliers_role;
 
+grant select on product_available to Customer_role;

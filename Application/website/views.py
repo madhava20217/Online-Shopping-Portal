@@ -84,4 +84,22 @@ def cart():
 @views.route('/order')
 @login_required
 def order():
-    return render_template("Order.html", user=current_user)
+    try:
+        mydb
+    except NameError as e:
+        connect_db()
+
+    print(current_user.get_id())
+    cursor = getcursor()
+    try:
+        query = "select * from Customer_Order where Customer_ID = %s"
+        cursor.execute(query, [current_user.get_id()])
+        orders_list = list(iter(cursor.fetchall()))
+        
+    except Exception as e:
+        print(e)
+
+    cursor.close()
+    print(orders_list)
+
+    return render_template("Order.html", user=current_user, orders_list = orders_list)

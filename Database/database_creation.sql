@@ -176,8 +176,8 @@ create table Transaction(
     Coupon_Code varchar(30),
 
     foreign key (Customer_ID) REFERENCES Customer(Customer_ID),
-    foreign key (Coupon_Code) REFERENCES Coupon(Coupon_Code)
-    
+    foreign key (Coupon_Code) REFERENCES Coupon(Coupon_Code),
+    foreign key (order_ID) REFERENCES Orders(order_ID)
     );
 
 
