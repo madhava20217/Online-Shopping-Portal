@@ -51,56 +51,59 @@
             <span class="ml-3 text-xl">BL'n'kt</span>
           </a>
 
-          <a class="mr-5" id="login" href="/login">
-            <button
-              class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
-            >
-              Login
-            </button>
-          </a>
-          <a class="mr-5" id="signup" href="/signup">
-            <button
-              class="inline-flex items-center text-white bg-red-500 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 rounded transition duration-200 text-base font-semibold mt-4 md:mt-4"
-            >
-              Sign Up for Free{#
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
+          {% if user.is_authenticated %}
+            <a class="mr-5" id="cart" href="/cart">
+              <button
+                class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
               >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-              #}
-            </button>
-          </a>
+                My Shopping Cart
+              </button>
+            </a>
 
-          <a class="mr-5" id="cart" href="/cart">
-            <button
-              class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
-            >
-              My Shopping Cart
-            </button>
-          </a>
+            <a class="mr-5" id="cart" href="/order">
+              <button
+                class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
+              >
+                My Orders
+              </button>
+            </a>
 
-          <a class="mr-5" id="cart" href="/order">
-            <button
-              class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
-            >
-              My Orders
-            </button>
-          </a>
+            <a class="mr-5" id="logout" href="/">
+              <button
+                class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
+              >
+                Logout
+              </button>
+            </a>
 
-          <a class="mr-5" id="logout" href="/">
-            <button
-              class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
-            >
-              Logout
-            </button>
-          </a>
+          {% else %}
+            <a class="mr-5" id="login" href="/login">
+              <button
+                class="inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
+              >
+                Login
+              </button>
+            </a>
+            <a class="mr-5" id="signup" href="/signup">
+              <button
+                class="inline-flex items-center text-white bg-red-500 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 rounded transition duration-200 text-base font-semibold mt-4 md:mt-4"
+              >
+                Sign Up for Free{#
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-4 h-4 ml-1"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+                #}
+              </button>
+            </a>
+          {% endif %}
         </nav>
       </div>
     </header>

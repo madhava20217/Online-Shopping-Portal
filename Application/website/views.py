@@ -136,7 +136,7 @@ def cart():
     if request.method == 'POST':
         cursor = getcursor()
         customer_id =  final_list[0][0][0]
-        get_order_id = "select max(ordr_id) rom "
+        get_order_id = "select max(order_id) from Customer"
         insert_values_into_order = "insert into Orders select %s,sum(price),avg(GST_percentage),avg(Discount_Percentage) from Product natural join Shopping_cart where Customer_id = %s"
         cursor.execute(insert_values_into_order,[order_id,customer_id])
         extract_product_ids = "select product_id from Shopping_Cart where Customer_id = %s"

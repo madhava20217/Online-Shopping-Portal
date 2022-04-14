@@ -10,15 +10,16 @@
 #TODO: users' previous orders page (delivery details etc)                           // Done
 #TODO: transaction page (checkout and pay)
 #TODO: home page products linking to invidual product pages
-#TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button
+#TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button    // Done
 #TODO: Employees management portal (for other stakeholders)
 #TODO: utilise views in the querying process
 #TODO: Optional : User can rate the products from my orders
 #TODO: Indexing of tables
-#TODO: make page foere customer can review, complain, comment
-#TODO: Make page to insert new productsr 
+#TODO: make page for customer can review, complain, comment
+#TODO: Make page to insert new product 
 #TODO: Reduce stocks of product as it gets ordered
 #TODO: take care of stock availability in individual product pages
+#TODO: optional: Review of each product in product page
 
 from . import connect_db, getcursor, db_commit, mydb
 from flask import Blueprint, render_template, request, flash, redirect, url_for
@@ -105,7 +106,6 @@ def signup():
             print("Exception caught when getting valid email address!")
             print(e)
             valid = False
-
         cursor.close()
 
         #try-except for temp_house_no
@@ -123,7 +123,7 @@ def signup():
             valid = False
         
         #this can happen if pincode or house number are invalid, or if the email address exists
-        if( valid ):
+        if(valid):
             #print("ERROR OCCURRED WHILE REGISTERING, CHECK VALIDITY OF PINCODE AND/OR HOUSE NUMBER")
             register_statement = "INSERT INTO Customer(First_name, Last_name, House_number, Locality, City, Pincode, email_address, password) values (%s, %s, %s, %s, %s, %s, %s, %s)"
             tup = [temp_first_name, temp_last_name, temp_house_no, temp_locality, temp_city, temp_pincode, temp_email_add, temp_passwd]

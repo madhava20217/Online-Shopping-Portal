@@ -2,15 +2,17 @@
 content %}
 <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
+
+    {% set ns = namespace(value = 0) %}
+      {# total price for cart #}
     <div class="-my-8 divide-y-2 divide-gray-100">
-      {# begin #} {% for prod in prod_list %}
+      {# begin #}
+      {% for prod in prod_list %}
+      
       <div class="py-8 flex flex-wrap md:flex-nowrap">
         <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-          <img
-            alt="ecommerce"
-            class="object-cover object-center w-full h-full block"
-            src="https://dummyimage.com/420x260"
-          />
+          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+            src="https://picsum.photos/420/260" />
           {# <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span> #}
         </div>
         <div class="md:flex-grow ml-10">
@@ -18,21 +20,34 @@ content %}
             {# product name#} {{ prod[1][0][2] }}
           </h2>
           <p class="leading-relaxed">
-            {# quantity #} Quantity : {{ prod[0][2] }} {# Glossier echo park
-            pug, church-key sartorial biodiesel vexillologist pop-up snackwave
-            ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke
-            vaporware kombucha lumbersexual pork belly polaroid hoodie portland
-            craft beer. #}
+            {# quantity #} Quantity : {{ prod[0][2] }}
           </p>
           <p class="leading-relaxed">
             {# price #} Cost per piece : {{ prod[1][0][1] }}
           </p>
           <p class="leading-relaxed">
-            {# price #} Total Cost : {{ prod[1][0][1] * prod[0][2]}}
+            {# price #} Total Cost : {{ prod[1][0][1] * prod[0][2] }}
           </p>
         </div>
       </div>
+      {% set prod_val = prod[1][0][1]|int * prod[0][2]|int %}
+      {% set ns.value = ns.value + prod_val %}
       {% endfor %} {# end #}
+      <div class="mt-5 flex-shrink-0 flex flex-col">
+        <h2 class="text-2xl text-left font-medium text-gray-900 title-font mb-2 mt-5">
+          Total Price of Cart Products (exclusive of taxes and discount) : Rs. {{ ns.value }}
+        </h2>
+      </div>
+      <div>
+      <form method="POST">
+        <button
+          class="w-full text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
+          id="checkout"
+        >
+          Checkout
+        </button>
+      </form>
+      </div>
     </div>
   </div>
 </section>
