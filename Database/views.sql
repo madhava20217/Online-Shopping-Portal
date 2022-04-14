@@ -22,8 +22,6 @@ Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.
 -- order_product: order_id, product_id
 -- transaction: order_id, customer, coupon
 
-drop view customer_order;
-
 create view Customer_Order as
 (
     select 

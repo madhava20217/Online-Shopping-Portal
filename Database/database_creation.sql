@@ -26,7 +26,6 @@
 -- 21) Complains
 -- 22) Order_products
 
-alter table Transaction add default NULL for Coupon_Code;
 drop database online_shopping;
 
 create DATABASE online_shopping;

@@ -1,8 +1,7 @@
 #TODO: product site: product rating average and take details 
 #from sql queries
 #TODO: make a page for showing previous orders of the customer
-#TODO: Add check for warehouse quantities
-#TODO: form for checkout on cart page
+
 
 from flask import Blueprint, render_template, flash, request, flash, redirect, url_for
 from flask_login import current_user, login_required, login_user, logout_user
@@ -16,6 +15,8 @@ views = Blueprint('views', __name__)
 global prod_id
 @views.route('/')
 def home1():
+    print(current_user)
+    print(current_user.get_id())
     temp = []
     try:
         mydb
@@ -139,10 +140,11 @@ def cart():
     if request.method == 'POST':
         print("*"*500)
         print(request.form)
+        print(request.form.get('form'))
         print("*"*500)
-        if(True):
-            cursor = getcursor()
-            customer_id =  final_list[0][0][0]
+        cursor = getcursor()
+        customer_id =  final_list[0][0][0]
+        if(request.form.get('form') == "checkout"):
             get_order_id = "select max(order_id) from Orders"
             cursor.execute(get_order_id)
             coupon_code = None
@@ -179,7 +181,6 @@ def cart():
 
             #adding details into transaction
             transaction_add = "insert into transaction values (%s, %s, %s, %s, %s, %s)"
-            cursor = getcursor()
             cursor.execute(transaction_add, [order_id, "test", 1, datetime.now(), customer_id, coupon_code])
 
         
@@ -191,6 +192,13 @@ def cart():
             delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
             cursor.execute(delete_from_shopping_cart,[customer_id])
         
+        else:
+            #deleting items from shopping cart
+            delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
+            cursor.execute(delete_from_shopping_cart,[customer_id])
+            mydb.commit()
+            cursor.close()
+            return redirect(url_for('views.cart'))
         mydb.commit()
         cursor.close()
         return redirect(url_for('views.order'))

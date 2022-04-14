@@ -1,29 +1,18 @@
-#TODO: check logic for signup auto-increment (it still auto increments)
-#TODO: dynamic list for shopping cart                                               // Done
-#TODO: fix user login (create customer object)                                      // Done
-#TODO: complete signup procedure                                                    // Done
-#TODO: shopping cart page (product quantity and total price)                        // Done
-#TODO: Add edit and delete option in shopping cart page and a checkout button
-#TODO: Auto increment in product table and some other tables                        // Done
-#TODO: The cost of products are too high! A 43g chips potato costs 72858.00 Rs!!!   // Done
-#TODO: product page to shopping cart linking (add to cart button)
-#TODO: users' previous orders page (delivery details etc)                           // Done
-#TODO: transaction page (checkout and pay)
-#TODO: home page products linking to invidual product pages
 #TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button    // Done
 #TODO: Employees management portal (for other stakeholders)
 #TODO: utilise views in the querying process
 #TODO: Optional : User can rate the products from my orders
 #TODO: Indexing of tables
-#TODO: make page for customer can review, complain, comment
-#TODO: Make page to insert new product 
+#TODO: make page for customer can review, complain, comment //optional
+#TODO: Make page to insert new product //optional
 #TODO: Reduce stocks of product as it gets ordered
 #TODO: take care of stock availability in individual product pages
 #TODO: optional: Review of each product in product page
-#TODO: create a form under shopping cart for transaction type
 #TODO: logout is buggy
-#TODO: make product links in shopping cart                                          // Done
 #TODO: make a class of all the sql queries and access them using it
+#TODO: Add check for warehouse quantities
+#TODO: form for transaction details on cart page 
+
 
 from . import connect_db, getcursor, db_commit, mydb
 from flask import Blueprint, render_template, request, flash, redirect, url_for
