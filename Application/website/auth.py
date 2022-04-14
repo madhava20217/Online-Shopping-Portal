@@ -20,6 +20,10 @@
 #TODO: Reduce stocks of product as it gets ordered
 #TODO: take care of stock availability in individual product pages
 #TODO: optional: Review of each product in product page
+#TODO: create a form under shopping cart for transaction type
+#TODO: logout is buggy
+#TODO: make product links in shopping cart                                          // Done
+#TODO: make a class of all the sql queries and access them using it
 
 from . import connect_db, getcursor, db_commit, mydb
 from flask import Blueprint, render_template, request, flash, redirect, url_for

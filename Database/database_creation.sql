@@ -26,6 +26,7 @@
 -- 21) Complains
 -- 22) Order_products
 
+alter table Transaction add default NULL for Coupon_Code;
 drop database online_shopping;
 
 create DATABASE online_shopping;
@@ -173,7 +174,7 @@ create table Transaction(
     Transaction_Status boolean, 
     transaction_time Timestamp, 
     Customer_ID Integer, 
-    Coupon_Code varchar(30),
+    Coupon_Code varchar(30) default NULL,
 
     foreign key (Customer_ID) REFERENCES Customer(Customer_ID),
     foreign key (Coupon_Code) REFERENCES Coupon(Coupon_Code),

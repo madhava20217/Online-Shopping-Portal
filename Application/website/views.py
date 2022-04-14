@@ -1,12 +1,15 @@
 #TODO: product site: product rating average and take details 
 #from sql queries
 #TODO: make a page for showing previous orders of the customer
+#TODO: Add check for warehouse quantities
+#TODO: form for checkout on cart page
 
 from flask import Blueprint, render_template, flash, request, flash, redirect, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 import mysql.connector
 from .User import User
 from . import connect_db, getcursor, db_commit, mydb
+from datetime import datetime
 
 views = Blueprint('views', __name__)
 
@@ -107,7 +110,7 @@ def cart():
     except NameError as e:
         connect_db()
 
-    print(current_user)
+    print(current_user.get_id())
 
     cursor = getcursor()
     query = "select * from Customer where email_address = %s"
@@ -134,40 +137,63 @@ def cart():
     # Structure of final_list:
     # [((customer_id, product_id, quantity), [(product_id, price, name, discount, gst)]),.....]
     if request.method == 'POST':
-        cursor = getcursor()
-        customer_id =  final_list[0][0][0]
-        get_order_id = "select max(order_id) from Customer"
-        insert_values_into_order = "insert into Orders select %s,sum(price),avg(GST_percentage),avg(Discount_Percentage) from Product natural join Shopping_cart where Customer_id = %s"
-        cursor.execute(insert_values_into_order,[order_id,customer_id])
-        extract_product_ids = "select product_id from Shopping_Cart where Customer_id = %s"
-        cursor.execute(extract_product_ids,[customer_id])
-        products_iterator = iter(cursor.fetchall())
-        product_id_list = list(products_iterator)
+        print("*"*500)
+        print(request.form)
+        print("*"*500)
+        if(True):
+            cursor = getcursor()
+            customer_id =  final_list[0][0][0]
+            get_order_id = "select max(order_id) from Orders"
+            cursor.execute(get_order_id)
+            coupon_code = None
+            order_id_iterator = iter(cursor.fetchall())
+            order_id_list = list(order_id_iterator)
+            order_id = order_id_list[0][0] + 1
+            insert_values_into_order = "insert into Orders select %s,sum(price * quantity),avg(GST_percentage),avg(Discount_Percentage) from Product natural join Shopping_cart where Customer_id = %s"
+            cursor.execute(insert_values_into_order,[order_id,customer_id])
+            extract_product_ids = "select product_id from Shopping_Cart where Customer_id = %s"
+            cursor.execute(extract_product_ids,[customer_id])
+            products_iterator = iter(cursor.fetchall())
+            product_id_list = list(products_iterator)
+            extract_quantity = "select quantity from Shopping_Cart where Customer_id = %s"
+            cursor.execute(extract_quantity,[customer_id])
+            quantity_iterator = iter(cursor.fetchall())
+            quantity_id_list = list(quantity_iterator)
+            for i in range(len(quantity_id_list)):
+                product = product_id_list[i][0]
+                quantity = quantity_id_list[i][0]
+                check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
+                cursor.execute(check_if_product_aready_ordered,[order_id,product])
+                product_ordered = False
+                if len(list(iter(cursor.fetchall()))) != 0:
+                        product_ordered = True
+                # print(product_present)
+                if(product_ordered == False):
+                    insert_product = "Insert into order_products values(%s,%s,%s)"
+                    cursor.execute(insert_product,[order_id,product,quantity])
+                    # cursor_ret(cursor)
+                if(product_ordered == True):
+                    increase_product_quantity = "Update order_products set quantity = quantity + %s where order_id = %s and Product_ID = %s"
+                    cursor.execute(increase_product_quantity,[order_id,product,quantity])
+            
 
-        extract_quantity = "select quantity from Shopping_Cart where Customer_id = %s"
-        cursor.execute(extract_quantity,[customer_id])
-        quantity_iterator = iter(cursor.fetchall())
-        quantity_id_list = list(quantity_iterator)
+            #adding details into transaction
+            transaction_add = "insert into transaction values (%s, %s, %s, %s, %s, %s)"
+            cursor = getcursor()
+            cursor.execute(transaction_add, [order_id, "test", 1, datetime.now(), customer_id, coupon_code])
 
-        for i in range(len(quantity_id_list)):
-            product = product_id_list[i][0]
-            quantity = quantity_id_list[i][0]
-            check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
-            cursor.execute(check_if_product_aready_ordered,[order_id,product])
-            product_ordered = False
-            if len(list(iter(cursor.fetchall()))) != 0:
-                    product_ordered = True
-            # print(product_present)
-            if(product_ordered == False):
-                insert_product = "Insert into order_products values(%s,%s,%s)"
-                cursor.execute(insert_product,[order_id,product,quantity])
-                # cursor_ret(cursor)
-            if(product_ordered == True):
-                increase_product_quantity = "Update order_products set quantity = quantity + %s where order_id = %s and Product_ID = %s"
-                cursor.execute(increase_product_quantity,[order_id,product,quantity])
-            order_id +=1
-            mydb.commit()
+        
+            #adding details into delivery
+            delivery_add = "insert into delivery values (%s, %s, %s, %s, %s);"
+            cursor.execute(delivery_add, [order_id, None, customer_id, None, None])
 
+            #deleting items from shopping cart
+            delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
+            cursor.execute(delete_from_shopping_cart,[customer_id])
+        
+        mydb.commit()
+        cursor.close()
+        return redirect(url_for('views.order'))
     return render_template("Cart.html", user=current_user, prod_list=final_list)
 
 @views.route('/order')
