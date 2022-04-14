@@ -10,42 +10,22 @@ from . import connect_db, getcursor, db_commit, mydb
 
 views = Blueprint('views', __name__)
 
-#global variables
-# global prod_name, prod_price, prod_dis, prod_img
 global prod_id
-
-@views.route('/', methods=['POST', 'GET'])
+@views.route('/')
 def home1():
     temp = []
-    if request.method == 'POST':
-        global prod_id
-        # global prod_name, prod_price, prod_dis, prod_img
-        # prod_name = request.form.get('prod_name')
-        # prod_price = request.form.get('prod_price')
-        # prod_dis = request.form.get('prod_dis')
-        prod_id = request.form.get('prod_id')
-        data = request.form
-        print(data)
-        print("*"*500)
+    try:
+        mydb
+    except NameError as e:
+        connect_db()
 
-        print(prod_id)
-        print(type(request.form.get('prod_id')))
+    cursor = getcursor()
+    query = "select product_name, price, discount_percentage, product_id from all_products"
+    cursor.execute(query)
+    temp = list(iter(cursor.fetchall()))
+    cursor.close()
 
-        return redirect(url_for('views.product'))
-
-    else:
-        try:
-            mydb
-        except NameError as e:
-            connect_db()
-
-        cursor = getcursor()
-        query = "select product_name, price, discount_percentage, product_id from all_products"
-        cursor.execute(query)
-        temp = list(iter(cursor.fetchall()))
-        cursor.close()
-
-    return render_template("Home1.html", all_prod = temp)
+    return render_template("Home1.html", all_prod = temp, user=current_user)
 '''
 @views.route('/2')
 def home2():
@@ -66,33 +46,60 @@ def home5():
 
 @views.route('/product/<pid>', methods=['GET','POST'])
 def product(pid):
-    print(pid)
-    # get product id, name, price, discount, and customer id 
-    # global prod_name, prod_price, prod_dis, prod_img
+    temp=[]
     if request.method == 'POST':
         #TODO here
-        # print("added to cart")
         quantity = request.form.get('quantity')
-        flash('Added to Cart!', category='success')
-        pass
-    else:
-        try:
-            mydb
-        except NameError as e:
-            connect_db()
-
+        print("*"*500)
+        print(request.form)
         cursor = getcursor()
-        prod_id = pid
-        query = "select product_name, price, discount_percentage from all_products where product_id = %s"
-        cursor.execute(query, [prod_id])
-        temp = list(iter(cursor.fetchall()))
+        try:
+            #Check if that product is already present
+            query2 = "select Customer_ID from Customer where email_address = %s"
+            cursor.execute(query2, [current_user.get_id()])
+            customer_id = list(iter(cursor.fetchall()))
+            if len(customer_id) != 0:
+                check_if_product_exists_in_cart = "select * from Shopping_Cart where exists(select * from Shopping_Cart where customer_ID = %s and Product_ID = %s)"
+                cursor.execute(check_if_product_exists_in_cart,[customer_id[0][0],pid])
+                product_present = False
+                if len(list(iter(cursor.fetchall()))) != 0:
+                        product_present = True
+                # print(product_present)
+                if(product_present == False):
+                    insert_product = "Insert into Shopping_Cart values(%s,%s,%s)"
+                    cursor.execute(insert_product,[customer_id[0][0],pid, quantity])
+                    # cursor_ret(cursor)
+                if(product_present == True):
+                    increase_product_quantity = "Update Shopping_Cart set quantity = quantity + %s where customer_ID = %s and Product_ID = %s"
+                    cursor.execute(increase_product_quantity,[quantity,customer_id[0][0],pid])
+                flash("Product added to cart, quantity " + quantity, category = "success")
+                db_commit()
+            else:
+                flash('Login to add to your cart', category='alert')
+                return redirect(url_for('auth.login'))
+        except Exception as e:
+            flash('Failed to add to Cart!', category='error')
+            print("Exception caught", e)
         cursor.close()
-        if (len(temp) == 0):
-            return None
 
+
+    try:
+        mydb
+    except NameError as e:
+        connect_db()
+
+    cursor2 = getcursor()
+    prod_id = pid
+    query = "select product_name, price, discount_percentage from all_products where product_id = %s"
+    cursor2.execute(query, [prod_id])
+    temp = list(iter(cursor2.fetchall()))
+    cursor2.close()
+    if (len(temp) == 0):
+        return None
     return render_template("Product.html", prod_name = temp[0][0], prod_price = temp[0][1], prod_discount = temp[0][2], user=current_user)
 
-@views.route('/cart')
+
+@views.route('/cart', methods=['GET', 'POST'])
 @login_required
 def cart():
     try:
@@ -105,14 +112,14 @@ def cart():
     cursor = getcursor()
     query = "select * from Customer where email_address = %s"
     cursor.execute(query, [current_user.get_id()])
-    temp = list(iter(cursor.fetchall()))
+    Customer_id = list(iter(cursor.fetchall()))
     cursor.close()
     prod_list = []
     final_list = []
-    if len(temp) != 0:
+    if len(Customer_id) != 0:
         cursor2 = getcursor()
         query2 = "select * from Shopping_Cart where customer_ID = %s"
-        cursor2.execute(query2, [temp[0][0]])
+        cursor2.execute(query2, [Customer_id[0][0]])
         prod_list = list(iter(cursor2.fetchall()))
         cursor2.close()
 
@@ -126,6 +133,40 @@ def cart():
 
     # Structure of final_list:
     # [((customer_id, product_id, quantity), [(product_id, price, name, discount, gst)]),.....]
+    if request.method == 'POST':
+        cursor = getcursor()
+        customer_id =  final_list[0][0][0]
+        get_order_id = "select max(ordr_id) rom "
+        insert_values_into_order = "insert into Orders select %s,sum(price),avg(GST_percentage),avg(Discount_Percentage) from Product natural join Shopping_cart where Customer_id = %s"
+        cursor.execute(insert_values_into_order,[order_id,customer_id])
+        extract_product_ids = "select product_id from Shopping_Cart where Customer_id = %s"
+        cursor.execute(extract_product_ids,[customer_id])
+        products_iterator = iter(cursor.fetchall())
+        product_id_list = list(products_iterator)
+
+        extract_quantity = "select quantity from Shopping_Cart where Customer_id = %s"
+        cursor.execute(extract_quantity,[customer_id])
+        quantity_iterator = iter(cursor.fetchall())
+        quantity_id_list = list(quantity_iterator)
+
+        for i in range(len(quantity_id_list)):
+            product = product_id_list[i][0]
+            quantity = quantity_id_list[i][0]
+            check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
+            cursor.execute(check_if_product_aready_ordered,[order_id,product])
+            product_ordered = False
+            if len(list(iter(cursor.fetchall()))) != 0:
+                    product_ordered = True
+            # print(product_present)
+            if(product_ordered == False):
+                insert_product = "Insert into order_products values(%s,%s,%s)"
+                cursor.execute(insert_product,[order_id,product,quantity])
+                # cursor_ret(cursor)
+            if(product_ordered == True):
+                increase_product_quantity = "Update order_products set quantity = quantity + %s where order_id = %s and Product_ID = %s"
+                cursor.execute(increase_product_quantity,[order_id,product,quantity])
+            order_id +=1
+            mydb.commit()
 
     return render_template("Cart.html", user=current_user, prod_list=final_list)
 
@@ -165,3 +206,6 @@ def order():
     print("ORDERS LIST", orders_list)     #debugging
 
     return render_template("Order.html", user=current_user, orders_list = orders_list)
+
+
+
