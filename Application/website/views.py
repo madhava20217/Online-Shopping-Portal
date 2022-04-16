@@ -6,6 +6,7 @@
 from flask import Blueprint, render_template, flash, request, flash, redirect, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 import mysql.connector
+import random
 from .User import User
 from . import connect_db, getcursor, db_commit, mydb
 from datetime import datetime
@@ -57,7 +58,7 @@ def product(pid):
         print(request.form)
         cursor = getcursor()
         try:
-            choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s"
+            choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s and Stocks > 0"
             cursor.execute(choose_warehouse,[pid])
             warehouse_avaialable_stock = iter(cursor.fetchall())
             warehouse_stock_list = list(warehouse_avaialable_stock)
@@ -66,7 +67,7 @@ def product(pid):
             # print(warehouse_stock_list)
             #print(type(quantity))
             if(range(len(warehouse_stock_list)) == 0):
-                flash('Product is out of stock', category='alert')
+                flash('Product is out of stock', category='error')
             else:
                 for i in range(len(warehouse_stock_list)):
                     if(warehouse_stock_list[i][1] > quantity):
@@ -105,7 +106,7 @@ def product(pid):
                     flash("Product added to cart, quantity " + str(quantity), category = "success")
                     db_commit()
                 else:
-                    flash('Login to add to your cart', category='alert')
+                    flash('Login to add to your cart', category='error')
                     return redirect(url_for('auth.login'))
         except Exception as e:
             flash('Failed to add to Cart!', category='error')
@@ -171,6 +172,7 @@ def cart():
         cursor = getcursor()
         customer_id =  final_list[0][0][0]
         if(request.form.get('form') == "checkout"):
+            total_cost = 0
             get_order_id = "select max(order_id) from Orders"
             cursor.execute(get_order_id)
             coupon_code = None
@@ -187,59 +189,85 @@ def cart():
             cursor.execute(extract_quantity,[customer_id])
             quantity_iterator = iter(cursor.fetchall())
             quantity_id_list = list(quantity_iterator)
+
+            
+            delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
+            cursor.execute(delete_from_shopping_cart,[customer_id])
+            db_commit()
+            flag = 0
             for i in range(len(quantity_id_list)):
                 product = product_id_list[i][0]
                 quantity = quantity_id_list[i][0]
-                # choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s"
-                # cursor.execute(choose_warehouse,[product])
-                # warehouse_avaialable_stock = iter(cursor.fetchall())
-                # warehouse_stock_list = list(warehouse_avaialable_stock)
-                # max_stock_warehouse_id = -1
-                # final_quantity_to_be_given = -1
-                # # print(warehouse_stock_list)
-                # #print(type(quantity))
-                # if(range(len(warehouse_stock_list)) == 0):
-                #     flash('Product is out of stock', category='alert')
-                # else:
-                #     for i in range(len(warehouse_stock_list)):
-                #         if(warehouse_stock_list[i][1] > quantity):
-                #             final_quantity_to_be_given = quantity
-                #             max_stock_warehouse_id = warehouse_stock_list[i][0]
-                #             break
-                #         else:
-                #             if(final_quantity_to_be_given < warehouse_stock_list[i][1]):
-                #                 final_quantity_to_be_given = warehouse_stock_list[i][1]
-                #                 max_stock_warehouse_id = warehouse_stock_list[i][0]
-                # if(final_quantity_to_be_given !=-1):
-                #     print(final_quantity_to_be_given)
-                #     print(pid)
-                #     print(max_stock_warehouse_id)
-                #     decrement_product = "update Stores SET Stocks = Stocks - %s where  Product_ID = %s and Warehouse_ID = %s"
-                #     cursor.execute(decrement_product,[final_quantity_to_be_given,product,max_stock_warehouse_id])
-                # quantity = final_quantity_to_be_given
-                check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
-                cursor.execute(check_if_product_aready_ordered,[order_id,product])
-                product_ordered = False
-                if len(list(iter(cursor.fetchall()))) != 0:
-                        product_ordered = True
-                # print(product_present)
-                if(product_ordered == False):
-                    insert_product = "Insert into order_products values(%s,%s,%s)"
-                    cursor.execute(insert_product,[order_id,product,quantity])
-                    # cursor_ret(cursor)
-                if(product_ordered == True):
-                    increase_product_quantity = "Update order_products set quantity = quantity + %s where order_id = %s and Product_ID = %s"
-                    cursor.execute(increase_product_quantity,[order_id,product,quantity])
+                choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s and Stocks > 0"     #chooses maximally stocked warehouse
+                cursor.execute(choose_warehouse,[product])
+                warehouse_avaialable_stock = iter(cursor.fetchall())
+                warehouse_stock_list = list(warehouse_avaialable_stock)
+                max_stock_warehouse_id = -1    #may not be required
+                final_quantity_to_be_given = -1
+                # print(warehouse_stock_list)
+                #print(type(quantity))
+                # the case when the product is out of stock
+                print("*"*150)
+                print("/n" "Value of warehouse list is" + "/n")
+                print(warehouse_stock_list)
+                if(len(warehouse_stock_list) == 0):
+                    flash('Product is out of stock', category='alert')
+                    break
+                else:
+                    flag = 1
+                    for i in range(len(warehouse_stock_list)):
+                        if(warehouse_stock_list[i][1] > quantity):
+                            final_quantity_to_be_given = quantity
+                            max_stock_warehouse_id = warehouse_stock_list[i][0]
+                            break
+                        else:
+                            if(final_quantity_to_be_given < warehouse_stock_list[i][1]):
+                                final_quantity_to_be_given = warehouse_stock_list[i][1]
+                                max_stock_warehouse_id = warehouse_stock_list[i][0]
+                    if(final_quantity_to_be_given !=-1):
+                        decrement_product = "update Stores SET Stocks = Stocks - %s where  Product_ID = %s and Warehouse_ID = %s"
+                        cursor.execute(decrement_product,[final_quantity_to_be_given,product,max_stock_warehouse_id])
+                    quantity = final_quantity_to_be_given
+
+                    insert_product = "Insert into Shopping_Cart values(%s,%s,%s)"
+                    cursor.execute(insert_product,[customer_id,product, quantity])
+                    mydb.commit()
+                    
+                    check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
+                    cursor.execute(check_if_product_aready_ordered,[order_id,product])
+                    product_ordered = False
+                    if len(list(iter(cursor.fetchall()))) != 0:
+                            product_ordered = True
+                    # print(product_present)
+                    if(product_ordered == False):
+                        insert_product = "Insert into order_products values(%s,%s,%s)"
+                        cursor.execute(insert_product,[order_id,product,quantity])
+                        # cursor_ret(cursor)
+                    if(product_ordered == True):
+                        increase_product_quantity = "Update order_products set quantity = quantity + %s where order_id = %s and Product_ID = %s"
+                        cursor.execute(increase_product_quantity,[order_id,product,quantity])
+
+            if(flag == 0):
+                delete_values_in_order = "delete from Orders where order_ID = %s"
+                cursor.execute(delete_values_in_order,[order_id])
+            else:
+                update_values_in_order = "UPDATE Orders SET Total_Price = (SELECT sum(price * quantity) from Product natural join Shopping_cart where Customer_id = %s) where order_id = %s"
+                cursor.execute(update_values_in_order,[customer_id,order_id])
+                
+                update_values_in_order = "UPDATE Orders SET Taxes = (select avg(GST_percentage) from Product natural join Shopping_cart where Customer_id = %s) where order_id = %s"
+                cursor.execute(update_values_in_order,[customer_id,order_id])
             
-
-            #adding details into transaction
-            transaction_add = "insert into transaction values (%s, %s, %s, %s, %s, %s)"
-            cursor.execute(transaction_add, [order_id, "test", 1, datetime.now(), customer_id, coupon_code])
-
-        
-            #adding details into delivery
-            delivery_add = "insert into delivery values (%s, %s, %s, %s, %s);"
-            cursor.execute(delivery_add, [order_id, None, customer_id, None, None])
+                update_values_in_order = "UPDATE Orders SET Total_Discount_Percentage = (select avg(Discount_Percentage) from Product natural join Shopping_cart where Customer_id = %s) where order_id = %s"
+                cursor.execute(update_values_in_order,[customer_id,order_id])
+                
+                
+                #adding details into transaction
+                transaction_add = "insert into transaction values (%s, %s, %s, %s, %s, %s)"
+                cursor.execute(transaction_add, [order_id, "test", 1, datetime.now(), customer_id, coupon_code])
+            
+                #adding details into delivery
+                delivery_add = "insert into delivery values (%s, %s, %s, %s, %s);"
+                cursor.execute(delivery_add, [order_id, None, customer_id, None, None])
 
             #deleting items from shopping cart
             delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
@@ -289,20 +317,37 @@ def order():
 
 
 
-@views.route('/complaint/<order_id>')
+@views.route('/complaint/<order_id>', methods=['GET', 'POST'])
 @login_required
-def complaint():
-    '''
-    cursor = getcursor()
-    try:
-        query1 = "insert into complains (customer_ID, order_ID, service_employee_id, date_of_creation, details, resolved) values ()"
-        query2 = "select Customer_ID from Customer where email_address = %s"
-        query3 = "select Order_ID from where Customer_ID = %s"
+def complaint(order_id):
+    if (request.method == 'POST'):
+        user_complaint = request.form.get('input_complain')
+        cursor = getcursor()
+        try:
+            query1 = "select Customer_ID from Customer where email_address = %s"
+            query2 = "select * from Transaction where Customer_ID = %s and Order_ID = %s"
+            query3 = "insert into complains (customer_ID, order_ID, service_employee_id, date_of_creation, details, resolved) values (%s,%s,%s,%s,%s,%s)"
 
-        # check here if the customer has ordered the order for which he is complaining
 
-    except Exception as e:
-        print("Exception caught", e)
-    
-    '''
+            cursor.execute(query1, [current_user.get_id()])
+            cust_id = list(iter(cursor.fetchall()))
+            cursor.execute(query2, [cust_id[0][0], order_id])
+            valid_order = list(iter(cursor.fetchall()))
+
+            if (len(valid_order) != 0):
+                service_emp_id = random.randint(21, 51)
+                date_of_create = datetime.now()
+                cursor.execute(query3, [cust_id[0][0], order_id, service_emp_id, date_of_create, user_complaint, 'F'])
+                flash("We have recieved your Complaint. Thankyou for your valuable feedback.", category="success")
+            else:
+                flash("Error submitting your complain! Please try again later", category="error")
+            cursor.close()
+            return redirect(url_for('views.order'))
+
+        except Exception as e:
+            print("Exception caught", e)
+            flash("Error submitting your complain! Please try again later", category="error")
+            cursor.close()
+            return redirect(url_for('views.order'))
+        
     return render_template("Complaint.html", user=current_user)

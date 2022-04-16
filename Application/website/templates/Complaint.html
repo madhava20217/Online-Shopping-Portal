@@ -2,7 +2,28 @@
     content %}
 
 <section class = "text-gray-600 body-font overflow-hidden">
-    <div class = "container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-
+    <div class = "w-full mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <h1 class="title-font font-medium text-3xl text-gray-900">
+            We are here to help you
+        </h1>
+        <form method="POST" class="w-full">
+            <input 
+                required 
+                type="text" 
+                maxlength="250" 
+                id="input_complain" 
+                name="input_complain" 
+                placeholder="Enter your complain here..."
+                class="w-full mt-5 bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+            <button
+            class="w-full mt-10 inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold text-lg"
+            type="submit"
+            >
+            Submit
+            </button>
+        </form>
     </div>
 </section>
+
+{% endblock %}
