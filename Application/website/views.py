@@ -52,35 +52,61 @@ def home5():
 def product(pid):
     temp=[]
     if request.method == 'POST':
-        #TODO here
-        quantity = request.form.get('quantity')
+        quantity = int(request.form.get('quantity'))
         print("*"*500)
         print(request.form)
         cursor = getcursor()
         try:
-            #Check if that product is already present
-            query2 = "select Customer_ID from Customer where email_address = %s"
-            cursor.execute(query2, [current_user.get_id()])
-            customer_id = list(iter(cursor.fetchall()))
-            if len(customer_id) != 0:
-                check_if_product_exists_in_cart = "select * from Shopping_Cart where exists(select * from Shopping_Cart where customer_ID = %s and Product_ID = %s)"
-                cursor.execute(check_if_product_exists_in_cart,[customer_id[0][0],pid])
-                product_present = False
-                if len(list(iter(cursor.fetchall()))) != 0:
-                        product_present = True
-                # print(product_present)
-                if(product_present == False):
-                    insert_product = "Insert into Shopping_Cart values(%s,%s,%s)"
-                    cursor.execute(insert_product,[customer_id[0][0],pid, quantity])
-                    # cursor_ret(cursor)
-                if(product_present == True):
-                    increase_product_quantity = "Update Shopping_Cart set quantity = quantity + %s where customer_ID = %s and Product_ID = %s"
-                    cursor.execute(increase_product_quantity,[quantity,customer_id[0][0],pid])
-                flash("Product added to cart, quantity " + quantity, category = "success")
-                db_commit()
+            choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s"
+            cursor.execute(choose_warehouse,[pid])
+            warehouse_avaialable_stock = iter(cursor.fetchall())
+            warehouse_stock_list = list(warehouse_avaialable_stock)
+            max_stock_warehouse_id = -1
+            final_quantity_to_be_given = -1
+            # print(warehouse_stock_list)
+            #print(type(quantity))
+            if(range(len(warehouse_stock_list)) == 0):
+                flash('Product is out of stock', category='alert')
             else:
-                flash('Login to add to your cart', category='alert')
-                return redirect(url_for('auth.login'))
+                for i in range(len(warehouse_stock_list)):
+                    if(warehouse_stock_list[i][1] > quantity):
+                        final_quantity_to_be_given = quantity
+                        max_stock_warehouse_id = warehouse_stock_list[i][0]
+                        break
+                    else:
+                        if(final_quantity_to_be_given < warehouse_stock_list[i][1]):
+                            final_quantity_to_be_given = warehouse_stock_list[i][1]
+                            max_stock_warehouse_id = warehouse_stock_list[i][0]
+                quantity = final_quantity_to_be_given
+                #Check if that product is already present
+                query2 = "select Customer_ID from Customer where email_address = %s"
+                cursor.execute(query2, [current_user.get_id()])
+                customer_id = list(iter(cursor.fetchall()))
+
+                #customer exists
+                if (len(customer_id) != 0):
+                    check_if_product_exists_in_cart = "select * from Shopping_Cart where exists(select * from Shopping_Cart where customer_ID = %s and Product_ID = %s)"
+                    cursor.execute(check_if_product_exists_in_cart,[customer_id[0][0],pid])
+                    product_present = False
+
+                    #checking if product exists in cart (for incrementing the value)
+                    if len(list(iter(cursor.fetchall()))) != 0:
+                            product_present = True
+                    
+                    #Product isn't present in the cart, so we need to add it to cart
+                    if(product_present == False):
+                        insert_product = "Insert into Shopping_Cart values(%s,%s,%s)"
+                        cursor.execute(insert_product,[customer_id[0][0],pid, quantity])
+                    
+                    #Product is present in the cart, we can simply increment the value (till the permissible stock levels)
+                    if(product_present == True):
+                        increase_product_quantity = "Update Shopping_Cart set quantity = quantity + %s where customer_ID = %s and Product_ID = %s"
+                        cursor.execute(increase_product_quantity,[quantity,customer_id[0][0],pid])
+                    flash("Product added to cart, quantity " + str(quantity), category = "success")
+                    db_commit()
+                else:
+                    flash('Login to add to your cart', category='alert')
+                    return redirect(url_for('auth.login'))
         except Exception as e:
             flash('Failed to add to Cart!', category='error')
             print("Exception caught", e)
@@ -164,6 +190,33 @@ def cart():
             for i in range(len(quantity_id_list)):
                 product = product_id_list[i][0]
                 quantity = quantity_id_list[i][0]
+                # choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s"
+                # cursor.execute(choose_warehouse,[product])
+                # warehouse_avaialable_stock = iter(cursor.fetchall())
+                # warehouse_stock_list = list(warehouse_avaialable_stock)
+                # max_stock_warehouse_id = -1
+                # final_quantity_to_be_given = -1
+                # # print(warehouse_stock_list)
+                # #print(type(quantity))
+                # if(range(len(warehouse_stock_list)) == 0):
+                #     flash('Product is out of stock', category='alert')
+                # else:
+                #     for i in range(len(warehouse_stock_list)):
+                #         if(warehouse_stock_list[i][1] > quantity):
+                #             final_quantity_to_be_given = quantity
+                #             max_stock_warehouse_id = warehouse_stock_list[i][0]
+                #             break
+                #         else:
+                #             if(final_quantity_to_be_given < warehouse_stock_list[i][1]):
+                #                 final_quantity_to_be_given = warehouse_stock_list[i][1]
+                #                 max_stock_warehouse_id = warehouse_stock_list[i][0]
+                # if(final_quantity_to_be_given !=-1):
+                #     print(final_quantity_to_be_given)
+                #     print(pid)
+                #     print(max_stock_warehouse_id)
+                #     decrement_product = "update Stores SET Stocks = Stocks - %s where  Product_ID = %s and Warehouse_ID = %s"
+                #     cursor.execute(decrement_product,[final_quantity_to_be_given,product,max_stock_warehouse_id])
+                # quantity = final_quantity_to_be_given
                 check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
                 cursor.execute(check_if_product_aready_ordered,[order_id,product])
                 product_ordered = False
@@ -230,16 +283,26 @@ def order():
 
 
     cursor.close()
-    # #trying to pass edited order list to display like grofers
-    # order_dict = {}
-    # for order in orders_list:
-    #     if(order[0] in order_dict.keys()):
-    #         order_dict[order[0]].append(order[1:])
-    #     else:
-    #         order_dict[order[0]] = [order[1:]]
     print("ORDERS LIST", orders_list)     #debugging
 
     return render_template("Order.html", user=current_user, orders_list = orders_list)
 
 
 
+@views.route('/complaint/<order_id>')
+@login_required
+def complaint():
+    '''
+    cursor = getcursor()
+    try:
+        query1 = "insert into complains (customer_ID, order_ID, service_employee_id, date_of_creation, details, resolved) values ()"
+        query2 = "select Customer_ID from Customer where email_address = %s"
+        query3 = "select Order_ID from where Customer_ID = %s"
+
+        # check here if the customer has ordered the order for which he is complaining
+
+    except Exception as e:
+        print("Exception caught", e)
+    
+    '''
+    return render_template("Complaint.html", user=current_user)

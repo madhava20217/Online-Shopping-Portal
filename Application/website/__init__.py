@@ -67,7 +67,6 @@ def create_app():
 		if len(temp) != 0:
 			return User(temp[0][0], temp[0][1])
 		else:
-			# return AnonymousUser()
 			return None
 
 	return app
