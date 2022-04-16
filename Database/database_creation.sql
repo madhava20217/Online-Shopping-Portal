@@ -65,7 +65,7 @@ create table Product(Product_ID Integer AUTO_INCREMENT NOT NULL,
 create table product_rating(
                     Product_ID Integer,
                     customer_id Integer,
-                    Rating numeric(1,0) check (Rating > 0),
+                    Rating numeric(1,0) check (Rating > 0),# Rating is from 1 to 5
                     foreign key (product_id) references Product(product_id),
                     foreign key (customer_id) references Customer(customer_id),
                     primary key (product_id, customer_id)

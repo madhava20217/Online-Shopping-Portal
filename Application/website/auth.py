@@ -1,17 +1,12 @@
-#TODO: Inserting product to user's shopping cart in database when the user clicks add to cart button    // Done
-#TODO: Employees management portal (for other stakeholders)
-#TODO: utilise views in the querying process
-#TODO: Optional : User can rate the products from my orders
+#TODO: Employees management portal (for other stakeholders)                              //CLI
+#TODO: User can rate the products from my orders                                         //Optional
 #TODO: Indexing of tables
-#TODO: make page for customer can review, complain, comment //optional
-#TODO: Make page to insert new product //optional
-#TODO: Reduce stocks of product as it gets ordered
-#TODO: take care of stock availability in individual product pages
-#TODO: optional: Review of each product in product page
-#TODO: logout is buggy                                                                                  // Done
-#TODO: make a class of all the sql queries and access them using it
+#TODO: Make page to insert new product                                                   //CLI
+#TODO: make a class of all the sql queries and access them using it                      //In Progress
 #TODO: Add check for warehouse quantities
-#TODO: form for transaction details on cart page 
+#TODO: form for transaction details on cart page                                         // Optional (COD only, write in docs)
+#TODO: #DOCUMENTATION In case of more ordered than permissible, it orders available quantity
+#TODO: Main page front look
 
 
 from . import connect_db, getcursor, db_commit, mydb
