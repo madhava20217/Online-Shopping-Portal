@@ -293,7 +293,7 @@ def cart():
             
                 #adding details into delivery
                 delivery_add = "insert into delivery values (%s, %s, %s, %s, %s);"
-                cursor.execute(delivery_add, [order_id, None, customer_id, None, None])
+                cursor.execute(delivery_add, [order_id, None, customer_id,max_stock_warehouse_id, None])
 
             #deleting items from shopping cart
             delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
