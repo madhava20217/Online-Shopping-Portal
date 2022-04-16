@@ -5,7 +5,7 @@
 #TODO: make a class of all the sql queries and access them using it                      //In Progress
 #TODO: form for transaction details on cart page                                         //Optional (COD only, write in docs)
 #TODO: #DOCUMENTATION In case of more ordered than permissible, it orders available quantity
-#TODO: Main page front look
+#TODO: Main page front look, vendor page, integration, logo
 #TODO: Assign Delivery Guy
 
 
