@@ -48,6 +48,7 @@ class MyDBConnector:
         product_list = list(iter(self.__cursor.fetchall()))
         return product_list
 
+#testing, main function
 if __name__ == "__main__":
     conn = MyDBConnector()
 
