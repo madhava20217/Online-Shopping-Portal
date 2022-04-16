@@ -3,7 +3,6 @@
 #TODO: Indexing of tables
 #TODO: Make page to insert new product                                                   //CLI
 #TODO: make a class of all the sql queries and access them using it                      //In Progress
-#TODO: Add check for warehouse quantities
 #TODO: form for transaction details on cart page                                         // Optional (COD only, write in docs)
 #TODO: #DOCUMENTATION In case of more ordered than permissible, it orders available quantity
 #TODO: Main page front look
