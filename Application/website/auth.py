@@ -8,7 +8,7 @@
 #TODO: Reduce stocks of product as it gets ordered
 #TODO: take care of stock availability in individual product pages
 #TODO: optional: Review of each product in product page
-#TODO: logout is buggy
+#TODO: logout is buggy                                                                                  // Done
 #TODO: make a class of all the sql queries and access them using it
 #TODO: Add check for warehouse quantities
 #TODO: form for transaction details on cart page 

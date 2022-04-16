@@ -1,6 +1,6 @@
 from cmath import log
 from flask import Flask, render_template, request
-from flask_login import LoginManager, login_user
+from flask_login import LoginManager, login_user, UserMixin, AnonymousUserMixin
 from .User import User
 import mysql.connector
 
@@ -67,6 +67,7 @@ def create_app():
 		if len(temp) != 0:
 			return User(temp[0][0], temp[0][1])
 		else:
+			# return AnonymousUser()
 			return None
 
 	return app

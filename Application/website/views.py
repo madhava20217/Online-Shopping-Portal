@@ -217,7 +217,7 @@ def order():
     orders_list = []
     cursor = getcursor()
     try:
-        query1 = "select Order_ID, Product_Name, Quantity, Delivery_address, Transaction_Time, Delivery_Date, Total_Price from Customer_Order where Customer_ID = %s"
+        query1 = "select Order_ID, Product_Name, Quantity, Delivery_address, Transaction_Time, Delivery_Date, Total_Price from Customer_Order where Customer_ID = %s ORDER BY Transaction_time DESC"
         query2 = "select Customer_ID from Customer where email_address = %s"
         # print("CURRENT USER's TYPE",type(current_user.get_id()))  #debugging
         cursor.execute(query2, [current_user.get_id()])
