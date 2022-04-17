@@ -11,8 +11,6 @@ delete from Shopping_cart
 end;
 
 
-delimiter $$
-drop trigger if exists update_cart $$
 create trigger update_cart after update on Stores
 for each row
 IF NEW.Stocks = 0 THEN
