@@ -8,7 +8,7 @@ from flask_login import current_user, login_required, login_user, logout_user
 import mysql.connector
 import random
 from .User import User
-from . import connect_db, getcursor, db_commit, mydb
+from . import myDB
 from datetime import datetime
 
 views = Blueprint('views', __name__)
@@ -20,34 +20,12 @@ def home1():
     print(current_user.get_id())
     temp = []
     try:
-        mydb
-    except NameError as e:
-        connect_db()
-
-    cursor = getcursor()
-    query = "select product_name, price, discount_percentage, product_id from all_products"
-    cursor.execute(query)
-    temp = list(iter(cursor.fetchall()))
-    cursor.close()
+        temp = myDB.get_all_products
+    except Exception as e:
+        print(e)
 
     return render_template("Home1.html", all_prod = temp, user=current_user)
-'''
-@views.route('/2')
-def home2():
-    return render_template("Home2.html")
 
-@views.route('/3')
-def home3():
-    return render_template("Home3.html")
-
-@views.route('/4')
-def home4():
-    return render_template("Home4.html")
-
-@views.route('/5')
-def home5():
-    return render_template("Home5.html")
-'''
 
 @views.route('/product/<pid>', methods=['GET','POST'])
 def product(pid):
@@ -84,9 +62,10 @@ def product(pid):
                             max_stock_warehouse_id = warehouse_stock_list[i][0]
                 quantity = final_quantity_to_be_given
                 #Check if that product is already present
-                query2 = "select Customer_ID from Customer where email_address = %s"
-                cursor.execute(query2, [current_user.get_id()])
-                customer_id = list(iter(cursor.fetchall()))
+                if (myDB.current_customer[7] == current_user.get_id()):
+                    customer_id = myDB.current_customer
+                else:
+                    customer_id = myDB.get_Customer(current_user.get_id())
 
                 #customer exists
                 if (len(customer_id) != 0):
@@ -133,18 +112,11 @@ def product(pid):
             print("Exception caught", e)
         cursor.close()
 
-
-    try:
-        mydb
-    except NameError as e:
-        connect_db()
-
-    cursor2 = getcursor()
     prod_id = pid
     query = "select product_name, price, discount_percentage from all_products where product_id = %s"
     cursor2.execute(query, [prod_id])
     temp = list(iter(cursor2.fetchall()))
-    cursor2.close()
+
     if (len(temp) == 0):
         return None
     return render_template("Product.html", prod_name = temp[0][0], prod_price = temp[0][1], prod_discount = temp[0][2], user=current_user)
@@ -153,43 +125,33 @@ def product(pid):
 @views.route('/cart', methods=['GET', 'POST'])
 @login_required
 def cart():
-    try:
-        mydb
-    except NameError as e:
-        connect_db()
 
-    print(current_user.get_id())
+    if (myDB.current_customer[7] == current_user.get_id()):
+        Customer_id = myDB.current_customer
+    else:
+        Customer_id = myDB.get_Customer(current_user.get_id())
 
-    cursor = getcursor()
-    query = "select * from Customer where email_address = %s"
-    cursor.execute(query, [current_user.get_id()])
-    Customer_id = list(iter(cursor.fetchall()))
-    cursor.close()
     prod_list = []
     final_list = []
     if len(Customer_id) != 0:
-        cursor2 = getcursor()
+
         query2 = "select * from Shopping_Cart where customer_ID = %s"
         cursor2.execute(query2, [Customer_id[0][0]])
         prod_list = list(iter(cursor2.fetchall()))
-        cursor2.close()
+
 
         for prod in prod_list:
             query3 = "select * from Product where Product_ID = %s"
-            cursor3 = getcursor()
+
             cursor3.execute(query3, [prod[1]])
             prod_details = list(iter(cursor3.fetchall()))
-            cursor3.close()
+
             final_list.append((prod, prod_details))
 
     # Structure of final_list:
     # [((customer_id, product_id, quantity), [(product_id, price, name, discount, gst)]),.....]
     if request.method == 'POST':
-        print("*"*500)
-        print(request.form)
-        print(request.form.get('form'))
-        print("*"*500)
-        cursor = getcursor()
+
         customer_id =  final_list[0][0][0]
         if(request.form.get('form') == "checkout"):
             total_cost = 0
@@ -314,30 +276,20 @@ def cart():
 @views.route('/order')
 @login_required
 def order():
-    try:
-        mydb
-    except NameError as e:
-        connect_db()
-
-    #current_user.get_id() returns a string which is the email address of the logged in user
-    #print(current_user.get_id())   #debugging
     orders_list = []
-    cursor = getcursor()
+
     try:
         query1 = "select Order_ID, Product_Name, Quantity, Delivery_address, Transaction_Time, Delivery_Date, Total_Price from Customer_Order where Customer_ID = %s ORDER BY Transaction_time DESC"
-        query2 = "select Customer_ID from Customer where email_address = %s"
-        # print("CURRENT USER's TYPE",type(current_user.get_id()))  #debugging
-        cursor.execute(query2, [current_user.get_id()])
-        customer_id = list(iter(cursor.fetchall()))
+        if (myDB.current_customer[7] == current_user.get_id()):
+            customer_id = myDB.current_customer
+        else:
+            customer_id = myDB.get_Customer(current_user.get_id())
+
         if len(customer_id) != 0:
             cursor.execute(query1,[customer_id[0][0]])
             orders_list = list(iter(cursor.fetchall()))
     except Exception as e:
         print("Exception caught", e)
-
-
-    cursor.close()
-    print("ORDERS LIST", orders_list)     #debugging
 
     return render_template("Order.html", user=current_user, orders_list = orders_list)
 
@@ -348,34 +300,32 @@ def order():
 def complaint(order_id):
     if (request.method == 'POST'):
         user_complaint = request.form.get('input_complain')
-        cursor = getcursor()
+
         try:
-            query1 = "select Customer_ID from Customer where email_address = %s"
             query2 = "select * from Transaction where Customer_ID = %s and Order_ID = %s"
-            query3 = "insert into complains (customer_ID, order_ID, service_employee_id, date_of_creation, details, resolved) values (%s,%s,%s,%s,%s,%s)"
 
+            if (myDB.current_customer[7] == current_user.get_id()):
+                cust_id = myDB.current_customer
+            else:
+                cust_id = myDB.get_Customer(current_user.get_id())
 
-            cursor.execute(query1, [current_user.get_id()])
-            cust_id = list(iter(cursor.fetchall()))
-            cursor.execute(query2, [cust_id[0][0], order_id])
+            cursor.execute(query2, [cust_id[0], order_id])
             valid_order = list(iter(cursor.fetchall()))
 
             if (len(valid_order) != 0):
                 service_emp_id = random.randint(21, 51)
                 date_of_create = datetime.now()
-                tup = [cust_id[0][0], order_id, service_emp_id, date_of_create, user_complaint, 'N']
-                cursor.execute(query3, tup)
-                db_commit()
+                complaint_info = [cust_id[0], order_id, service_emp_id, date_of_create, user_complaint, 'N']
+                myDB.add_Complaint(complaint_info)
                 flash("We have recieved your Complaint. Thank you for your valuable feedback.", category="success")
             else:
                 flash("Error submitting your complaint! Please try again later", category="error")
-            cursor.close()
+
             return redirect(url_for('views.order'))
 
         except Exception as e:
             print("Exception caught", e)
             flash("Error submitting your complain! Please try again later", category="error")
-            cursor.close()
             return redirect(url_for('views.order'))
         
     return render_template("Complaint.html", user=current_user)
