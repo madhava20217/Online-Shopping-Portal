@@ -154,22 +154,30 @@ from service_employee,
     
 ); */
 
--- create view Warehouse_Worker_view as 
--- (select *
---  from Stores, 
---  where );
+create view Warehouse_Worker_view as 
+(select 
+    Warehouse_ID,Product_id,Stocks
+    from Stores natural join Warehouse_Worker 
+    );
 
 
 
 -- ************* GRANTS *************
 -- grant roles
-create role Customer_role;
-create role Suppliers_role;
-create role Delivery_Guy_role;
-create role Warehouse_Worker_role;
-create role Service_Emp_role;
+DROP ROLE IF EXISTS Customer_role;
+CREATE ROLE Customer_role ;
+DROP ROLE IF EXISTS Suppliers_role;
+CREATE ROLE Suppliers_role ;
+DROP ROLE IF EXISTS Deliver_Guy_role;
+CREATE ROLE Deliver_Guy_role ;
+DROP ROLE IF EXISTS Warehouse_Worker_role;
+CREATE ROLE Warehouse_Worker_role ;
+DROP ROLE IF EXISTS Service_Emp_role;
+CREATE ROLE Service_Emp_role ;
 
-grant select on Customer_Order, Customer_Cart ,Customer_Complaint to Service_Emp_role;
+grant select on Customer_Order to Service_Emp_role;
+grant select on Customer_Cart to Service_Emp_role;
+grant select on Customer_Complaints to Service_Emp_role;
 
 grant select on Delivery_Guy to Deliver_Guy_role;
 
@@ -177,4 +185,4 @@ grant select on Warehouse_Worker_view to Warehouse_Worker_role;
 
 grant select on Suppliers to Suppliers_role;
 
-grant select on product_available to Customer_role;
+grant select on all_products to Customer_role;

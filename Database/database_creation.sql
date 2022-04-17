@@ -86,6 +86,8 @@ create table Vendor(Vendor_id Integer AUTO_INCREMENT NOT NULL,
                     Plot_number numeric(30,0) check (plot_number >= 0),
                     City varchar(30),
                     pincode numeric(6,0) check (pincode >= 0),
+                    email_address varchar(50) unique not null,
+                    password varchar(30) not null,
                     PRIMARY KEY (Vendor_id)
                     );
 create table Vendor_phone(Vendor_id Integer,
