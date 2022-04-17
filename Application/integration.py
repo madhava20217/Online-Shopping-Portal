@@ -115,6 +115,7 @@ class MyDBConnector:
 
     def delete_from_Cart(self, customer_id):
         # use table shopping cart
+        
         pass
 
     def add_to_Cart(self, customer_id, Product_id, Quantity):
