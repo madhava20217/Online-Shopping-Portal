@@ -2,7 +2,7 @@
 #from sql queries
 #TODO: make a page for showing previous orders of the customer
 
-
+from random import randint
 from flask import Blueprint, render_template, flash, request, flash, redirect, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 import mysql.connector
@@ -106,8 +106,8 @@ def product(pid):
                     
                     #Product is present in the cart, we can simply increment the value (till the permissible stock levels)
                     if(product_present == True):
-                        get_quantity_of_product_aready_ordered = "select quantity from Shopping_Cart where Product_ID = %s and Customer_id = %s"
-                        cursor.execute(get_quantity_of_product_aready_ordered,[pid,customer_id[0][0]])
+                        get_quantity_of_product_aready_ordered = "select quantity from Shopping_Cart where Customer_id = %s and Product_id = %s"
+                        cursor.execute(get_quantity_of_product_aready_ordered,[customer_id[0][0]],pid)
                         quantity_iterator1 = iter(cursor.fetchall())
                         quantity_id_only_1 = list(quantity_iterator1)
                         already_in_cart_quantity = quantity_id_only_1[0][0]
@@ -209,8 +209,6 @@ def cart():
             cursor.execute(extract_quantity,[customer_id])
             quantity_iterator = iter(cursor.fetchall())
             quantity_id_list = list(quantity_iterator)
-
-            
             delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
             cursor.execute(delete_from_shopping_cart,[customer_id])
             db_commit()
@@ -254,7 +252,7 @@ def cart():
                     stock_avaialable = final_quantity_to_be_given
                    
                     
-                    check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s)"
+                    check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s )"
                     cursor.execute(check_if_product_aready_ordered,[order_id,product])
                     product_ordered = False
                     if len(list(iter(cursor.fetchall()))) != 0:
@@ -292,8 +290,19 @@ def cart():
                 cursor.execute(transaction_add, [order_id, "test", 1, datetime.now(), customer_id, coupon_code])
             
                 #adding details into delivery
+                possible_delivery_ids_query = "select Employee_ID from Delivery_Partner"
+                cursor.execute(possible_delivery_ids_query)
+                delivery_ids_iterator = iter(cursor.fetchall())
+                delivery_id_list = list(delivery_ids_iterator)
+                random_number = randint(0, len(delivery_id_list) - 1)
+
+                delivery_id = 1
+                for i in range(len(delivery_id_list)):
+                    if(random_number == i):
+                        delivery_id = delivery_id_list[i][0]
+                        break
                 delivery_add = "insert into delivery values (%s, %s, %s, %s, %s);"
-                cursor.execute(delivery_add, [order_id, None, customer_id,max_stock_warehouse_id, None])
+                cursor.execute(delivery_add, [order_id, delivery_id, customer_id,max_stock_warehouse_id, datetime.now()])
 
             #deleting items from shopping cart
             delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
@@ -351,7 +360,7 @@ def complaint(order_id):
         cursor = getcursor()
         try:
             query1 = "select Customer_ID from Customer where email_address = %s"
-            query2 = "select * from Transaction where Customer_ID = %s and Order_ID = %s"
+            query2 = "select * from Transaction where  Order_ID = %s and Customer_ID = %s "
             query3 = "insert into complains (customer_ID, order_ID, service_employee_id, date_of_creation, details, resolved) values (%s,%s,%s,%s,%s,%s)"
 
 
@@ -379,3 +388,54 @@ def complaint(order_id):
             return redirect(url_for('views.order'))
         
     return render_template("Complaint.html", user=current_user)
+
+
+'''
+    @views.route('/order', methods=['GET', 'POST'])
+@login_required
+def order(order_id, prod_id):# My order
+    try:
+        mydb
+    except NameError as e:
+        connect_db()
+
+   
+    orders_list = []
+    cursor = getcursor()
+    try:
+        query1 = "select Order_ID, Product_ID, Product_Name, Quantity, Delivery_address, Transaction_Time, Delivery_Date, Total_Price from Customer_Order where Customer_ID = %s"
+        query2 = "select Customer_ID from Customer where email_address = %s"
+        query3=" insert into product_rating(Product_ID, Customer_ID, Rating) values (%s,%s,%s)"
+        
+        cursor.execute(query2, [current_user.get_id()])
+        customer_id = list(iter(cursor.fetchall()))
+        cursor.execute(query2, customer_id[0][1],prod_id)
+        
+        if request.method=='POST':
+            rating= request.form.get('input_rating')
+            print(request.form)
+            
+            # dont know how to proceed further 
+            if len(customer_id) != 0:
+                cursor.execute(query1,[customer_id[0][0],order_id])
+                orders_list = list(iter(cursor.fetchall()))
+                if(len(orders_list)!=0):
+                    tup=[prod_id, order_id, rating]
+                    cursor.execute(query3, tup)
+                    flash("Thanks for Rating!!", category="success")
+            else:
+                flash("OOPS!! Try again", category="error")
+    except Exception as e:
+        print("Exception caught", e)
+
+
+    cursor.close()
+    
+    print("ORDERS LIST", orders_list)   
+
+    return render_template("Order.html", user=current_user, orders_list = orders_list)
+
+
+'''
+
+

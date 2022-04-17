@@ -1,5 +1,3 @@
--- TODO: add delivery_date field to delivery table and fix all the input data.
-
 -- script for creating database and tables
 
 -- tables created:
@@ -26,6 +24,8 @@
 -- 21) Complains
 -- 22) Order_products
 
+--NOTE: SQL automatically indexes primary keys.
+
 drop database online_shopping;
 
 create DATABASE online_shopping;
@@ -47,11 +47,11 @@ create table Customer(
 
 /* ALTER TABLE Customer MODIFY Customer_ID Integer AUTO_INCREMENT unique NOT NULL ; */
 
-create table Customer_phone(Customer_ID Integer,
+/* create table Customer_phone(Customer_ID Integer,
                             Phone_number numeric(30,0) not null,
                             foreign key (Customer_id) references Customer(customer_id),
                             primary key(Phone_number,Customer_id)
-                            );
+                            ); */
 
 
 create table Product(Product_ID Integer AUTO_INCREMENT NOT NULL,
@@ -62,21 +62,21 @@ create table Product(Product_ID Integer AUTO_INCREMENT NOT NULL,
                     PRIMARY KEY (Product_ID)
                     );
 
-create table product_rating(
+/* create table product_rating(
                     Product_ID Integer,
                     customer_id Integer,
                     Rating numeric(1,0) check (Rating > 0),# Rating is from 1 to 5
                     foreign key (product_id) references Product(product_id),
                     foreign key (customer_id) references Customer(customer_id),
                     primary key (product_id, customer_id)
-                    );
+                    ); */
 
-create table product_photo(
+/* create table product_photo(
                     Product_ID Integer,
                     Photos_url varchar(300),
                     foreign key (product_id) references Product(product_id),
                     primary key (product_id, Photos_url)
-                    );
+                    ); */
 
 
 
@@ -89,12 +89,12 @@ create table Vendor(Vendor_id Integer AUTO_INCREMENT NOT NULL,
                     email_address varchar(50) unique not null,
                     password varchar(30) not null,
                     PRIMARY KEY (Vendor_id)
-                    );
+                    /* );
 create table Vendor_phone(Vendor_id Integer,
                             Phone_number numeric(30,0) not null,
                             foreign key (Vendor_ID) references Vendor(Vendor_ID),
                             primary key(Phone_number,Vendor_ID)
-                        );
+                        ); */
 
 
 create table Warehouse(Warehouse_ID Integer AUTO_INCREMENT NOT NULL,
@@ -104,11 +104,11 @@ create table Warehouse(Warehouse_ID Integer AUTO_INCREMENT NOT NULL,
                     PRIMARY KEY (Warehouse_ID)
                 );
 
-create table Warehouse_phone(Warehouse_ID Integer,
+/* create table Warehouse_phone(Warehouse_ID Integer,
                             Phone_number numeric(30,0) not null,
                             foreign key (Warehouse_ID) references Warehouse(Warehouse_ID),
                             primary key(Phone_number,Warehouse_ID)
-                        );
+                        ); */
 
 
 create table Employee(Employee_ID Integer AUTO_INCREMENT NOT NULL,

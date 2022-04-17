@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% block title %}My Orders{% endblock %} {% block content
 %}
+<!--<link rel="stylesheet" href="css/home.css">-->
 <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
     <div class="-my-8 divide-y-2 divide-gray-100">
@@ -25,6 +26,43 @@
               <p class="leading-relaxed">Expected Delivery : {{ order[5] }}</p>
             {{ endif }} #}
         </div>
+
+        <!--
+          <div class='rate'>
+            <form method='POST' class="rating">
+              <label>
+                <input type="radio" id= 'input_rating' name="stars" value="1" />
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <input type="radio" id= 'input_rating' name="stars" value="2" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <input type="radio" id= 'input_rating' name="stars" value="3" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>   
+              </label>
+              <label>
+                <input type="radio" id= 'input_rating' name="stars" value="4" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+              <label>
+                <input type="radio" id= 'input_rating'  name="stars" value="5" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+              </label>
+            </form>
+          </div>
+        -->
         <a href="/complaint/{{ order[0] }}">
           <div
             class="container w-40 h-40 inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4">

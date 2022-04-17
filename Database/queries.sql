@@ -22,7 +22,7 @@ alter table Vendor add(Vendor_out_of_business boolean default False);
 
 select distinct Employee_ID
         	from Employee 
-        	where Salary > some (select Salary from Employee where Department= "Marketing" ) ;
+        	where Salary > some (select Salary from Employee where Department= "Marketing" );
 
 delete from Stores where stocks = 0;
 
