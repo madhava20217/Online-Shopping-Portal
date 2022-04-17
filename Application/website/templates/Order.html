@@ -1,40 +1,63 @@
-{% extends "base.html" %} {% block title %}My Orders{% endblock %} {% block content
-%}
+{% extends "base.html" %} {% block title %}My Orders{% endblock %} {% block
+content %}
 <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
+    {% if orders_list %}
     <div class="-my-8 divide-y-2 divide-gray-100">
-      {# begin #}
-      {% for order in orders_list %}
+      {# begin #} {% for order in orders_list %}
       <div class="py-8 flex flex-wrap md:flex-nowrap">
         <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-            src="https://picsum.photos/420/260" />
+          <img
+            alt="ecommerce"
+            class="object-cover object-center w-full h-full block"
+            src="https://picsum.photos/420/260"
+          />
         </div>
         <div class="md:flex-grow ml-10">
-          <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ order[1] }}</h2>
+          <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+            {{ order[1] }}
+          </h2>
           <p class="leading-relaxed">Quantity : {{ order[2] }}</p>
           <p class="leading-relaxed">Total Price : {{ (order[6])|round(2) }}</p>
           <p class="leading-relaxed">Delivery Address : {{ order[3] }}</p>
           <p class="leading-relaxed">Ordered On : {{ order[4] }}</p>
           {% if order[5] != None %}
           <p class="leading-relaxed">Delivered On : {{ order[5] }}</p>
-          {% endif %}
-          {# {% if (current_time > order[5]) %}
-              <p class="leading-relaxed">Delivered On : {{ order[5] }}</p>
-            {{ else }}
-              <p class="leading-relaxed">Expected Delivery : {{ order[5] }}</p>
-            {{ endif }} #}
+          {% endif %} {# {% if (current_time > order[5]) %}
+          <p class="leading-relaxed">Delivered On : {{ order[5] }}</p>
+          {{ else }}
+          <p class="leading-relaxed">Expected Delivery : {{ order[5] }}</p>
+          {{ endif }} #}
         </div>
         <a href="/complaint/{{ order[0] }}">
           <div
-            class="container w-40 h-40 inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4">
+            class="container w-40 h-40 inline-flex items-center text-red-500 bg-white-100 border-solid border-2 border-red-500 py-2 px-5 focus:outline-none hover:bg-red-600 border-red-600 hover:text-white rounded transition duration-200 font-semibold mt-4 md:mt-4"
+          >
             Not satisfied? Send a message to our Customer Care service here!
           </div>
         </a>
       </div>
-      {% endfor %}
-      {# end #}
+      {% endfor %} {# end #}
     </div>
+    {% else %}
+    <center>
+      <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <img
+          alt="ecommerce"
+          class="object-cover object-center w-full h-full block"
+          src="https://i.pinimg.com/originals/c6/0f/ea/c60fea3ac3aab2e82c2f7ea901ef55f6.jpg"
+        />
+      </div>
+    </center>
+    <div class="md:flex-grow mt-10">
+      <h2
+        class="text-2xl font-medium text-gray-700 title-font mb-2 text-center"
+      >
+        It's so empty here!
+      </h2>
+      <p class="leading-relaxed text-gray-500 text-center">Order now</p>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% endblock %}

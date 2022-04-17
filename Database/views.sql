@@ -122,7 +122,7 @@ create view all_products as
         product.product_id = stores.product_id
 );
 
-select * from product_available;
+select * from all_products;
 
 -- View for suppliers, should have details of products they supply
 create view Suppliers as 
@@ -131,9 +131,9 @@ create view Suppliers as
     (CONCAT(vendor.first_name, " ", vendor.last_name)) as Vendor_Name,
     (CONCAT(vendor.plot_number, " ", vendor.city, " ", vendor.pincode)) as Vendor_Address,
     Product.product_ID as Product_ID,
-    product.product_Name as Product_Name,
-    product.price as Unit_price,
-    product.GST_percentage as GST_Percentage,
+    Product.product_Name as Product_Name,
+    Product.price as Unit_price,
+    Product.GST_percentage as GST_Percentage,
     Supplies.quantity as Quantity_Supplied
 
     from Vendor, Supplies, Product
