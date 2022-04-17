@@ -2,35 +2,32 @@ from cmath import log
 from flask import Flask, render_template, request
 from flask_login import LoginManager, login_user, UserMixin, AnonymousUserMixin
 from .User import User
-from .integration import MyDBConnector
 import mysql.connector
 
-# #defining global variable for database login measures
-# global mydb
-# mydb = mysql.connector.connect(host = "localhost",
-# 								user = "root",
-# 								password = "Jga@10000",
-# 								database = "online_shopping")
+#defining global variable for database login measures
+global mydb
+mydb = mysql.connector.connect(host = "localhost",
+								user = "root",
+								password = "Madhava2207",
+								database = "online_shopping")
 
 
-# def connect_db():
-# 	''' function to initialise connection to online shopping database in mydb'''
-# 	mydb = mysql.connector.connect(host = "localhost",
-# 								user = "root",
-# 								password = "Jga@10000",
-# 								database = "online_shopping")
+def connect_db():
+	''' function to initialise connection to online shopping database in mydb'''
+	mydb = mysql.connector.connect(host = "localhost",
+								user = "root",
+								password = "Madhava2207",
+								database = "online_shopping")
 
-# 	return mydb
+	return mydb
 
 
-# def getcursor():
-# 	'''function to get cursor object from database connection instance'''
-# 	return mydb.cursor(buffered = True)
+def getcursor():
+	'''function to get cursor object from database connection instance'''
+	return mydb.cursor(buffered = True)
 
-# def db_commit():
-# 	mydb.commit();
-
-myDB = MyDBConnector()
+def db_commit():
+	mydb.commit();
 
 def create_app():
 	'''creates and returns an app object
@@ -53,11 +50,22 @@ def create_app():
 	login_manager.init_app(app)
 
 	@login_manager.user_loader
-	def load_user(useremail):		
+	def load_user(useremail):
+		try:
+			mydb
+		except NameError as e:
+			connect_db()
+		
+		cursor = getcursor()
+		login_query = "select email_address, password from Customer where email_address = %s"
+		cursor.execute(login_query, [useremail])
+		
 		#if length isn't 0, we found the customer!
-		temp = myDB.get_Customer(useremail)
+		temp = list(iter(cursor.fetchall()))
+		cursor.close()
+	
 		if len(temp) != 0:
-			return User(temp[0][7], temp[0][8])
+			return User(temp[0][0], temp[0][1])
 		else:
 			return None
 
