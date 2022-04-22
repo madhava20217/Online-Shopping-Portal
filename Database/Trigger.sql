@@ -1,9 +1,11 @@
+
+
 DELIMITER $
 
 create trigger passwd before insert on Employee
     for each row
     if new.password is NULL THEN
-        set new.password = MD5(new.first_name);
+        set new.password = MD5(new.email_address);
     end if$
 delimiter ;
 
