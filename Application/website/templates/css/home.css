@@ -1,4 +1,4 @@
-/*
+
 .rating {
     display: inline-block;
     position: relative;
@@ -63,4 +63,4 @@
   .rating label input:focus:not(:checked) ~ .icon:last-child {
     color: #000;
     text-shadow: 0 0 5px #09f;
-    */
+  }

@@ -129,3 +129,31 @@ def get_employee(email, password):
         print("Error when returning vendor ID")
         print(e);
         return None
+
+def getVendor_by_ID(vend_id):
+    chk_ven = "select email_address from vendor where vendor_ID = %s limit 1"
+    try:
+        cursor.execute(chk_ven, [vend_id])
+        lst = list(iter(cursor.fetchall()))
+        return lst[0][0]
+
+    except Error as e:
+        print("Error when returning vendor ID")
+        print(e);
+        return None
+
+
+def getEmp_by_ID(emp_id):
+    chk_emp = "select email_address from Employee where employee_ID = %s limit 1"
+    chk_del = "select employee_id from delivery_partner where employee_id = %s limit 1"
+    chk_svc = "select employee_id from service_employee where employee_id = %s limit 1"
+    chk_wrh = "select employee_id from warehouse_worker where employee_id = %s limit 1"
+    try:
+        cursor.execute(chk_emp, [emp_id])
+        lst = list(iter(cursor.fetchall()))
+        return lst[0]
+
+    except Error as e:
+        print("Error when returning employee ID")
+        print(e);
+        return None

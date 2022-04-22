@@ -2,6 +2,7 @@
 
 DELIMITER $
 
+--Working
 create trigger passwd before insert on Employee
     for each row
     if new.password is NULL THEN
@@ -9,24 +10,36 @@ create trigger passwd before insert on Employee
     end if$
 delimiter ;
 
-
-create trigger update_cart after Update on Stores
-for each row
-IF NEW.stocks = 0 THEN
-begin atomic
-delete from Shopping_cart
-    where Shopping_cart.product_id = B;
-end;
-
+--Working
+DELIMITER $
 
 create trigger update_cart after update on Stores
-for each row
-IF NEW.Stocks = 0 THEN
-        delete from shopping_cart 
-        where product_ID = NEW.product_id;
-end$$
+    for each row
+    if new.stocks = 0 THEN
+        delete from Shopping_cart where Shopping_cart.product_id = new.product_id;
+    end if$
+delimiter ;
 
+--non_working
+DELIMITER $
+
+create trigger scalp_customers after update on Stores
+    for each row
+        if new.stocks < 100 then
+            update Product set Product.Total_Discount_Percentage = Product.Total_Discount_Percentage/2;
+        end if$ 
 delimiter ;
 
 
-    /*  (select T.A from (select sum(Stores.stocks) as A,product_id as B from Stores group by Stores.product_id ) as T) */
+/* delimiter $
+create trigger incr_discount 
+after  
+update
+on Orders
+for each row
+if Total_price> 10000
+set new.Total_Discount_Percentage = new.Total_Discount_Percentage*10;
+end if$ 
+delimiter ;  */
+
+show variables like 'have_query_cache';

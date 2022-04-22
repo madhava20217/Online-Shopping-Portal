@@ -6,13 +6,9 @@ import traceback
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from .db import *
 from flask_login import UserMixin, login_user, login_required, logout_user, current_user, login_manager
-from .user import *
+from .employee import Employee
+from .Vendor import Vendor
 
-
-
-
-
-    
 
 
 def create_app():
@@ -40,7 +36,7 @@ def create_app():
             pin = int(request.form['pin_code'].strip())
         except Error as e:
             flash("There seems to be something wrong going on :/", category = "error")
-            return redirect(url_for("/"))
+            return redirect("/") # redirect(url_for(__init__.sign_up_vendor))
 
         city = request.form['city']
         
@@ -80,7 +76,10 @@ def create_app():
             res = checkVendor(email, passwd)
             print(res)
             if res == 1:
-                getVendorID(email, passwd)
+                vend_id = getVendorID(email, passwd)
+                vend = Vendor(vend_id, email)
+                login_user(vend, remember=True)
+                flash('Successfully logged in', category = 'success')
                 return redirect('/')
 
             else:
@@ -106,10 +105,11 @@ def create_app():
 
         if (type(res) == tuple):
             #create user here
-            user = User(res[0], email, res[1])
-            login_user(user, remember = True)
+            emp = Employee(res[0][0], email, res[0][1])
+            # user = User(res[0], email, res[1])
+            login_user(emp, remember = True)
             flash('Successfully logged in', category = 'success')
-            return redirect('/')
+            # return redirect('/')
             
             if(res[1] == "service"):
                 return redirect('/')
@@ -131,9 +131,26 @@ def create_app():
         logout_user()
         return redirect('/')
 
-    @login_manager.user_loader
-    def load_user(user_id):
-        return User.query.get(int(user_id))
-
+    @app.route('/api/vend_logout')
+    @login_required
+    def vend_logout():
+        logout_user()
+        return redirect('/')
 
     return app
+'''
+    @login_manager.user_loader
+    def load_user(id):
+        temp1 = getVendor_by_ID(id)
+        if temp1==None:
+            temp1 = getEmp_by_ID(id)
+        else:
+            return Vendor(id, temp1)
+
+        if temp1==None:
+            return None
+        else:
+            return Employee(id, temp1[0], temp1[1])
+'''
+    
+    

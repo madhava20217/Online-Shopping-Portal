@@ -1,7 +1,7 @@
 -- TODO: management role / views
 
 -- ************* VIEWS *************
-
+delimiter ;
 create view Delivery_Guy as 
 (select Delivery.Order_ID, Delivery.Employee_ID, Customer.House_number as Customer_House_No, Customer.Locality as Customer_Locality, 
 Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.Plot_number as Warehouse_Address,
