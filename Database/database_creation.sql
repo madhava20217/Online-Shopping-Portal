@@ -26,6 +26,8 @@
 
 --NOTE: SQL automatically indexes primary keys.
 
+--Customer_phone, product_rating, product_photo, vendor_phone and warehouse_phone removed.
+
 drop database online_shopping;
 
 create DATABASE online_shopping;
@@ -88,9 +90,9 @@ create table Vendor(Vendor_id Integer AUTO_INCREMENT NOT NULL,
                     pincode numeric(6,0) check (pincode >= 0),
                     email_address varchar(50) unique not null,
                     password varchar(30) not null,
-                    PRIMARY KEY (Vendor_id)
-                    /* );
-create table Vendor_phone(Vendor_id Integer,
+                    PRIMARY KEY (Vendor_id));
+
+/* create table Vendor_phone(Vendor_id Integer,
                             Phone_number numeric(30,0) not null,
                             foreign key (Vendor_ID) references Vendor(Vendor_ID),
                             primary key(Phone_number,Vendor_ID)
