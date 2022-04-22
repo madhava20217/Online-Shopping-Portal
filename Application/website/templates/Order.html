@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}My Orders{% endblock %} {% block content
 %}
-<link rel="stylesheet" href="/Application/website/templates/css/home.css">
+
 <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
     <div class="-my-8 divide-y-2 divide-gray-100">
@@ -28,7 +28,7 @@
         </div>
 
         
-          <div class='rate'>
+          <!-- <div class='rate'>
             <form method='POST' class="rating">
               <label>
                 <input type="radio" id= 'input_rating' name="stars" value="1" />
@@ -61,7 +61,7 @@
                 <span class="icon">★</span>
               </label>
             </form>
-          </div>
+          </div> -->
         
         <a href="/complaint/{{ order[0] }}">
           <div

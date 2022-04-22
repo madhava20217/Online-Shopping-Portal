@@ -22,12 +22,20 @@ delimiter ;
 
 --non_working
 DELIMITER $
-
 create trigger scalp_customers after update on Stores
     for each row
         if new.stocks < 100 then
             update Product set Product.Total_Discount_Percentage = Product.Total_Discount_Percentage/2;
         end if$ 
+delimiter ;
+
+delete 
+
+DELIMITER $
+create trigger add_stock_warehouse after insert on Product
+    for each row
+        insert into Stores values (
+            FLOOR(RAND()*(select max(warehouse_id) - minfrom warehouse), new.product_id, 0);
 delimiter ;
 
 
@@ -42,4 +50,3 @@ set new.Total_Discount_Percentage = new.Total_Discount_Percentage*10;
 end if$ 
 delimiter ;  */
 
-show variables like 'have_query_cache';

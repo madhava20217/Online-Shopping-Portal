@@ -3,6 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/css">
+      .rating {
+        display: inline-block;
+        position: relative;
+        height: 20px;
+        line-height: 30px;
+        font-size: 20px;
+        
+        margin-top: 20px;
+      }
+    
+      .rating label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        cursor: pointer;
+      }
+    
+      .rating label:last-child {
+        position: static;
+      }
+    
+      .rating label:nth-child(1) {
+        z-index: 5;
+      }
+    
+      .rating label:nth-child(2) {
+        z-index: 4;
+      }
+    
+      .rating label:nth-child(3) {
+        z-index: 3;
+      }
+    
+      .rating label:nth-child(4) {
+        z-index: 2;
+      }
+    
+      .rating label:nth-child(5) {
+        z-index: 1;
+      }
+    
+      .rating label input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    
+      .rating label .icon {
+        float: left;
+        color: transparent;
+      }
+    
+      .rating label:last-child .icon {
+        color: grey;
+      }
+    
+      .rating:not(:hover) label input:checked ~ .icon,
+      .rating:hover label:hover input ~ .icon {
+        color: orange;
+      }
+    
+      .rating label input:focus:not(:checked) ~ .icon:last-child {
+        color: #000;
+        text-shadow: 0 0 5px #09f;
+      }
+    </style>
     <title>{% block title %}BL'n'kt{%endblock%}</title>
   </head>
   <body>
@@ -18,6 +87,7 @@
             id="home"
             href="/"
           >
+          
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

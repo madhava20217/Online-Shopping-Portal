@@ -53,7 +53,7 @@ def checkVendor(email, password = None):
         print(e)
         return -1
 
-def getVendorID(email, password):
+def getVendorID(email):
     '''function to get vendor's vendorID
     arguments: email and password
     returns: vendor ID, an integer value'''
@@ -63,11 +63,27 @@ def getVendorID(email, password):
         lst = list(iter(cursor.fetchall()))
         return lst[0][0]
 
-
     except Error as e:
         print("Error when returning vendor ID")
         print(e);
         return None
+    except:
+        return None
+
+# def getEmployeeIDtype(email):
+#     '''function to get employee's employeeID
+#     arguments: email
+#     returns: employee ID, an integer value'''
+#     chk_ven = "select employee_ID from Employee where email_address = %s limit 1"
+#     try:
+#         cursor.execute(chk_ven, [email])
+#         lst = list(iter(cursor.fetchall()))
+#         return lst[0][0]
+
+#     except Error as e:
+#         print("Error when returning Employee ID")
+#         print(e);
+#         return None
 
 def register_vendor(first_name, last_name, plot, city, pin, email, password):
     '''Function for inserting values to the database
@@ -85,7 +101,7 @@ def register_vendor(first_name, last_name, plot, city, pin, email, password):
         return False
     return True
 
-def get_employee(email, password):
+def get_employee(email, password=None):
     '''function to verify employee credentials and type
     arguments: email and password
     returns: list of employee ID and category if found
@@ -111,7 +127,7 @@ def get_employee(email, password):
         id = lst[0][0]
         passwd = lst[0][16]
 
-        if passwd != password:
+        if password!=None and passwd != password:
             return False
 
 
@@ -128,6 +144,8 @@ def get_employee(email, password):
     except Error as e:
         print("Error when returning vendor ID")
         print(e);
+        return None
+    except:
         return None
 
 def getVendor_by_ID(vend_id):
@@ -151,7 +169,20 @@ def getEmp_by_ID(emp_id):
     try:
         cursor.execute(chk_emp, [emp_id])
         lst = list(iter(cursor.fetchall()))
-        return lst[0]
+        if(len(lst) == 0):
+            return False    
+
+        email = lst[0][0]
+
+        cursor.execute(chk_del, [emp_id])
+        if len(list(iter(cursor.fetchall()))) != 0:
+            return tuple([email, "delivery"])
+        
+        cursor.execute(chk_svc, [emp_id])
+        if len(list(iter(cursor.fetchall()))) != 0:
+            return tuple([email, "service"])
+        
+        return -1
 
     except Error as e:
         print("Error when returning employee ID")

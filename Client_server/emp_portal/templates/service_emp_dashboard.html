@@ -19,7 +19,7 @@
             </a>
         </div>
         <div class="align-end">
-            <a href="/logout" class="navbar-nav">
+            <a href="/api/emp_logout" class="navbar-nav">
                 Logout
             </a>
         </div>
@@ -34,11 +34,15 @@
     
     <br>
 
+    {% for mesg in get_flashed_messages() %}
+    <h1 class="h1 text-info bg-dark m-0 text-center"> {{ mesg }} </h1>
+    {% endfor %}
+
     <!--Complaints-->
     <section>
 
         <!--Form for submission-->
-        <form method = "POST" action={{ url_for('resolved_grievance') }}>
+        <form method = "POST" action={{ url_for('vend_login') }}>
             <input type="hidden", id = "identifier" value = "order_identifier">
         </form>
 
