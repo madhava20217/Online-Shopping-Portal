@@ -1,5 +1,11 @@
+DELIMITER $
 
-
+create trigger passwd before insert on Employee
+    for each row
+    if new.password is NULL THEN
+        set new.password = MD5(new.first_name);
+    end if$
+delimiter ;
 
 
 create trigger update_cart after Update on Stores

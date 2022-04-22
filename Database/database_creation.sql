@@ -129,6 +129,7 @@ create table Employee(Employee_ID Integer AUTO_INCREMENT NOT NULL,
                     City varchar(30),
                     Pincode numeric(6,0) check (Pincode >= 0),
                     Phone_number numeric(30,0),
+                    password varchar(50),
                     PRIMARY KEY (Employee_ID)
                 );
 
