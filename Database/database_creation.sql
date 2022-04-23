@@ -60,7 +60,7 @@ create table Product(Product_ID Integer AUTO_INCREMENT NOT NULL,
                     Price numeric(15, 2) check(Price > 0),
                     Product_name varchar(50),
                     Discount_Percentage numeric(5,2) check(Discount_Percentage >= 0), 
-                    GST_percentage numeric(10, 2),
+                    GST_percentage numeric(10, 2) check(GST_percentage >= 0 ),
                     PRIMARY KEY (Product_ID)
                     );
 
@@ -214,7 +214,7 @@ create table Stores(
 create table Supplies(
 	Vendor_id Integer,
     Product_ID Integer,
-    Quantity Integer check(Quantity > 0 and Quantity <=10),
+    Quantity Integer check(Quantity > 0),
 
     primary key (Vendor_ID, Product_ID),
     foreign key (Vendor_ID) references Vendor(Vendor_ID),

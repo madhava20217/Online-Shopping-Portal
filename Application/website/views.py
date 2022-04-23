@@ -90,7 +90,7 @@ def product(pid):
 
                 #customer exists
                 if (len(customer_id) != 0):
-                    check_if_product_exists_in_cart = "select * from Shopping_Cart where exists(select * from Shopping_Cart where customer_ID = %s and Product_ID = %s)"
+                    check_if_product_exists_in_cart = "select 1 from Shopping_Cart where customer_ID = %s and Product_ID = %s"
                     cursor.execute(check_if_product_exists_in_cart,[customer_id[0][0],pid])
                     product_present = False
 
@@ -252,7 +252,7 @@ def cart():
                     stock_avaialable = final_quantity_to_be_given
                    
                     
-                    check_if_product_aready_ordered = "select * from order_products where exists(select * from order_products where order_id = %s and Product_ID = %s )"
+                    check_if_product_aready_ordered = "select 1 from order_products where order_id = %s and Product_ID = %s"
                     cursor.execute(check_if_product_aready_ordered,[order_id,product])
                     product_ordered = False
                     if len(list(iter(cursor.fetchall()))) != 0:
@@ -360,13 +360,12 @@ def complaint(order_id):
         cursor = getcursor()
         try:
             query1 = "select Customer_ID from Customer where email_address = %s"
-            query2 = "select * from Transaction where  Order_ID = %s and Customer_ID = %s "
+            query2 = "select * from Transaction where Order_ID = %s and Customer_ID = %s "
             query3 = "insert into complains (customer_ID, order_ID, service_employee_id, date_of_creation, details, resolved) values (%s,%s,%s,%s,%s,%s)"
-
 
             cursor.execute(query1, [current_user.get_id()])
             cust_id = list(iter(cursor.fetchall()))
-            cursor.execute(query2, [cust_id[0][0], order_id])
+            cursor.execute(query2, [order_id, cust_id[0][0]])
             valid_order = list(iter(cursor.fetchall()))
 
             if (len(valid_order) != 0):

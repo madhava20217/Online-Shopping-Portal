@@ -17,7 +17,7 @@ def create_app():
     @app.route('/')
     def hello():
         print(current_user.get_id())
-        return render_template('Home.html')
+        return render_template('home.html')
     
     @app.route('/vend_signup')
     def signup():
@@ -76,7 +76,8 @@ def create_app():
             if res == 1:
                 vend_id = getVendorID(email)
                 vend = Vendor(vend_id, email)
-                login_user(vend, remember=True)
+                login_user(vend)
+                print(type(current_user.get_id()), current_user.get_id())
                 flash('Successfully logged in', category = 'success')
                 return redirect('/vendor_dashboard')
 
@@ -101,7 +102,7 @@ def create_app():
             #create user here
             emp = Employee(res[0], email, res[1])
             # user = User(res[0], email, res[1])
-            login_user(emp, remember = True)
+            login_user(emp)
             flash('Successfully logged in', category = 'success')
             
             if(res[1] == "service"):
@@ -118,32 +119,93 @@ def create_app():
 
 
     @app.route('/api/emp_logout')
-    # @login_required
+    @login_required
     def emp_logout():
         logout_user()
         return redirect('/')
 
     @app.route('/api/vend_logout')
-    # @login_required
+    @login_required
     def vend_logout():
         logout_user()
         return redirect('/')
 
 
     @app.route("/emp_dashboard_del")
-    # @login_required
+    @login_required
     def del_dashboard():
-        return render_template("delivery_emp_dashboard.html")
+        del_list = get_delivery_list(current_user.get_id())
+        return render_template("delivery_emp_dashboard.html", delivery=del_list)
+
+    @app.route("/api/emp_dashboard_del", methods=['POST'])
+    @login_required
+    def del_dashboard_post():
+        pass
+        '''
+            order_id = request.form['form-name']
+
+        '''
 
     @app.route("/emp_dashboard_ser")
-    # @login_required
+    @login_required
     def service_dashboard():
-        return render_template("service_emp_dashboard.html")
+        comp_list = get_complaint_list(current_user.get_id())
+        return render_template("service_emp_dashboard.html", complaint_list=comp_list)
+
+    @app.route("/api/emp_dashboard_ser")
+    @login_required
+    def service_dashboard_post():
+        pass
+        '''
+            order_id = request.form['form-name']
+            
+        '''
 
     @app.route("/vendor_dashboard")
-    # @login_required
+    @login_required
     def vendor_dashboard():
         return render_template("vendor_dashboard.html")
+
+    @app.route("/api/vendor_dashboard", methods=['POST'])
+    @login_required
+    def vendor_dashboard_post():       
+        prod_id = request.form['prod_id']
+        quantity = request.form['quantity']
+        print("inside vendor_dashboard(): ", end='')
+        print(current_user.get_id())
+        temp = restock_prod(current_user.get_id(), prod_id, quantity)
+        if temp==None:
+            flash("Entered Product ID does not exist", category="error")
+        else:
+            flash("Stock Updated!", category="success")
+
+        return redirect("/vendor_dashboard")
+        
+
+    @app.route("/vendor_add_new_product")
+    @login_required
+    def add_prod():
+        return render_template("add_prod.html")
+
+    @app.route("/api/vendor_add_new_product", methods=['POST'])
+    @login_required
+    def add_new_prod():
+        prod_name = request.form['prod_name']
+        price = request.form['price']
+        discount = request.form['discount']
+        gst = request.form['gst']
+        stock = request.form['stock']
+        gst = int(gst)
+        discount = int(discount)
+        price = int(price)
+
+        temp = add_new_product(current_user.get_id(), prod_name, price, discount, gst, stock)
+        if temp==None:
+            flash("Error! Try again later", category="error")
+            return redirect("/vendor_add_new_product")
+        else:
+            flash("New Product Successfully added", category="success")
+        return redirect("/vendor_dashboard")
 
 
     login_manager = LoginManager()
@@ -151,17 +213,18 @@ def create_app():
     # login_manager.login_view = 'emp_login'
 
     @login_manager.user_loader
-    def load_user(email):
-        temp = getVendorID(email)
+    def load_user(id):
+        temp = getVendor_by_ID(id)
+        # print("email inside laod user", id)
+        # print("inside load user", temp)
         if temp==None:
-            temp = get_employee(email)
+            temp = getEmp_by_ID(id)
+            if temp==None or temp==False or temp==-1:
+                return None
+            else:
+                return Employee(id, temp[0], temp[1])
         else:
-            return Vendor(temp, email)
-
-        if temp==None or temp==False or temp==-1:
-            return None
-        else:
-            return Employee(temp[0][0], email, temp[0][1])
+            return Vendor(id, temp)
 
     return app
 

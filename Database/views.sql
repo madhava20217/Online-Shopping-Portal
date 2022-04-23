@@ -80,7 +80,12 @@ select customer_id,rank() over (order by total_order_cost desc) as customer_rank
 (select Customer_id,sum(Total_Price) as total_order_cost from Transaction natural join Orders
  group by Customer_id) as T order by customer_rank);
 
-
+create view Average_cost_of_orders_for_each_day as
+(
+    select date(transaction_time),avg(Total_price) over
+    (order by date(transaction_time) rows unbounded preceding) as average_cost
+    from Transaction natural join Orders where Transaction_Status = 1
+);
 select * from customer_complaints;
 
 commit;
@@ -126,8 +131,6 @@ create view all_products as
     where
         product.product_id = stores.product_id
 );
-
-select * from product_available;
 
 -- View for suppliers, should have details of products they supply
 create view Suppliers as 
@@ -179,13 +182,17 @@ DROP ROLE IF EXISTS Warehouse_Worker_role;
 CREATE ROLE Warehouse_Worker_role ;
 DROP ROLE IF EXISTS Service_Emp_role;
 CREATE ROLE Service_Emp_role ;
+DROP ROLE IF EXISTS Manager_role;
+CREATE ROLE Manager_role;
 
-grant select on Customer_Order to Service_Emp_role;
-grant select on Customer_Cart to Service_Emp_role;
+
+grant Service_Emp_role to Manager_role;
+
+grant select on Average_cost_of_orders_for_each_day to Manager_role;
 grant select on Customer_Complaints to Service_Emp_role;
+grant select on Most_valuable_customer to Manager_role;
+grant select on Customer_Order to Service_Emp_role;
 
-
-grant select on Most_valuable_customer to Service_Emp_role;
 grant select on Delivery_Guy to Deliver_Guy_role;
 
 grant select on Warehouse_Worker_view to Warehouse_Worker_role;

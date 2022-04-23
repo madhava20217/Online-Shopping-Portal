@@ -27,11 +27,11 @@
                 </a>
             </div>
             <div class="col-md-2">
-                <a href="/vendor_add_new_product" class="navbar-brand">Add New Product</a>
+                <a href="/vendor_dashboard" class="navbar-brand">Restock Product</a>
             </div>
             <div class="col-md-7"></div>
             <div class="col-md-1">
-                <div class="container align-end mx-5">
+                <div class="container align-end">
                     <a href="/api/vend_logout" class="navbar-nav ">
                         Logout
                     </a>
@@ -47,27 +47,28 @@
     <!--Heading-->
     <section class="bg-dark text-light p-5 text-sm-start">
         <h1 class="text-center">
-            Restock Product
+            Add New Product
         </h1>
-        <form action="/api/vendor_dashboard" id="restock_prod_form" method="POST">
-                <label for="prod_id" class="sr-only">Enter Product ID</label>
-                    <input type="text" class="form-control" id="prod_id" name="prod_id" placeholder="Enter Product ID"
+        <form action="/api/vendor_add_new_product" id="add_prod_form" method="POST">
+                <label for="prod_name" class="sr-only">Product Name</label>
+                    <input type="name" class="form-control" id="prod_name" name="prod_name" placeholder="Enter Product Name"
                         required autofocus>
-                        <label for="quantity" class="sr-only">Stock Quantity</label>
-                    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Stock Quantity to add"
+                        <label for="price" class="sr-only">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price of Product"
                         required autofocus>
-                    <div class="container align-center my-5">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                        <label for="discount" class="sr-only">Discount Percentage</label>
+                    <input type="number" class="form-control" id="discount" name="discount" placeholder="Enter Discount Percentage"
+                        required autofocus>
+                        <label for="gst" class="sr-only">GST</label>
+                    <input type="number" class="form-control" id="gst" name="gst" placeholder="Enter GST Percentage"
+                        required autofocus>
+                        <label for="stock" class="sr-only">Stock</label>
+                    <input type="number" class="form-control" id="stock" name="stock" placeholder="Enter Stock"
+                        required autofocus>
+                    <div class="container align-center">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block my-4">Submit</button>
                     </div>
-
         </form>
-    </section>
-
-    <br>
-
-    <!--Add product-->
-    <section>
-        <!-- Add form here-->
     </section>
 
 </body>
