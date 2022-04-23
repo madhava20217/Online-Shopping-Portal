@@ -5,6 +5,7 @@ from datetime import datetime
 from flask import current_app, g
 from flask.cli import with_appcontext
 
+global conn, cursor
 conn = None
 cursor = None
 
@@ -266,14 +267,13 @@ def add_new_product(vendor_id, name, price, discount, gst,restock_amount):
             print(e)
             return None
 
-    conn.commit()
-
 def get_delivery_list(emp_id):
-    delivery_list_query = 'select order_id, customer_address, Warehouse_address from delivery_guy where employee_id = %s and Date_of_Complaint_Creation is NULL'
-    
+    delivery_list_query = 'select order_id, customer_address, Warehouse_address from delivery_guy where Delivery_date is null and employee_id = %s '
+
     try:
         cursor.execute(delivery_list_query,[emp_id])
         lst = list(iter(cursor.fetchall()))
+        print(lst)
         return lst
 
     except Error as e:
@@ -282,7 +282,7 @@ def get_delivery_list(emp_id):
         return None
 
 def get_complaint_list(emp_id):
-    complaint_list_query = "select Order_ID, complaint_deails , date_of_complaint_creation ,complaint_number from Customer_Complaints where Employee_ID = %s "
+    complaint_list_query = 'select Order_ID, complaint_details , date_of_complaint_creation ,complaint_number from Customer_Complaints where Employee_ID = %s and Resolution_Status = "N"'
     try:
         cursor.execute(complaint_list_query,[emp_id])
         lst = list(iter(cursor.fetchall()))
@@ -296,7 +296,7 @@ def get_complaint_list(emp_id):
         
 def resolved_complaint(complaint_number):
     try:
-        resolve_complain = "update complains set resolved = 1 where complaint_number = %s"
+        resolve_complain = "update complains set resolved = 'Y' where complaint_number = %s"
         cursor.execute(resolve_complain,[complaint_number])
         conn.commit()
         return True
@@ -306,6 +306,7 @@ def resolved_complaint(complaint_number):
     
 def delivered_order(order_id):
     try:
+        deliver_order_query = "update Delivery set delivery_date = %s where order_id = %s "
         deliver_order_query = "update Delivery set delivery_date = %s where order_id = %s "
         cursor.execute(deliver_order_query,[datetime.now(),order_id])
         conn.commit()

@@ -6,6 +6,7 @@ create view Delivery_Guy as
 (select 
     Delivery.Order_ID as Order_ID, 
     Delivery.Employee_ID as Employee_ID,  
+    Delivery.delivery_date as Delivery_date,
     CONCAT(Customer.House_number, " ", Customer.Locality, " ", Customer.City, " ", Customer.pincode) as Customer_address, 
     CONCAT(Warehouse.Plot_number , " ", Warehouse.City, " ", Warehouse.pincode) as Warehouse_address 
 from Delivery, Customer, Warehouse

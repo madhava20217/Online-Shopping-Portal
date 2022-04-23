@@ -122,13 +122,13 @@ def create_app():
     @login_required
     def emp_logout():
         logout_user()
-        return redirect(url_for('hello'))
+        return redirect("/")
 
     @app.route('/api/vend_logout')
     @login_required
     def vend_logout():
         logout_user()
-        return redirect(url_for('hello'))
+        return redirect("/")
 
 
     @app.route("/emp_dashboard_del")
@@ -151,7 +151,6 @@ def create_app():
         return redirect("/emp_dashboard_del")
         
 
-
     @app.route("/emp_dashboard_ser")
     @login_required
     def service_dashboard():
@@ -167,7 +166,7 @@ def create_app():
         temp = resolved_complaint(complaint_id)
         if temp==False:
             flash("Cannot mark complaint as resolved! Try again!", category="error")
-        return redirect("/emp_dashboard_del")
+        return redirect("/emp_dashboard_ser")
 
     @app.route("/vendor_dashboard")
     @login_required
