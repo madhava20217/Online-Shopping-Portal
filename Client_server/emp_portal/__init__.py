@@ -119,7 +119,7 @@ def create_app():
 
 
     @app.route('/api/emp_logout')
-    @login_required
+    # @login_required
     def emp_logout():
         logout_user()
         return redirect("/")
