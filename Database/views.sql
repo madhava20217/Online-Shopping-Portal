@@ -59,7 +59,6 @@ create view Customer_Order as
         and Del.order_id = Orders.order_id
 );
 commit;
-
 -- Customer's complaints tracking
 create view Customer_Complaints as (
     select customer.customer_ID,
@@ -73,7 +72,8 @@ create view Customer_Complaints as (
     complains.order_ID as Order_ID,
     complains.date_of_creation as Date_of_Complaint_Creation,
     complains.Details as Complaint_Details,
-    complains.resolved as Resolution_Status
+    complains.resolved as Resolution_Status,
+    complains.complaint_number as complaint_number
 
     from employee, complains natural join customer
     where complains.service_employee_id =  employee.employee_id

@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-md bg-dark text-light navbar-dark py-3">
         <div class="container">
-            <a href="/service_emp_dashboard" class="navbar-brand">
+            <a href="/emp_dashboard_ser" class="navbar-brand">
                 BL'n'kt
             </a>
         </div>
@@ -41,46 +41,48 @@
     <!--Complaints-->
     <section>
 
-        <!--Form for submission-->
+        <!-- Form for submission
         <form method = "POST" action={{ url_for('vend_login') }}>
             <input type="hidden", id = "identifier" value = "order_identifier">
-        </form>
+        </form> -->
 
-
-        {% for complaint in complaint_list %}
+        
 
         <div class ="container bg-light text-dark m-0 ps-5">
-            <div class="row bg-warning m-0">
-                <div class="col-sm-9 m-0">
-                    <div class="row">
-                        <div class="col-sm-8">Order ID:</div>
-                        <div class="col-sm-4"> {{ complaint[0] }} </div>
+        {% for complaint in complaint_list %}
+            <div class="row my-4">
+                    <div class="col-sm-9 m-0">
+                        <div class="row">
+                            <div class="col-sm-8">Order ID:</div>
+                            <div class="col-sm-4"> {{ complaint[0] }} </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">Query: </div>
+                            <div class="col-sm-4"> {{ complaint[1] }} </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">Date: </div>
+                            <div class="col-sm-4"> {{ complaint[2] }} </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-8">Query: </div>
-                        <div class="col-sm-4"> {{ compliant[1] }} </div>
+                    <div class="col-sm-3 m-0">
+                        <div class="row">
+                            <h6 class="text-primary">Mark as Resolved?</h6>
+                        </div>
+                        <div class="row">
+                            <form method="POST" action="/api/emp_dashboard_ser" id="resolved_form">
+                            <input type="hidden" name="form-name" value={{ complaint[3] }}>
+                            <button class="button bg-success text-light">Yes</button>
+                            </form>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-8">Date: </div>
-                        <div class="col-sm-4"> {{ compliant[2] }} </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 m-0">
-                    <div class="row">
-                        <h6 class="text-primary">Mark as Resolved?</h6>
-                    </div>
-                    <div class="row">
-                        <form>
-                        <input type="hidden" name="form-name" value={{ complaint[0] }}>
-                        <button class="button bg-success text-light">Yes</button>
-                        </form>
-                    </div>
-                </div>
+                
             </div>
+            {% endfor %}
+        </div>
             
             <br class = "bg-dark">
         
-            {% endfor %}
+           
     </section>
     
 </body>

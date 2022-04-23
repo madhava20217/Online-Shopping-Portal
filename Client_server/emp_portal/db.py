@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+from datetime import datetime
 
 from flask import current_app, g
 from flask.cli import with_appcontext
@@ -223,6 +224,7 @@ def restock_prod(vendor_id, product_id, restock_amount):
         conn.commit()
         return True
     except Error as e:
+            conn.rollback()
             print(e)
             return None
 
@@ -256,15 +258,18 @@ def add_new_product(vendor_id, name, price, discount, gst,restock_amount):
         insert_into_supplies = "Insert into Supplies (Vendor_ID, Product_ID, Quantity) values(%s,%s,%s)"
         cursor.execute(insert_into_supplies,[vendor_id,max_product_id,restock_amount])
     
+        conn.commit()
+
         return True
     except Error as e:
+            conn.rollback()
             print(e)
             return None
 
     conn.commit()
 
 def get_delivery_list(emp_id):
-    delivery_list_query = 'select order_id, customer_address, Warehouse_address from delivery_guy where employee_id = %s'
+    delivery_list_query = 'select order_id, customer_address, Warehouse_address from delivery_guy where employee_id = %s and Date_of_Complaint_Creation is NULL'
     
     try:
         cursor.execute(delivery_list_query,[emp_id])
@@ -277,13 +282,34 @@ def get_delivery_list(emp_id):
         return None
 
 def get_complaint_list(emp_id):
-    complaint_list_query = "select order_id, details, date_of_creation from complains where emp_id = %s "
+    complaint_list_query = "select Order_ID, complaint_deails , date_of_complaint_creation ,complaint_number from Customer_Complaints where Employee_ID = %s "
     try:
         cursor.execute(complaint_list_query,[emp_id])
         lst = list(iter(cursor.fetchall()))
+        print(lst)
         return lst
 
     except Error as e:
-        print("Error when returning vendor ID")
+        print("Error when returning complaint list")
         print(e)
         return None
+        
+def resolved_complaint(complaint_number):
+    try:
+        resolve_complain = "update complains set resolved = 1 where complaint_number = %s"
+        cursor.execute(resolve_complain,[complaint_number])
+        conn.commit()
+        return True
+    except:
+        conn.rollback()
+        return False
+    
+def delivered_order(order_id):
+    try:
+        deliver_order_query = "update Delivery set delivery_date = %s where order_id = %s "
+        cursor.execute(deliver_order_query,[datetime.now(),order_id])
+        conn.commit()
+        return True
+    except:
+        conn.rollback()
+        return False

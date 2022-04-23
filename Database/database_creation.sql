@@ -47,14 +47,6 @@ create table Customer(
                     PRIMARY KEY (Customer_ID)
                     );
 
-/* ALTER TABLE Customer MODIFY Customer_ID Integer AUTO_INCREMENT unique NOT NULL ; */
-
-/* create table Customer_phone(Customer_ID Integer,
-                            Phone_number numeric(30,0) not null,
-                            foreign key (Customer_id) references Customer(customer_id),
-                            primary key(Phone_number,Customer_id)
-                            ); */
-
 
 create table Product(Product_ID Integer AUTO_INCREMENT NOT NULL,
                     Price numeric(15, 2) check(Price > 0),
@@ -63,24 +55,6 @@ create table Product(Product_ID Integer AUTO_INCREMENT NOT NULL,
                     GST_percentage numeric(10, 2) check(GST_percentage >= 0 ),
                     PRIMARY KEY (Product_ID)
                     );
-
-/* create table product_rating(
-                    Product_ID Integer,
-                    customer_id Integer,
-                    Rating numeric(1,0) check (Rating > 0),# Rating is from 1 to 5
-                    foreign key (product_id) references Product(product_id),
-                    foreign key (customer_id) references Customer(customer_id),
-                    primary key (product_id, customer_id)
-                    ); */
-
-/* create table product_photo(
-                    Product_ID Integer,
-                    Photos_url varchar(300),
-                    foreign key (product_id) references Product(product_id),
-                    primary key (product_id, Photos_url)
-                    ); */
-
-
 
 create table Vendor(Vendor_id Integer AUTO_INCREMENT NOT NULL,
                     first_name varchar(30) not null,
@@ -92,12 +66,6 @@ create table Vendor(Vendor_id Integer AUTO_INCREMENT NOT NULL,
                     password varchar(30) not null,
                     PRIMARY KEY (Vendor_id));
 
-/* create table Vendor_phone(Vendor_id Integer,
-                            Phone_number numeric(30,0) not null,
-                            foreign key (Vendor_ID) references Vendor(Vendor_ID),
-                            primary key(Phone_number,Vendor_ID)
-                        ); */
-
 
 create table Warehouse(Warehouse_ID Integer AUTO_INCREMENT NOT NULL,
                     Plot_number numeric(30,0) check(plot_number >= 0),
@@ -105,13 +73,6 @@ create table Warehouse(Warehouse_ID Integer AUTO_INCREMENT NOT NULL,
                     pincode numeric(6,0) check(pincode >= 0),
                     PRIMARY KEY (Warehouse_ID)
                 );
-
-/* create table Warehouse_phone(Warehouse_ID Integer,
-                            Phone_number numeric(30,0) not null,
-                            foreign key (Warehouse_ID) references Warehouse(Warehouse_ID),
-                            primary key(Phone_number,Warehouse_ID)
-                        ); */
-
 
 create table Employee(Employee_ID Integer AUTO_INCREMENT NOT NULL,
                     First_Name varchar(30) not null,
@@ -256,6 +217,4 @@ create table order_products(
 
     primary key (order_id, product_id)
 );
-
-
 commit;

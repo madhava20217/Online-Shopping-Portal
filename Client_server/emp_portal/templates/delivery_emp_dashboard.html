@@ -14,12 +14,12 @@
 <body>
     <nav class="navbar navbar-expand-md bg-dark text-light navbar-dark py-3">
         <div class="container">
-            <a href="/delivery_emp_dashboard" class="navbar-brand">
+            <a href="/emp_dashboard_del" class="navbar-brand">
                 BL'n'kt
             </a>
         </div>
         <div class="align-end mx-5">
-            <a href="/logout" class="navbar-nav">
+            <a href="/api/emp_logout" class="navbar-nav">
                 Logout
             </a>
         </div>
@@ -42,10 +42,10 @@
     <section>
 
         <!--Form for submission-->
-        <form method = "POST" action={{ url_for('resolved_grievance') }}>
+        {# <form method = "POST" action={{ url_for('resolved_grievance') }}>
             <input type="hidden", id = "identifier" value = "order_identifier">
-        </form>
-
+        </form> #}
+            
 
         {% for deliv in delivery %}
 
@@ -57,12 +57,12 @@
                         <div class="col-sm-4"> {{ deliv[0] }} </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-8">Delivery Address: </div>
-                        <div class="col-sm-4"> {{ deliv[1] }} </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-8">Pickup Address: </div>
                         <div class="col-sm-4"> {{ deliv[2] }} </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">Delivery Address: </div>
+                        <div class="col-sm-4"> {{ deliv[1] }} </div>
                     </div>
                 </div>
                 <div class="col-sm-3 m-0">
@@ -70,7 +70,7 @@
                         <h6 class="text-primary">Mark as Delivered?</h6>
                     </div>
                     <div class="row">
-                        <form>
+                        <form method="POST" action="/api/emp_dashboard_del" id="delivered_form">
                         <input type="hidden" name="form-name" value={{ deliv[0] }}>
                         <button class="button bg-success text-light">Yes</button>
                         </form>

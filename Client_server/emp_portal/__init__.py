@@ -122,44 +122,52 @@ def create_app():
     @login_required
     def emp_logout():
         logout_user()
-        return redirect('/')
+        return redirect(url_for('hello'))
 
     @app.route('/api/vend_logout')
     @login_required
     def vend_logout():
         logout_user()
-        return redirect('/')
+        return redirect(url_for('hello'))
 
 
     @app.route("/emp_dashboard_del")
     @login_required
     def del_dashboard():
         del_list = get_delivery_list(current_user.get_id())
+        if del_list==None:
+            del_list=[]
         return render_template("delivery_emp_dashboard.html", delivery=del_list)
 
     @app.route("/api/emp_dashboard_del", methods=['POST'])
     @login_required
     def del_dashboard_post():
-        pass
-        '''
-            order_id = request.form['form-name']
+        order_id = request.form['form-name']
+        print("{"*100)
+        print(order_id)
+        temp = delivered_order(order_id)
+        if temp==False:
+            flash("Error while updating. Please Try again!", category="error")
+        return redirect("/emp_dashboard_del")
+        
 
-        '''
 
     @app.route("/emp_dashboard_ser")
     @login_required
     def service_dashboard():
         comp_list = get_complaint_list(current_user.get_id())
+        if comp_list==None:
+            comp_list=[]
         return render_template("service_emp_dashboard.html", complaint_list=comp_list)
 
-    @app.route("/api/emp_dashboard_ser")
+    @app.route("/api/emp_dashboard_ser", methods=['POST'])
     @login_required
     def service_dashboard_post():
-        pass
-        '''
-            order_id = request.form['form-name']
-            
-        '''
+        complaint_id = request.form['form-name']
+        temp = resolved_complaint(complaint_id)
+        if temp==False:
+            flash("Cannot mark complaint as resolved! Try again!", category="error")
+        return redirect("/emp_dashboard_del")
 
     @app.route("/vendor_dashboard")
     @login_required
