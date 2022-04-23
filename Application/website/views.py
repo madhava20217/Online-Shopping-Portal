@@ -301,8 +301,8 @@ def cart():
                     if(random_number == i):
                         delivery_id = delivery_id_list[i][0]
                         break
-                delivery_add = "insert into delivery values (%s, %s, %s, %s, %s);"
-                cursor.execute(delivery_add, [order_id, delivery_id, customer_id,max_stock_warehouse_id, datetime.now()])
+                delivery_add = "insert into delivery values (%s, %s, %s, %s, NULL);"
+                cursor.execute(delivery_add, [order_id, delivery_id, customer_id,max_stock_warehouse_id])
 
             #deleting items from shopping cart
             delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
@@ -389,52 +389,5 @@ def complaint(order_id):
     return render_template("Complaint.html", user=current_user)
 
 
-'''
-    @views.route('/order', methods=['GET', 'POST'])
-@login_required
-def order(order_id, prod_id):# My order
-    try:
-        mydb
-    except NameError as e:
-        connect_db()
-
-   
-    orders_list = []
-    cursor = getcursor()
-    try:
-        query1 = "select Order_ID, Product_ID, Product_Name, Quantity, Delivery_address, Transaction_Time, Delivery_Date, Total_Price from Customer_Order where Customer_ID = %s"
-        query2 = "select Customer_ID from Customer where email_address = %s"
-        query3=" insert into product_rating(Product_ID, Customer_ID, Rating) values (%s,%s,%s)"
-        
-        cursor.execute(query2, [current_user.get_id()])
-        customer_id = list(iter(cursor.fetchall()))
-        cursor.execute(query2, customer_id[0][1],prod_id)
-        
-        if request.method=='POST':
-            rating= request.form.get('input_rating')
-            print(request.form)
-            
-            # dont know how to proceed further 
-            if len(customer_id) != 0:
-                cursor.execute(query1,[customer_id[0][0],order_id])
-                orders_list = list(iter(cursor.fetchall()))
-                if(len(orders_list)!=0):
-                    tup=[prod_id, order_id, rating]
-                    cursor.execute(query3, tup)
-                    flash("Thanks for Rating!!", category="success")
-            else:
-                flash("OOPS!! Try again", category="error")
-    except Exception as e:
-        print("Exception caught", e)
-
-
-    cursor.close()
-    
-    print("ORDERS LIST", orders_list)   
-
-    return render_template("Order.html", user=current_user, orders_list = orders_list)
-
-
-'''
 
 

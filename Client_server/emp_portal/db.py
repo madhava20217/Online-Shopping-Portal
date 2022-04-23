@@ -264,21 +264,22 @@ def add_new_product(vendor_id, name, price, discount, gst,restock_amount):
     conn.commit()
 
 def get_delivery_list(emp_id):
-    delivery_list_query = "select order_id,House_number,Locality,City,pincode from "
+    delivery_list_query = 'select order_id, customer_address, Warehouse_address from delivery_guy where employee_id = %s'
+    
     try:
-        cursor.execute(complaint_list_query)
+        cursor.execute(delivery_list_query,[emp_id])
         lst = list(iter(cursor.fetchall()))
         return lst
 
     except Error as e:
-        print("Error when returning vendor ID")
+        print("Error when returning delivery ID list")
         print(e)
         return None
 
 def get_complaint_list(emp_id):
-    complaint_list_query = "select order_id,details,date_of_creation from complains"
+    complaint_list_query = "select order_id, details, date_of_creation from complains where emp_id = %s "
     try:
-        cursor.execute(complaint_list_query)
+        cursor.execute(complaint_list_query,[emp_id])
         lst = list(iter(cursor.fetchall()))
         return lst
 

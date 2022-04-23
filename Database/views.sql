@@ -3,10 +3,13 @@
 -- ************* VIEWS *************
 delimiter ;
 create view Delivery_Guy as 
-(select Delivery.Order_ID, Delivery.Employee_ID, Customer.House_number as Customer_House_No, Customer.Locality as Customer_Locality, 
-Customer.City as Customer_City, Customer.pincode as Customer_PinCode, Warehouse.Plot_number as Warehouse_Address,
- Warehouse.City as Warehouse_City, Warehouse.pincode as Warehouse_PinCode from Delivery, Customer, Warehouse where 
- (Customer.customer_ID = Delivery.Customer_ID and Delivery.Warehouse_ID = Warehouse.Warehouse_ID));
+(select 
+    Delivery.Order_ID as Order_ID, 
+    Delivery.Employee_ID as Employee_ID,  
+    CONCAT(Customer.House_number, " ", Customer.Locality, " ", Customer.City, " ", Customer.pincode) as Customer_address, 
+    CONCAT(Warehouse.Plot_number , " ", Warehouse.City, " ", Warehouse.pincode) as Warehouse_address 
+from Delivery, Customer, Warehouse
+where (Customer.customer_ID = Delivery.Customer_ID and Delivery.Warehouse_ID = Warehouse.Warehouse_ID));
 
 -- Views for customer : cart, complaint, order
 
