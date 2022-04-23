@@ -25,6 +25,10 @@
         </div>
     </nav>
 
+    {% for mesg in get_flashed_messages() %}
+        <h1 class="h1 text-info bg-dark m-0 text-center"> {{ mesg }} </h1>
+    {% endfor %}
+
     <!--Heading-->
     <section class="bg-dark text-light p-5 text-sm-start">
         <h1 class="text-center">

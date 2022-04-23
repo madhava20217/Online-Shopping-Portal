@@ -29,7 +29,6 @@ create index Complains_employee on Complains(service_employee_id);
 
 create index Supply_product on Supply(product_id);
 
-create index 
 
 /* create index Price_index on Product(Price); */
 /* 

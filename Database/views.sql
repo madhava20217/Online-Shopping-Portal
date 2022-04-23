@@ -75,6 +75,11 @@ create view Customer_Complaints as (
     from employee, complains natural join customer
     where complains.service_employee_id =  employee.employee_id
 );
+create view Most_valuable_customer as(
+select customer_id,rank() over (order by total_order_cost desc) as customer_rank from 
+(select Customer_id,sum(Total_Price) as total_order_cost from Transaction natural join Orders
+ group by Customer_id) as T order by customer_rank);
+
 
 select * from customer_complaints;
 
@@ -179,6 +184,8 @@ grant select on Customer_Order to Service_Emp_role;
 grant select on Customer_Cart to Service_Emp_role;
 grant select on Customer_Complaints to Service_Emp_role;
 
+
+grant select on Most_valuable_customer to Service_Emp_role;
 grant select on Delivery_Guy to Deliver_Guy_role;
 
 grant select on Warehouse_Worker_view to Warehouse_Worker_role;

@@ -43,46 +43,54 @@
     {% for mesg in get_flashed_messages() %}
     <h1 class="h1 text-info bg-dark m-0 text-center"> {{ mesg }} </h1>
     {% endfor %}
-    
-    <div class="p-5 mb-4 bg-dark text-light">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold text-center color-white">
-                Sign-up
-            </h1>
-            <form action="/api/signup" id="vendor_signup" method="POST">
-                <label for="first_name" class="sr-only">First Name</label>
-                <input type="name" class="form-control" id="first_name" name="first_name" placeholder="Enter first name"
-                    required autofocus>
 
-                <label for="last_name" class="sr-only">Last Name</label>
-                <input type="name" class="form-control" id="last_name" name="last_name" placeholder="Enter last name"
-                    required autofocus>
 
-                <label for="plot_number" class="sr-only">Plot Number</label>
-                <input type="number" class="form-control" id="plot_number" name="plot_number"
-                    placeholder="Enter plot number" required autofocus>
-
-                <label for="city" class="sr-only">City</label>
-                <input type="name" class="form-control" id="city" name="city" placeholder="Enter City" required
-                    autofocus>
-
-                <label for="pin_code" class="sr-only">Pin Code</label>
-                <input type="number" class="form-control" id="pin_code" name="pin_code" placeholder="Enter Pin Code"
-                    required autofocus>
-
-                <label for="email_id" class="sr-only">Email Address</label>
-                <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Enter Email Address"
-                    required autofocus>
-
-                <label for="password" class="sr-only">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"
-                    required autofocus>
-                <br>
-                <div class="container align-center">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign-up</button>
-                </div>
-            </form>
+    <div class="row bg-dark text-light m-0">
+        <div class="col-md-1"></div>
+        <div class="p-5 mb-4 bg-dark text-light col-md-3 align-end ">
+            <img src="https://i.imgflip.com/6dkafp.jpg" alt="PLEASE, join us" class="img-fluid rounded-circle">
         </div>
+        <div class="p-5 mb-4 bg-dark text-light col-md-7 align-end">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold text-center color-white">
+                    Sign-up
+                </h1>
+                <form action="/api/signup" id="vendor_signup" method="POST">
+                    <label for="first_name" class="sr-only">First Name</label>
+                    <input type="name" class="form-control" id="first_name" name="first_name" placeholder="Enter first name"
+                        required autofocus>
+
+                    <label for="last_name" class="sr-only">Last Name</label>
+                    <input type="name" class="form-control" id="last_name" name="last_name" placeholder="Enter last name"
+                        required autofocus>
+
+                    <label for="plot_number" class="sr-only">Plot Number</label>
+                    <input type="number" class="form-control" id="plot_number" name="plot_number"
+                        placeholder="Enter plot number" required autofocus>
+
+                    <label for="city" class="sr-only">City</label>
+                    <input type="name" class="form-control" id="city" name="city" placeholder="Enter City" required
+                        autofocus>
+
+                    <label for="pin_code" class="sr-only">Pin Code</label>
+                    <input type="number" class="form-control" id="pin_code" name="pin_code" placeholder="Enter Pin Code"
+                        required autofocus>
+
+                    <label for="email_id" class="sr-only">Email Address</label>
+                    <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Enter Email Address"
+                        required autofocus>
+
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"
+                        required autofocus>
+                    <br>
+                    <div class="container align-center">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign-up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
     </div>
 
     <!--Footer-->
