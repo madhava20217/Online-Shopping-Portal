@@ -6,18 +6,18 @@
 \contentsline {chapter}{\numberline {2}ER Diagram}{5}{}%
 \contentsline {section}{\numberline {2.1}Entities}{5}{}%
 \contentsline {section}{\numberline {2.2}Relations}{8}{}%
-\contentsline {section}{\numberline {2.3}Diagram}{10}{}%
-\contentsline {chapter}{\numberline {3}Relational Schema}{11}{}%
-\contentsline {chapter}{\numberline {4}Changes from the Mid Evaluation}{13}{}%
-\contentsline {section}{\numberline {4.1}Customers' Portal / Main Portal}{18}{}%
-\contentsline {section}{\numberline {4.2}Buiseness Portal}{19}{}%
-\contentsline {chapter}{\numberline {5}Project Development Procedure and Deliverables}{21}{}%
-\contentsline {section}{\numberline {5.1}ER Formulation}{21}{}%
-\contentsline {section}{\numberline {5.2}Weak Entity}{21}{}%
-\contentsline {section}{\numberline {5.3}Entity Relationship Participation and Types}{22}{}%
-\contentsline {section}{\numberline {5.4}Ternary Relation}{22}{}%
-\contentsline {section}{\numberline {5.5}Relational Schemas}{22}{}%
-\contentsline {section}{\numberline {5.6}Sufficient and Valid Constraints in DDL}{22}{}%
-\contentsline {section}{\numberline {5.7}Data Entry}{22}{}%
-\contentsline {section}{\numberline {5.8}Queries}{23}{}%
-\contentsline {chapter}{\numberline {6}Contributions of Team Members}{24}{}%
+\contentsline {section}{\numberline {2.3}Diagram}{11}{}%
+\contentsline {chapter}{\numberline {3}Relational Schema}{12}{}%
+\contentsline {chapter}{\numberline {4}Changes from the Mid Evaluation}{14}{}%
+\contentsline {section}{\numberline {4.1}Customers' Portal / Main Portal}{19}{}%
+\contentsline {section}{\numberline {4.2}Buiseness Portal}{20}{}%
+\contentsline {chapter}{\numberline {5}Project Development Procedure and Deliverables}{22}{}%
+\contentsline {section}{\numberline {5.1}ER Formulation}{22}{}%
+\contentsline {section}{\numberline {5.2}Weak Entity}{22}{}%
+\contentsline {section}{\numberline {5.3}Entity Relationship Participation and Types}{23}{}%
+\contentsline {section}{\numberline {5.4}Ternary Relation}{23}{}%
+\contentsline {section}{\numberline {5.5}Relational Schemas}{23}{}%
+\contentsline {section}{\numberline {5.6}Sufficient and Valid Constraints in DDL}{23}{}%
+\contentsline {section}{\numberline {5.7}Data Entry}{23}{}%
+\contentsline {section}{\numberline {5.8}Queries}{24}{}%
+\contentsline {chapter}{\numberline {6}Contributions of Team Members}{25}{}%
