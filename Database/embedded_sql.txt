@@ -1,0 +1,46 @@
+
+insert_values_into_order = "insert into Orders select %s,sum(price * quantity),avg(GST_percentage),avg(Discount_Percentage) from Product natural join Shopping_cart where Customer_id = %s"
+cursor.execute(insert_values_into_order,[order_id,customer_id])
+
+update_quant = "update stores set stocks = stocks + %s where product_id = %s order by stocks ASC limit 1"
+cursor.execute(update_quant, [restock_amount, product_id])
+
+choose_warehouse = "select Warehouse_ID,Stocks from Stores where Product_ID = %s and Stocks > 0"     #chooses maximally stocked warehouse
+cursor.execute(choose_warehouse,[product])
+
+delete_from_shopping_cart = "delete from Shopping_cart where Customer_id = %s"
+cursor.execute(delete_from_shopping_cart,[customer_id])
+
+reg = "insert into vendor(first_name, last_name, plot_number, city, pincode, email_address, password) values (%s, %s, %s, %s, %s, %s, %s)"
+cursor.execute(reg, tup)
+
+complaint_list_query = 'select Order_ID, complaint_details , date_of_complaint_creation ,complaint_number from Customer_Complaints where Employee_ID = %s and Resolution_Status = "N"'
+cursor.execute(complaint_list_query,[emp_id])
+
+delivery_list_query = 'select order_id, customer_address, Warehouse_address from delivery_guy where Delivery_date is null and employee_id = %s '
+cursor.execute(delivery_list_query,[emp_id])
+
+select_warehouse_with_minimum_stock = "select Warehouse_ID from Stores where product_id = %s order by stocks limit 1;"
+cursor.execute(select_warehouse_with_minimum_stock,[max_product_id])
+
+check_if_product_aready_ordered = "select 1 from order_products where order_id = %s and Product_ID = %s"
+cursor.execute(check_if_product_aready_ordered,[order_id,product])
+
+update_values_in_order = "UPDATE Orders SET Taxes = (select avg(GST_percentage) from Product natural join Shopping_cart where Customer_id = %s) where order_id = %s"
+cursor.execute(update_values_in_order,[customer_id,order_id])
+
+create view Most_valuable_customer as(
+select customer_id,rank() over (order by total_order_cost desc) as customer_rank from 
+(select Customer_id,sum(Total_Price) as total_order_cost from Transaction natural join Orders
+ group by Customer_id) as T order by customer_rank);
+
+/*  Windowing */
+create view Average_cost_of_orders_for_each_day as
+(
+    select date(transaction_time),avg(Total_price) over
+    (order by date(transaction_time) rows unbounded preceding) as average_cost
+    from Transaction natural join Orders where Transaction_Status = 1
+);
+
+
+

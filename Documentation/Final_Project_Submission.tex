@@ -13,9 +13,9 @@
 }
 
 \author{Abhimanyu Bhatnagar, 2020273
+        \\Atyant Sony, 2020039
         \\Madhava Krishna, 2020217
-        \\Ritika Nagar, 2020112
-        \\Atyant Sony, 2020039}
+        \\Ritika Nagar, 2020112}
 \date{\textit{\today}}
 
 
@@ -77,7 +77,7 @@
         \item Employees have only one email address.
         \item There won't be any wishlisting features, nor any saved-items feature like the ones offered by Amazon.
         \item Employees' performance would be graded on a scale from 1 to 10 (for ease of data entry) with decimal values being permissible.
-        \item Discounts will be applied before taxes are calculated. Taxes will be calculated on the total amount after applying discount.
+        \item The mode of payment would be Cash on Delivery (no alternate methods would be provided) for the sake of simplicity.
     \end{enumerate}
 
 
@@ -90,7 +90,6 @@
         \item Customer
             \begin{enumerate}
                 \item \underline{Customer ID}: Primary key
-                \item Phone Number: Multivalued
                 \item Name: composite
                     \begin{enumerate}
                         \item First Name
@@ -110,25 +109,15 @@
         \item Product
             \begin{enumerate}
                 \item \underline{Product ID}: Primary key
-                \item Specifications
-                    \begin{enumerate}
-                        \item Expiry date
-                        \item Manufacture date
-                        \item Country of manufacture
-                        \item Weight 
-                        \item Dimensions
-                    \end{enumerate}
                 \item Price
                 \item Category
                 \item Discount Percentage
                 \item GST
-                \item Rating : Multivalued
-                \item Photos: Multivalued
             \end{enumerate}
         \item Orders
             \begin{enumerate}
                 \item \underline{Order ID}
-                \item Cost of products
+                \item Total\_Cost
                 \item Taxes
                 \item Discount Percentage
             \end{enumerate}
@@ -144,6 +133,8 @@
                     \end{enumerate}
                 \item Name
                 \item Phone number
+                \item Email\_address
+                \item password
             \end{enumerate}
         \item Coupon
             \begin{enumerate}
@@ -189,6 +180,7 @@
                 \item Gender
                 \item Date of Birth
                 \item Age : derived
+                \item Password
             \end{enumerate}
             Employees can be specialised into:
             \begin{itemize}
@@ -243,6 +235,7 @@
                 \item Employee ID: Foreign Key (references Employee)
                 \item Customer ID: Foreign Key (references Customer)
                 \item Warehouse ID: Foreign Key (references Warehouse)
+                \item Delivery\_date
             \end{enumerate}
             \item Transaction: Relation between customer and their cart, order and coupon code.
             \begin{enumerate}
@@ -259,6 +252,9 @@
                 \item Customer ID: Foreign Key (references Customer)
                 \item Order ID: Foreign Key (references Order)
                 \item Service Employee ID: Foreign Key (references Employee)
+                \item date\_of\_crelation
+                \item resolved
+                \item details
             \end{enumerate}
 	\item Works in: between Warehouse Worker and warehouse.
 	\begin{enumerate}
@@ -290,24 +286,20 @@ The ER diagram was reduced by noting multiplicities and the following tables for
 \begin{enumerate}
 	\item Customer(\underline{customer ID}, First\_name, Last\_name, House\_number, Locality, City, Pincode, Email\_Address, Password)
 	\item Product(\underline{product ID}, Price, Category, Discount Percentage, GST Percentage)
-	\item Product Rating(\underline{Product ID, Customer ID}, Rating)
-	\item Product Photo(\underline{Product ID, Product Photo})
-	\item Vendor(\underline{Vendor ID}, First Name, Last Name, Plot Number, City, Pincode)
-	\item Vendor Phone(\underline{Vendor ID, Phone Number})
+	\item Vendor(\underline{Vendor ID}, First Name, Last Name, Plot Number, City, Pincode,email\_adress,password)
 	\item Warehouse(\underline{Warehouse ID}, Plot Number, City, Pincode)
-	\item Warehouse Phone(\underline{Warehouse ID, Phone Number})
-	\item Employee(\underline{Employee ID}, First name, Last name, Age, Salary, Gender, Department, Performance, Position, Date of Joining, Date of Birth, Email Address, House Number, Locality, City, Pincode, Phone Number)
+	\item Employee(\underline{Employee ID}, First name, Last name, Age, Salary, Gender, Department, Performance, Position, Date of Joining, Date of Birth, Email Address, House Number, Locality, City, Pincode, Phone Number,password)
 	\item Delivery Partner(\underline{Employee ID}, Vehicle ID, Vehicle Type)
 	\item Warehouse Worker(\underline{Employee ID})
 	\item Service Employee (\underline{Employee ID})
 	\item Orders(\underline{Order ID}, Total Price, Taxes, Total Discount Percentage)
 	\item Coupon(\underline{Coupon Code}, Discount Percentage)
 	\item Transaction(\underline{Order ID}, Payment Method, Transaction Status ,Transaction Time, Customer ID, Coupon code)\\ Here, Customer ID is referenced from Customer table and coupon code from Coupon table. Coupon code can be null, customer id cannot.
-	\item Delivery (\underline{Order ID}, Employee ID, Customer ID, Warehouse ID) \\ Here Employee ID is taken from the Employee table if it belongs to Delivery Partner, Customer ID from Customer table, Warehouse ID from Warehouse table.
+	\item Delivery (\underline{Order ID}, Employee ID, Customer ID, Warehouse ID,delivery\_date) \\ Here Employee ID is taken from the Employee table if it belongs to Delivery Partner, Customer ID from Customer table, Warehouse ID from Warehouse table.
 	\item Stores(\underline{Warehouse ID, Product ID}, Quantity)
 	\item Supplies(\underline{Vendor ID, Product ID}, Quantity)
 	\item Shopping Cart(\underline{Customer ID, Product ID}, Quantity)
-	\item Complains(\underline{Complaint Number}, Customer ID, Order ID, Service Employee ID)\\ Here, Customer ID is taken from Customer table, Order ID from Orders table, Service Employee ID from Service Employees table.
+	\item Complains(\underline{Complaint Number}, Customer ID, Order ID, Service Employee ID,resolved,date\_of\_creation,details)\\ Here, Customer ID is taken from Customer table, Order ID from Orders table, Service Employee ID from Service Employees table.
 	\item Order Products(\underline{Order ID, Product ID}, Quantity)
 
 \end{enumerate}
@@ -315,6 +307,136 @@ The ER diagram was reduced by noting multiplicities and the following tables for
 \textbf{\underline{ Note}}: Employee has both fields of age and DOB. This is a redundancy on our part as the data entries were designed with age as an attribute. This may be eliminated in the final version depending on whether there is need or not (number of employees should be significantly lower than the number of customers).
 \\
 The SQL queries for creating the database, populating the database and the queries required are submitted under the names: 'database\_creation.sql', 'database\_population.sql' and 'queries.sql' in the Database folder.
+
+\chapter{Changes from the Mid Evaluation}
+
+
+    \section*{Schema}
+        \begin{enumerate}
+            \item Dropped vendor\_phone, customer\_phone, warehouse\_phone, product\_rating, product\_photos tables to reduce complexity.
+            \item Converted complains quarternary relation to ternary relation.
+            \item Added attributes email\_address and password in vendor.
+            \item Added password attribute in employee table.
+            \item Auto-incremented customer, product, vendor, warehouse, orders, complains (for ease of insertion).
+            \item Added attribute delivery\_date in delivery.
+            \item Removed attribute category from product, added attribute product\_name.
+            \item Added attributes details, resolved and date\_of\_creation in complains.
+        \end{enumerate}
+
+    \section*{Queries and Views}
+        \begin{enumerate}
+            \item Added another query to account for the missing query during the mid-evaluation.
+            \item Created new views and roles.
+            \item Created triggers pertaining to the application.
+        \end{enumerate}
+
+    
+\chapter*{Deliverables for Final Evaluation}
+    \section*{Project Scope and Relational Schema}
+        Scope, depth and relation schema were updated from the mid-evaluation. Details in the previous chapter.
+    
+    \section*{Views and Grants}
+        Views were created (present in views.sql file in the Database directory). All views were created taking into account the requirement by the application. Corresponding roles were created and were granted authorisation.
+
+    \section*{SQL Queries}
+        Queries are present in queries\_endsem.sql.\\
+        Most of the queries were taken from the embedded queries which were required to run the application. Do note that the data was changed in order to generate the pure SQL queries from embedded queries and hence may not be coherent.
+
+    \section*{Embedded SQL Queries}
+        All embedded SQL queries (ranging from easy to complex) are in embedded\_sql.txt
+    
+    \section*{Query optimisation}
+        Queries are automatically optimised by MySQL, however, we had tried to optimise the number of calls by searching creative ways to only select as many columns as required, and created indexes to assist with querying.
+
+    \section*{Indexing}
+        MySQL creates indices for primary keys. In addition to those, we had tried to optimise all those functions that we were using in the application. \\
+        Attributes for which we created index tables
+        \begin{itemize}
+            \item email\_address and password from customer
+            \item email\_address and password from vendor
+            \item stock from stores
+            \item quantity from shopping\_cart.
+            \item products on shopping\_cart.
+            \item product\_id from stores.
+            \item customer\_id from transaction
+            \item service\_employee\_id from complains
+            \item product\_id from supply
+        \end{itemize}
+    
+    \section*{Triggers}
+        Triggers were created (present in Trigger.sql in the Database directory). The following triggers were created:
+        \begin{itemize}
+            \item For generating password for employee (uses MD5 checksum to generate temporary queries).
+            \item Removing item from cart once it goes out of stock.
+            \item Reduce discount percentage once stock reduces below 100.
+            \item Insert into stores whenever a new product is inserted (adding it to list before incrementing value).
+        \end{itemize}
+    
+    \textbf{NOTE:} All files pertaining to queries and the submission are in the Database director.
+
+\chapter*{Overview of the Sites}
+    \section*{Introduction}
+    Keeping in mind that customers and employees and vendors have different requirements, a decision was taken to split the application into two parts: one which took care of the Customers' side, and another which catered to Employees and Vendors.
+    \\
+    The scope was limited in several places, in order to create a high-quality, coherent product that would work well.
+    \\
+    \section{Customers' Portal / Main Portal}
+    The customers' portal allows for several features:
+    
+        \begin{enumerate}
+            \item Signing up new customers.
+            \item Browsing products
+            \item Logging in
+            \item Adding products to cart
+            \item Checking out items
+            \item Monitoring orders and delivery dates
+            \item Sending complaints regarding orders.
+        \end{enumerate}
+    A few critical assumptions were made:
+    \\
+        \begin{itemize}
+            \item The payment occurs only through Cash on Delivery. This decision was taken to limit creation of another form for payment details (which were getting hard to handle).
+            \item After complaining about an order, the customer would be contacted via email by the assigned service employee, and they would not be able to track the status of their complaints. This decision was made looking at Amazon's flow, wherin complaining results in the company employees contacting the customer.
+            \item There is no option to return an order, or rate them, for the same reason that forms were getting overwhelming to handle.
+            \item Cart items cannot be dropped as a single unit, the cart can only be fully cleared (in order to reduce complexity).
+            \item In case the item stock gets to 0, it would be removed from all customers' carts (due to the trigger).
+            \item Delivery details won't be shown.
+        \end{itemize}
+    
+
+   
+    \section{Buiseness Portal}
+    This site is used by employees(service employees and delivery guy) and vendor.
+        \begin{itemize}
+            \item Vendors' portal flow
+                \begin{enumerate}
+                    \item New Vendor creates his/her account 
+                    \item He/She logins to his/her account
+                    \item He/she can restock the products he/she is already selling
+                    \item He/she can add new products
+            \end{enumerate}
+            \item Employees' portal flow
+                \begin{enumerate}
+                    \item Delivery Employees and Service Employees can login to the portal
+                    \item Service Employees can see Customers' Complaints and mark them as resolved.
+                    \item Delivery guy can see the orders that he/she has to deliver and mark them as delivered.    
+            \end{enumerate}
+        \end{itemize}
+    As with the customers' portal, a few assumptions were made:
+    \\
+    \begin{itemize}
+        \item In employees' portal, we cannot register a new employee (database admin would be responsible for that).
+        \item Warehouse workers have no provision to login.
+        \item Service employees would only be responsible for handling complaints(would only be marking them as resolved after sending an external email, at least on the portal).
+        \item Delivery agents would be allowed to login and they would only be shown a list of deliveries to be made. Only a provision to mark the item as delivered would exist.
+        \item We would not cross verify with the customers whether they recieved the order or not. The customer can complain if the order was not recieved.  
+        \item Vendors would have an option to add a new product, but would not be shown the product\_id of the newly inserted item (to reduce complexity, they would still be able to visit the customer's site and get to know the product id).
+        \item Restocking only happens on the basis of product\_id.
+    \end{itemize}
+
+        
+
+        
 
 \chapter{Project Development Procedure and Deliverables}
 	\section{ER Formulation}
@@ -351,8 +473,12 @@ Collaboration was done by the means of Microsoft Visual Studio Code's Live Share
 				\item DDL : creating tables
 				\item Creating test data
 				\item Part of the SQL queries
-				\item Assisted with documentation
-			\end{enumerate}
+				\item Documentation
+				\item Triggers
+                \item Views and grants
+                \item Indexing
+                \item Embedded sql queries(Database connection)
+                \item helped with the Customer page
 		
 		\item Atyant Sony:
 			\begin{enumerate}
@@ -363,13 +489,14 @@ Collaboration was done by the means of Microsoft Visual Studio Code's Live Share
 				\item Creating test data
 				\item Part of the SQL queries
 				\item Documentation and latex formatting.
+				\item Handled HTML forms
+                \item Embedded sql queries
+                \item Indexing
+                \item Made front end 
 			\end{enumerate}
 		\item Ritika Nagar:			
 			\begin{enumerate}
-				\item Ideation of the ER diagram
-				\item Reduction to Relational Schema
-				\item Creating test data
-				\item SQL queries
+                \item
 			\end{enumerate}
 		\item Madhava Krishna:
 			\begin{enumerate}
@@ -380,6 +507,12 @@ Collaboration was done by the means of Microsoft Visual Studio Code's Live Share
 				\item Creating part of the test data
 				\item SQL query
 				\item Documentation and latex formatting.
+				\item Database Connection
+				\item Customer Portal Landing Page
+				\item Part of the employees' portal
+				\item Part of the customers' page
+                \item Trigggers
+                \item 
 			\end{enumerate}
 	\end{enumerate}
 \end{document}

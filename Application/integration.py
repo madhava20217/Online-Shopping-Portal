@@ -108,7 +108,7 @@ class MyDBConnector:
 
     def add_Order(self, order_id):
         # use order table
-        query=" insert into Order(order_id,Total_Price, Taxes, Total_Discount_Percentage) values(%s,%s,%s)"
+        query=" insert into Orders(order_id,Total_Price, Taxes, Total_Discount_Percentage) values(%s,%s,%s)"
         self.__cursor.execute(query,order_id)
         self.__commit()
         pass

@@ -76,9 +76,9 @@ def getVendorID(email):
     except:
         return None
 
-def getVendorEmail(id):
-    '''function to get vendor's email address given the ID'''
-    get_email = "select email_address from "
+# def getVendorEmail(id):
+#     '''function to get vendor's email address given the ID'''
+#     get_email = "select email_address from "
 
 def register_vendor(first_name, last_name, plot, city, pin, email, password):
     '''Function for inserting values to the database

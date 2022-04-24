@@ -1,7 +1,7 @@
 PWD c:\Users\krish\Desktop\DBMS\Documentation
 INPUT C:\Users\krish\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\krish\Desktop\DBMS\Documentation\ER Diagram and Relational Schema.tex
-OUTPUT ER Diagram and Relational Schema.log
+INPUT c:\Users\krish\Desktop\DBMS\Documentation\Final_Project_Submission.tex
+OUTPUT Final_Project_Submission.log
 INPUT C:\Program Files\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\report.cls
@@ -92,10 +92,10 @@ INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\ER Diagram and Relational Schema.aux
-INPUT ER Diagram and Relational Schema.aux
-INPUT ER Diagram and Relational Schema.aux
-OUTPUT ER Diagram and Relational Schema.aux
+INPUT .\Final_Project_Submission.aux
+INPUT Final_Project_Submission.aux
+INPUT Final_Project_Submission.aux
+OUTPUT Final_Project_Submission.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -121,14 +121,14 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-OUTPUT ER Diagram and Relational Schema.pdf
+OUTPUT Final_Project_Submission.pdf
 INPUT C:\Users\krish\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\ER Diagram and Relational Schema.toc
-INPUT ER Diagram and Relational Schema.toc
-INPUT ER Diagram and Relational Schema.toc
+OUTPUT Final_Project_Submission.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -137,10 +137,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-OUTPUT ER Diagram and Relational Schema.toc
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\Pictures\ER_Diagram.png
 INPUT .\Pictures\ER_Diagram.png
@@ -149,7 +145,8 @@ INPUT .\Pictures\ER_Diagram.png
 INPUT .\Pictures\ER_Diagram.png
 INPUT .\Pictures\ER_Diagram.png
 INPUT .\Pictures\ER_Diagram.png
-INPUT ER Diagram and Relational Schema.aux
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT Final_Project_Submission.aux
 INPUT C:\Users\krish\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\krish\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

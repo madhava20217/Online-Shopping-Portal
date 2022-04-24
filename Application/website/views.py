@@ -301,7 +301,7 @@ def cart():
                     if(random_number == i):
                         delivery_id = delivery_id_list[i][0]
                         break
-                delivery_add = "insert into delivery values (%s, %s, %s, %s, NULL);"
+                delivery_add = "insert into delivery values (%s, %s, %s, %s, NULL)"
                 cursor.execute(delivery_add, [order_id, delivery_id, customer_id,max_stock_warehouse_id])
 
             #deleting items from shopping cart

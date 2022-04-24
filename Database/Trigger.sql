@@ -1,5 +1,3 @@
-
-
 DELIMITER $
 
 --Working
@@ -20,7 +18,7 @@ create trigger update_cart after update on Stores
     end if$
 delimiter ;
 
---non_working
+--Working
 DELIMITER $
 create trigger scalp_customers after update on Stores
     for each row
@@ -29,24 +27,12 @@ create trigger scalp_customers after update on Stores
         end if$ 
 delimiter ;
 
-delete 
-
+--Working
 DELIMITER $
 create trigger add_stock_warehouse after insert on Product
     for each row
         insert into Stores values (
-            FLOOR(RAND()*(select max(warehouse_id) - minfrom warehouse), new.product_id, 0);
+            FLOOR(RAND()*(select max(warehouse_id) - min(warehouse_id) from warehouse)), new.product_id, 0);
 delimiter ;
 
-
-/* delimiter $
-create trigger incr_discount 
-after  
-update
-on Orders
-for each row
-if Total_price> 10000
-set new.Total_Discount_Percentage = new.Total_Discount_Percentage*10;
-end if$ 
-delimiter ;  */
 

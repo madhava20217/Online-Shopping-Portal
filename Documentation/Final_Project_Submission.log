@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.3.8)  7 APR 2022 08:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.3.8)  24 APR 2022 16:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex"
-(c:/Users/krish/Desktop/DBMS/Documentation/ER Diagram and Relational Schema.tex
+**c:/Users/krish/Desktop/DBMS/Documentation/Final_Project_Submission.tex
+(c:/Users/krish/Desktop/DBMS/Documentation/Final_Project_Submission.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2021-11-22> (C:\Program Files\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
@@ -49,8 +49,8 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count192
 \l__pdf_internal_box=\box50
-) (ER Diagram and Relational Schema.aux)
-\openout1 = `"ER Diagram and Relational Schema.aux"'.
+) (Final_Project_Submission.aux)
+\openout1 = `Final_Project_Submission.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -91,18 +91,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 24.
  [1
 
-{C:/Users/krish/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (ER Diagram and Relational Schema.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
-)
+{C:/Users/krish/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+No file Final_Project_Submission.toc.
 \tf@toc=\write3
-\openout3 = `"ER Diagram and Relational Schema.toc"'.
+\openout3 = `Final_Project_Submission.toc'.
 
- [1
+[1
 
 ]
 Chapter 1.
@@ -115,18 +109,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--57
 
 ] [3] [4]
 Chapter 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 92.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 92.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 92.
 [5
 
-] [6] [7] [8]
-Overfull \hbox (1.75844pt too wide) in paragraph at lines 239--240
+] [6] [7]
+Overfull \hbox (1.75844pt too wide) in paragraph at lines 231--232
 []\OT1/cmr/m/n/12 Delivery: Quar-ternary re-la-tion be-tween ware-house, or-der, de-liv-ery part-
  []
 
-[9]
+[8] [9]
 <Pictures/ER_Diagram.png, id=37, 1240.635pt x 2011.515pt>
 File: Pictures/ER_Diagram.png Graphic file (type png)
 <use Pictures/ER_Diagram.png>
-Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 285.
+Package pdftex.def Info: Pictures/ER_Diagram.png  used on input line 281.
 (pdftex.def)             Requested size: 331.50238pt x 537.46877pt.
  [10]
 Overfull \vbox (17.2121pt too high) has occurred while \output is active []
@@ -135,42 +135,103 @@ Overfull \vbox (17.2121pt too high) has occurred while \output is active []
 Chapter 3.
 [12
 
-] [13]
+]
+Overfull \hbox (30.72984pt too wide) in paragraph at lines 298--299
+[]\OT1/cmr/m/n/12 Delivery ($[]$, Em-ployee ID, Cus-tomer ID, Ware-house ID,delivery[]date) 
+ []
+
+[13]
 Chapter 4.
 
-Overfull \hbox (24.21574pt too wide) in paragraph at lines 324--324
-[]\OT1/cmr/bx/n/17.28 Entity Re-la-tion-ship Par-tic-i-pa-tion and Types 
+Overfull \hbox (21.6157pt too wide) in paragraph at lines 316--317
+[]\OT1/cmr/m/n/12 Dropped ven-dor[]phone, cus-tomer[]phone, ware-house[]phone, prod-uct[]rating,
+ []
+
+
+Overfull \hbox (12.5161pt too wide) in paragraph at lines 322--323
+[]\OT1/cmr/m/n/12 Removed at-tribute cat-e-gory from prod-uct, added at-tribute prod-uct[]name. 
  []
 
 [14
 
+] [15] [16
+
+] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 379--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--397
+
+ []
+
+[19
+
 ]
-Overfull \hbox (23.62627pt too wide) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 425--427
+
+ []
+
+[20]
+Overfull \hbox (17.26382pt too wide) in paragraph at lines 430--431
+[]\OT1/cmr/m/n/12 Service em-ploy-ees would only be re-spon-si-ble for han-dling com-plaints(would
+ []
+
+[21]
+Chapter 5.
+
+Overfull \hbox (24.21574pt too wide) in paragraph at lines 446--446
+[]\OT1/cmr/bx/n/17.28 Entity Re-la-tion-ship Par-tic-i-pa-tion and Types 
+ []
+
+[22
+
+]
+Overfull \hbox (23.62627pt too wide) in paragraph at lines 462--463
 \OT1/cmr/m/n/12 Queries have been in-cluded in the Database folder un-der the file name 'queries.sql',
  []
 
 
-Overfull \hbox (26.70288pt too wide) in paragraph at lines 340--341
+Overfull \hbox (26.70288pt too wide) in paragraph at lines 462--463
 \OT1/cmr/m/n/12 which should be run af-ter run-ning 'database[]creation.sql' and 'data[]population.sql'
  []
 
-[15] [16]
-Chapter 5.
-[17
+[23] [24]
+Chapter 6.
+[25
 
-] [18] (ER Diagram and Relational Schema.aux) ) 
+]
+
+c:/Users/krish/Desktop/DBMS/Documentation/Final_Project_Submission.tex:518: LaTeX Error: \begin{enumerate} on input line 467 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.518 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[26] (Final_Project_Submission.aux) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 467 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 1363 strings out of 478659
- 22802 string characters out of 2855778
- 325375 words of memory out of 3000000
- 19494 multiletter control sequences out of 15000+600000
+ 1359 strings out of 478659
+ 22472 string characters out of 2855778
+ 325353 words of memory out of 3000000
+ 19492 multiletter control sequences out of 15000+600000
  410235 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,6n,62p,698b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,62p,688b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\krish\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "ER Diagram and Relational Schema.pdf" (19 pages, 388130 bytes).
+Output written on Final_Project_Submission.pdf (27 pages, 398655 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
