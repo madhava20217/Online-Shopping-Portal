@@ -311,7 +311,7 @@ The SQL queries for creating the database, populating the database and the queri
 \chapter{Changes from the Mid Evaluation}
 
 
-    \section*{Schema}
+    \section{Schema}
         \begin{enumerate}
             \item Dropped vendor\_phone, customer\_phone, warehouse\_phone, product\_rating, product\_photos tables to reduce complexity.
             \item Converted complains quarternary relation to ternary relation.
@@ -323,7 +323,7 @@ The SQL queries for creating the database, populating the database and the queri
             \item Added attributes details, resolved and date\_of\_creation in complains.
         \end{enumerate}
 
-    \section*{Queries and Views}
+    \section{Queries and Views}
         \begin{enumerate}
             \item Added another query to account for the missing query during the mid-evaluation.
             \item Created new views and roles.
@@ -331,24 +331,24 @@ The SQL queries for creating the database, populating the database and the queri
         \end{enumerate}
 
     
-\chapter*{Deliverables for Final Evaluation}
-    \section*{Project Scope and Relational Schema}
+\chapter{Deliverables for Final Evaluation}
+    \section{Project Scope and Relational Schema}
         Scope, depth and relation schema were updated from the mid-evaluation. Details in the previous chapter.
     
-    \section*{Views and Grants}
+    \section{Views and Grants}
         Views were created (present in views.sql file in the Database directory). All views were created taking into account the requirement by the application. Corresponding roles were created and were granted authorisation.
 
-    \section*{SQL Queries}
+    \section{SQL Queries}
         Queries are present in queries\_endsem.sql.\\
         Most of the queries were taken from the embedded queries which were required to run the application. Do note that the data was changed in order to generate the pure SQL queries from embedded queries and hence may not be coherent.
 
-    \section*{Embedded SQL Queries}
+    \section{Embedded SQL Queries}
         All embedded SQL queries (ranging from easy to complex) are in embedded\_sql.txt
     
-    \section*{Query optimisation}
+    \section{Query optimisation}
         Queries are automatically optimised by MySQL, however, we had tried to optimise the number of calls by searching creative ways to only select as many columns as required, and created indexes to assist with querying.
 
-    \section*{Indexing}
+    \section{Indexing}
         MySQL creates indices for primary keys. In addition to those, we had tried to optimise all those functions that we were using in the application. \\
         Attributes for which we created index tables
         \begin{itemize}
@@ -363,7 +363,7 @@ The SQL queries for creating the database, populating the database and the queri
             \item product\_id from supply
         \end{itemize}
     
-    \section*{Triggers}
+    \section{Triggers}
         Triggers were created (present in Trigger.sql in the Database directory). The following triggers were created:
         \begin{itemize}
             \item For generating password for employee (uses MD5 checksum to generate temporary queries).
@@ -374,7 +374,10 @@ The SQL queries for creating the database, populating the database and the queri
     
     \textbf{NOTE:} All files pertaining to queries and the submission are in the Database director.
 
-\chapter*{Overview of the Sites}
+\chapter{Overview of the Sites}
+
+    \textbf{\textit{NOTE: The connector files require to be saved again and again whenever there is a sporadic change in the database. This seems to be an issue with server reload and we were not able to take care of it for this project.
+    Example, on changing delivery states in database using MySQL and going into the employee portal to visualise them, the to-be-delivered orders are not visible at all.}}
     \section*{Introduction}
     Keeping in mind that customers and employees and vendors have different requirements, a decision was taken to split the application into two parts: one which took care of the Customers' side, and another which catered to Employees and Vendors.
     \\
@@ -405,7 +408,7 @@ The SQL queries for creating the database, populating the database and the queri
     
 
    
-    \section{Buiseness Portal}
+    \section{Business Portal}
     This site is used by employees(service employees and delivery guy) and vendor.
         \begin{itemize}
             \item Vendors' portal flow
