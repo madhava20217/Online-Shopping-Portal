@@ -6,3 +6,9 @@ Group 32
 2) Atyant Sony: 2020039
 3) Ritika Nagar: 2020112
 4) Madhava Krishna: 2020217
+
+## About the project
+The project is about creating an online shopping portal, with the frontend created using Jinja2 based HTML and Tailwind and Bootstrap CSS. The connection to the backend was done using MySQL Python connector.
+There are two parts to this project, one for the customer's side and another for the employees' side.
+The customer's portal is in the Application directory of the main project directory and can be run by executing main.py.
+The employees' portal is in the Client_server directory of the main project directory and can be run by executing hello.py.
